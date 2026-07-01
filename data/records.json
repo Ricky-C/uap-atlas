@@ -1,0 +1,192 @@
+[
+  {
+    "id": "3f991a25c8315737",
+    "release": "01",
+    "sourceAgency": "CIA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "[location redacted]",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/CIA-UAP-D001_Intelligence-Assessment.pdf",
+    "media": {
+      "docImage": "ingest/fixtures/release-01/files/CIA-UAP-D001_Intelligence-Assessment.pdf"
+    }
+  },
+  {
+    "id": "41750e16bcf851d4",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": "2004-11-14",
+    "locationRaw": "off the coast of Southern California",
+    "lat": 32.7,
+    "lon": -119.5,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/DOW-UAP-D001_Nimitz-Encounter-Report.pdf",
+    "media": {
+      "docImage": "ingest/fixtures/release-01/files/DOW-UAP-D001_Nimitz-Encounter-Report.pdf"
+    }
+  },
+  {
+    "id": "83c0a05f017cc1db",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "incident-report",
+    "incidentDate": null,
+    "locationRaw": "INDOPACOM area of responsibility",
+    "lat": 15,
+    "lon": 150,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/DOW-UAP-PR003_Unresolved-Incident-Report.pdf",
+    "media": {
+      "docImage": "ingest/fixtures/release-01/files/DOW-UAP-PR003_Unresolved-Incident-Report.pdf"
+    }
+  },
+  {
+    "id": "b0a4a16e55887c6f",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "video",
+    "incidentDate": "2015-01-20",
+    "locationRaw": "Jacksonville, Florida",
+    "lat": 30.3322,
+    "lon": -81.6557,
+    "geoPrecision": "city",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/DOW-UAP-V002_Gimbal-Clip.mp4",
+    "media": {
+      "video": "ingest/fixtures/release-01/files/DOW-UAP-V002_Gimbal-Clip.mp4"
+    }
+  },
+  {
+    "id": "c633b86df2f331ac",
+    "release": "01",
+    "sourceAgency": "AARO",
+    "docType": "report",
+    "incidentDate": "2022-03-15",
+    "locationRaw": "Nellis Air Force Base, Nevada",
+    "lat": 36.2361,
+    "lon": -115.0343,
+    "geoPrecision": "point",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/AARO-UAP-D004_Sensor-Data-Summary.pdf",
+    "media": {
+      "docImage": "ingest/fixtures/release-01/files/AARO-UAP-D004_Sensor-Data-Summary.pdf"
+    }
+  },
+  {
+    "id": "ca42d47386b03705",
+    "release": "01",
+    "sourceAgency": "DOE",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "Hanford Site, Washington",
+    "lat": 46.5506,
+    "lon": -119.4881,
+    "geoPrecision": "city",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/DOE-UAP-D002_Facility-Observation-Report.pdf",
+    "media": {
+      "docImage": "ingest/fixtures/release-01/files/DOE-UAP-D002_Facility-Observation-Report.pdf"
+    }
+  },
+  {
+    "id": "cb1405204e48f646",
+    "release": "01",
+    "sourceAgency": "NASA",
+    "docType": "rendering",
+    "incidentDate": "2004-11-14",
+    "locationRaw": "off the coast of Southern California",
+    "lat": 32.7,
+    "lon": -119.5,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/NASA-UAP-IMG005_Atmospheric-Rendering.png",
+    "media": {
+      "rendering": "ingest/fixtures/release-01/files/NASA-UAP-IMG005_Atmospheric-Rendering.png"
+    }
+  },
+  {
+    "id": "d0d60c1a9b9195e4",
+    "release": "01",
+    "sourceAgency": "STATE",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "Washington, D.C.",
+    "lat": 38.9072,
+    "lon": -77.0369,
+    "geoPrecision": "city",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/STATE-UAP-D001_Diplomatic-Cable.pdf",
+    "media": {
+      "docImage": "ingest/fixtures/release-01/files/STATE-UAP-D001_Diplomatic-Cable.pdf"
+    }
+  },
+  {
+    "id": "ea3084d401aad72f",
+    "release": "01",
+    "sourceAgency": "NASA",
+    "docType": "report",
+    "incidentDate": "2023-06-01",
+    "locationRaw": "Northeastern United States",
+    "lat": 43,
+    "lon": -73.5,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/NASA-UAP-D002_Atmospheric-Anomaly-Study.pdf",
+    "media": {
+      "docImage": "ingest/fixtures/release-01/files/NASA-UAP-D002_Atmospheric-Anomaly-Study.pdf"
+    }
+  },
+  {
+    "id": "edd3ced1100916e6",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "FBI-file",
+    "incidentDate": null,
+    "locationRaw": "Los Alamos, New Mexico",
+    "lat": 35.8809,
+    "lon": -106.3031,
+    "geoPrecision": "city",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/65_HS1-834228961_62-HQ-83894_Section_10.pdf",
+    "media": {
+      "docImage": "ingest/fixtures/release-01/files/65_HS1-834228961_62-HQ-83894_Section_10.pdf"
+    }
+  }
+]

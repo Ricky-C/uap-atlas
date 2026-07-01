@@ -1,0 +1,50 @@
+/*
+ * tokens.css — the ONLY place raw style values live.
+ * Components reference these tokens via var(--token); a hardcoded value elsewhere
+ * is a bug (design-guardian enforces). Values are placeholder-but-real; the later
+ * Claude Design pass refines them without moving the roles. See DESIGN.md.
+ */
+
+:root {
+  /* base — near-black indigo, not pure black (a hint of blue reads as "space") */
+  --bg-void: #070a12;
+  --bg-surface: #0a0e16;
+  --bg-raised: #10151f;
+
+  /* hairlines — faint cool lines, instrument feel */
+  --line: rgba(130, 165, 205, 0.14);
+  --line-strong: rgba(130, 165, 205, 0.24);
+
+  /* text — cool off-white, NEVER green at paragraph sizes */
+  --text-primary: #d6dde8;
+  --text-secondary: #9aa6b6;
+  --text-muted: #6b7688;
+
+  /* signal — phosphor green, SPARING. accents, active points, live cues, key data */
+  --signal: #5cf2a0;
+  --signal-dim: #2f9d63;
+  --signal-bg: rgba(92, 242, 160, 0.1);
+
+  /* alert — amber, RESERVED for unresolved status + redaction */
+  --alert: #e6b458;
+  --alert-bg: rgba(230, 180, 88, 0.12);
+
+  /* redaction — blacker than the surface */
+  --redact: #04060a;
+
+  /* type — placeholder-but-real font stacks; webfonts are not bundled in Phase 0,
+     so the system fallback renders. Self-hosted faces arrive in a later pass. */
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --font-grotesk: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Base wiring lives here (tokens.css is exempt from the design-guardian scan),
+   so component files stay free of raw values. */
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg-void);
+  color: var(--text-primary);
+  font-family: var(--font-grotesk);
+}

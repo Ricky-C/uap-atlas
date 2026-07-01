@@ -1,0 +1,84 @@
+[
+  {
+    "file": "DOW-UAP-D001_Nimitz-Encounter-Report.pdf",
+    "mediaType": "document",
+    "incidentDate": "2004-11-14",
+    "incidentLocation": "off the coast of Southern California",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/DOW-UAP-D001_Nimitz-Encounter-Report.pdf"
+  },
+  {
+    "file": "DOW-UAP-PR003_Unresolved-Incident-Report.pdf",
+    "agency": "DOW",
+    "mediaType": "document",
+    "incidentDate": "2021",
+    "incidentLocation": "INDOPACOM area of responsibility",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/DOW-UAP-PR003_Unresolved-Incident-Report.pdf"
+  },
+  {
+    "file": "65_HS1-834228961_62-HQ-83894_Section_10.pdf",
+    "agency": "FBI",
+    "mediaType": "document",
+    "docType": "FBI-file",
+    "docId": "62-HQ-83894",
+    "incidentDate": null,
+    "incidentLocation": "Los Alamos, New Mexico",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/65_HS1-834228961_62-HQ-83894_Section_10.pdf"
+  },
+  {
+    "file": "NASA-UAP-D002_Atmospheric-Anomaly-Study.pdf",
+    "agency": "NASA",
+    "mediaType": "document",
+    "incidentDate": "2023-06-01",
+    "incidentLocation": "Northeastern United States",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/NASA-UAP-D002_Atmospheric-Anomaly-Study.pdf"
+  },
+  {
+    "file": "CIA-UAP-D001_Intelligence-Assessment.pdf",
+    "agency": "CIA",
+    "mediaType": "document",
+    "incidentDate": "1949",
+    "incidentLocation": "[location redacted]",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/CIA-UAP-D001_Intelligence-Assessment.pdf"
+  },
+  {
+    "file": "AARO-UAP-D004_Sensor-Data-Summary.pdf",
+    "agency": "AARO",
+    "mediaType": "document",
+    "incidentDate": "2022-03-15",
+    "incidentLocation": "Nellis Air Force Base, Nevada",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/AARO-UAP-D004_Sensor-Data-Summary.pdf"
+  },
+  {
+    "file": "DOE-UAP-D002_Facility-Observation-Report.pdf",
+    "agency": "DOE",
+    "mediaType": "document",
+    "incidentDate": "1967",
+    "incidentLocation": "Hanford Site, Washington",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/DOE-UAP-D002_Facility-Observation-Report.pdf"
+  },
+  {
+    "file": "DOW-UAP-V002_Gimbal-Clip.mp4",
+    "agency": "DOW",
+    "mediaType": "video",
+    "docType": "video",
+    "incidentDate": "2015-01-20",
+    "incidentLocation": "Jacksonville, Florida",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/DOW-UAP-V002_Gimbal-Clip.mp4"
+  },
+  {
+    "file": "NASA-UAP-IMG005_Atmospheric-Rendering.png",
+    "agency": "NASA",
+    "mediaType": "image",
+    "incidentDate": "2004-11-14",
+    "incidentLocation": "off the coast of Southern California",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/NASA-UAP-IMG005_Atmospheric-Rendering.png"
+  },
+  {
+    "file": "STATE-UAP-D001_Diplomatic-Cable.pdf",
+    "agency": "STATE",
+    "mediaType": "document",
+    "incidentDate": "1952",
+    "incidentLocation": "Washington, D.C.",
+    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/STATE-UAP-D001_Diplomatic-Cable.pdf"
+  }
+]

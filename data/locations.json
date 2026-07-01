@@ -1,0 +1,10 @@
+{
+  "off the coast of Southern California": { "lat": 32.7, "lon": -119.5, "geoPrecision": "theater" },
+  "INDOPACOM area of responsibility": { "lat": 15.0, "lon": 150.0, "geoPrecision": "theater" },
+  "Northeastern United States": { "lat": 43.0, "lon": -73.5, "geoPrecision": "region" },
+  "Los Alamos, New Mexico": { "lat": 35.8809, "lon": -106.3031, "geoPrecision": "city" },
+  "Nellis Air Force Base, Nevada": { "lat": 36.2361, "lon": -115.0343, "geoPrecision": "point" },
+  "Hanford Site, Washington": { "lat": 46.5506, "lon": -119.4881, "geoPrecision": "city" },
+  "Jacksonville, Florida": { "lat": 30.3322, "lon": -81.6557, "geoPrecision": "city" },
+  "Washington, D.C.": { "lat": 38.9072, "lon": -77.0369, "geoPrecision": "city" }
+}

@@ -1,0 +1,36 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+*.tsbuildinfo
+
+# logs / debug output
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# env / secrets
+.env
+.env.*
+!.env.example
+
+# os / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# local-only Claude Code settings (project agents/commands/skills stay tracked)
+.claude/settings.local.json
+
+# real release bundles from war.gov — large binary, not committed. Drop an
+# extracted bundle in releases/<id>/ (with files/ + index.json) to ingest it.
+# The committed synthetic fixture under ingest/fixtures/ is NOT ignored.
+releases/
+
+# NOTE: data/ is committed output (records.json, locations.json, cache/).
+# Do NOT add a data/ ignore rule.
