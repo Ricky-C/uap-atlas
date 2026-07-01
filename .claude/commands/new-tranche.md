@@ -9,10 +9,10 @@ war.gov 403-blocks automation, so acquiring the bundle is a **manual human step*
 
 Do the following in order, stopping to report if any step surprises you:
 
-1. Confirm the bundle for release $ARGUMENTS is in place at `releases/$ARGUMENTS/`, containing a `files/` folder and an `index.json` that mirrors the portal's index columns. If that directory is missing, stop and tell the user to download and extract the war.gov bundle there — do NOT try to fetch it yourself. If a bare `.zip` is sitting there unextracted, the ingest fails loud with guidance; relay that message.
+1. Confirm the bundle for release $ARGUMENTS is extracted at `data/raw/release_$ARGUMENTS/` as a flat folder of files. If that directory is missing, stop and tell the user to download and extract the war.gov bundle there — do NOT try to fetch it yourself. If the directory exists but is empty (a bare `.zip` dropped in unextracted), the ingest fails loud with guidance; relay that message. If the user has also exported war.gov's filterable index, confirm it's at `data/raw/release_$ARGUMENTS/index.json` (optional; it fills incident date, location, and source URL — see DATA.md for the shape).
 1. Run the ingest for this release (`pnpm ingest:release $ARGUMENTS`). It will:
-  - read and validate the extracted bundle from `releases/$ARGUMENTS/` (a real bundle there takes precedence over the committed fixture; the untrusted `index.json` is validated at the edge),
-  - parse filenames + index into partial records,
+  - read the extracted flat bundle from `data/raw/release_$ARGUMENTS/` (a real bundle there takes precedence over the committed fixture; any `index.json` is untrusted and validated at the edge),
+  - derive agency/docType from filenames and mediaType from extension; join the optional index (its fields override) for date/location/source URL,
   - geocode against `data/locations.json`,
   - merge into `data/records.json` (idempotent — record ids are content-addressed, so nothing already processed is rewritten).
   Note: the Claude enrichment pass (`summary`, `objectClass`, `redactionPct`) is deferred to Phase 2 and is **not** run yet — Phase 1 records carry empty summaries and `unknown` object classes by design. When enrichment lands it runs in this step, cache-backed so nothing already processed is re-billed.

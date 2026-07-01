@@ -67,13 +67,33 @@ war.gov 403-blocks automated clients, so **downloading a release is a manual hum
 To ingest a real release:
 
 1. From war.gov/ufo, download the release's ZIP bundle(s) — documents and videos — yourself.
-1. Extract them into `releases/<id>/` (e.g. `releases/01/`) so the directory contains a `files/` folder and an `index.json`. `releases/` is gitignored (real bundles are large binaries); the committed synthetic fixture under `ingest/fixtures/release-<id>/` is the fallback the same code path ingests unchanged.
-1. Author `index.json` to mirror the portal's index columns — a JSON array whose entries are `{ file, mediaType, incidentLocation, sourceUrl, agency?, docType?, docId?, incidentDate? }`. Filenames alone don't carry incident date or location, so those come from the index.
-1. Run `pnpm ingest:release <id>` (or `pnpm ingest` for the newest local release).
+1. Extract them into `data/raw/release_NN/` (e.g. `data/raw/release_01/`) as a **flat folder** — the files sit directly in the directory, exactly as the bundle ships them. `data/raw/` is gitignored (real bundles run to gigabytes); the committed synthetic fixture under `ingest/fixtures/release-NN/` (which uses a `files/` subfolder) is the fallback the same code path ingests unchanged.
+1. Run `pnpm ingest:release NN` (or `pnpm ingest` for the newest local release).
 
-Source resolution is newest-first: a real bundle in `releases/<id>/` takes precedence over the fixture. `index.json` is untrusted external data — it's validated at the edge, and `file` entries are constrained to bare, non-symlink regular files inside `files/` (a path-traversal guard, since we don't author the real war.gov index). Ingest is idempotent: record ids are content-addressed (a hash of the source file), so re-running never rewrites unchanged records — and, once enrichment lands, never re-bills already-processed files.
+That alone produces records: `mediaType` is derived from the file extension, and `sourceAgency` / `docType` from the filename convention (`DOW-UAP-D001`, `CIA-UAP-002`, `FBI-Photo-B10`, …). Files with no PURSUE code in the name — the National Archives record-group scans (`65_…`, `341_…`) and redaction-only names (`Serial-3_Redacted.pdf`) — get `sourceAgency: "unknown"`; we never guess it. Incident **date and location are not read from the filename** even when present there, because they aren't reliably encoded across every convention — they come from the index below.
 
-If you drop a bare `.zip` without extracting it (a common half-step), ingest fails loud: *"`releases/01` exists but has no index.json. Extract the war.gov bundle into `releases/01/` so it contains files/ and index.json."*
+### The release index (optional, authoritative for date/location/URL)
+
+Incident date, incident location, and the source URL live in war.gov's separate filterable index (Agency · Release · Incident Date · Incident Location · Type · link), which ships separately from the file bundle. Export it and drop it at **`data/raw/release_NN/index.json`** as a JSON array keyed by `file`; a re-run joins it in and its fields **override** the derived values. Only `file` is required — every other field is optional and fills a gap when present:
+
+```jsonc
+[
+  {
+    "file": "DOW-UAP-D001_Nimitz-Encounter-Report.pdf", // required — bare filename, must match a file on disk
+    "agency": "DOW",                 // overrides the filename-derived agency
+    "mediaType": "document",         // "document" | "image" | "video"; else derived from extension
+    "docType": "report",             // overrides the filename-derived docType
+    "docId": "DOW-UAP-D001",         // the portal's document id (not persisted yet — no schema field)
+    "incidentDate": "2004-11-14",    // ISO 8601 full date, or null; a bare year/range must be null
+    "incidentLocation": "off San Diego, California", // free text; drives geocoding via data/locations.json
+    "sourceUrl": "https://www.war.gov/..."           // link back to the official record
+  }
+]
+```
+
+Source resolution is newest-first and real-wins: `data/raw/release_NN/` takes precedence over `releases/NN/` (legacy) over the fixture. The index is untrusted external data — it's validated at the edge, and both index-referenced and on-disk files are constrained to bare, non-symlink regular files inside the release directory (a path-traversal guard, since we don't author the real war.gov index). Index rows whose file isn't on disk are logged and skipped (partial download or export mismatch), not fatal. Ingest is idempotent: record ids are content-addressed (a hash of the source file), so re-running never rewrites unchanged records — and, once enrichment lands, never re-bills already-processed files.
+
+If a release directory exists but is empty (e.g. a bare `.zip` dropped in without extracting), ingest fails loud: *"`data/raw/release_01` exists but has no ingestable files. Extract the war.gov bundle so the release directory contains the documents directly."*
 
 Note: the Claude enrichment pass (`summary`, `objectClass`, `redactionPct`) is deferred to Phase 2 and is not wired into the ingest run yet. Phase 1 records carry empty summaries and `unknown` object classes by design.
 

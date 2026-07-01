@@ -24,6 +24,15 @@ export function run(releaseArg?: string): void {
   const source = fetched.fromFixture ? `${fetched.dir} (synthetic fixture)` : fetched.dir;
   console.log(`ingest: release ${releaseId} from ${source} — ${fetched.files.length} files`);
 
+  if (fetched.orphanIndex.length > 0) {
+    console.warn(
+      `\n  ${fetched.orphanIndex.length} index row(s) reference files not on disk ` +
+        `(partial download or export mismatch) — skipped:`,
+    );
+    for (const f of fetched.orphanIndex) console.warn(`    · ${f}`);
+    console.warn("");
+  }
+
   const parsed = parseRelease(fetched);
   const { records, misses, redacted } = geocodeRecords(parsed, fetchLocationTable(LOCATIONS_PATH));
 

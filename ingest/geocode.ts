@@ -74,6 +74,11 @@ export function geocodeRecords(records: UAPRecord[], table: LocationTable): Geoc
   });
 
   const geocoded = records.map((record): UAPRecord => {
+    // No location yet (e.g. a real record awaiting the portal index): unresolved, but not a
+    // curation miss — there is nothing for a human to add to the table.
+    if (record.locationRaw.trim() === "") {
+      return unresolved(record);
+    }
     if (isRedactedLocation(record.locationRaw)) {
       redacted.add(record.locationRaw);
       return unresolved(record);

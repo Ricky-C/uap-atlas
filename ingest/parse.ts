@@ -1,32 +1,48 @@
-// Filename + index -> partial UAPRecord. Pure: no IO (fetch.ts already read disk).
+// Filename + optional index -> UAPRecord. Pure: no IO (fetch.ts already read disk).
 //
-// The recon on real war.gov data showed filenames encode agency / docType / docId
-// for most files (e.g. DOW-UAP-D001, CIA-UAP-D001), while a few use bureau-style
-// case numbers (e.g. 62-HQ-83894). Incident date and location are NOT in the
-// filename — they live in the release index. So: derive agency/docType/docId from
-// the filename where possible (index overrides win), and take date/location from
-// the index. Geo coordinates and the Claude-enriched fields are filled later; here
+// The real war.gov filenames span several conventions (see the fixtures and DATA.md):
+//   modern PURSUE   DOW-UAP-D001_...  CIA-UAP-002-...  DoW-UAP-D079_...  DOW-UAP-D3-...
+//                   (agency casing varies; separator - or _; 1-3 digit id; optional
+//                    series letters D/PR/VM/VS/IMG; release_03 CIA has no series letter)
+//   FBI photos      FBI-Photo-A1.png   FBI-Photo-B10.pdf
+//   archival        65_HS1-..._62-HQ-83894_Section_1.pdf   341_110677_...  059UAP00011.pdf
+//   redaction-only  Serial-3_Redacted.pdf   USPER-Statement-Redacted.pdf
+//
+// We derive agency / docType from the filename where the convention allows and take
+// everything else from the index when present (index wins). Archival and redaction-only
+// names carry no PURSUE agency code, so their agency stays "unknown" until the index
+// supplies it — we never guess. Geo and the Claude-enriched fields are filled later; here
 // they stay at honest defaults (unknown / null / empty).
 
 import type { ObjectClass, UAPRecord } from "../schema";
 import type { FetchedFile, FetchedRelease } from "./fetch";
 
-// e.g. "DOW-UAP-D001_Nimitz-Encounter-Report.pdf" -> "DOW", "DOW-UAP-D001"
-const SERIES = /^([A-Z]{2,6})-UAP-([A-Z]{1,3})(\d{3,})/;
+// AGENCY-UAP-<series?><id>: captures agency (2-6 letters, any case) and the optional
+// series letters. Leading zeros on the id are tolerated; the id value itself is unused.
+// No trailing anchor: the id separator is '-' OR '_' (and '_' is a \w char, so \b would
+// fail before it), and greedy \d+ already consumes the whole id.
+const SERIES = /^([A-Za-z]{2,6})-UAP-([A-Za-z]{1,3})?0*\d+/;
+// FBI-Photo-A1.png / FBI-Photo-B10.pdf
+const PHOTO = /^([A-Za-z]{2,6})-Photo-[A-Za-z]?\d+/;
 
-function deriveAgency(file: string): string | null {
-  return SERIES.exec(file)?.[1] ?? null;
+function normalizeAgency(raw: string | undefined): string | null {
+  return raw ? raw.toUpperCase() : null;
 }
 
-function deriveDocType(file: string): string {
-  const kind = SERIES.exec(file)?.[2];
-  switch (kind) {
+function deriveAgency(file: string): string | null {
+  return normalizeAgency(SERIES.exec(file)?.[1] ?? PHOTO.exec(file)?.[1] ?? undefined);
+}
+
+function docTypeForSeries(series: string | undefined): string {
+  switch (series?.toUpperCase()) {
     case "D":
       return "report";
     case "PR":
       return "incident-report";
     case "VS":
       return "video-still";
+    case "VM":
+      return "visual-media";
     case "IMG":
       return "rendering";
     default:
@@ -34,8 +50,14 @@ function deriveDocType(file: string): string {
   }
 }
 
-// ISO 8601 date only. Anything fuzzier (a bare year, a range) becomes null rather
-// than fabricating precision the source doesn't have. See DATA.md.
+function deriveDocType(file: string): string {
+  if (/digital[-_ ]?rendering|(^|[-_])rendering([-_]|$)/i.test(file)) return "rendering";
+  if (/-Photo-/i.test(file)) return "photo";
+  return docTypeForSeries(SERIES.exec(file)?.[2]);
+}
+
+// ISO 8601 date only. Anything fuzzier (a bare year, a range) becomes null rather than
+// fabricating precision the source doesn't have. See DATA.md.
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
 function normalizeDate(raw: string | null | undefined): string | null {
@@ -48,28 +70,30 @@ function normalizeDate(raw: string | null | undefined): string | null {
 }
 
 function mediaFor(file: FetchedFile): UAPRecord["media"] {
-  switch (file.raw.mediaType) {
-    case "video":
-      return { video: file.relPath };
-    case "image":
-      return file.raw.docType === "rendering" || /IMG\d/.test(file.file)
-        ? { rendering: file.relPath }
-        : { docImage: file.relPath };
-    case "document":
-      return { docImage: file.relPath };
+  if (file.mediaType === "video") return { video: file.relPath };
+  if (file.mediaType === "image") {
+    // Only synthetic renderings (Digital-Rendering, the IMG series) belong in the rendering
+    // slot. A video-still (VS) is a real captured frame, not a rendering, so it stays a
+    // docImage — consistent with the honesty posture.
+    return /rendering/i.test(file.file) || /-UAP-IMG/i.test(file.file)
+      ? { rendering: file.relPath }
+      : { docImage: file.relPath };
   }
+  return { docImage: file.relPath }; // documents (pdf, etc.)
 }
 
 function parseFile(releaseId: string, file: FetchedFile): UAPRecord {
-  const { raw } = file;
+  const idx = file.entry;
   const objectClass: ObjectClass = "unknown"; // filled by the Claude pass (Phase 2)
   return {
     id: file.sha256.slice(0, 16),
     release: releaseId,
-    sourceAgency: raw.agency || deriveAgency(file.file) || "unknown",
-    docType: raw.docType ?? deriveDocType(file.file),
-    incidentDate: normalizeDate(raw.incidentDate),
-    locationRaw: raw.incidentLocation,
+    sourceAgency: idx?.agency ?? deriveAgency(file.file) ?? "unknown",
+    docType: idx?.docType ?? deriveDocType(file.file),
+    incidentDate: normalizeDate(idx?.incidentDate),
+    // Location comes from the index; without it we hold an empty string (honest "unknown"),
+    // never a guess inferred from the filename. geocode.ts leaves it unresolved.
+    locationRaw: idx?.incidentLocation ?? "",
     lat: null, // geocode.ts
     lon: null, // geocode.ts
     geoPrecision: "unknown", // geocode.ts
@@ -77,17 +101,17 @@ function parseFile(releaseId: string, file: FetchedFile): UAPRecord {
     resolved: false, // PURSUE archives only unresolved cases
     redactionPct: null, // Claude pass (Phase 2)
     summary: "", // Claude pass (Phase 2); Phase 1 records carry no summary yet
-    sourceUrl: raw.sourceUrl,
+    sourceUrl: idx?.sourceUrl ?? "", // from the index; empty until it's joined in
     media: mediaFor(file),
-    // Note: the source's document id (raw.docId, or the DOW-UAP-D001 token in the
-    // filename) is intentionally not persisted — UAPRecord has no docId field, and
-    // `id` is the content hash. Add a field to schema.ts first if that changes.
+    // Note: the source's document id (idx.docId, or the DOW-UAP-D001 token in the filename)
+    // is intentionally not persisted — UAPRecord has no docId field, and `id` is the content
+    // hash. Add a field to schema.ts first if that changes.
   };
 }
 
 export function parseRelease(release: FetchedRelease): UAPRecord[] {
-  // Content-addressed ids must be unique; if two files hash identically, fail loud
-  // rather than silently dropping one.
+  // Content-addressed ids must be unique; if two files hash identically, fail loud rather
+  // than silently dropping one.
   const seen = new Map<string, string>();
   return release.files.map((file) => {
     const record = parseFile(release.releaseId, file);
