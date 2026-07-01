@@ -1,11 +1,11 @@
 [
   {
-    "id": "3f991a25c8315737",
+    "id": "00afb60938d05101",
     "release": "01",
-    "sourceAgency": "CIA",
+    "sourceAgency": "DOW",
     "docType": "report",
     "incidentDate": null,
-    "locationRaw": "[location redacted]",
+    "locationRaw": "",
     "lat": null,
     "lon": null,
     "geoPrecision": "unknown",
@@ -13,180 +13,3771 @@
     "resolved": false,
     "redactionPct": null,
     "summary": "",
-    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/CIA-UAP-D001_Intelligence-Assessment.pdf",
+    "sourceUrl": "",
     "media": {
-      "docImage": "ingest/fixtures/release-01/files/CIA-UAP-D001_Intelligence-Assessment.pdf"
+      "docImage": "data/raw/release_01/DOW-UAP-D12-Mission-Report-Iraq-May-2022.pdf"
     }
   },
   {
-    "id": "41750e16bcf851d4",
+    "id": "03b730443d7be1c6",
     "release": "01",
     "sourceAgency": "DOW",
     "docType": "report",
-    "incidentDate": "2004-11-14",
-    "locationRaw": "off the coast of Southern California",
-    "lat": 32.7,
-    "lon": -119.5,
-    "geoPrecision": "theater",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
     "summary": "",
-    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/DOW-UAP-D001_Nimitz-Encounter-Report.pdf",
+    "sourceUrl": "",
     "media": {
-      "docImage": "ingest/fixtures/release-01/files/DOW-UAP-D001_Nimitz-Encounter-Report.pdf"
+      "docImage": "data/raw/release_01/DOW-UAP-D54-Mission-Report-Mediterranean-Sea-NA.pdf"
     }
   },
   {
-    "id": "83c0a05f017cc1db",
+    "id": "0686b305215d5a6f",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-A6.png"
+    }
+  },
+  {
+    "id": "0a8548a845c3b45f",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D8-Mission-Report-Djibouti-2025.pdf"
+    }
+  },
+  {
+    "id": "0dc72877cdf9cc3a",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D48-Report-September-1996.pdf"
+    }
+  },
+  {
+    "id": "0dd7855ac3c69e39",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D49-Launch-Summary-February-2000.pdf"
+    }
+  },
+  {
+    "id": "0df8c23b9c7710c8",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Serial_153.pdf"
+    }
+  },
+  {
+    "id": "0f898352417d0447",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D6-Mission-Report-Arabian-Gulf-2020.pdf"
+    }
+  },
+  {
+    "id": "10c11e9bf4d66861",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D50-Email-Correspondence-INDOPACOM-April-2025.pdf"
+    }
+  },
+  {
+    "id": "10e3ba274b83d773",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/341_110677_Numerical_File_5-2500.pdf"
+    }
+  },
+  {
+    "id": "1822564fbae08f15",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D14-Mission-Report-Iraq-May-2022.pdf"
+    }
+  },
+  {
+    "id": "18ee158476f1203b",
+    "release": "01",
+    "sourceAgency": "NASA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/NASA-UAP-D2-Apollo-17-Transcript-1972.pdf"
+    }
+  },
+  {
+    "id": "1c4afdbae5c62023",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B12.pdf"
+    }
+  },
+  {
+    "id": "1fe6258aa15843c8",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/255_t_763_r1b_transcripts.pdf"
+    }
+  },
+  {
+    "id": "211a0cf5a12935c6",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-A4.png"
+    }
+  },
+  {
+    "id": "23482936d9dbf8de",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/38_143685_box7_Incident_Summaries_101-172.pdf"
+    }
+  },
+  {
+    "id": "23c76f92be6a0441",
+    "release": "01",
+    "sourceAgency": "NASA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/NASA-UAP-D5-Apollo-17-Crew-Debriefing-for-Science-1973.pdf"
+    }
+  },
+  {
+    "id": "2539850305227baf",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/59_64634_711.5612[7-2852.pdf"
+    }
+  },
+  {
+    "id": "2565433b0ac938d6",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D57-Mission-Report-Gulf-of-Aden-September-2020.pdf"
+    }
+  },
+  {
+    "id": "257e2388f838975f",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/059UAP00013.pdf"
+    }
+  },
+  {
+    "id": "259b451d1355deb3",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B13.pdf"
+    }
+  },
+  {
+    "id": "25e87f1c743d7c6c",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-A7.png"
+    }
+  },
+  {
+    "id": "29ed0fb7cbe0be3c",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/Serial-4-Redacted_Redacted.pdf"
+    }
+  },
+  {
+    "id": "2c874c40c55505f2",
+    "release": "01",
+    "sourceAgency": "NASA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/NASA-UAP-D6-Apollo-17-Technical-Crew-Debriefing-1973.pdf"
+    }
+  },
+  {
+    "id": "2ca8cede91d8fd79",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Serial_449.pdf"
+    }
+  },
+  {
+    "id": "30708df4aa8484c6",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D74-Mission-Report-Syria-November-2023.pdf"
+    }
+  },
+  {
+    "id": "31c9299629c77d05",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B14.pdf"
+    }
+  },
+  {
+    "id": "33fca4826934033f",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-A3.png"
+    }
+  },
+  {
+    "id": "350806816e58095e",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Section_7.pdf"
+    }
+  },
+  {
+    "id": "36708d3c6121b00c",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D62-Mission-Report-Strait-of-Hormuz-September-2020.pdf"
+    }
+  },
+  {
+    "id": "36b00fdf99e456df",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-101634279_100-DE-18221_Serial_844.pdf"
+    }
+  },
+  {
+    "id": "373070ab867b592e",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/18_100754_ General 1946-7_Vol_2.pdf"
+    }
+  },
+  {
+    "id": "39126406547c89db",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D60-Mission-Report-Persian-Gulf-August-2020.pdf"
+    }
+  },
+  {
+    "id": "3fc7a74876b36b32",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-101634279_100-DE-26505.pdf"
+    }
+  },
+  {
+    "id": "43fc008a99501f57",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B19.pdf"
+    }
+  },
+  {
+    "id": "46701a48cefa62a8",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D19-Mission-Report-Syria-February-21-2023.pdf"
+    }
+  },
+  {
+    "id": "472793feaf12754d",
+    "release": "01",
+    "sourceAgency": "NASA",
+    "docType": "visual-media",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/NASA-UAP-VM5-Apollo-12-1969.jpg"
+    }
+  },
+  {
+    "id": "4752dd830144b21c",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D18-Mission-Report-Iraq-December-2022.pdf"
+    }
+  },
+  {
+    "id": "4ce20fc566edf4a3",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D61-Mission-Report-Persian-Gulf-August-2020.pdf"
+    }
+  },
+  {
+    "id": "52b81ee21a3bfc5e",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B21.pdf"
+    }
+  },
+  {
+    "id": "5479dd8f1138ef43",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/18_6369445_General_1948_Vol_1.pdf"
+    }
+  },
+  {
+    "id": "566894d9cb31e158",
+    "release": "01",
+    "sourceAgency": "DOS",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOS-UAP-D1-Cable-1-Papua-New-Guinea-January-1985.pdf"
+    }
+  },
+  {
+    "id": "58219b8000454aa2",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D3-Mission-Report-Arabian-Gulf-2020.pdf"
+    }
+  },
+  {
+    "id": "60c1239f7a6bad96",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/USPER-Statement-Redacted.pdf"
+    }
+  },
+  {
+    "id": "61f7e6594e7ab695",
+    "release": "01",
+    "sourceAgency": "NASA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/NASA-UAP-D7-Skylab-Technical-Crew-Debriefing-1973.pdf"
+    }
+  },
+  {
+    "id": "64c4b8d8df93af93",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B18.pdf"
+    }
+  },
+  {
+    "id": "66b9b9de53f1dc02",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-A5.png"
+    }
+  },
+  {
+    "id": "672b79390fe65958",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D75-Mission-Report-Gulf-of-Aden-July-2024.pdf"
+    }
+  },
+  {
+    "id": "6768eb6e15f75660",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Section_1.pdf"
+    }
+  },
+  {
+    "id": "6a456b9add3f4f6d",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B1.pdf"
+    }
+  },
+  {
+    "id": "6e05171abaf2e965",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-A1.png"
+    }
+  },
+  {
+    "id": "7078d96f334dbf39",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D33-Mission-Report-Greece-October-2023.pdf"
+    }
+  },
+  {
+    "id": "71ca8826db94d615",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D20-Mission-Report-Iraq-2023.pdf"
+    }
+  },
+  {
+    "id": "74dc1a19ef09d093",
+    "release": "01",
+    "sourceAgency": "NASA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/NASA-UAP-D1-Apollo-12-Transcript-1969.pdf"
+    }
+  },
+  {
+    "id": "7620094802463bc9",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Section_6.pdf"
+    }
+  },
+  {
+    "id": "77043137eec2494b",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Serial_130.pdf"
+    }
+  },
+  {
+    "id": "7f1c6a3220d6c590",
+    "release": "01",
+    "sourceAgency": "NASA",
+    "docType": "visual-media",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/NASA-UAP-VM1-Apollo-12-1969.jpg"
+    }
+  },
+  {
+    "id": "7f7133940153eee8",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-A2.png"
+    }
+  },
+  {
+    "id": "8195bb3076df7363",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B10.pdf"
+    }
+  },
+  {
+    "id": "829f0a7381883c14",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B7.pdf"
+    }
+  },
+  {
+    "id": "8422fceb10b2eafc",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D64-Mission-Report-Iran-November-2020.pdf"
+    }
+  },
+  {
+    "id": "8554d8c928591876",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-A8.png"
+    }
+  },
+  {
+    "id": "8565c159b82f50a6",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/Western_US_Event_Slides_5.08.2026.pdf"
+    }
+  },
+  {
+    "id": "857deb5a9363aad6",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D4-Mission-Report-Arabian-Gulf-2020.pdf"
+    }
+  },
+  {
+    "id": "86017c6972e7e6e1",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B9.pdf"
+    }
+  },
+  {
+    "id": "861e37148d76359f",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B2.pdf"
+    }
+  },
+  {
+    "id": "86275421f6458356",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D27-Mission-Report-United-Arab-Emirates-October-2023.pdf"
+    }
+  },
+  {
+    "id": "88c6b1c82931a1dd",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Serial_438.pdf"
+    }
+  },
+  {
+    "id": "8a58dbdbe84dc4f2",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B3.pdf"
+    }
+  },
+  {
+    "id": "8af86cd09af935b3",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B24.pdf"
+    }
+  },
+  {
+    "id": "8dd6f06197acb06f",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B22.pdf"
+    }
+  },
+  {
+    "id": "9048f6d63441caa2",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B5.pdf"
+    }
+  },
+  {
+    "id": "90570293e61c9b22",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D52-Email-Correspondance-NA-August-2024.pdf"
+    }
+  },
+  {
+    "id": "90b353682ba21811",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D38-Range-Fouler-Debrief-Middle-East-May-2020.pdf"
+    }
+  },
+  {
+    "id": "9127fb5a81efacf0",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D56-Range-Fouler-Debrief-Arabian-Sea-August-2020.pdf"
+    }
+  },
+  {
+    "id": "921e5ea0a0b4264d",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B23.pdf"
+    }
+  },
+  {
+    "id": "92ae47295e427519",
+    "release": "01",
+    "sourceAgency": "NASA",
+    "docType": "visual-media",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/NASA-UAP-VM4-Apollo-12-1969.jpg"
+    }
+  },
+  {
+    "id": "92e6279262cc5809",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B15.pdf"
+    }
+  },
+  {
+    "id": "968c266f780e1f69",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/059UAP00011.pdf"
+    }
+  },
+  {
+    "id": "97112a6fe175f045",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B20.pdf"
+    }
+  },
+  {
+    "id": "9d15960073133810",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/342_HS1-416511228_box186_319.1-Flying-Discs-1949.pdf"
+    }
+  },
+  {
+    "id": "a61357a986698132",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Serial_220.pdf"
+    }
+  },
+  {
+    "id": "a9abc1e6d69201bd",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B16.pdf"
+    }
+  },
+  {
+    "id": "aacc41814dd16583",
+    "release": "01",
+    "sourceAgency": "NASA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/NASA-UAP-D4-Apollo-11-Technical-Crew-Debriefing-1969.pdf"
+    }
+  },
+  {
+    "id": "aad2a8d88ab6e1da",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B11.pdf"
+    }
+  },
+  {
+    "id": "abe02815d6331854",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/Serial-3_Redacted.pdf"
+    }
+  },
+  {
+    "id": "acaa311b10923b3a",
+    "release": "01",
+    "sourceAgency": "NASA",
+    "docType": "visual-media",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/NASA-UAP-VM2-Apollo-12-1969.jpg"
+    }
+  },
+  {
+    "id": "ad2fd32949337143",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Section_8.pdf"
+    }
+  },
+  {
+    "id": "ad3b37eb9fbd20e6",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D63-Mission-Report-Strait-of-Hormuz-October-2020.pdf"
+    }
+  },
+  {
+    "id": "af150a6b5139abc6",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D5-Mission-Report-Arabian-Gulf-2020.pdf"
+    }
+  },
+  {
+    "id": "b13552c6b558408e",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Section_10.pdf"
+    }
+  },
+  {
+    "id": "b18179d90564ecae",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/2024-04-30-Composite-Sketch.pdf"
+    }
+  },
+  {
+    "id": "b24365329f506d92",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/38_143685_box7_Incident_Summaries_173-233.pdf"
+    }
+  },
+  {
+    "id": "b3b3f023d70bcce3",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D16-Mission-Report-Syria-July-2022.pdf"
+    }
+  },
+  {
+    "id": "b4f4f4ce6dc7687a",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D35-Mission-Report-Greece-October-2023.pdf"
+    }
+  },
+  {
+    "id": "b557b29df1c6f2c5",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Serial_403.pdf"
+    }
+  },
+  {
+    "id": "b6a51b4cd1c09ff6",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/255_413270_UFO's_and_Defense_What_Should_we_Prepare_For.pdf"
+    }
+  },
+  {
+    "id": "b79da2d091ae8e16",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Section_2.pdf"
+    }
+  },
+  {
+    "id": "b9b413c19731ce7d",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B4.pdf"
+    }
+  },
+  {
+    "id": "ba72ac1879acea2f",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Section_3.pdf"
+    }
+  },
+  {
+    "id": "bb60e830904c747b",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B8.pdf"
+    }
+  },
+  {
+    "id": "bd5478d2e420f6ff",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D25-Mission-Report-Greece-January-2024.pdf"
+    }
+  },
+  {
+    "id": "bfbc281190a14c52",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D65-Mission-Report-Persian-Gulf-July-2020.pdf"
+    }
+  },
+  {
+    "id": "c0a322f3544e3ba6",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Section_9.pdf"
+    }
+  },
+  {
+    "id": "c1c48d35943e6522",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/38_143685_box7_Incident_Summaries_1-100.pdf"
+    }
+  },
+  {
+    "id": "c2bd370cdadc2f17",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D58-Range-Fouler-Debrief-NA-October-2020.pdf"
+    }
+  },
+  {
+    "id": "c38d267441b19350",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/Serial 5 Redacted_Redacted.pdf"
+    }
+  },
+  {
+    "id": "c3a722892229c6da",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Section_4.pdf"
+    }
+  },
+  {
+    "id": "c4cae44b6ac7b4f4",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D7-Mission-Report-Arabian-Gulf-2020.pdf"
+    }
+  },
+  {
+    "id": "c5cfbc8bacca29db",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D44-Range-Fouler-Arabian-Sea-October-2020.pdf"
+    }
+  },
+  {
+    "id": "c70c7334e7b8f387",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B6.pdf"
+    }
+  },
+  {
+    "id": "cc3ac0d680084861",
+    "release": "01",
+    "sourceAgency": "NASA",
+    "docType": "visual-media",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/NASA-UAP-VM3-Apollo-12-1969.jpg"
+    }
+  },
+  {
+    "id": "cddcc196385c373e",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/59_214434_SP_16_[7.18.1963].pdf"
+    }
+  },
+  {
+    "id": "ce62e46b3535a468",
+    "release": "01",
+    "sourceAgency": "NASA",
+    "docType": "visual-media",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/NASA-UAP-VM6-Apollo-17-1972.jpg"
+    }
+  },
+  {
+    "id": "d52431b354af55b1",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D42-Range-Fouler-Debrief-Japan-2023.pdf"
+    }
+  },
+  {
+    "id": "d64b69da88d045bb",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/331_120752_Numeric_Files_1944–1945_37153_German_Armament_Equipment_Documents.pdf"
+    }
+  },
+  {
+    "id": "d6614ddb85556a5a",
     "release": "01",
     "sourceAgency": "DOW",
     "docType": "incident-report",
     "incidentDate": null,
-    "locationRaw": "INDOPACOM area of responsibility",
-    "lat": 15,
-    "lon": 150,
-    "geoPrecision": "theater",
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
     "summary": "",
-    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/DOW-UAP-PR003_Unresolved-Incident-Report.pdf",
+    "sourceUrl": "",
     "media": {
-      "docImage": "ingest/fixtures/release-01/files/DOW-UAP-PR003_Unresolved-Incident-Report.pdf"
+      "docImage": "data/raw/release_01/DOW-UAP-PR20.pdf"
     }
   },
   {
-    "id": "b0a4a16e55887c6f",
+    "id": "e12c00b3e2d64e35",
     "release": "01",
     "sourceAgency": "DOW",
-    "docType": "video",
-    "incidentDate": "2015-01-20",
-    "locationRaw": "Jacksonville, Florida",
-    "lat": 30.3322,
-    "lon": -81.6557,
-    "geoPrecision": "city",
-    "objectClass": "unknown",
-    "resolved": false,
-    "redactionPct": null,
-    "summary": "",
-    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/DOW-UAP-V002_Gimbal-Clip.mp4",
-    "media": {
-      "video": "ingest/fixtures/release-01/files/DOW-UAP-V002_Gimbal-Clip.mp4"
-    }
-  },
-  {
-    "id": "c633b86df2f331ac",
-    "release": "01",
-    "sourceAgency": "AARO",
     "docType": "report",
-    "incidentDate": "2022-03-15",
-    "locationRaw": "Nellis Air Force Base, Nevada",
-    "lat": 36.2361,
-    "lon": -115.0343,
-    "geoPrecision": "point",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
     "summary": "",
-    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/AARO-UAP-D004_Sensor-Data-Summary.pdf",
+    "sourceUrl": "",
     "media": {
-      "docImage": "ingest/fixtures/release-01/files/AARO-UAP-D004_Sensor-Data-Summary.pdf"
+      "docImage": "data/raw/release_01/DOW-UAP-D28-Mission-Report-East-China-Sea-2024.pdf"
     }
   },
   {
-    "id": "ca42d47386b03705",
+    "id": "e1b27f7e274549e5",
     "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/059UAP00012.pdf"
+    }
+  },
+  {
+    "id": "e1d583556594e3e9",
+    "release": "01",
+    "sourceAgency": "DOS",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOS-UAP-D2-Cable-2-Kazakhstan-January-1994.pdf"
+    }
+  },
+  {
+    "id": "ea1cd5296143f378",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D23-Mission-Report-United-Arab-Emirates-October-2023.pdf"
+    }
+  },
+  {
+    "id": "ed6e3824974865fe",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_SUB_A.pdf"
+    }
+  },
+  {
+    "id": "ed97686fb1301e3a",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Section_5.pdf"
+    }
+  },
+  {
+    "id": "f21f4ae91e51810b",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D51-Email-Correspondence-Pacific-Time-Zone-March-2023.pdf"
+    }
+  },
+  {
+    "id": "f2d96af041ac6d45",
+    "release": "01",
+    "sourceAgency": "FBI",
+    "docType": "photo",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/FBI-Photo-B17.pdf"
+    }
+  },
+  {
+    "id": "f5885b95b57a81c0",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D55-Mission-Report-Syria-November-2016.pdf"
+    }
+  },
+  {
+    "id": "f9deed9063306b0c",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D10-Mission-Report-Middle-East-May-2022.pdf"
+    }
+  },
+  {
+    "id": "fafb11efae96654a",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/65_HS1-834228961_62-HQ-83894_Serial_164.pdf"
+    }
+  },
+  {
+    "id": "fc5b1c8ab5661570",
+    "release": "01",
+    "sourceAgency": "unknown",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/341_110448_Records_Relating_to_the_Collection_and_Dissemination_of_Intelligence_1948-1955-TS_CONT_No.2_2-5300-2-5399.pdf"
+    }
+  },
+  {
+    "id": "fd4deb1e48fcfa7f",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_01/DOW-UAP-D32-Mission-Report,-Syria-October-2024.pdf"
+    }
+  },
+  {
+    "id": "324a9795356cc793",
+    "release": "02",
     "sourceAgency": "DOE",
     "docType": "report",
     "incidentDate": null,
-    "locationRaw": "Hanford Site, Washington",
-    "lat": 46.5506,
-    "lon": -119.4881,
-    "geoPrecision": "city",
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
     "summary": "",
-    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/DOE-UAP-D002_Facility-Observation-Report.pdf",
+    "sourceUrl": "",
     "media": {
-      "docImage": "ingest/fixtures/release-01/files/DOE-UAP-D002_Facility-Observation-Report.pdf"
+      "docImage": "data/raw/release_02/DOE-UAP-D002_JamesTuck_Correspondence.pdf"
     }
   },
   {
-    "id": "cb1405204e48f646",
-    "release": "01",
-    "sourceAgency": "NASA",
-    "docType": "rendering",
-    "incidentDate": "2004-11-14",
-    "locationRaw": "off the coast of Southern California",
-    "lat": 32.7,
-    "lon": -119.5,
-    "geoPrecision": "theater",
-    "objectClass": "unknown",
-    "resolved": false,
-    "redactionPct": null,
-    "summary": "",
-    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/NASA-UAP-IMG005_Atmospheric-Rendering.png",
-    "media": {
-      "rendering": "ingest/fixtures/release-01/files/NASA-UAP-IMG005_Atmospheric-Rendering.png"
-    }
-  },
-  {
-    "id": "d0d60c1a9b9195e4",
-    "release": "01",
-    "sourceAgency": "STATE",
+    "id": "4c007724fa7325d2",
+    "release": "02",
+    "sourceAgency": "DOE",
     "docType": "report",
     "incidentDate": null,
-    "locationRaw": "Washington, D.C.",
-    "lat": 38.9072,
-    "lon": -77.0369,
-    "geoPrecision": "city",
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
     "summary": "",
-    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/STATE-UAP-D001_Diplomatic-Cable.pdf",
+    "sourceUrl": "",
     "media": {
-      "docImage": "ingest/fixtures/release-01/files/STATE-UAP-D001_Diplomatic-Cable.pdf"
+      "docImage": "data/raw/release_02/DOE-UAP-D001_PANTEX_Image.pdf"
     }
   },
   {
-    "id": "ea3084d401aad72f",
-    "release": "01",
-    "sourceAgency": "NASA",
+    "id": "89ecb1163e42d3e8",
+    "release": "02",
+    "sourceAgency": "DOE",
     "docType": "report",
-    "incidentDate": "2023-06-01",
-    "locationRaw": "Northeastern United States",
-    "lat": 43,
-    "lon": -73.5,
-    "geoPrecision": "region",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
     "summary": "",
-    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/NASA-UAP-D002_Atmospheric-Anomaly-Study.pdf",
+    "sourceUrl": "",
     "media": {
-      "docImage": "ingest/fixtures/release-01/files/NASA-UAP-D002_Atmospheric-Anomaly-Study.pdf"
+      "docImage": "data/raw/release_02/DOE-UAP-D003_Pajarito_Astronomers.pdf"
     }
   },
   {
-    "id": "edd3ced1100916e6",
-    "release": "01",
+    "id": "bef126d8702b94e7",
+    "release": "02",
+    "sourceAgency": "ODNI",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_02/ODNI-UAP-D001_USPER_Narrative_Senior_USIC.pdf"
+    }
+  },
+  {
+    "id": "d3039ed486d8400b",
+    "release": "02",
+    "sourceAgency": "CIA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_02/CIA-UAP-D001_Intelligence_Information_Report_USSR_1973.pdf"
+    }
+  },
+  {
+    "id": "ec72132902a2f50d",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_02/DOW-UAP-D017_General_Correspondence_Of_Sandia.pdf"
+    }
+  },
+  {
+    "id": "04195d918cf49bc4",
+    "release": "03",
     "sourceAgency": "FBI",
-    "docType": "FBI-file",
+    "docType": "report",
     "incidentDate": null,
-    "locationRaw": "Los Alamos, New Mexico",
-    "lat": 35.8809,
-    "lon": -106.3031,
-    "geoPrecision": "city",
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
     "summary": "",
-    "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/65_HS1-834228961_62-HQ-83894_Section_10.pdf",
+    "sourceUrl": "",
     "media": {
-      "docImage": "ingest/fixtures/release-01/files/65_HS1-834228961_62-HQ-83894_Section_10.pdf"
+      "docImage": "data/raw/release_03/FBI-UAP-D012_Newark-Field-Office_1952-1967.pdf"
+    }
+  },
+  {
+    "id": "0d38bc499e9bd038",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "rendering",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "rendering": "data/raw/release_03/FBI-UAP-D014_Digital-Rendering_Incident-1-1_Western-US-Event_2023.jpg"
+    }
+  },
+  {
+    "id": "0d53232bd0d23672",
+    "release": "03",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/DOW-UAP-D088_US-AirForce_Analysis-of-Flying-Objects-in-the-US_101-172.pdf"
+    }
+  },
+  {
+    "id": "124dc78af9a98b74",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "rendering",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "rendering": "data/raw/release_03/FBI-UAP-D020_Digital-Rendering_Incident-2-5_Western-US-Event_2023.jpg"
+    }
+  },
+  {
+    "id": "1a963146cfb52cdf",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "rendering",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "rendering": "data/raw/release_03/FBI-UAP-D015_Digital-Rendering_Incident-1-2_Western-US-Event_2023.jpg"
+    }
+  },
+  {
+    "id": "1f6d1a95647dbd14",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-018_Report_of_Unusual_Flying_Object_Sightings_and_Attendant_Scientific_Activity.pdf"
+    }
+  },
+  {
+    "id": "22528109268e1ed1",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/FBI-UAP-D001_FD-302_Unresolved-UAP-Report_ColoradoSprings_2022.pdf"
+    }
+  },
+  {
+    "id": "24438d15d989c8b1",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/FBI-UAP-D004_FD-1057-02_Northeastern-US_2024.pdf"
+    }
+  },
+  {
+    "id": "284e470d213a7982",
+    "release": "03",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/DOW-UAP-D078_Notional-Map_Western-United-States-Event.pdf"
+    }
+  },
+  {
+    "id": "2b011f25bb6fed48",
+    "release": "03",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/DoW-UAP-D080_Narrative-2_Western-US-Event.pdf"
+    }
+  },
+  {
+    "id": "2be20f887d364078",
+    "release": "03",
+    "sourceAgency": "NASA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/NASA-UAP-D017_Preliminary-Gemini-4-Crew-Debriefing_Part2_1965.pdf"
+    }
+  },
+  {
+    "id": "3393d62c92d9a5ad",
+    "release": "03",
+    "sourceAgency": "USG",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/USG-UAP-D001_Congress-WhiteHouse-UFO-Correspondence_1998.pdf"
+    }
+  },
+  {
+    "id": "35e904ddb6652ca7",
+    "release": "03",
+    "sourceAgency": "NASA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/NASA-UAP-D015_Astronaut-Scientific-Debriefings_1962-1963.pdf"
+    }
+  },
+  {
+    "id": "3a11822b45f559ac",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-003-THE_CENTRAL_INTELLIGENCE_AGENCY_AND_OVERHEAD_RECONNAISSANCE-THE_U-2_AND_OXCART_PROGRAMS_1954-1974.pdf"
+    }
+  },
+  {
+    "id": "3abdbd131944fb84",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-010_REPORT_ON_CONVERSATIONS_WITH_SOVIET_SCIENTISTS_ON_SUBJECT_OF_UNIDENTIFIED_FLYING_OBJECTS_IS_THE_USSR.pdf"
+    }
+  },
+  {
+    "id": "3c369f9660a35284",
+    "release": "03",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/DoW-UAP-D081_Narrative-3_Western-US-Event.pdf"
+    }
+  },
+  {
+    "id": "3e03f61e60ce0072",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-004-CASE_17708_CLOSED_AND_DR_LEON_DAVIDSON.pdf"
+    }
+  },
+  {
+    "id": "3e8ee13c5fa8d61a",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-008_SPECULATIVE_PAPER_BY_N_KARDASHEV_AND_A_SAKHAROV.pdf"
+    }
+  },
+  {
+    "id": "4332ebe48c3fcb1e",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-017_Placement_on_High_Alert_Due_to_Perceived_Aggressive_Foreign_Posturing.pdf"
+    }
+  },
+  {
+    "id": "43f3553b900cf8cc",
+    "release": "03",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/DOW-UAP-D085_Transmission-of-CIA-Scientific-Advisory-Panel-Rept_1953.pdf"
+    }
+  },
+  {
+    "id": "490841ebe7487b3e",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-012-Combatting_Fatigue_in_Crewmembers.pdf"
+    }
+  },
+  {
+    "id": "50f1e4af35a5c630",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/FBI-UAP-D013_WA-UFO-Investigation_1952-1960.pdf"
+    }
+  },
+  {
+    "id": "5eb571dbfd4faa81",
+    "release": "03",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/DOW-UAP-D077_Unresolved-Case-Analysis-Update_Western-United-States-Event.pdf"
+    }
+  },
+  {
+    "id": "5f073d6c4ae822a8",
+    "release": "03",
+    "sourceAgency": "NASA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/NASA-UAP-D018_Gemini-4_Experiment-Debriefing_1967.pdf"
+    }
+  },
+  {
+    "id": "6004fb66d76ccf50",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-013-Report_of_Unusual_Flying_Object_Sightings_and_Attendant_Scientific_Activity.pdf"
+    }
+  },
+  {
+    "id": "623e02b31165d3a5",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "rendering",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "rendering": "data/raw/release_03/FBI-UAP-D019_Digital-Rendering_Incident-2-4_Western-US-Event_2023.jpg"
+    }
+  },
+  {
+    "id": "670dbdbe40e70fa5",
+    "release": "03",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/DoW-UAP-D079_Narrative-1_Western-US-Event.pdf"
+    }
+  },
+  {
+    "id": "8004ab172820cb1e",
+    "release": "03",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/DOW-UAP-D087_US-AirForce_Analysis-of-Flying-Objects-in-the-US_1-100.pdf"
+    }
+  },
+  {
+    "id": "855a0d73d1e9c0fc",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-007_Current_Status_of_Unidentified_Flying_Objects_UFO_Project.pdf"
+    }
+  },
+  {
+    "id": "85e84eb491e2331a",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-005-GERMAN_SCIENTISTS_ ARTICLE_ON_FLYING_DISCS.pdf"
+    }
+  },
+  {
+    "id": "8bb0b7c69f8b7c2a",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "rendering",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "rendering": "data/raw/release_03/FBI-UAP-D022_Digital-Rendering_Incident-2-6_Western-US-Event_2023.jpg"
+    }
+  },
+  {
+    "id": "8bd2f3385d375a75",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "rendering",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "rendering": "data/raw/release_03/FBI-UAP-D018_Digital-Rendering_Incident-2-3_Western-US-Event_2023.jpg"
+    }
+  },
+  {
+    "id": "90e05e77fc088c29",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf"
+    }
+  },
+  {
+    "id": "915709912f3612b4",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "rendering",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "rendering": "data/raw/release_03/FBI-UAP-D017_Digital-Rendering_Incident-2-2_Western-US-Event_2023.jpg"
+    }
+  },
+  {
+    "id": "953c2aa10c0e560e",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/FBI-UAP-D006_FD-1057-05_Northeastern-US_2024.pdf"
+    }
+  },
+  {
+    "id": "971d604c8a91acb1",
+    "release": "03",
+    "sourceAgency": "NASA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/NASA-UAP-D022_Gemini-9-Debriefing_1966.pdf"
+    }
+  },
+  {
+    "id": "a1eefc277c9c9845",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-014_British_Activity_in_the_Field_of_Unidentified_Flying_Objects.pdf"
+    }
+  },
+  {
+    "id": "a54a4d12ac77b4f7",
+    "release": "03",
+    "sourceAgency": "NASA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/NASA-UAP-D020_Gemini-5-Technical-Debriefing_Part2_1965.pdf"
+    }
+  },
+  {
+    "id": "a56e49ed5dd5fbb0",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-002_Scientific-Advisory-Panel-on-Unidentified-Flying-Objects_Report_1952-1953.pdf"
+    }
+  },
+  {
+    "id": "a91a8665371816b5",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-019-Australian_Dept_of_Defense_Scientific_and_Intel_Aspects_of_the_UFO_Problem.pdf"
+    }
+  },
+  {
+    "id": "aaf14409fe2a6b85",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/FBI-UAP-D011_DFBI-Correspondence-Referral_1949.pdf"
+    }
+  },
+  {
+    "id": "abcbc0042ec0f228",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/FBI-UAP-D008_FD-1057-07_Northeastern-US_2024.pdf"
+    }
+  },
+  {
+    "id": "ad70e6d8f9091d43",
+    "release": "03",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/DoW-UAP-D083_Narrative-5_Western-US-Event.pdf"
+    }
+  },
+  {
+    "id": "b18ca8af0477d1c5",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "rendering",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "rendering": "data/raw/release_03/FBI-UAP-D023_Digital-Rendering_Incident-2-7_Western-US-Event_2023.jpg"
+    }
+  },
+  {
+    "id": "b1e7c92ade168f3f",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "rendering",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "rendering": "data/raw/release_03/FBI-UAP-D016_Digital-Rendering_Incident-2-1_Western-US-Event_2023.jpg"
+    }
+  },
+  {
+    "id": "b2e4554e261e980c",
+    "release": "03",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/DOW-UAP-D084_USArmy-Flying-Saucer-Study_1949.pdf"
+    }
+  },
+  {
+    "id": "b5513dea063f469e",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/FBI-UAP-D009_FD-302-67_Northeastern-Orb-Sighting_2026.pdf"
+    }
+  },
+  {
+    "id": "b5a4f68efde90279",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-011-The_Sary_Shagan_Weapons_Testing_Range.pdf"
+    }
+  },
+  {
+    "id": "b612cbe81c33546e",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/FBI-UAP-D010_FD-302-71_Northeastern-Orb-Sighting_2026.pdf"
+    }
+  },
+  {
+    "id": "b98b58a326ea413b",
+    "release": "03",
+    "sourceAgency": "ICA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/ICA-UAP-D001_Analysis_Colorado-Springs-UAP-Incident.pdf"
+    }
+  },
+  {
+    "id": "c33b63109ce1e9d5",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/FBI-UAP-D005_FD-1057-04_Northeastern-US_2024.pdf"
+    }
+  },
+  {
+    "id": "c6c33cf9f578f242",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-016-Sightings_of_Unidentified_Flying_Ojbects_in_Ladakh_Nepal_Sikkim_and_Bhutan.pdf"
+    }
+  },
+  {
+    "id": "ca596a44820b275f",
+    "release": "03",
+    "sourceAgency": "NASA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/NASA-UAP-D016_Preliminary-Gemini-4-Crew-Debriefing_Part1_1965.pdf"
+    }
+  },
+  {
+    "id": "d2ff89273ce8bf19",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-009-UNKNOWN-FLYING_OBJECTS_OBERVED_OVER_BUDAPEST.pdf"
+    }
+  },
+  {
+    "id": "d522d9a289caaa7b",
+    "release": "03",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/DoW-UAP-D082_Narrative-4_Western-US-Event.pdf"
+    }
+  },
+  {
+    "id": "d767f2f41f24abef",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "rendering",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "rendering": "data/raw/release_03/FBI-UAP-D021_Digital-Rendering_Incident-1-3_Western-US-Event_2023.jpg"
+    }
+  },
+  {
+    "id": "e067ec3753f24fbe",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "rendering",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/FBI-UAP-D003_Digital-Rendering_Unresolved-UAP-Report_ColoradoSprings_2022.pdf"
+    }
+  },
+  {
+    "id": "e192e501e6be5c87",
+    "release": "03",
+    "sourceAgency": "NASA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/NASA-UAP-D021_Gemini-7-Technical-Debriefing_1965.pdf"
+    }
+  },
+  {
+    "id": "eaa9a2e8a96ab61b",
+    "release": "03",
+    "sourceAgency": "CIA",
+    "docType": "document",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/CIA-UAP-006_Sighting_of_Unconventional_Aircraft.pdf"
+    }
+  },
+  {
+    "id": "f5cfb310e3064e34",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/FBI-UAP-D007_FD-1057-06_Northeastern-US_2024.pdf"
+    }
+  },
+  {
+    "id": "f73ffa1579ecc891",
+    "release": "03",
+    "sourceAgency": "FBI",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/FBI-UAP-D002_FD-1057_Unresolved-UAP-Report_ColoradoSprings_2022.pdf"
+    }
+  },
+  {
+    "id": "f96457d53f3cd65a",
+    "release": "03",
+    "sourceAgency": "DOW",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/DOW-UAP-D086_USNavy-Report-of-Flying-Discs_1948.pdf"
+    }
+  },
+  {
+    "id": "fd3b139e6b9ad4e3",
+    "release": "03",
+    "sourceAgency": "NASA",
+    "docType": "report",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "",
+    "sourceUrl": "",
+    "media": {
+      "docImage": "data/raw/release_03/NASA-UAP-D019_Gemini-5-Technical-Debriefing_Part1_1965.pdf"
     }
   }
 ]
