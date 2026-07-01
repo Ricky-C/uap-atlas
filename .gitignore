@@ -27,10 +27,11 @@ Thumbs.db
 # local-only Claude Code settings (project agents/commands/skills stay tracked)
 .claude/settings.local.json
 
-# real release bundles from war.gov — large binary, not committed. Drop an
-# extracted bundle in releases/<id>/ (with files/ + index.json) to ingest it.
-# The committed synthetic fixture under ingest/fixtures/ is NOT ignored.
+# Real war.gov release bundles — multi-GB binaries, never committed. The user
+# downloads and extracts them locally (data/raw/release_NN/); ingest reads them
+# from disk. The committed synthetic fixture under ingest/fixtures/ is NOT ignored.
 releases/
+data/raw/
 
-# NOTE: data/ is committed output (records.json, locations.json, cache/).
-# Do NOT add a data/ ignore rule.
+# NOTE: data/ is otherwise committed output (records.json, locations.json, cache/).
+# Only data/raw/ (the source bundles) is ignored — do NOT ignore data/ wholesale.
