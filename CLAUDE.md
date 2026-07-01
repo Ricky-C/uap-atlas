@@ -51,6 +51,7 @@ uap-atlas/
 │   ├── Drawer.tsx         # the case-file panel
 │   └── Timeline.tsx
 ├── public/                # NASA Black Marble texture, static assets
+│   └── media/             # per-record preview JPEGs (committed; `pnpm media` output)
 ├── ARCHITECTURE.md
 ├── DATA.md
 ├── DESIGN.md
@@ -70,6 +71,8 @@ pnpm typecheck          # tsc --noEmit — must pass before any commit
 pnpm lint               # eslint — must pass before any commit
 pnpm ingest             # run the ingest script for the newest local release bundle
 pnpm ingest:release 01  # run ingest for a specific release
+pnpm enrich             # Claude enrichment pass (cached docs re-bill nothing)
+pnpm media              # render web preview assets into public/media/ (no API cost)
 ```
 
 If a command above doesn't exist yet, wire it in `package.json` as part of the phase that introduces it (see `PLAN.md`) rather than inventing an alternative.

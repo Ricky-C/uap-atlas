@@ -98,6 +98,10 @@ Source resolution is newest-first and real-wins: `data/raw/release_NN/` takes pr
 
 **Re-ingesting resets the enriched fields** (`summary`, `objectClass`, `redactionPct`) to their defaults in `records.json` — that's by design (incoming wins, one merge rule). Run `pnpm enrich` afterwards: it restores every already-processed document from the committed cache at zero API cost, and the ingest→enrich pair is byte-identical on a clean re-run.
 
+### Web media assets (`pnpm media`)
+
+The app can't serve `data/raw/` (gigabytes, gitignored), so `pnpm media` renders one preview JPEG per record — a PDF's first page via pdftoppm, or the downscaled native image — into **`public/media/<id>.jpg`** (committed, ~27 MB for the current corpus; 1200px long edge, q80). The id is the source file's content hash, so an existing asset is by definition current: re-runs skip it (`--force` re-renders after a knob change, `--limit N` for trials). `records.json` is not rewritten — its `media.*` paths remain raw-source provenance; the app finds assets by the `media/<id>.jpg` convention and falls back to a placeholder if one is missing. No API cost; a record whose source file is absent from `data/raw` fails the run loudly at the end rather than shipping a silently partial asset set.
+
 ### Incident dates (normalization policy)
 
 The portal's Incident Date column is free text: `12/30/47`, `July, 2008`, `2022`, `June 3-7, 1965`, `1952-1953`, `1970s`, `N/A`. We normalize (in `ingest/parse.ts`) to **ISO 8601 at the precision the source actually has** — `1947-12-30`, `2008-07`, `2022` — rather than fabricating a full date or discarding a real year to null. Rules: ranges and decades collapse to their **start** (`1952-1953` → `1952`, `June 3-7, 1965` → `1965-06-03`, `1970s` → `1970`); qualifiers keep only the year (`Late 2025` → `2025`); 2-digit years pivot at 30 (`47` → 1947, `26` → 2026 — the corpus spans the 1940s to the present, so nothing predates 1930); `N/A`/unparseable → `null`. The UI consumes at year granularity, so reduced precision renders honestly.

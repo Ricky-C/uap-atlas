@@ -181,6 +181,22 @@
   }
 }
 
+.doc-scan {
+  margin: var(--space-4) 0 0;
+}
+
+.doc-scan img {
+  display: block;
+  width: 100%;
+  background: var(--redact); /* shows through while the JPEG streams in */
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-1);
+}
+
+.doc-scan figcaption {
+  margin-top: var(--space-2);
+}
+
 .doc-scan-placeholder {
   display: flex;
   align-items: center;

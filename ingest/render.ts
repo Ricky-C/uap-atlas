@@ -31,6 +31,7 @@ export interface RenderResult {
 export interface RenderOptions {
   renderPx?: number; // long-edge pixel cap; default 1568 (~2.5k image tokens/page, measured)
   maxPages?: number; // most pages to render from a PDF; default 3
+  jpegQuality?: number; // default 88 (enrichment); the web asset pass uses less
 }
 
 const DEFAULT_RENDER_PX = 1568;
@@ -75,6 +76,7 @@ export function pageCount(mediaPath: string): number {
 export function renderDocToImages(mediaPath: string, opts: RenderOptions = {}): RenderResult {
   const renderPx = opts.renderPx ?? DEFAULT_RENDER_PX;
   const maxPages = opts.maxPages ?? DEFAULT_MAX_PAGES;
+  const jpegQuality = opts.jpegQuality ?? JPEG_QUALITY;
   const ext = extname(mediaPath).toLowerCase();
 
   if (ext === ".pdf") {
@@ -85,7 +87,7 @@ export function renderDocToImages(mediaPath: string, opts: RenderOptions = {}): 
       execFileSync("pdftoppm", [
         "-jpeg",
         "-jpegopt",
-        `quality=${JPEG_QUALITY}`,
+        `quality=${jpegQuality}`,
         "-f",
         "1",
         "-l",
@@ -130,7 +132,7 @@ export function renderDocToImages(mediaPath: string, opts: RenderOptions = {}): 
   const inputCoder = mediaType === "image/png" ? "png" : "jpg";
   const buf = execFileSync(
     "magick",
-    [`${inputCoder}:-`, "-resize", `${renderPx}x${renderPx}>`, "-quality", String(JPEG_QUALITY), "jpg:-"],
+    [`${inputCoder}:-`, "-resize", `${renderPx}x${renderPx}>`, "-quality", String(jpegQuality), "jpg:-"],
     { input: readFileSync(mediaPath), maxBuffer: 64 * 1024 * 1024 },
   );
   return {

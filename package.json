@@ -12,7 +12,8 @@
     "format": "prettier --write .",
     "ingest": "tsx ingest/run.ts",
     "ingest:release": "tsx ingest/run.ts",
-    "enrich": "tsx ingest/enrich.ts"
+    "enrich": "tsx ingest/enrich.ts",
+    "media": "tsx ingest/media.ts"
   },
   "dependencies": {
     "react": "^19.2.7",
