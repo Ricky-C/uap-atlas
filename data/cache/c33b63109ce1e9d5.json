@@ -1,0 +1,25 @@
+{
+  "recordId": "c33b63109ce1e9d5",
+  "sha256": "c33b63109ce1e9d5",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 3,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An FBI electronic communication documents an interview with a redacted witness who described repeated sightings of lights near their property since 2021, including an initial 2021 sighting where a single light split into two or three lights forming a triangular pattern, plus a separate 1996 incident of a large light stopping a vehicle in New Mexico. The witness described cross-referencing sightings with ADS-B flight data to rule out aircraft and stated activity increased since September.",
+  "objectClass": "light",
+  "redactionPct": 35,
+  "reviewFlags": [
+    "heavily-redacted"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 186
+  },
+  "enrichedAt": "2026-07-01T21:54:54.222Z"
+}

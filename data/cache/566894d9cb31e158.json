@@ -1,0 +1,23 @@
+{
+  "recordId": "566894d9cb31e158",
+  "sha256": "566894d9cb31e158",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 3,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A 1985 U.S. Embassy Port Moresby cable reports that Papua New Guinea's National Intelligence Organization inquired about sightings of high-altitude, high-speed aircraft-like objects with lights and contrails observed on the night of January 24, including a pilot's radar contact and multiple ground witnesses; U.S. officials stated they had no record of B-52 or other U.S. aircraft in PNG airspace that day.",
+  "objectClass": "light",
+  "redactionPct": 0,
+  "reviewFlags": [],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 179
+  },
+  "enrichedAt": "2026-07-01T21:42:56.496Z"
+}

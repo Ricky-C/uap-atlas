@@ -1,0 +1,26 @@
+{
+  "recordId": "1822564fbae08f15",
+  "sha256": "1822564fbae08f15",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 9,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A 50 ATKS mission report (MISREP) describes an ISR aircraft sortie over the eastern Mediterranean and Syria, during which the aircraft was reacted to by 1-3 aircraft including a possible RJAF Su-30, observed a probable Su-27/35 landing at Al Assad airfield, and reported one possible small unidentified aerial phenomenon at 0117Z.",
+  "objectClass": "unknown",
+  "redactionPct": 15,
+  "reviewFlags": [
+    "ambiguous-object",
+    "heavily-redacted"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 185
+  },
+  "enrichedAt": "2026-07-01T21:42:56.492Z"
+}

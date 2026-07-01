@@ -4,15 +4,23 @@
 
 export type GeoPrecision = "point" | "city" | "region" | "theater" | "unknown";
 
-export type ObjectClass =
-  | "orb"
-  | "disc"
-  | "fireball"
-  | "light"
-  | "triangle"
-  | "craft"
-  | "other"
-  | "unknown";
+// Runtime source of truth for the object-class enum. Both sides import this:
+// ingest/enrich.ts validates the model's output against it and derives the
+// structured-output JSON schema from it; the app narrows against the same list.
+// Keeping it a runtime const (not a type-only union) means there is exactly one
+// place to add a class. Golden rule 1: the schema is the contract.
+export const OBJECT_CLASSES = [
+  "orb",
+  "disc",
+  "fireball",
+  "light",
+  "triangle",
+  "craft",
+  "other",
+  "unknown",
+] as const;
+
+export type ObjectClass = (typeof OBJECT_CLASSES)[number];
 
 export interface UAPRecord {
   id: string; // stable, content-addressed (hash of source file)

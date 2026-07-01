@@ -1,0 +1,25 @@
+{
+  "recordId": "9127fb5a81efacf0",
+  "sha256": "9127fb5a81efacf0",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 1,
+    "pageCount": 1,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A pilot with squadron HSM-73 reported observing three unidentified round air contacts at night over the North Arabian Sea during routine operations, with negative radar, ES, and IFF track. The contacts were described as maintaining a westerly heading with unknown speed and no interaction occurring with the reporting aircraft.",
+  "objectClass": "orb",
+  "redactionPct": 2,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 3745,
+    "output_tokens": 147
+  },
+  "enrichedAt": "2026-07-01T21:45:25.814Z"
+}

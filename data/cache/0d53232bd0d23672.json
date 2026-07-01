@@ -1,0 +1,23 @@
+{
+  "recordId": "0d53232bd0d23672",
+  "sha256": "0d53232bd0d23672",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 210,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An Air Force checklist describes a fireball meteor seen over Norcatur, Kansas on 18 February 1948, reportedly exploding at 30-35 miles altitude with a loud blast followed by smaller explosions and leaving a bluish-white smoke trail; meteorite fragments, including a 109-pound stone, were later recovered from the area.",
+  "objectClass": "fireball",
+  "redactionPct": 0,
+  "reviewFlags": [],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 153
+  },
+  "enrichedAt": "2026-07-01T21:51:31.381Z"
+}

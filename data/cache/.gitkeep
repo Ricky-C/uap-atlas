@@ -1,0 +1,5 @@
+# Per-document enrichment cache (committed output). Each data/cache/<record.id>.json
+# holds the claude-sonnet-5 result for one document, keyed on {model, promptSha,
+# schemaSha, strategy} so ingest/enrich.ts never re-bills unchanged work. The
+# ephemeral _batch-state.json in this directory is gitignored; everything else here
+# is committed. This .gitkeep keeps the directory tracked before the first run.

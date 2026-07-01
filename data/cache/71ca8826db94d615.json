@@ -1,0 +1,26 @@
+{
+  "recordId": "71ca8826db94d615",
+  "sha256": "71ca8826db94d615",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 6,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A 2023 USAF misrep describes a two-ship F-16CM flight out of Prince Sultan Air Base flying a defensive counter-air mission over Iraq and Syria; during the mission the crew reported observing multiple possible unidentified aerial phenomena before continuing the mission and returning to base without further incident.",
+  "objectClass": "unknown",
+  "redactionPct": 10,
+  "reviewFlags": [
+    "ambiguous-object",
+    "heavily-redacted"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 158
+  },
+  "enrichedAt": "2026-07-01T21:45:25.816Z"
+}

@@ -37,7 +37,14 @@ Goal: prove the entire pipeline on real data using only what's free from filenam
 
 Acceptance: run `pnpm ingest` on release 01, then `pnpm dev`, and see real cases plotted on the globe; clicking one opens a populated drawer; the timeline filters by date. All styling via tokens. `design-guardian` passes.
 
-## Phase 2 — v1: Claude enrichment
+## Phase 2 — v1: Claude enrichment ✅ (enrichment done)
+
+**Status:** Enrichment shipped. All 199 records carry a neutral `summary`, `objectClass`, and
+`redactionPct`, produced by `claude-sonnet-5` over the first ≤3 rendered pages via the Batch API
+(~$1.45 one-time, cached per source-file hash in `data/cache/`). Idempotent: a re-run re-bills
+nothing and leaves `records.json` byte-identical. Reviewed (adversarial multi-agent pass) and
+spot-checked for neutrality / never-de-anonymize. The **drawer UI** below (showing the image +
+summary + redaction %) still lands with the globe app — that's Phase-0 stub work, not yet built.
 
 Goal: real records — summaries, object classes, redaction estimates — from the document images.
 

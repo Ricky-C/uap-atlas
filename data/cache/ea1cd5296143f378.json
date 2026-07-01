@@ -1,0 +1,26 @@
+{
+  "recordId": "ea1cd5296143f378",
+  "sha256": "ea1cd5296143f378",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 9,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A 50th ATKS MISREP describes an RPA sortie flying ISR in support of OP Spartan Shield out of Al Dhafra, during which sensor operators reported two visual observations logged as unidentified aerial phenomena at 0241Z and 0322Z; details of the observations are referenced in separate UAP log lines not included in this excerpt.",
+  "objectClass": "unknown",
+  "redactionPct": 15,
+  "reviewFlags": [
+    "ambiguous-object",
+    "heavily-redacted"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 170
+  },
+  "enrichedAt": "2026-07-01T21:48:55.285Z"
+}

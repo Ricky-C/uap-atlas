@@ -1,0 +1,25 @@
+{
+  "recordId": "a61357a986698132",
+  "sha256": "a61357a986698132",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 15,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A 1950 letter from a self-described Mexican inventor to a scientific commission in New York discusses stratospheric aerostats, commonly called flying saucers, alongside claims of various unrelated inventions attributed to the author.",
+  "objectClass": "unknown",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 9015,
+    "output_tokens": 119
+  },
+  "enrichedAt": "2026-07-01T21:45:25.804Z"
+}

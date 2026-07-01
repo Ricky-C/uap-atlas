@@ -1,0 +1,25 @@
+{
+  "recordId": "89ecb1163e42d3e8",
+  "sha256": "89ecb1163e42d3e8",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 1,
+    "pageCount": 1,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A club newsletter from Pajarito Astronomers announces a May 1986 meeting featuring a guest speaker discussing why scientists should be concerned about UFO reports; it does not describe any specific sighting or object.",
+  "objectClass": "unknown",
+  "redactionPct": 5,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 3745,
+    "output_tokens": 116
+  },
+  "enrichedAt": "2026-07-01T21:51:31.382Z"
+}

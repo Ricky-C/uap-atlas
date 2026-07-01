@@ -1,0 +1,25 @@
+{
+  "recordId": "aaf14409fe2a6b85",
+  "sha256": "aaf14409fe2a6b85",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 4,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A 1949 letter from a McMinnville, Oregon minister to FBI Director J. Edgar Hoover describes an observation from the prior May of four narrow beams of light seen converging over the Cascade mountains, with small clouds forming within the beams and an apparent explosion effect at their convergence point rising to about ten thousand feet, visible for at least ten minutes. Hoover's reply thanks the writer for the information without further comment.",
+  "objectClass": "light",
+  "redactionPct": 5,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 185
+  },
+  "enrichedAt": "2026-07-01T21:54:54.228Z"
+}

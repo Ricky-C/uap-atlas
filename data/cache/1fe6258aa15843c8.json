@@ -1,0 +1,25 @@
+{
+  "recordId": "1fe6258aa15843c8",
+  "sha256": "1fe6258aa15843c8",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 4,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "During the Gemini 7 mission, astronaut Borman reported a 'bogey' at ten o'clock high and numerous small particles moving past the spacecraft at an estimated three to four miles distance, in addition to the sighting of the spent booster tumbling nearby. NASA public affairs later characterized the third unidentified object referenced in the exchange as the reported bogey.",
+  "objectClass": "unknown",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8511,
+    "output_tokens": 167
+  },
+  "enrichedAt": "2026-07-01T21:42:56.486Z"
+}

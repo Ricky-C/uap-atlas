@@ -1,0 +1,25 @@
+{
+  "recordId": "490841ebe7487b3e",
+  "sha256": "490841ebe7487b3e",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 2,
+    "pageCount": 2,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A 1976 CIA Domestic Collection Division report on Soviet aviation medicine describes Aeroflot officials discussing pilot fatigue, biological testing equipment, and radiation research; a section notes a radiation biologist's explanation of cosmic ray particles causing pilots to perceive flashes of light during night flying, and a scientist reportedly stated that 99 percent of UFO occurrences were traceable to natural or man-made phenomena, with one percent unexplained.",
+  "objectClass": "light",
+  "redactionPct": 10,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 6212,
+    "output_tokens": 201
+  },
+  "enrichedAt": "2026-07-01T21:51:31.381Z"
+}

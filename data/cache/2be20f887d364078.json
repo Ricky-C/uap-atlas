@@ -1,0 +1,25 @@
+{
+  "recordId": "2be20f887d364078",
+  "sha256": "2be20f887d364078",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 290,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "This is the cover and preface of a preliminary NASA transcript of the Gemini IV (GT-4) flight crew debriefing, conducted aboard the USS Wasp and concluded at the Manned Spacecraft Center in June 1965; it is an administrative and preface document with no observation account included on these pages.",
+  "objectClass": "unknown",
+  "redactionPct": 5,
+  "reviewFlags": [
+    "non-document-media"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8567,
+    "output_tokens": 144
+  },
+  "enrichedAt": "2026-07-01T21:51:31.383Z"
+}

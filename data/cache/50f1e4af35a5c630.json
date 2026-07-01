@@ -1,0 +1,25 @@
+{
+  "recordId": "50f1e4af35a5c630",
+  "sha256": "50f1e4af35a5c630",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 55,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "FBI Seattle file compiles newspaper clippings from the Columbia Basin News (July 1952) reporting multiple sightings of a bright, fast-moving disc-like object over Pasco and Kennewick, Washington, described by witnesses as ring-shaped with flashing lights, some comparing it to a spinning pinwheel; additional witnesses reported similar objects on subsequent nights.",
+  "objectClass": "disc",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 175
+  },
+  "enrichedAt": "2026-07-01T21:51:31.381Z"
+}

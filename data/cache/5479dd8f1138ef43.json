@@ -1,0 +1,23 @@
+{
+  "recordId": "5479dd8f1138ef43",
+  "sha256": "5479dd8f1138ef43",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 28,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An Eleventh Air Force forwarding letter relays an FBI-sourced report of a round, phosphorescent object seen by New York Central railroad employees near Hobson, Ohio on the night of May 8, 1948, reportedly moving at great speed at an altitude of 6-8 miles and leaving a phosphorescent trail.",
+  "objectClass": "disc",
+  "redactionPct": 0,
+  "reviewFlags": [],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 146
+  },
+  "enrichedAt": "2026-07-01T21:42:56.487Z"
+}

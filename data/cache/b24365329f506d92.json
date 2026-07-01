@@ -1,0 +1,25 @@
+{
+  "recordId": "b24365329f506d92",
+  "sha256": "b24365329f506d92",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 144,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "Two incident summary sheets from a declassified series document ground observations: one near Keithsburg, Iowa on 15 Sept 1948 describing a small metallic disc-shaped object viewed through binoculars drifting south, and another in Ascension Parish, Louisiana on 1 Oct 1948 describing a witness with flying experience observing a cone-shaped, white-hot object flying east in level flight without sound or trail.",
+  "objectClass": "unknown",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 9071,
+    "output_tokens": 184
+  },
+  "enrichedAt": "2026-07-01T21:48:55.285Z"
+}

@@ -29,8 +29,17 @@ function readExisting(outPath: string): UAPRecord[] {
   return value as UAPRecord[];
 }
 
-function byReleaseThenId(a: UAPRecord, b: UAPRecord): number {
+export function byReleaseThenId(a: UAPRecord, b: UAPRecord): number {
   return a.release === b.release ? a.id.localeCompare(b.id) : a.release.localeCompare(b.release);
+}
+
+// The one on-disk writer for records.json. Both the release merge (below) and
+// the Phase-2 enrichment write-back (ingest/enrich.ts) go through here, so the
+// byte layout — sort order, 2-space indent, trailing newline — is identical no
+// matter which pass wrote last. A clean re-run therefore produces no spurious diff.
+export function writeRecordsFile(records: UAPRecord[], outPath: string): void {
+  const sorted = [...records].sort(byReleaseThenId);
+  writeFileSync(outPath, `${JSON.stringify(sorted, null, 2)}\n`, "utf8");
 }
 
 export function emitRecords(releaseId: string, incoming: UAPRecord[], outPath: string): EmitDiff {
@@ -55,14 +64,14 @@ export function emitRecords(releaseId: string, incoming: UAPRecord[], outPath: s
     .map((r) => r.id);
 
   // Upsert incoming into the global id-keyed set; drop what was removed. Guarantees
-  // unique ids in the output (no cross-release duplicates).
+  // unique ids in the output (no cross-release duplicates). writeRecordsFile sorts.
   const mergedById = new Map(existing.map((r) => [r.id, r]));
   for (const id of removed) mergedById.delete(id);
   for (const r of incoming) mergedById.set(r.id, r);
-  const merged = [...mergedById.values()].sort(byReleaseThenId);
+  const merged = [...mergedById.values()];
 
   const wrote = added.length > 0 || changed.length > 0 || removed.length > 0;
-  if (wrote) writeFileSync(outPath, `${JSON.stringify(merged, null, 2)}\n`, "utf8");
+  if (wrote) writeRecordsFile(merged, outPath);
 
   return {
     releaseId,

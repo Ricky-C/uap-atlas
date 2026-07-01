@@ -1,0 +1,25 @@
+{
+  "recordId": "d3039ed486d8400b",
+  "sha256": "d3039ed486d8400b",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 3,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A CIA field report on the Sary Shagan weapons testing range in the USSR includes an account from a former Soviet source who, in late summer 1973 while stepping outside during a televised sports event, observed a sharp bright green circular mass in the sky west of a test site; within seconds it widened and formed concentric green circles before the coloring faded within minutes, with no associated sound.",
+  "objectClass": "other",
+  "redactionPct": 15,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 164
+  },
+  "enrichedAt": "2026-07-01T21:51:31.379Z"
+}

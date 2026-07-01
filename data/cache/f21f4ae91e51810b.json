@@ -1,0 +1,26 @@
+{
+  "recordId": "f21f4ae91e51810b",
+  "sha256": "f21f4ae91e51810b",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 6,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An internal correspondence between AFOSI personnel discusses processing a records request as a derivative classification review rather than a full declassification, approving use of an unclassified summary in a product. The document contains no description of an observed aerial object or event.",
+  "objectClass": "unknown",
+  "redactionPct": 45,
+  "reviewFlags": [
+    "heavily-redacted",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 127
+  },
+  "enrichedAt": "2026-07-01T21:48:55.282Z"
+}

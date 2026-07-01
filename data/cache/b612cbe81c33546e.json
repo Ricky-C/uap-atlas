@@ -1,0 +1,26 @@
+{
+  "recordId": "b612cbe81c33546e",
+  "sha256": "b612cbe81c33546e",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 2,
+    "pageCount": 2,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An FBI FD-302 report describes witnesses observing a yellow, basketball-sized ball of light and a larger beach-ball-sized light near trees behind their property around 9:15pm, which appeared to move laterally and merge before disappearing; the account also mentions later sightings of white orbs and a separate 1987 incident involving a red light near power lines.",
+  "objectClass": "orb",
+  "redactionPct": 40,
+  "reviewFlags": [
+    "heavily-redacted",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 6212,
+    "output_tokens": 167
+  },
+  "enrichedAt": "2026-07-01T21:54:54.221Z"
+}

@@ -1,0 +1,25 @@
+{
+  "recordId": "3e8ee13c5fa8d61a",
+  "sha256": "3e8ee13c5fa8d61a",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 2,
+    "pageCount": 2,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A 1972 CIA intelligence report summarizes a US citizen's account of a Yerevan, Armenia science conference in September 1971, describing a speculative physics paper by Soviet scientists Kardashev and Sakharov on charged mass collapse in space, and noting a Soviet committee investigating reported flying saucer phenomena was regarded by attendees as lacking scientific rigor.",
+  "objectClass": "unknown",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 6212,
+    "output_tokens": 174
+  },
+  "enrichedAt": "2026-07-01T21:51:31.379Z"
+}

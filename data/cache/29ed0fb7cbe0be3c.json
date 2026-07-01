@@ -1,0 +1,25 @@
+{
+  "recordId": "29ed0fb7cbe0be3c",
+  "sha256": "29ed0fb7cbe0be3c",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 2,
+    "pageCount": 2,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An FBI FD-302 report describes a contractor who, while conducting LiDAR tests near a restricted airspace site in September 2023, saw a linear metallic/gray object with a bright white banded light on its east side. The object was reportedly larger than a drone but smaller than a 737, moved east to west at roughly 5000 feet, and disappeared after five to ten seconds.",
+  "objectClass": "other",
+  "redactionPct": 45,
+  "reviewFlags": [
+    "heavily-redacted"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 6212,
+    "output_tokens": 165
+  },
+  "enrichedAt": "2026-07-01T21:42:56.497Z"
+}

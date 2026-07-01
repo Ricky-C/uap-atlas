@@ -1,0 +1,25 @@
+{
+  "recordId": "3393d62c92d9a5ad",
+  "sha256": "3393d62c92d9a5ad",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 86,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "Two HATS incoming-correspondence tracking records document constituent letters forwarded by U.S. senators (Snowe and Grassley) to the State Department's legal office, one regarding a Maine constituent interested in UFOs and recent Mars photographs, and another regarding a constituent requesting information on UFO sightings reported by astronauts.",
+  "objectClass": "unknown",
+  "redactionPct": 5,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8791,
+    "output_tokens": 157
+  },
+  "enrichedAt": "2026-07-01T21:51:31.378Z"
+}

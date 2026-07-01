@@ -1,0 +1,25 @@
+{
+  "recordId": "b79da2d091ae8e16",
+  "sha256": "b79da2d091ae8e16",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 194,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An August 1947 FBI office memo from the San Francisco field office to Director Ladd forwards photostatic copies of Army Air Forces letters and reports on flying disc sightings in Oregon and Arizona, along with earlier correspondence from Fourth Air Force officers at Hamilton Field, California. Copies of the enclosed materials were being forwarded to the Portland and Phoenix field offices for their files on the subject.",
+  "objectClass": "disc",
+  "redactionPct": 5,
+  "reviewFlags": [
+    "illegible"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8623,
+    "output_tokens": 180
+  },
+  "enrichedAt": "2026-07-01T21:48:55.283Z"
+}

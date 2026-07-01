@@ -1,0 +1,23 @@
+{
+  "recordId": "18ee158476f1203b",
+  "sha256": "18ee158476f1203b",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 16,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "Apollo mission transcript (Tape 5) records crew members reporting bright, jagged fragments or particles drifting past their windows during and after a spacecraft maneuver, discussing possible causes such as ice chunks, paint flaking, or debris from the S-IVB stage.",
+  "objectClass": "other",
+  "redactionPct": 0,
+  "reviewFlags": [],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8623,
+    "output_tokens": 126
+  },
+  "enrichedAt": "2026-07-01T21:42:56.497Z"
+}

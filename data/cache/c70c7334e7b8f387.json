@@ -1,0 +1,27 @@
+{
+  "recordId": "c70c7334e7b8f387",
+  "sha256": "c70c7334e7b8f387",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 1,
+    "pageCount": 1,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A sensor or gun-camera style still with crosshair overlay shows a small dark object in flight against a plain sky background, timestamped 12/31/99 18:10:00; surrounding context that might identify location or source has been redacted.",
+  "objectClass": "unknown",
+  "redactionPct": 25,
+  "reviewFlags": [
+    "heavily-redacted",
+    "ambiguous-object",
+    "non-document-media"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 3633,
+    "output_tokens": 133
+  },
+  "enrichedAt": "2026-07-01T21:48:55.282Z"
+}

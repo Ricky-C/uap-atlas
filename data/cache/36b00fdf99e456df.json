@@ -1,0 +1,23 @@
+{
+  "recordId": "36b00fdf99e456df",
+  "sha256": "36b00fdf99e456df",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 1,
+    "pageCount": 1,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An FBI office memo from Detroit reports that a caller named David Weaver telephoned early on April 17, 1958, to describe seeing a circular object with a crystal-like dome that reflected lights, moving northward across the city near Six Mile and Lamphere Street. The report notes he tried unsuccessfully to reach Selfridge Air Force Base before contacting the FBI office.",
+  "objectClass": "disc",
+  "redactionPct": 0,
+  "reviewFlags": [],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 3745,
+    "output_tokens": 161
+  },
+  "enrichedAt": "2026-07-01T21:42:56.491Z"
+}

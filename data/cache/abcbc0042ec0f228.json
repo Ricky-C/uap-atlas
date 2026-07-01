@@ -1,0 +1,26 @@
+{
+  "recordId": "abcbc0042ec0f228",
+  "sha256": "abcbc0042ec0f228",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 2,
+    "pageCount": 2,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An FBI electronic communication describes agents conducting a site survey around a redacted location in December 2024, following up on a UAP sighting reported by two agents in November 2024. The survey team walked the perimeter and inspected areas with prior sightings but found nothing unusual on the ground or at treetop level, noting moderate tree cover that would make nighttime drone or craft flight there difficult.",
+  "objectClass": "unknown",
+  "redactionPct": 45,
+  "reviewFlags": [
+    "heavily-redacted",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 6212,
+    "output_tokens": 178
+  },
+  "enrichedAt": "2026-07-01T21:54:54.222Z"
+}

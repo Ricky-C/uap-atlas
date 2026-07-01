@@ -1,0 +1,26 @@
+{
+  "recordId": "d2ff89273ce8bf19",
+  "sha256": "d2ff89273ce8bf19",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 1,
+    "pageCount": 1,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A form-based government document, largely illegible due to poor scan quality, appears to record procedural or policy guidance rather than a specific witness sighting account.",
+  "objectClass": "unknown",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "illegible",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 3185,
+    "output_tokens": 97
+  },
+  "enrichedAt": "2026-07-01T21:54:54.232Z"
+}

@@ -1,0 +1,26 @@
+{
+  "recordId": "b98b58a326ea413b",
+  "sha256": "b98b58a326ea413b",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 4,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A U.S. Army report describes five service members at Fort Carson, Colorado observing a stationary, slowly shape-shifting airborne object above Cheyenne Mountain for 30–180 seconds on 15 February 2022; the object had a translucent, shimmering white appearance and disappeared suddenly, with analysts assessing low confidence that it was possible sunlight backscattering off snow and clouds.",
+  "objectClass": "other",
+  "redactionPct": 25,
+  "reviewFlags": [
+    "heavily-redacted",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8007,
+    "output_tokens": 184
+  },
+  "enrichedAt": "2026-07-01T21:54:54.232Z"
+}

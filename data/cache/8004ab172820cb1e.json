@@ -1,0 +1,23 @@
+{
+  "recordId": "8004ab172820cb1e",
+  "sha256": "8004ab172820cb1e",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 253,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A billeting officer at Muroc Air Field, California reported seeing two silver spherical or disc-shaped objects flying at about 8000 feet and 300 mph on July 3, 1947, with additional witnesses corroborating the sighting; a third similar object was later seen circling tightly over the airfield.",
+  "objectClass": "disc",
+  "redactionPct": 0,
+  "reviewFlags": [],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8567,
+    "output_tokens": 135
+  },
+  "enrichedAt": "2026-07-01T21:54:54.232Z"
+}

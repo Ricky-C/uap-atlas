@@ -1,0 +1,25 @@
+{
+  "recordId": "2539850305227baf",
+  "sha256": "2539850305227baf",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 2,
+    "pageCount": 2,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A July 1952 memorandum records that General Samford, Air Force A-2, told an inquirer that flying saucer phenomena remained a complete enigma but had been reported for over 100 years, with increased reporting attributed to improved observation methods and publicity. The memo notes that credible observers reported incredible things and that the Air Force treated the phenomena as a concern only because they were not understood, with little support given to theories of man-made or controlled origin.",
+  "objectClass": "unknown",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 6212,
+    "output_tokens": 188
+  },
+  "enrichedAt": "2026-07-01T21:42:56.487Z"
+}

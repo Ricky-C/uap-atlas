@@ -1,0 +1,23 @@
+{
+  "recordId": "61f7e6594e7ab695",
+  "sha256": "61f7e6594e7ab695",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 11,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "Skylab 1/2 crew debriefing transcript in which astronauts Kerwin, Conrad, and Weitz discuss recurring light flashes, spots, and streaks seen mostly with eyes closed or in peripheral vision during the mission, along with medical kit usage.",
+  "objectClass": "light",
+  "redactionPct": 0,
+  "reviewFlags": [],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 127
+  },
+  "enrichedAt": "2026-07-01T21:45:25.802Z"
+}

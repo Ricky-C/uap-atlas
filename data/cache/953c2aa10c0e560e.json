@@ -1,0 +1,26 @@
+{
+  "recordId": "953c2aa10c0e560e",
+  "sha256": "953c2aa10c0e560e",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 3,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An FBI electronic communication describes special agents visiting a witness's home in November 2024 to conduct a site survey of areas where the resident reported observing unidentified aerial phenomena over the past three years, including trail camera footage facing west of the property.",
+  "objectClass": "unknown",
+  "redactionPct": 45,
+  "reviewFlags": [
+    "heavily-redacted",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 132
+  },
+  "enrichedAt": "2026-07-01T21:54:54.226Z"
+}

@@ -1,0 +1,25 @@
+{
+  "recordId": "ec72132902a2f50d",
+  "sha256": "ec72132902a2f50d",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 116,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An 1100th USAF Special Reporting Group letter dated 7 April 1949 to Sandia Base reports on completed and pending security corrections at Camp Campbell, Kentucky, including gate locks, alert plans, radio installations, and drainage/erosion control efforts; a related folder cover sheet lists the general subject as unidentified flying objects without describing a specific sighting.",
+  "objectClass": "unknown",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8847,
+    "output_tokens": 171
+  },
+  "enrichedAt": "2026-07-01T21:51:31.384Z"
+}

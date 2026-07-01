@@ -1,0 +1,23 @@
+{
+  "recordId": "74dc1a19ef09d093",
+  "sha256": "74dc1a19ef09d093",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 4,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "This is Apollo 12 mission transcript covering communications between mission control and the crew, including a lunar module pilot's report of particles of light seen through the AOT while looking into a dark quadrant that appeared to move away into space, and a later reported flashing anomaly on the AGS display attributed to electromagnetic interference.",
+  "objectClass": "light",
+  "redactionPct": 0,
+  "reviewFlags": [],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 138
+  },
+  "enrichedAt": "2026-07-01T21:45:25.826Z"
+}

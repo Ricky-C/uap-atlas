@@ -1,0 +1,25 @@
+{
+  "recordId": "23482936d9dbf8de",
+  "sha256": "23482936d9dbf8de",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 178,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A checklist report describes an incident near Norcatur, Kansas on 18 February 1948, based on a newspaper account from an editor, describing a bluish-white smoke smudge with a mushroom shape at an estimated altitude of 30-35 miles, accompanied by one large explosion followed by smaller ones, and disintegrating afterward.",
+  "objectClass": "other",
+  "redactionPct": 10,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8511,
+    "output_tokens": 155
+  },
+  "enrichedAt": "2026-07-01T21:42:56.494Z"
+}

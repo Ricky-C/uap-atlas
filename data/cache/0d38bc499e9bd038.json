@@ -1,0 +1,26 @@
+{
+  "recordId": "0d38bc499e9bd038",
+  "sha256": "0d38bc499e9bd038",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 1,
+    "pageCount": 1,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An image depicts a nighttime rural road scene with a bright orange orb and three smaller red points of light in the sky above distant hills, with no additional documentary context provided.",
+  "objectClass": "orb",
+  "redactionPct": null,
+  "reviewFlags": [
+    "non-document-media",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 3073,
+    "output_tokens": 104
+  },
+  "enrichedAt": "2026-07-01T21:51:31.383Z"
+}

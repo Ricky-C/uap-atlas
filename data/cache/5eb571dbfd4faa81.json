@@ -1,0 +1,23 @@
+{
+  "recordId": "5eb571dbfd4faa81",
+  "sha256": "5eb571dbfd4faa81",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 4,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An AARO memorandum describes six federal law enforcement agents reporting, over two days in October 2023, luminous orange 'mother orbs' near dusk that appeared to release clusters of smaller red 'orbs' exhibiting varied horizontal and altitude movement, with one red orb reportedly stationary for several hours; the report states the case remains unresolved after analysis of flight, radar, and ADS-B data.",
+  "objectClass": "orb",
+  "redactionPct": 0,
+  "reviewFlags": [],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 172
+  },
+  "enrichedAt": "2026-07-01T21:51:31.380Z"
+}

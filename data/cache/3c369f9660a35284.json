@@ -1,0 +1,25 @@
+{
+  "recordId": "3c369f9660a35284",
+  "sha256": "3c369f9660a35284",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 2,
+    "pageCount": 2,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A federal law enforcement agent's witness account, provided to AARO, describes observing an orange orb that pulsed between clear and orange and expelled three smaller red orbs over two nights in October 2023 in the western U.S., along with four red lights hovering over an airfield and a vehicle that appeared to evade pursuit before disappearing.",
+  "objectClass": "orb",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 6212,
+    "output_tokens": 153
+  },
+  "enrichedAt": "2026-07-01T21:51:31.382Z"
+}

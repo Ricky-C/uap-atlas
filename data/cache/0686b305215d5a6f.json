@@ -1,0 +1,26 @@
+{
+  "recordId": "0686b305215d5a6f",
+  "sha256": "0686b305215d5a6f",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 1,
+    "pageCount": 1,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An imaging frame with crosshair overlay shows a small dark rounded object near the center, with no accompanying descriptive text visible in the field of view.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "reviewFlags": [
+    "non-document-media",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 1446,
+    "output_tokens": 99
+  },
+  "enrichedAt": "2026-07-01T20:39:02.712Z"
+}

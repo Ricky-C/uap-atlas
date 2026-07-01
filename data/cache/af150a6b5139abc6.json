@@ -1,0 +1,26 @@
+{
+  "recordId": "af150a6b5139abc6",
+  "sha256": "af150a6b5139abc6",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 6,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "The document shows only a section header, '1.4(a)', with no visible descriptive text or witness account present on the page.",
+  "objectClass": "unknown",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "illegible",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 85
+  },
+  "enrichedAt": "2026-07-01T21:45:25.821Z"
+}

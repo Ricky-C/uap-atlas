@@ -1,0 +1,25 @@
+{
+  "recordId": "fd3b139e6b9ad4e3",
+  "sha256": "fd3b139e6b9ad4e3",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 223,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "This is the cover and preface of a declassified NASA Gemini V technical debriefing transcript (Part 1), prepared by the Spacecraft Operations Branch in September 1965, summarizing crew accounts of the mission from an operational viewpoint; it does not itself describe any anomalous object.",
+  "objectClass": "unknown",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8511,
+    "output_tokens": 142
+  },
+  "enrichedAt": "2026-07-01T21:56:35.112Z"
+}

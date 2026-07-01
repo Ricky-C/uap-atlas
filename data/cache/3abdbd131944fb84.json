@@ -1,0 +1,25 @@
+{
+  "recordId": "3abdbd131944fb84",
+  "sha256": "3abdbd131944fb84",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 2,
+    "pageCount": 2,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A 1967 CIA information report recounts a US astrophysicist's conversations with Soviet astronomers during a trip through the USSR, describing varying levels of interest in and reported sightings of unidentified aerial phenomena, including a reddish flashing object seen near Kiev and reports of ball lightning later attributed to headlight reflections.",
+  "objectClass": "unknown",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 4980,
+    "output_tokens": 156
+  },
+  "enrichedAt": "2026-07-01T21:51:31.382Z"
+}

@@ -1,0 +1,27 @@
+{
+  "recordId": "259b451d1355deb3",
+  "sha256": "259b451d1355deb3",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 1,
+    "pageCount": 1,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A sensor image with a timestamp shows a small dark object near the center crosshair, with surrounding text fields redacted; no further descriptive detail is legible.",
+  "objectClass": "unknown",
+  "redactionPct": 20,
+  "reviewFlags": [
+    "heavily-redacted",
+    "ambiguous-object",
+    "non-document-media"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 3633,
+    "output_tokens": 110
+  },
+  "enrichedAt": "2026-07-01T21:42:56.498Z"
+}

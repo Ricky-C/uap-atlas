@@ -1,0 +1,25 @@
+{
+  "recordId": "7620094802463bc9",
+  "sha256": "7620094802463bc9",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 271,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An FBI office memorandum from 1950 summarizes reports of aerial phenomena over sensitive installations in New Mexico since December 1948, categorized into green fireballs, discs, and meteors, with about 150 observations noted and a meteor expert stating the phenomena did not appear to be of meteoric origin.",
+  "objectClass": "other",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8343,
+    "output_tokens": 146
+  },
+  "enrichedAt": "2026-07-01T21:45:25.794Z"
+}

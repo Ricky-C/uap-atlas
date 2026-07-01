@@ -1,0 +1,25 @@
+{
+  "recordId": "77043137eec2494b",
+  "sha256": "77043137eec2494b",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 126,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "Two Pan American Airways crew members flying a Constellation aircraft between Gander and La Guardia on 4 August 1947 independently reported sighting an unidentified elongated orange/gold object near Boston, estimated at 15-20 feet long, traveling at 150-175 mph before contact was lost when the aircraft banked or a cloud obscured the view.",
+  "objectClass": "other",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8959,
+    "output_tokens": 161
+  },
+  "enrichedAt": "2026-07-01T21:45:25.824Z"
+}

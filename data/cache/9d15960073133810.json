@@ -1,0 +1,25 @@
+{
+  "recordId": "9d15960073133810",
+  "sha256": "9d15960073133810",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 143,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "Two documents: a 1950 Lowry Flight Service Center report describes two spherical objects seen by two named Bendix Aviation employees over Kansas City and Olathe, Kansas, on the night of 6 January 1950, appearing motionless for 10-15 minutes before departing rapidly to the southwest; a 1949 Olmsted Flight Service Center report records a C-45 aircraft sighting near Griffiss Air Force Base, Rome, New York, on 20 September 1949, with limited details filled in on a standard reporting form.",
+  "objectClass": "orb",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8791,
+    "output_tokens": 223
+  },
+  "enrichedAt": "2026-07-01T21:45:25.802Z"
+}

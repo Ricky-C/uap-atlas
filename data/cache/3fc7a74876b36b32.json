@@ -1,0 +1,26 @@
+{
+  "recordId": "3fc7a74876b36b32",
+  "sha256": "3fc7a74876b36b32",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 15,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "FBI Detroit field office administrative papers referencing notes from a November 1957 interview with Wladyslaw Krasuski, with no descriptive content about any aerial phenomenon visible on these pages.",
+  "objectClass": "unknown",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object",
+    "illegible"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8735,
+    "output_tokens": 116
+  },
+  "enrichedAt": "2026-07-01T21:42:56.497Z"
+}

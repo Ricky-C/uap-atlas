@@ -1,0 +1,26 @@
+{
+  "recordId": "ce62e46b3535a468",
+  "sha256": "ce62e46b3535a468",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 1,
+    "pageCount": 1,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An Apollo-era lunar surface photograph shows a barren landscape with hills on the horizon; an inset zoom of the sky area highlights two small colored points of light against the dark background.",
+  "objectClass": "light",
+  "redactionPct": null,
+  "reviewFlags": [
+    "non-document-media",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 4305,
+    "output_tokens": 109
+  },
+  "enrichedAt": "2026-07-01T21:48:55.280Z"
+}

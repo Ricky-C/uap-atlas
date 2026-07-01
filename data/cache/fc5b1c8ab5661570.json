@@ -1,0 +1,25 @@
+{
+  "recordId": "fc5b1c8ab5661570",
+  "sha256": "fc5b1c8ab5661570",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 7,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "This is an administrative cover sheet and correspondence routing document from the Directorate of Intelligence, HQ USAF, dated November 1948, transmitting extracts of a special intelligence organization's reports from the European Command for review; it does not describe an observed aerial object.",
+  "objectClass": "unknown",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8455,
+    "output_tokens": 132
+  },
+  "enrichedAt": "2026-07-01T21:48:55.279Z"
+}

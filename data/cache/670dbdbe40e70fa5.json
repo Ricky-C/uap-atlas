@@ -1,0 +1,23 @@
+{
+  "recordId": "670dbdbe40e70fa5",
+  "sha256": "670dbdbe40e70fa5",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 2,
+    "pageCount": 2,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An AARO memorandum records a federal law enforcement agent's first-hand account of glowing orb-like lights observed over two nights in October 2023 in the western U.S., including one that appeared to hover near a hillside and emit smaller red lights, plus a separate encounter with a low-flying, translucent object near a roadway.",
+  "objectClass": "orb",
+  "redactionPct": 0,
+  "reviewFlags": [],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 6212,
+    "output_tokens": 140
+  },
+  "enrichedAt": "2026-07-01T21:54:54.237Z"
+}

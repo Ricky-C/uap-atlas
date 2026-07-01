@@ -1,0 +1,26 @@
+{
+  "recordId": "284e470d213a7982",
+  "sha256": "284e470d213a7982",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 1,
+    "pageCount": 1,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A notional illustration depicts four separate incidents reported by U.S. federal law enforcement agents in the western United States during October 2023, describing orange orbs launching smaller red orbs, a large fiery orb projected against a ridgeline, and thin kite-shaped objects with colored lights observed at close range.",
+  "objectClass": "orb",
+  "redactionPct": null,
+  "reviewFlags": [
+    "non-document-media",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 3073,
+    "output_tokens": 149
+  },
+  "enrichedAt": "2026-07-01T21:51:31.385Z"
+}

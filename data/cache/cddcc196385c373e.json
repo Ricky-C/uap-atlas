@@ -1,0 +1,25 @@
+{
+  "recordId": "cddcc196385c373e",
+  "sha256": "cddcc196385c373e",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 6,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A 1963 NASA Space Council internal memo to a State Department official discusses policy considerations regarding the theoretical possibility of encountering intelligent life in space, referencing scientific and 'flying saucer advocate' viewpoints on Mars, the moon, and planetary formation theory. It does not describe an actual sighting or observed object.",
+  "objectClass": "unknown",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 156
+  },
+  "enrichedAt": "2026-07-01T21:48:55.281Z"
+}

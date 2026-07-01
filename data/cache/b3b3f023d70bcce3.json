@@ -1,0 +1,26 @@
+{
+  "recordId": "b3b3f023d70bcce3",
+  "sha256": "b3b3f023d70bcce3",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 7,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An Air Force mission report (89 ATKS, Task Force Chosin) describes a July 31 2022 sortie over an area in the CENTCOM area of responsibility during which the aircrew observed an unidentified aerial phenomenon at a specified grid location before continuing and completing its ISR tasking.",
+  "objectClass": "unknown",
+  "redactionPct": 10,
+  "reviewFlags": [
+    "ambiguous-object",
+    "heavily-redacted"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 153
+  },
+  "enrichedAt": "2026-07-01T21:48:55.284Z"
+}

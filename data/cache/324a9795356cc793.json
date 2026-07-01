@@ -1,0 +1,25 @@
+{
+  "recordId": "324a9795356cc793",
+  "sha256": "324a9795356cc793",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 4,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A handwritten 1970 letter to James L. Tuck recalls green light sightings observed at Los Alamos between 1948 and 1951, typically between 9 and 11 pm over the Jemez Mountains, along with one afternoon sighting of five objects flying in formation from southeast to northwest; the writer notes these were reported to the Protective Force at the time and suggests checking Protective Force logs for exact dates. A separate related letter from Tuck to a U.S. Army Engineering School requests information on a 'recipe' used for simulated atomic bomb demonstrations, referencing atmospheric vortices described in Edward U. Condon's UFO study.",
+  "objectClass": "light",
+  "redactionPct": 5,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 258
+  },
+  "enrichedAt": "2026-07-01T21:51:31.378Z"
+}

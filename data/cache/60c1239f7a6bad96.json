@@ -1,0 +1,26 @@
+{
+  "recordId": "60c1239f7a6bad96",
+  "sha256": "60c1239f7a6bad96",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 3,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A multi-page declassified field report describes a joint helicopter search operation investigating earlier eyewitness reports of orbs, lights, and ground impact sounds near a mountain range. Personnel aboard the helicopter and at a listening post repeatedly observed orbs and swarms of lights that flared up and down in formations, hovered near the aircraft, moved at high speed, and appeared to interact with military aircraft in the area over several hours.",
+  "objectClass": "orb",
+  "redactionPct": 30,
+  "reviewFlags": [
+    "heavily-redacted",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 194
+  },
+  "enrichedAt": "2026-07-01T21:45:25.798Z"
+}

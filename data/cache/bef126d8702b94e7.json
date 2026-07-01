@@ -1,0 +1,23 @@
+{
+  "recordId": "bef126d8702b94e7",
+  "sha256": "bef126d8702b94e7",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 2,
+    "pageCount": 2,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A senior U.S. intelligence officer's report describes a helicopter crew and ground teams observing multiple orange, oval-shaped orbs over a mountain test range at night, some approaching within ten feet of the aircraft, splitting, forming formations, and matching the movements of fighter jets before vanishing.",
+  "objectClass": "orb",
+  "redactionPct": 0,
+  "reviewFlags": [],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 6212,
+    "output_tokens": 136
+  },
+  "enrichedAt": "2026-07-01T21:51:31.381Z"
+}

@@ -1,0 +1,25 @@
+{
+  "recordId": "a54a4d12ac77b4f7",
+  "sha256": "a54a4d12ac77b4f7",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 325,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "This is a declassified NASA cover and preface page for the Gemini V (GT-5) flight crew technical debriefing transcript, Part II, prepared by the Spacecraft Operations Branch in September 1965; it contains no description of an observed object or phenomenon.",
+  "objectClass": "unknown",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8511,
+    "output_tokens": 132
+  },
+  "enrichedAt": "2026-07-01T21:54:54.242Z"
+}

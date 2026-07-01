@@ -1,0 +1,25 @@
+{
+  "recordId": "85e84eb491e2331a",
+  "sha256": "85e84eb491e2331a",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 4,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A 1950 CIA information report from Chile transmits a translated article by a German scientist, Dr. Eduard Ludwig, proposing an aerodynamic explanation for reported 'flying discs' based on boundary-layer effects, rotating turbines, and Flettner rotor technology developed in German aeronautical research. The article does not describe a specific sighting but offers a theoretical engineering hypothesis for how disc-shaped luminous craft could function.",
+  "objectClass": "disc",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 7223,
+    "output_tokens": 193
+  },
+  "enrichedAt": "2026-07-01T21:54:54.239Z"
+}

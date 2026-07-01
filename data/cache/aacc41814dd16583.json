@@ -1,0 +1,25 @@
+{
+  "recordId": "aacc41814dd16583",
+  "sha256": "aacc41814dd16583",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 11,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "Apollo 11 crew debriefing transcript in which Aldrin, Armstrong, and Collins discuss sighting an unidentified bright object with an L-shape roughly one day out from the moon, initially suspected to be the S-IVB stage, which ground control reported as being 6000 miles away.",
+  "objectClass": "unknown",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8511,
+    "output_tokens": 143
+  },
+  "enrichedAt": "2026-07-01T21:45:25.821Z"
+}

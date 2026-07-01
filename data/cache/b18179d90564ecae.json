@@ -1,0 +1,25 @@
+{
+  "recordId": "b18179d90564ecae",
+  "sha256": "b18179d90564ecae",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 1,
+    "pageCount": 1,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An image depicts a smooth, elongated disc-shaped object hovering above a tree line and grassy field, with a bright light or glare emanating from its leading edge.",
+  "objectClass": "disc",
+  "redactionPct": null,
+  "reviewFlags": [
+    "non-document-media"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 3409,
+    "output_tokens": 95
+  },
+  "enrichedAt": "2026-07-01T21:45:25.814Z"
+}

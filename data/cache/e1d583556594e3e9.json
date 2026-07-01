@@ -1,0 +1,23 @@
+{
+  "recordId": "e1d583556594e3e9",
+  "sha256": "e1d583556594e3e9",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 3,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A 1994 U.S. Embassy Dushanbe cable reports that Tajik Air's American chief pilot and two colleagues observed a bright, high-speed maneuvering light for about 40 minutes while flying at 41,000 feet over Kazakhstan; they later flew under contrails left by the object, estimated at 100,000 feet, and did not believe it was a meteor.",
+  "objectClass": "light",
+  "redactionPct": 0,
+  "reviewFlags": [],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 160
+  },
+  "enrichedAt": "2026-07-01T21:48:55.279Z"
+}

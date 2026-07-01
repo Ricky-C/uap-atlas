@@ -1,0 +1,25 @@
+{
+  "recordId": "90b353682ba21811",
+  "sha256": "90b353682ba21811",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 1,
+    "pageCount": 1,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An aircrew debrief form reports that during a night ISR mission on 05/14/20, sensor operators observed a solid white, round object moving over water, which was tracked intermittently with intermittent loss and reacquisition of the sensor lock.",
+  "objectClass": "orb",
+  "redactionPct": 5,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 3745,
+    "output_tokens": 122
+  },
+  "enrichedAt": "2026-07-01T21:45:25.819Z"
+}

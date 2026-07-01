@@ -1,0 +1,26 @@
+{
+  "recordId": "4752dd830144b21c",
+  "sha256": "4752dd830144b21c",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 6,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An Air Force MISREP describes an aircraft flying an ISR mission near Baghdad, Iraq, collecting SIGINT and supporting operations, during which the crew reported observing a possible unidentified aerial phenomenon; details of the sighting itself are referenced in a separate UAP line not included in this excerpt.",
+  "objectClass": "unknown",
+  "redactionPct": 15,
+  "reviewFlags": [
+    "heavily-redacted",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 159
+  },
+  "enrichedAt": "2026-07-01T21:42:56.496Z"
+}

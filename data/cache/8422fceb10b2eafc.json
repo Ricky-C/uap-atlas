@@ -1,0 +1,26 @@
+{
+  "recordId": "8422fceb10b2eafc",
+  "sha256": "8422fceb10b2eafc",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 7,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A USAF mission report (MISREP 5039166) describes a sortie from OKAS supporting NAVCENT operations near the Arabian Gulf, Strait of Hormuz, and Gulf of Oman, during which the aircrew reported two separate observations of an unidentified aerial phenomenon (UAP) at 2143Z and 2148Z, logged in the mission's observation lines.",
+  "objectClass": "unknown",
+  "redactionPct": 15,
+  "reviewFlags": [
+    "heavily-redacted",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 182
+  },
+  "enrichedAt": "2026-07-01T21:45:25.810Z"
+}

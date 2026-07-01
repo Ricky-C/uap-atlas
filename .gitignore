@@ -35,3 +35,9 @@ data/raw/
 
 # NOTE: data/ is otherwise committed output (records.json, locations.json, cache/).
 # Only data/raw/ (the source bundles) is ignored — do NOT ignore data/ wholesale.
+
+# Ephemeral batch-resume state for the Phase 2 enrichment pass. Holds a batch id
+# that expires in ~29 days; the per-doc cache files under data/cache/ ARE committed.
+data/cache/_batch-state.json
+# Atomic-write temp siblings (writeJsonAtomic) — never commit a half-written file.
+data/cache/*.tmp

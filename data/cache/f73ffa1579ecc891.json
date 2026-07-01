@@ -1,0 +1,25 @@
+{
+  "recordId": "f73ffa1579ecc891",
+  "sha256": "f73ffa1579ecc891",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 2,
+    "pageCount": 2,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An FBI electronic communication describes a forensic sketch interview of a former U.S. Army intelligence officer who, with four colleagues, reported observing an unidentified aerial phenomenon over the Cheyenne Mountains area in February. The witness described a potato-shaped, translucent, whitish object made of shifting scale-like panels that remained stationary for about two minutes before vanishing abruptly with no shadow.",
+  "objectClass": "other",
+  "redactionPct": 30,
+  "reviewFlags": [
+    "heavily-redacted"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 6212,
+    "output_tokens": 179
+  },
+  "enrichedAt": "2026-07-01T21:56:35.113Z"
+}

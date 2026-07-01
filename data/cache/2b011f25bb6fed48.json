@@ -1,0 +1,25 @@
+{
+  "recordId": "2b011f25bb6fed48",
+  "sha256": "2b011f25bb6fed48",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 8,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A federal law enforcement agent's narrative to AARO describes multiple sightings over two nights in October 2023 in the western U.S., including bright orb-like lights that expelled smaller red lights in formation, hovering light clusters resembling vehicle headlights, and an orb that accelerated and changed shape while being pursued by car.",
+  "objectClass": "orb",
+  "redactionPct": 0,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 151
+  },
+  "enrichedAt": "2026-07-01T21:51:31.384Z"
+}

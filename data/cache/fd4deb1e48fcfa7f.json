@@ -1,0 +1,26 @@
+{
+  "recordId": "fd4deb1e48fcfa7f",
+  "sha256": "fd4deb1e48fcfa7f",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 10,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "A 12 SOS aircraft mission report describes an unspecified aircraft conducting FMV/SIGINT collection sorties over Iraq/Syria on an ISR tasking, noting that at 1559Z the crew observed an unidentified aerial phenomenon referenced as UAP 1, with no further description provided in this narrative section.",
+  "objectClass": "unknown",
+  "redactionPct": 10,
+  "reviewFlags": [
+    "ambiguous-object",
+    "heavily-redacted"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 8679,
+    "output_tokens": 164
+  },
+  "enrichedAt": "2026-07-01T21:51:31.384Z"
+}

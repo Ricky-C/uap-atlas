@@ -1,0 +1,23 @@
+{
+  "recordId": "350806816e58095e",
+  "sha256": "350806816e58095e",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 3,
+    "pageCount": 205,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An FBI teletype from Savannah reports that AEC security at the Savannah River Plant relayed an account from two Du Pont Company employees who saw a blue light with an orange fringe, shaped like a saucer, flying over the plant's 400 area at high speed in a northeastern direction on the night of August 8, 1952.",
+  "objectClass": "disc",
+  "redactionPct": 0,
+  "reviewFlags": [],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 9127,
+    "output_tokens": 141
+  },
+  "enrichedAt": "2026-07-01T21:42:56.495Z"
+}

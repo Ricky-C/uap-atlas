@@ -1,0 +1,25 @@
+{
+  "recordId": "90570293e61c9b22",
+  "sha256": "90570293e61c9b22",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 2,
+    "pageCount": 2,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "Emails between analysts discuss administrative approval to add the year (in addition to already-approved month and day) to an unclassified tear line describing a 31 Oct incident in which a U.S. aircraft observed a possible oval/orb-shaped object moving at low speed, tracked for over two hours.",
+  "objectClass": "orb",
+  "redactionPct": 25,
+  "reviewFlags": [
+    "heavily-redacted"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 6212,
+    "output_tokens": 139
+  },
+  "enrichedAt": "2026-07-01T21:45:25.812Z"
+}

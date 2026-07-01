@@ -1,0 +1,26 @@
+{
+  "recordId": "10c11e9bf4d66861",
+  "sha256": "10c11e9bf4d66861",
+  "model": "claude-sonnet-5",
+  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
+  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "strategy": {
+    "pagesSent": 2,
+    "pageCount": 2,
+    "renderPx": 1568,
+    "maxPages": 3
+  },
+  "summary": "An email exchange between an intelligence data analysis technician and an information disclosure analyst confirms that two tearlines dated 10APR25 and 11APR25 are approved at the UNCLASSIFIED level. Both tearlines report a US aircraft observing one possible UAP for approximately 12 and 23 seconds respectively, at unknown altitude and speed, with no interference noted.",
+  "objectClass": "unknown",
+  "redactionPct": 45,
+  "reviewFlags": [
+    "heavily-redacted",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 6212,
+    "output_tokens": 179
+  },
+  "enrichedAt": "2026-07-01T21:42:56.498Z"
+}
