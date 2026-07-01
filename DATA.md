@@ -60,6 +60,23 @@ The National UFO Reporting Center database (~100k geocoded civilian reports) is 
 
 Earth-at-night imagery for the globe surface. Public domain. Thematically apt (watching the dark side for signals) and it makes the globe look expensive for free.
 
+## Ingesting a release (the manual drop)
+
+war.gov 403-blocks automated clients, so **downloading a release is a manual human step** — the ingest pipeline never touches the network. `ingest/fetch.ts` reads a bundle you have already downloaded and extracted onto disk; there is no fetch-over-HTTP path, and neither the script nor Claude can pull the bundle for you.
+
+To ingest a real release:
+
+1. From war.gov/ufo, download the release's ZIP bundle(s) — documents and videos — yourself.
+1. Extract them into `releases/<id>/` (e.g. `releases/01/`) so the directory contains a `files/` folder and an `index.json`. `releases/` is gitignored (real bundles are large binaries); the committed synthetic fixture under `ingest/fixtures/release-<id>/` is the fallback the same code path ingests unchanged.
+1. Author `index.json` to mirror the portal's index columns — a JSON array whose entries are `{ file, mediaType, incidentLocation, sourceUrl, agency?, docType?, docId?, incidentDate? }`. Filenames alone don't carry incident date or location, so those come from the index.
+1. Run `pnpm ingest:release <id>` (or `pnpm ingest` for the newest local release).
+
+Source resolution is newest-first: a real bundle in `releases/<id>/` takes precedence over the fixture. `index.json` is untrusted external data — it's validated at the edge, and `file` entries are constrained to bare, non-symlink regular files inside `files/` (a path-traversal guard, since we don't author the real war.gov index). Ingest is idempotent: record ids are content-addressed (a hash of the source file), so re-running never rewrites unchanged records — and, once enrichment lands, never re-bills already-processed files.
+
+If you drop a bare `.zip` without extracting it (a common half-step), ingest fails loud: *"`releases/01` exists but has no index.json. Extract the war.gov bundle into `releases/01/` so it contains files/ and index.json."*
+
+Note: the Claude enrichment pass (`summary`, `objectClass`, `redactionPct`) is deferred to Phase 2 and is not wired into the ingest run yet. Phase 1 records carry empty summaries and `unknown` object classes by design.
+
 ## Geocoding
 
 `locationRaw` ranges from a precise city to a whole combatant-command area of responsibility. We geocode into **precision tiers** and store the tier so the UI can render uncertainty honestly rather than faking pinpoints:
