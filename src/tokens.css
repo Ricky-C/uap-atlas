@@ -36,6 +36,54 @@
      so the system fallback renders. Self-hosted faces arrive in a later pass. */
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --font-grotesk: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* type scale — data-dense instrument sizes; two weights only (400/500) */
+  --type-xs: 11px;
+  --type-sm: 13px;
+  --type-md: 15px;
+  --type-lg: 18px;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --leading-body: 1.55;
+  --tracking-wide: 0.08em; /* mono labels / status pills */
+
+  /* spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* shape */
+  --radius-1: 4px;
+  --radius-2: 8px;
+  --radius-round: 999px;
+  --hairline: 1px;
+
+  /* motion — minimal and slow; everything animated respects reduced-motion */
+  --dur-fast: 150ms;
+  --dur-slow: 400ms;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* layout */
+  --panel-w: 320px; /* left case index */
+  --drawer-w: 400px; /* right case-file drawer */
+  --timeline-h: 56px;
+
+  /* globe parameters — unitless values read at runtime by Globe.tsx so the
+     Claude Design pass can tune the instrument from tokens alone */
+  --globe-atmosphere-alt: 0.12;
+  --globe-rotate-speed: 0.35;
+  --globe-point-alt: 0.01;
+  --globe-radius-crisp: 0.4; /* point + city tiers — crisp dot */
+  --globe-radius-region: 1.2; /* soft blob at the centroid */
+  --globe-radius-theater: 2.4; /* large low-confidence area */
+  --globe-color-region: rgba(47, 157, 99, 0.55); /* --signal-dim, reduced */
+  --globe-color-theater: rgba(47, 157, 99, 0.28); /* --signal-dim, faint */
+  --globe-ring-period-ms: 1800; /* select "ping" ripple */
+  --globe-ring-max-radius: 5;
+  --globe-ring-propagation-speed: 1;
 }
 
 /* Base wiring lives here (tokens.css is exempt from the design-guardian scan),

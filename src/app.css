@@ -1,0 +1,276 @@
+/*
+ * app.css — component layout and chrome. Every color, spacing, type, radius,
+ * and motion value here is a var(--token) from tokens.css; structural values
+ * (flex, grid, percentages, viewport units) are the only literals allowed.
+ */
+
+.app {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── globe ─────────────────────────────────────────────────────────────── */
+
+.globe-layer {
+  position: absolute;
+  inset: 0;
+}
+
+/* ── shared chrome ─────────────────────────────────────────────────────── */
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-secondary);
+}
+
+/* ── case index (left panel) ───────────────────────────────────────────── */
+
+.case-index {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  bottom: calc(var(--timeline-h) + var(--space-4));
+  width: var(--panel-w);
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-2);
+}
+
+.case-index-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--hairline) solid var(--line);
+}
+
+.case-index-count {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  color: var(--text-muted);
+}
+
+.case-index-list {
+  margin: 0;
+  padding: var(--space-1);
+  list-style: none;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.case-row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  background: none;
+  border: none;
+  border-radius: var(--radius-1);
+  text-align: left;
+  cursor: pointer;
+}
+
+.case-row:hover {
+  background: var(--bg-raised);
+}
+
+.case-row-active {
+  background: var(--signal-bg);
+}
+
+.case-row-id {
+  font-family: var(--font-mono);
+  font-size: var(--type-sm);
+  color: var(--text-primary);
+}
+
+.case-row-active .case-row-id {
+  color: var(--signal);
+}
+
+.case-row-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  color: var(--text-muted);
+}
+
+/* ── drawer (right panel, the case file) ───────────────────────────────── */
+
+.drawer {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  bottom: calc(var(--timeline-h) + var(--space-4));
+  width: var(--drawer-w);
+  overflow-y: auto;
+  padding: var(--space-4);
+  background: var(--bg-raised);
+  border: var(--hairline) solid var(--line-strong);
+  border-radius: var(--radius-2);
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: var(--hairline) solid var(--line);
+}
+
+.drawer-title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.drawer-case-id {
+  font-family: var(--font-mono);
+  font-size: var(--type-sm);
+  color: var(--text-primary);
+}
+
+.drawer-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.status-pill {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  color: var(--alert);
+  background: var(--alert-bg);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-round);
+}
+
+.drawer-close {
+  background: none;
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-1);
+  color: var(--text-secondary);
+  font-size: var(--type-sm);
+  padding: var(--space-1) var(--space-2);
+  cursor: pointer;
+}
+
+.drawer-close:hover {
+  color: var(--text-primary);
+}
+
+/* all animated properties live behind the reduced-motion gate (DESIGN.md) */
+@media (prefers-reduced-motion: no-preference) {
+  .case-row {
+    transition: background var(--dur-fast) var(--ease);
+  }
+  .drawer-close {
+    transition: color var(--dur-fast) var(--ease);
+  }
+}
+
+.doc-scan-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 8.5 / 5.5;
+  margin-top: var(--space-4);
+  background: var(--redact);
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-1);
+}
+
+.drawer-summary {
+  margin: var(--space-4) 0;
+  font-size: var(--type-md);
+  line-height: var(--leading-body);
+  color: var(--text-primary); /* body text is off-white, never green */
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-2) var(--space-4);
+  margin: 0;
+  padding-top: var(--space-3);
+  border-top: var(--hairline) solid var(--line);
+  font-family: var(--font-mono);
+  font-size: var(--type-sm);
+}
+
+.meta-grid dt {
+  color: var(--text-muted);
+}
+
+.meta-grid dd {
+  margin: 0;
+  color: var(--text-primary);
+  overflow-wrap: anywhere;
+}
+
+.meta-signal {
+  color: var(--signal);
+}
+
+a.meta-signal {
+  text-decoration: none;
+}
+
+a.meta-signal:hover {
+  text-decoration: underline;
+}
+
+.meta-alert {
+  color: var(--alert);
+}
+
+/* ── timeline (footer scrubber) ────────────────────────────────────────── */
+
+.timeline {
+  position: absolute;
+  left: var(--space-4);
+  right: var(--space-4);
+  bottom: var(--space-4);
+  height: var(--timeline-h);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 0 var(--space-4);
+  background: var(--bg-surface);
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-2);
+}
+
+.timeline-empty,
+.timeline-count {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  color: var(--text-muted);
+}
+
+.timeline-year {
+  font-family: var(--font-mono);
+  font-size: var(--type-sm);
+  color: var(--text-secondary);
+}
+
+.timeline-year-active {
+  color: var(--signal); /* key data value — signal, not body text */
+}
+
+.timeline-scrubber {
+  flex: 1;
+  accent-color: var(--signal);
+}
