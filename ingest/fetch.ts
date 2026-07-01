@@ -11,11 +11,16 @@
 //
 // The real bundles are a FLAT folder of files with NO index. war.gov's filterable
 // index (Agency · Incident Date · Incident Location · Type · link) is the authoritative
-// home for those fields, but it ships separately. So the index is OPTIONAL here: when a
-// curator exports it into <dir>/index.json (a JSON array, keyed by `file`), its fields
-// OVERRIDE the filename-derived values; without it, mediaType is derived from the file
-// extension and the index-only fields (agency where absent, incidentDate, location,
-// sourceUrl) stay at honest defaults until a re-run with the index fills them.
+// home for those fields, but it ships separately. So the index is OPTIONAL here, from
+// either source (index.json wins when both exist):
+//
+//   <dir>/index.json     hand-authored JSON array keyed by `file`
+//   data/csv/*.csv       the portal's filterable-index CSV export, one file covering
+//                        every release (parsed/joined by ingest/portal.ts)
+//
+// Index fields OVERRIDE the filename-derived values; without any index, mediaType is
+// derived from the file extension and the index-only fields (agency where absent,
+// incidentDate, location, sourceUrl) stay at honest defaults until a re-run fills them.
 //
 // The index is untrusted external data (we don't author the real one): it is validated
 // at the edge, and every file — index-referenced or discovered on disk — is constrained
@@ -25,10 +30,11 @@
 
 import { createHash } from "node:crypto";
 import { existsSync, lstatSync, readdirSync, readFileSync, realpathSync } from "node:fs";
-import { basename, extname, isAbsolute, join, relative, sep } from "node:path";
+import { extname, isAbsolute, join, relative, sep } from "node:path";
 
 import { readJson } from "./io";
 import { parseLocationTable, type LocationTable } from "./geocode";
+import { joinPortalRows, parsePortalCsv, safeName, type PortalRow } from "./portal";
 
 export type MediaType = "document" | "image" | "video";
 
@@ -58,7 +64,9 @@ export interface FetchedRelease {
   dir: string;
   fromFixture: boolean;
   files: FetchedFile[];
+  indexSource: string | null; // which index joined this run (index.json / a CSV), if any
   orphanIndex: string[]; // index rows whose file isn't on disk (partial download/export)
+  unmappedAgencies: string[]; // portal agency names with no short code yet (curator log)
 }
 
 // Source roots in precedence order: a real extracted bundle wins over the fixture.
@@ -166,22 +174,6 @@ function resolveRelease(releaseId: string): { dir: string; root: string; fromFix
   throw new Error(`ingest/fetch: release ${releaseId} not found (looked in ${checked.join(", ")})`);
 }
 
-// A file value from the index must be a bare filename so it can never escape the release
-// directory (path-traversal guard). Matters most for the real war.gov index we don't author.
-function safeName(where: string, name: string): string {
-  if (
-    name.length === 0 ||
-    name !== basename(name) ||
-    name === "." ||
-    name === ".." ||
-    name.includes("\\") ||
-    name.includes("\0")
-  ) {
-    throw new Error(`ingest/fetch: ${where}.file "${name}" must be a bare filename (no path segments)`);
-  }
-  return name;
-}
-
 const MEDIA_TYPES: readonly MediaType[] = ["document", "image", "video"];
 
 // Load the optional release index into a map keyed by filename. Trust nothing: validate at
@@ -209,7 +201,7 @@ function loadIndex(dir: string): Map<string, RawIndexEntry> {
     };
     const file = optStr("file");
     if (!file) throw new Error(`ingest/fetch: ${where}.file must be a non-empty string`);
-    const name = safeName(where, file);
+    const name = safeName(`ingest/fetch: ${where}`, file);
     if (map.has(name)) throw new Error(`ingest/fetch: ${where}.file "${name}" is listed twice`);
 
     let mediaType: MediaType | undefined;
@@ -251,15 +243,63 @@ function loadIndex(dir: string): Map<string, RawIndexEntry> {
   return map;
 }
 
+const PORTAL_CSV_DIR = join("data", "csv");
+
+// Every portal-export CSV under data/csv/, parsed and concatenated. The export is one
+// CSV across all releases; multiple files just mean multiple exports dropped in. Note:
+// if two exports carry a document row for the same file+release, the alphabetically
+// FIRST csv wins (joinPortalRows keeps the first row seen) — not the newest drop-in.
+function loadPortalRows(): { rows: PortalRow[]; source: string | null } {
+  if (!existsSync(PORTAL_CSV_DIR)) return { rows: [], source: null };
+  const csvs = readdirSync(PORTAL_CSV_DIR)
+    .filter((n) => n.toLowerCase().endsWith(".csv"))
+    .filter((n) => lstatSync(join(PORTAL_CSV_DIR, n)).isFile())
+    .sort();
+  const rows = csvs.flatMap((n) => {
+    const path = join(PORTAL_CSV_DIR, n);
+    return parsePortalCsv(path, readFileSync(path, "utf8"));
+  });
+  return { rows, source: csvs.length > 0 ? csvs.map((n) => join(PORTAL_CSV_DIR, n)).join(", ") : null };
+}
+
+interface ResolvedIndex {
+  index: Map<string, RawIndexEntry>;
+  indexSource: string | null;
+  orphanIndex: string[];
+  unmappedAgencies: string[];
+}
+
+// Precedence: a hand-authored <dir>/index.json wins over the portal CSV export.
+function resolveIndex(dir: string, releaseId: string, names: string[]): ResolvedIndex {
+  if (existsSync(join(dir, INDEX_FILENAME))) {
+    const index = loadIndex(dir);
+    const onDisk = new Set(names);
+    return {
+      index,
+      indexSource: join(dir, INDEX_FILENAME),
+      orphanIndex: [...index.keys()].filter((name) => !onDisk.has(name)).sort(),
+      unmappedAgencies: [],
+    };
+  }
+  const { rows, source } = loadPortalRows();
+  if (source === null) {
+    return { index: new Map(), indexSource: null, orphanIndex: [], unmappedAgencies: [] };
+  }
+  const joined = joinPortalRows(rows, releaseId, names);
+  return {
+    index: joined.index,
+    indexSource: source,
+    orphanIndex: joined.unmatchedDocs,
+    unmappedAgencies: joined.unmappedAgencies,
+  };
+}
+
 export function fetchRelease(releaseId: string): FetchedRelease {
   const { dir, root, fromFixture } = resolveRelease(releaseId);
   const base = filesBase(dir);
   assertContained(base, root); // defense in depth: base must resolve inside the source root
-  const index = loadIndex(dir);
   const names = listSourceFiles(base);
-
-  const onDisk = new Set(names);
-  const orphanIndex = [...index.keys()].filter((name) => !onDisk.has(name)).sort();
+  const { index, indexSource, orphanIndex, unmappedAgencies } = resolveIndex(dir, releaseId, names);
 
   const files = names.map((name): FetchedFile => {
     const relPath = join(base, name);
@@ -275,7 +315,7 @@ export function fetchRelease(releaseId: string): FetchedRelease {
     return { file: name, relPath, sha256, mediaType: entry?.mediaType ?? mediaTypeForExt(name), entry };
   });
 
-  return { releaseId, dir, fromFixture, files, orphanIndex };
+  return { releaseId, dir, fromFixture, files, indexSource, orphanIndex, unmappedAgencies };
 }
 
 // The hand-curated geocode table is input, so its read lives here too (not in run.ts).

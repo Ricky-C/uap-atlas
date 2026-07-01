@@ -16,7 +16,11 @@ export interface LocationEntry {
   geoPrecision: GeoPrecision;
 }
 
-export type LocationTable = Record<string, LocationEntry>;
+// A null entry means a curator looked at the location and ruled it unplottable on an
+// Earth globe ("Moon", "Low Earth Orbit", "Cislunar Space"). The record stays honest
+// (lat/lon null, precision unknown, side-index only) but stops appearing in the
+// "add these to the table" miss list on every run.
+export type LocationTable = Record<string, LocationEntry | null>;
 
 export interface GeocodeResult {
   records: UAPRecord[];
@@ -45,6 +49,10 @@ export function parseLocationTable(source: string, value: unknown): LocationTabl
       throw new Error(
         `ingest/geocode: ${source}["${key}"] looks like a redaction marker — do not geocode withheld locations`,
       );
+    }
+    if (raw === null) {
+      table[key] = null; // curated as unplottable (off-Earth etc.) — see LocationTable
+      continue;
     }
     const e = raw as Record<string, unknown>;
     if (typeof e?.lat !== "number" || typeof e?.lon !== "number") {
@@ -84,8 +92,12 @@ export function geocodeRecords(records: UAPRecord[], table: LocationTable): Geoc
       return unresolved(record);
     }
     const hit = table[record.locationRaw];
-    if (!hit) {
+    if (hit === undefined) {
       misses.add(record.locationRaw);
+      return unresolved(record);
+    }
+    if (hit === null) {
+      // Curated as unplottable (e.g. off-Earth): honestly unresolved, not a miss.
       return unresolved(record);
     }
     return { ...record, lat: hit.lat, lon: hit.lon, geoPrecision: hit.geoPrecision };

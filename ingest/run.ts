@@ -2,10 +2,10 @@
 // (newest local release) or `pnpm ingest:release 01` (a specific one). This module
 // does no disk IO of its own — reads live in fetch.ts, writes in emit.ts.
 //
-// The Claude enrichment pass (summary, objectClass, redactionPct) is Phase 2 and is
-// deliberately skipped here — Phase 1 records carry empty summaries and unknown object
-// classes, which is what the drawer expects at this stage. Ingest fails loud: any bad
-// input stops the run and names the file.
+// The Claude enrichment pass (summary, objectClass, redactionPct) is a separate step
+// (`pnpm enrich`): re-ingesting resets those fields and enrich restores them from the
+// committed cache at zero cost (see DATA.md). Ingest fails loud: any bad input stops
+// the run and names the file.
 
 import { join } from "node:path";
 
@@ -23,6 +23,20 @@ export function run(releaseArg?: string): void {
   const fetched = fetchRelease(releaseId);
   const source = fetched.fromFixture ? `${fetched.dir} (synthetic fixture)` : fetched.dir;
   console.log(`ingest: release ${releaseId} from ${source} — ${fetched.files.length} files`);
+  console.log(
+    fetched.indexSource
+      ? `ingest: index joined from ${fetched.indexSource}`
+      : "ingest: no index found (index.json or data/csv export) — date/location/sourceUrl stay at defaults",
+  );
+
+  if (fetched.unmappedAgencies.length > 0) {
+    console.warn(
+      `\n  ${fetched.unmappedAgencies.length} portal agency name(s) have no short code yet ` +
+        `(add to AGENCY_CODES in ingest/portal.ts) — filename-derived agency kept:`,
+    );
+    for (const a of fetched.unmappedAgencies) console.warn(`    · ${a}`);
+    console.warn("");
+  }
 
   if (fetched.orphanIndex.length > 0) {
     console.warn(
@@ -60,7 +74,10 @@ export function run(releaseArg?: string): void {
       ? `ingest: wrote ${RECORDS_PATH}`
       : `ingest: ${RECORDS_PATH} already up to date (no write)`,
   );
-  console.log("ingest: enrichment (summary, object class, redaction %) deferred to Phase 2");
+  console.log(
+    "ingest: run `pnpm enrich` to restore/fill summary, object class, redaction % " +
+      "(cached documents re-bill nothing)",
+  );
 }
 
 // argv: [node, run.ts, <releaseId?>]. A release id is two digits, e.g. "01".

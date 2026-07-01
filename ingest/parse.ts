@@ -56,17 +56,85 @@ function deriveDocType(file: string): string {
   return docTypeForSeries(SERIES.exec(file)?.[2]);
 }
 
-// ISO 8601 date only. Anything fuzzier (a bare year, a range) becomes null rather than
-// fabricating precision the source doesn't have. See DATA.md.
-const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+// Incident dates arrive as free text from the portal index ("July, 2008", "12/30/47",
+// "June 3-7, 1965", "1952-1953", "1970s", "N/A"). We normalize to ISO 8601 at the
+// precision the source actually has — "2008-07", "1947-12-30", "1965-06-03", "1952",
+// "1970" — rather than either fabricating a full date or discarding the year to null.
+// Ranges (and decades, which are ranges) collapse to their start. Unparseable text
+// becomes null. See DATA.md "Incident dates".
 
-function normalizeDate(raw: string | null | undefined): string | null {
-  if (!raw || !ISO_DATE.test(raw)) return null;
-  const t = Date.parse(`${raw}T00:00:00Z`);
+const MONTHS: Record<string, number> = {
+  january: 1, february: 2, march: 3, april: 4, may: 5, june: 6,
+  july: 7, august: 8, september: 9, october: 10, november: 11, december: 12,
+};
+
+function monthNumber(name: string): number | null {
+  const lower = name.toLowerCase();
+  const hit = Object.keys(MONTHS).find((m) => m === lower || (lower.length >= 3 && m.startsWith(lower)));
+  return hit ? MONTHS[hit] : null;
+}
+
+// The portal's older records use 2-digit years ("12/30/47"). The corpus spans the
+// 1940s to the present; nothing predates 1930 or postdates the current release era,
+// so 00-29 -> 2000s, 30-99 -> 1900s.
+function fullYear(y: string): number {
+  const n = Number(y);
+  return y.length === 4 ? n : n <= 29 ? 2000 + n : 1900 + n;
+}
+
+const pad = (n: number): string => String(n).padStart(2, "0");
+
+// Reject impossible calendar dates that Date silently rolls over (2023-06-31 -> Jul 1):
+// if the parsed instant doesn't render back to the same YYYY-MM-DD, it wasn't a real date.
+function validDay(iso: string): string | null {
+  const t = Date.parse(`${iso}T00:00:00Z`);
   if (Number.isNaN(t)) return null;
-  // Reject impossible calendar dates that Date silently rolls over (2023-06-31 -> Jul 1):
-  // if the parsed instant doesn't render back to the same YYYY-MM-DD, it wasn't a real date.
-  return new Date(t).toISOString().slice(0, 10) === raw ? raw : null;
+  return new Date(t).toISOString().slice(0, 10) === iso ? iso : null;
+}
+
+export function normalizeDate(raw: string | null | undefined): string | null {
+  const s = (raw ?? "").trim();
+  if (s === "" || /^n\/?a$/i.test(s)) return null;
+
+  // Already ISO (hand-authored index.json rows): full date, year-month, or year.
+  let m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s);
+  if (m) return validDay(s);
+  m = /^(\d{4})-(\d{2})$/.exec(s);
+  if (m && Number(m[2]) >= 1 && Number(m[2]) <= 12) return s;
+
+  // M/D/YY or M/D/YYYY, optionally the start of a range ("4/10/2025-4/11/2025").
+  m = /^(\d{1,2})\/(\d{1,2})\/(\d{2}|\d{4})(?:\s*-\s*\d{1,2}\/\d{1,2}\/(?:\d{2}|\d{4}))?$/.exec(s);
+  if (m) return validDay(`${fullYear(m[3])}-${pad(Number(m[1]))}-${pad(Number(m[2]))}`);
+
+  // "June 3, 1965" / "June 3-7, 1965" / "December 19-21, 1965" — day-range start.
+  m = /^([A-Za-z]+)\.?\s+(\d{1,2})(?:\s*-\s*\d{1,2})?,\s*(\d{4})$/.exec(s);
+  if (m) {
+    const month = monthNumber(m[1]);
+    if (month) return validDay(`${m[3]}-${pad(month)}-${pad(Number(m[2]))}`);
+  }
+
+  // "August 2 - September 2, 1965" — cross-month range, start month/day + shared year.
+  m = /^([A-Za-z]+)\.?\s+(\d{1,2})\s*-\s*[A-Za-z]+\.?\s+\d{1,2},\s*(\d{4})$/.exec(s);
+  if (m) {
+    const month = monthNumber(m[1]);
+    if (month) return validDay(`${m[3]}-${pad(month)}-${pad(Number(m[2]))}`);
+  }
+
+  // "July, 2008" / "August 1952" / "August 1952-1967" — year-month (range start).
+  m = /^([A-Za-z]+)\.?,?\s+(\d{4})(?:\s*-\s*\d{4})?$/.exec(s);
+  if (m) {
+    const month = monthNumber(m[1]);
+    if (month) return `${m[2]}-${pad(month)}`;
+    // Not a month ("Late 2025", "Early 1967") — the year is all the source gives.
+    return m[2];
+  }
+
+  // "2022" / "1952-1953" (range start) / "1970s" (decade start). Fully anchored so a
+  // mangled ISO-ish string ("2022-05-20Txx") degrades to null, not a silent year.
+  m = /^(\d{4})(?:s|\s*-\s*\d{4})?$/.exec(s);
+  if (m) return m[1];
+
+  return null; // unparseable — honest null beats a guess
 }
 
 function mediaFor(file: FetchedFile): UAPRecord["media"] {

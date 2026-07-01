@@ -74,7 +74,10 @@ That alone produces records: `mediaType` is derived from the file extension, and
 
 ### The release index (optional, authoritative for date/location/URL)
 
-Incident date, incident location, and the source URL live in war.gov's separate filterable index (Agency · Release · Incident Date · Incident Location · Type · link), which ships separately from the file bundle. Export it and drop it at **`data/raw/release_NN/index.json`** as a JSON array keyed by `file`; a re-run joins it in and its fields **override** the derived values. Only `file` is required — every other field is optional and fills a gap when present:
+Incident date, incident location, and the source URL live in war.gov's separate filterable index, which ships separately from the file bundle. Ingest joins it from either of two sources; a hand-authored `index.json` wins when both exist:
+
+1. **`data/csv/*.csv` — the portal's own CSV export (the normal path).** Export war.gov's filterable index as CSV and drop it in `data/csv/` (committed); one export covers every release. `ingest/portal.ts` parses it (columns used: Type, Agency, Incident Date, Incident Location, PDF | Image Link), derives the release and filename from each row's link, and joins case-insensitively to the files on disk — the export's URL casing drifts from the bundle's, so the on-disk name is canonical. Video/audio rows are skipped (excluded from the corpus by project decision); when a document row and its paired video rows share a link, the document row wins. Portal agency names map to the short codes the schema uses (`Department of War` → `DOW`, `Department of State` → `DOS`, …) via `AGENCY_CODES` in `ingest/portal.ts`; an unmapped name is logged for a curator, never guessed.
+1. **`data/raw/release_NN/index.json` — hand-authored (the override path).** A JSON array keyed by `file`; its fields **override** the derived values. Only `file` is required — every other field is optional and fills a gap when present:
 
 ```jsonc
 [
@@ -84,14 +87,20 @@ Incident date, incident location, and the source URL live in war.gov's separate 
     "mediaType": "document",         // "document" | "image" | "video"; else derived from extension
     "docType": "report",             // overrides the filename-derived docType
     "docId": "DOW-UAP-D001",         // the portal's document id (not persisted yet — no schema field)
-    "incidentDate": "2004-11-14",    // ISO 8601 full date, or null; a bare year/range must be null
+    "incidentDate": "2004-11-14",    // free text OK — normalized per "Incident dates" below
     "incidentLocation": "off San Diego, California", // free text; drives geocoding via data/locations.json
     "sourceUrl": "https://www.war.gov/..."           // link back to the official record
   }
 ]
 ```
 
-Source resolution is newest-first and real-wins: `data/raw/release_NN/` takes precedence over `releases/NN/` (legacy) over the fixture. The index is untrusted external data — it's validated at the edge, and both index-referenced and on-disk files are constrained to bare, non-symlink regular files inside the release directory (a path-traversal guard, since we don't author the real war.gov index). Index rows whose file isn't on disk are logged and skipped (partial download or export mismatch), not fatal. Ingest is idempotent: record ids are content-addressed (a hash of the source file), so re-running never rewrites unchanged records — and, once enrichment lands, never re-bills already-processed files.
+Source resolution is newest-first and real-wins: `data/raw/release_NN/` takes precedence over `releases/NN/` (legacy) over the fixture. The index — CSV or JSON — is untrusted external data: it's validated at the edge (https-only source links, bare filenames), and both index-referenced and on-disk files are constrained to bare, non-symlink regular files inside the release directory (a path-traversal guard, since we don't author the real war.gov index). Index rows whose file isn't on disk are logged and skipped (partial download or export mismatch), not fatal. Ingest is idempotent: record ids are content-addressed (a hash of the source file), so re-running never rewrites unchanged records — and enrichment never re-bills already-processed files.
+
+**Re-ingesting resets the enriched fields** (`summary`, `objectClass`, `redactionPct`) to their defaults in `records.json` — that's by design (incoming wins, one merge rule). Run `pnpm enrich` afterwards: it restores every already-processed document from the committed cache at zero API cost, and the ingest→enrich pair is byte-identical on a clean re-run.
+
+### Incident dates (normalization policy)
+
+The portal's Incident Date column is free text: `12/30/47`, `July, 2008`, `2022`, `June 3-7, 1965`, `1952-1953`, `1970s`, `N/A`. We normalize (in `ingest/parse.ts`) to **ISO 8601 at the precision the source actually has** — `1947-12-30`, `2008-07`, `2022` — rather than fabricating a full date or discarding a real year to null. Rules: ranges and decades collapse to their **start** (`1952-1953` → `1952`, `June 3-7, 1965` → `1965-06-03`, `1970s` → `1970`); qualifiers keep only the year (`Late 2025` → `2025`); 2-digit years pivot at 30 (`47` → 1947, `26` → 2026 — the corpus spans the 1940s to the present, so nothing predates 1930); `N/A`/unparseable → `null`. The UI consumes at year granularity, so reduced precision renders honestly.
 
 If a release directory exists but is empty (e.g. a bare `.zip` dropped in without extracting), ingest fails loud: *"`data/raw/release_01` exists but has no ingestable files. Extract the war.gov bundle so the release directory contains the documents directly."*
 
@@ -110,6 +119,8 @@ Note: the Claude enrichment pass (`summary`, `objectClass`, `redactionPct`) is d
 | `unknown` | not resolvable | not plotted; listed only |
 
 Geocoding is a hand-curated `data/locations.json` lookup, not a geocoding service. The corpus has only a few dozen distinct locations, and a human-curated table is both cheaper and more accurate than an automated geocoder guessing at "Northeastern US." When ingest hits a `locationRaw` not in the table, it flags it for a human to add — it does not guess.
+
+Table conventions: keys are the portal's location strings **verbatim** (including its typos — `"Westen United States"` is a faithful alias next to the correct spelling, because `locationRaw` stays faithful to source). A key mapped to **`null`** means a curator ruled it unplottable on an Earth globe (`"Moon"`, `"Low Earth Orbit"`, `"Cislunar Space"`): the record stays honestly unresolved and side-index-only, without reappearing in the miss list every run. One curation judgment worth recording: `"Georgia"` is the country (the corpus row is a Tbilisi embassy cable) — if a future tranche means the U.S. state, that row's `locationRaw` will need a distinguishing key.
 
 ## Hard rules
 
