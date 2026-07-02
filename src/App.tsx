@@ -20,11 +20,19 @@ export function App() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [maxYear, setMaxYear] = useState<number | null>(null);
 
-  const visible = useMemo(() => upToYear(RECORDS, maxYear), [maxYear]);
-  const basemap = useMemo(() => upToYear(BLUEBOOK, maxYear).filter(isPlottable), [maxYear]);
+  // The Globe receives the FULL plottable sets plus the cutoff — points past the
+  // cutoff tween to radius 0 there rather than unmounting, so scrubbing animates.
+  const plotted = useMemo(() => RECORDS.filter(isPlottable), []);
+  const basemap = useMemo(() => BLUEBOOK.filter(isPlottable), []);
 
-  const plotted = useMemo(() => visible.filter(isPlottable), [visible]);
-  const unplotted = useMemo(() => visible.filter((r) => !isPlottable(r)), [visible]);
+  // The case index is a list, not a canvas — it filters the ordinary way.
+  const unplotted = useMemo(
+    () => upToYear(RECORDS, maxYear).filter((r) => !isPlottable(r)),
+    [maxYear],
+  );
+  const plottedShown = useMemo(() => upToYear(plotted, maxYear).length, [plotted, maxYear]);
+  // Deliberately not cleared when the timeline scrubs the selected case out of
+  // view: the open case file stays readable; only its globe point recedes.
   const selected = selectedId ? (RECORDS.find((r) => r.id === selectedId) ?? null) : null;
   const timelineRecords = useMemo(() => [...RECORDS, ...BLUEBOOK], []);
 
@@ -33,12 +41,13 @@ export function App() {
       <Globe
         records={plotted}
         basemap={basemap}
+        maxYear={maxYear}
         selectedId={selectedId}
         onSelect={setSelectedId}
       />
       <CaseIndex
         records={unplotted}
-        plottedCount={plotted.length}
+        plottedCount={plottedShown}
         selectedId={selectedId}
         onSelect={setSelectedId}
       />

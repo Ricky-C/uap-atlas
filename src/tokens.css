@@ -88,6 +88,9 @@
      the hero layer (crisp point / soft blob / faint area), uniformly de-emphasized —
      radius = hero tier radius x the emphasis factor, color per tier at low alpha */
   --globe-emphasis-basemap: 0.55;
+  --globe-points-transition-ms: 600; /* scrub tween: points grow/shrink, no hard cuts */
+  --timeline-play-step-ms: 180; /* year-sweep cadence for the timeline play control */
+  --timeline-play-step-ms-reduced: 700; /* calmer sweep when reduced motion disables the tween */
   --globe-color-basemap: rgba(47, 157, 99, 0.35); /* point + city — crisp, dim */
   --globe-color-basemap-region: rgba(47, 157, 99, 0.18);
   --globe-color-basemap-theater: rgba(47, 157, 99, 0.09);

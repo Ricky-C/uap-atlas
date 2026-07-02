@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import GlobeGL, { type GlobeMethods } from "react-globe.gl";
 import type { UAPRecord } from "../schema";
-import { isBasemap } from "./data";
+import { isBasemap, incidentYear } from "./data";
 import { token, tokenNumber, prefersReducedMotion } from "./theme";
 
 // The observatory instrument: NASA Black Marble night lights, a soft signal-dim
@@ -10,8 +10,9 @@ import { token, tokenNumber, prefersReducedMotion } from "./theme";
 // them into the CaseIndex instead of faking certainty here.
 
 interface GlobeProps {
-  records: UAPRecord[]; // plottable hero records (PURSUE)
-  basemap: UAPRecord[]; // plottable Blue Book historical layer — low emphasis, not clickable
+  records: UAPRecord[]; // ALL plottable hero records (PURSUE) — year filter applied here
+  basemap: UAPRecord[]; // ALL plottable Blue Book records — low emphasis, not clickable
+  maxYear: number | null; // timeline cutoff; null = everything
   selectedId: string | null;
   onSelect: (id: string) => void;
 }
@@ -26,7 +27,7 @@ function useWindowSize() {
   return size;
 }
 
-export function Globe({ records, basemap, selectedId, onSelect }: GlobeProps) {
+export function Globe({ records, basemap, maxYear, selectedId, onSelect }: GlobeProps) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const { w, h } = useWindowSize();
   const reducedMotion = useMemo(() => prefersReducedMotion(), []);
@@ -49,6 +50,7 @@ export function Globe({ records, basemap, selectedId, onSelect }: GlobeProps) {
       ringMaxRadius: tokenNumber("--globe-ring-max-radius", 5),
       ringPropagationSpeed: tokenNumber("--globe-ring-propagation-speed", 1),
       emphasisBasemap: tokenNumber("--globe-emphasis-basemap", 0.55),
+      pointsTransitionMs: tokenNumber("--globe-points-transition-ms", 600),
       colorBasemap: token("--globe-color-basemap"),
       colorBasemapRegion: token("--globe-color-basemap-region"),
       colorBasemapTheater: token("--globe-color-basemap-theater"),
@@ -62,6 +64,15 @@ export function Globe({ records, basemap, selectedId, onSelect }: GlobeProps) {
     controls.autoRotate = !reducedMotion;
     controls.autoRotateSpeed = theme.rotateSpeed;
   }, [reducedMotion, theme.rotateSpeed]);
+
+  // Timeline visibility: dated records past the cutoff shrink to radius 0 (the
+  // points stay mounted so the scrub tweens instead of hard-cutting); undated
+  // records are always visible — hiding them would imply we know when they were.
+  const visibleAt = (r: UAPRecord): boolean => {
+    if (maxYear === null) return true;
+    const y = incidentYear(r);
+    return y === null || y <= maxYear;
+  };
 
   // The basemap keeps the same precision-tier shape hierarchy as the hero layer
   // (crisp point / soft blob / faint area — the honesty rule applies to both),
@@ -89,6 +100,7 @@ export function Globe({ records, basemap, selectedId, onSelect }: GlobeProps) {
   };
 
   const pointRadius = (r: UAPRecord): number => {
+    if (!visibleAt(r)) return 0;
     const tier =
       r.geoPrecision === "region"
         ? theme.radiusRegion
@@ -98,9 +110,10 @@ export function Globe({ records, basemap, selectedId, onSelect }: GlobeProps) {
     return isBasemap(r) ? tier * theme.emphasisBasemap : tier;
   };
 
-  // A single "ping" ripple on the selected case (skipped under reduced motion).
+  // A single "ping" ripple on the selected case (skipped under reduced motion,
+  // and when the timeline has scrubbed the selected case out of view).
   const selected = records.find((r) => r.id === selectedId);
-  const ringsData = !reducedMotion && selected ? [selected] : [];
+  const ringsData = !reducedMotion && selected && visibleAt(selected) ? [selected] : [];
 
   // Basemap first so hero points draw over it at equal altitude.
   const points = useMemo(() => [...basemap, ...records], [basemap, records]);
@@ -118,12 +131,17 @@ export function Globe({ records, basemap, selectedId, onSelect }: GlobeProps) {
         pointsData={points}
         pointLat={(d) => (d as UAPRecord).lat ?? 0}
         pointLng={(d) => (d as UAPRecord).lon ?? 0}
+        // These accessor closures must stay unmemoized: react-globe.gl only
+        // re-evaluates radius/color (and tweens the change) when the accessor
+        // prop's identity changes — a useCallback here would freeze the scrub.
         pointColor={(d) => pointColor(d as UAPRecord)}
         pointRadius={(d) => pointRadius(d as UAPRecord)}
         pointAltitude={theme.pointAlt}
+        pointsTransitionDuration={reducedMotion ? 0 : theme.pointsTransitionMs}
         onPointClick={(d) => {
           const r = d as UAPRecord;
-          if (!isBasemap(r)) onSelect(r.id); // the basemap is texture, not UI
+          // The basemap is texture, not UI; a scrubbed-out (radius 0) point isn't a target.
+          if (!isBasemap(r) && visibleAt(r)) onSelect(r.id);
         }}
         ringsData={ringsData}
         ringLat={(d) => (d as UAPRecord).lat ?? 0}

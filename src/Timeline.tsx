@@ -1,11 +1,12 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import type { UAPRecord } from "../schema";
 import { incidentYear } from "./data";
+import { tokenNumber, prefersReducedMotion } from "./theme";
 
-// A basic scrubber over incidentDate: show cases up to the chosen year.
+// A scrubber over incidentDate: show cases up to the chosen year, with a play
+// control that sweeps the full range (the globe tweens points in as it runs).
 // Undated cases are never hidden by the scrubber — hiding them would imply the
-// scrubber knows when they happened. With the current corpus (all dates null,
-// pending the portal-index join) the scrubber reports that state honestly.
+// scrubber knows when they happened.
 
 interface TimelineProps {
   records: UAPRecord[];
@@ -14,6 +15,14 @@ interface TimelineProps {
 }
 
 export function Timeline({ records, maxYear, onChange }: TimelineProps) {
+  const [playing, setPlaying] = useState(false);
+  // The interval callback reads the latest cutoff through a ref so the sweep
+  // advances from wherever the user last scrubbed, without re-arming the timer.
+  const yearRef = useRef(maxYear);
+  useEffect(() => {
+    yearRef.current = maxYear;
+  }, [maxYear]);
+
   const { years, undatedCount } = useMemo(() => {
     const ys = records
       .map(incidentYear)
@@ -21,6 +30,32 @@ export function Timeline({ records, maxYear, onChange }: TimelineProps) {
       .sort((a, b) => a - b);
     return { years: ys, undatedCount: records.length - ys.length };
   }, [records]);
+
+  const minYear = years[0];
+  const lastYear = years[years.length - 1];
+
+  useEffect(() => {
+    if (!playing || minYear === undefined) return;
+    // Under reduced motion the globe tween is off, so a fast sweep would strobe
+    // points in and out — slow the cadence to keep the sweep calm.
+    const step = prefersReducedMotion()
+      ? tokenNumber("--timeline-play-step-ms-reduced", 700)
+      : tokenNumber("--timeline-play-step-ms", 180);
+    const id = window.setInterval(() => {
+      // Advance the ref here too — waiting for the prop round-trip alone would
+      // stall a year whenever a render outlasts the step interval.
+      const next = (yearRef.current ?? minYear - 1) + 1;
+      if (next >= lastYear) {
+        yearRef.current = null;
+        onChange(null); // sweep complete — back to "everything"
+        setPlaying(false);
+      } else {
+        yearRef.current = next;
+        onChange(next);
+      }
+    }, step);
+    return () => window.clearInterval(id);
+  }, [playing, minYear, lastYear, onChange]);
 
   if (years.length === 0) {
     return (
@@ -34,24 +69,34 @@ export function Timeline({ records, maxYear, onChange }: TimelineProps) {
     );
   }
 
-  const min = years[0];
-  const max = years[years.length - 1];
-  const value = maxYear ?? max;
+  const value = maxYear ?? lastYear;
   const shown = years.filter((y) => y <= value).length;
 
   return (
     <footer className="timeline">
       <span className="mono-label">timeline</span>
-      <span className="timeline-year">{min}</span>
+      <button
+        type="button"
+        className="timeline-play"
+        onClick={() => {
+          if (!playing && maxYear === null) onChange(minYear); // sweep from the start
+          setPlaying(!playing);
+        }}
+        aria-label={playing ? "Pause the year sweep" : "Play the year sweep"}
+      >
+        {playing ? "pause" : "play"}
+      </button>
+      <span className="timeline-year">{minYear}</span>
       <input
         className="timeline-scrubber"
         type="range"
-        min={min}
-        max={max}
+        min={minYear}
+        max={lastYear}
         value={value}
         onChange={(e) => {
+          setPlaying(false); // a manual scrub takes the wheel
           const y = Number(e.target.value);
-          onChange(y >= max ? null : y);
+          onChange(y >= lastYear ? null : y);
         }}
         aria-label="Show cases up to year"
       />

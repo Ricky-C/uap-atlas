@@ -269,6 +269,19 @@ a.meta-signal:hover {
   border-radius: var(--radius-2);
 }
 
+.timeline-play {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  color: var(--signal); /* interactive control — signal is its job */
+  background: var(--signal-bg);
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-1);
+  padding: var(--space-1) var(--space-3);
+  cursor: pointer;
+}
+
 .timeline-empty,
 .timeline-count {
   font-family: var(--font-mono);
