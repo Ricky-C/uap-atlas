@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import type { UAPRecord } from "../schema";
+import { PanelSwitch } from "./PanelSwitch";
 
 // Redaction analysis (Phase 4): who redacts hardest, and how redaction shifts
 // across tranches. One measure (mean % of page area redacted) across categories,
@@ -73,10 +74,8 @@ export function Redaction({ records, onShowCases }: RedactionProps) {
   return (
     <section className="case-index" aria-label="Redaction analysis">
       <header className="case-index-header">
-        <span className="mono-label">redaction analysis</span>
-        <button type="button" className="panel-toggle" onClick={onShowCases}>
-          cases
-        </button>
+        <span className="mono-label">redaction</span>
+        <PanelSwitch active="analysis" onSwitch={(v) => v === "cases" && onShowCases()} />
       </header>
       <div className="redaction-body">
         <div className="redaction-hero">
@@ -104,8 +103,8 @@ export function Redaction({ records, onShowCases }: RedactionProps) {
         </ul>
 
         <p className="redaction-note">
-          Model-estimated share of page area under redaction bars, first pages of each
-          document. Bars share a fixed 0–100% scale.
+          Model-estimated share of page area under redaction bars, first pages of each document.
+          Bars share a fixed 0–100% scale.
           {unestimated > 0 ? ` ${unestimated} records have no estimate and are excluded.` : ""}
         </p>
       </div>

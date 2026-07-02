@@ -13,13 +13,7 @@ import {
   type UAPRecord,
 } from "../schema";
 
-const GEO_PRECISIONS: readonly GeoPrecision[] = [
-  "point",
-  "city",
-  "region",
-  "theater",
-  "unknown",
-];
+const GEO_PRECISIONS: readonly GeoPrecision[] = ["point", "city", "region", "theater", "unknown"];
 
 function asString(v: unknown, fallback = ""): string {
   return typeof v === "string" ? v : fallback;
@@ -86,6 +80,12 @@ export const BLUEBOOK: UAPRecord[] = (rawBluebook as unknown[])
 export function isBasemap(r: UAPRecord): boolean {
   return r.release === "bluebook";
 }
+
+// Header counter: how many PURSUE releases the corpus spans (the Blue Book
+// basemap is a historical layer, not a release, so it doesn't count). A record
+// with a missing release field degrades to "" — filtered so it can't mint a
+// phantom release in the header.
+export const RELEASE_COUNT = new Set(RECORDS.map((r) => r.release).filter(Boolean)).size;
 
 // Skeptic layer (data/skeptic.json, built by `pnpm skeptic`). Parsed at the edge
 // like everything external. Three states per record, and the distinction is the

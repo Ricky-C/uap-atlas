@@ -34,6 +34,9 @@ export function App() {
   const [maxYear, setMaxYear] = useState<number | null>(null);
   const [panel, setPanel] = useState<"cases" | "analysis">("cases");
   const [aboutOpen, setAboutOpen] = useState(false);
+  // Mobile only: the bottom sheet's tap-to-raise state (no drag physics).
+  // Desktop ignores it — the sheet wrapper is display:contents there.
+  const [sheetExpanded, setSheetExpanded] = useState(false);
   // Rotation is user intent (T6): on by default, off under reduced motion —
   // but the explicit toggle can still opt in.
   const [rotationOn, setRotationOn] = useState(() => !prefersReducedMotion());
@@ -44,9 +47,7 @@ export function App() {
   // The globe's onPointHover floods identical/null values while the pointer
   // moves; this guard keeps them from becoming re-renders (T4).
   const setHoverGuarded = useCallback((next: HoverState | null) => {
-    setHover((prev) =>
-      prev?.id === next?.id && prev?.source === next?.source ? prev : next,
-    );
+    setHover((prev) => (prev?.id === next?.id && prev?.source === next?.source ? prev : next));
   }, []);
 
   // The Globe receives the FULL plottable sets plus the cutoff — points past the
@@ -67,12 +68,16 @@ export function App() {
   // Blue Book basemap dots are selectable too (they open a minimal catalog
   // card), so the lookup spans both corpora.
   const selected = selectedId
-    ? (RECORDS.find((r) => r.id === selectedId) ?? BLUEBOOK.find((r) => r.id === selectedId) ?? null)
+    ? (RECORDS.find((r) => r.id === selectedId) ??
+      BLUEBOOK.find((r) => r.id === selectedId) ??
+      null)
     : null;
   const timelineRecords = useMemo(() => [...RECORDS, ...BLUEBOOK], []);
 
   return (
-    <main className="app">
+    // data-selected lets the mobile CSS swap the sheet's contents (index ↔
+    // case file) without a resize listener; desktop selectors ignore it.
+    <main className="app" data-selected={selected !== null || undefined}>
       <Suspense fallback={null}>
         <Globe
           records={plotted}
@@ -87,24 +92,37 @@ export function App() {
         />
       </Suspense>
       <Header onOpenAbout={() => setAboutOpen(true)} />
-      {panel === "cases" ? (
-        <CaseIndex
-          records={indexRecords}
-          plottedCount={plottedShown}
-          lunarCount={lunarShown}
-          unplottedCount={unplottedShown}
-          selectedId={selectedId}
-          hover={hover}
-          onSelect={setSelectedId}
-          onHover={setHoverGuarded}
-          onShowAnalysis={() => setPanel("analysis")}
-        />
-      ) : (
-        <Redaction records={RECORDS} onShowCases={() => setPanel("cases")} />
-      )}
-      <div className="right-col">
-        <Drawer record={selected} onClose={() => setSelectedId(null)} />
-        <Legend collapsed={selected !== null} />
+      {/* The sheet is a layout ghost on desktop (display:contents) and the
+          glass bottom sheet on mobile — same children either way. */}
+      <div className={sheetExpanded ? "sheet sheet-expanded" : "sheet"}>
+        <button
+          type="button"
+          className="sheet-handle"
+          onClick={() => setSheetExpanded((v) => !v)}
+          aria-label={sheetExpanded ? "Collapse the case sheet" : "Expand the case sheet"}
+          aria-expanded={sheetExpanded}
+        >
+          <span className="sheet-handle-bar" aria-hidden="true" />
+        </button>
+        {panel === "cases" ? (
+          <CaseIndex
+            records={indexRecords}
+            plottedCount={plottedShown}
+            lunarCount={lunarShown}
+            unplottedCount={unplottedShown}
+            selectedId={selectedId}
+            hover={hover}
+            onSelect={setSelectedId}
+            onHover={setHoverGuarded}
+            onShowAnalysis={() => setPanel("analysis")}
+          />
+        ) : (
+          <Redaction records={RECORDS} onShowCases={() => setPanel("cases")} />
+        )}
+        <div className="right-col">
+          <Drawer record={selected} onClose={() => setSelectedId(null)} />
+          <Legend collapsed={selected !== null} />
+        </div>
       </div>
       <RotationControl on={rotationOn} onToggle={() => setRotationOn((v) => !v)} />
       <Timeline records={timelineRecords} maxYear={maxYear} onChange={setMaxYear} />

@@ -72,7 +72,12 @@ export function About({ onClose }: AboutProps) {
       >
         <header className="about-header">
           <span className="mono-label">about / methodology</span>
-          <button type="button" className="drawer-close" onClick={onClose} aria-label="Close about panel">
+          <button
+            type="button"
+            className="drawer-close"
+            onClick={onClose}
+            aria-label="Close about panel"
+          >
             ✕
           </button>
         </header>
@@ -100,25 +105,25 @@ export function About({ onClose }: AboutProps) {
 
           <h2 className="about-section">independence</h2>
           <p>
-            This is an independent public-records explorer. It is not affiliated with, endorsed
-            by, or connected to any government agency.
+            This is an independent public-records explorer. It is not affiliated with, endorsed by,
+            or connected to any government agency.
           </p>
 
           <h2 className="about-section">neutral framing</h2>
           <p>
             The records are presented, not interpreted. Summaries are factual digests of what each
             document says; nothing here claims the phenomena are extraterrestrial or asserts an
-            explanation. Uncertainty is rendered honestly — a case whose location is only known to
-            a region is drawn as a soft regional mark, never a crisp pinpoint.
+            explanation. Uncertainty is rendered honestly — a case whose location is only known to a
+            region is drawn as a soft regional mark, never a crisp pinpoint.
           </p>
 
           <h2 className="about-section">how enrichment &amp; geocoding work</h2>
           <p>
-            A build-time pass reads each released document and extracts a neutral summary, an
-            object classification, and an estimate of how much of the page is redacted. Locations
-            come from a hand-curated lookup table keyed to the text of the release, each tagged
-            with a precision tier (point, city, region, theater, or unknown). Redactions are left
-            alone: identities and facility locations the government withheld are never recovered,
+            A build-time pass reads each released document and extracts a neutral summary, an object
+            classification, and an estimate of how much of the page is redacted. Locations come from
+            a hand-curated lookup table keyed to the text of the release, each tagged with a
+            precision tier (point, city, region, theater, or unknown). Redactions are left alone:
+            identities and facility locations the government withheld are never recovered,
             cross-referenced, or inferred.
           </p>
         </div>

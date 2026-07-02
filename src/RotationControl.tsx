@@ -18,7 +18,7 @@ export function RotationControl({ on, onToggle }: RotationControlProps) {
       aria-pressed={on}
       aria-label="Toggle globe auto-rotation"
     >
-      <span aria-hidden="true">{on ? "↻" : "⊘"}</span> rotation {on ? "on" : "off"}
+      <span aria-hidden="true">◎</span> auto-rotate {on ? "on" : "off"}
     </button>
   );
 }

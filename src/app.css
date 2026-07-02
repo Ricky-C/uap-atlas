@@ -61,7 +61,8 @@
   font-family: var(--font-mono);
   font-size: var(--type-xs);
   font-weight: var(--weight-medium);
-  letter-spacing: var(--tracking-wide);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase; /* instrument labels read as engravings */
   color: var(--text-secondary);
 }
 
@@ -69,20 +70,20 @@
 
 .app-header {
   position: absolute;
-  top: var(--space-4);
-  left: var(--space-4);
-  right: var(--space-4);
+  top: var(--space-5);
+  left: var(--space-5);
+  right: var(--space-5);
   height: var(--header-h);
   z-index: 1;
   display: flex;
   align-items: center;
   gap: var(--space-4);
-  padding: 0 var(--space-4);
+  padding: 0 var(--space-5);
   box-sizing: border-box;
   background: var(--bg-panel);
   backdrop-filter: blur(var(--panel-blur));
   border: var(--hairline) solid var(--line);
-  border-radius: var(--radius-2);
+  border-radius: var(--radius-bar);
   box-shadow: var(--shadow-panel);
 }
 
@@ -98,8 +99,20 @@
 }
 
 .app-header-title {
+  font-family: var(--font-mono);
+  font-size: var(--type-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wordmark);
+  text-transform: uppercase;
   color: var(--text-primary);
-  letter-spacing: var(--tracking-wider);
+  white-space: nowrap;
+}
+
+.header-divider {
+  width: var(--hairline);
+  height: var(--space-5);
+  flex: none;
+  background: var(--line-strong);
 }
 
 .app-header-tagline {
@@ -111,56 +124,132 @@
   white-space: nowrap;
 }
 
+.app-header-count {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.header-about {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: none;
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-2);
+  padding: var(--space-2) var(--space-3);
+  cursor: pointer;
+}
+
+.header-about:hover {
+  color: var(--text-primary);
+  background: var(--bg-raised);
+}
+
 /* ── case index (left panel) ───────────────────────────────────────────── */
 
 .case-index {
   position: absolute;
-  top: calc(var(--header-h) + var(--space-4) + var(--space-3));
-  left: var(--space-4);
-  bottom: calc(var(--timeline-h) + var(--space-4));
+  top: calc(var(--header-h) + var(--space-5) * 2);
+  left: var(--space-5);
+  bottom: calc(var(--timeline-h) + var(--space-5) + var(--space-4));
   width: var(--panel-w);
   z-index: 1;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
   background: var(--bg-panel);
   backdrop-filter: blur(var(--panel-blur));
   border: var(--hairline) solid var(--line);
-  border-radius: var(--radius-2);
+  border-radius: var(--radius-panel);
   box-shadow: var(--shadow-panel);
 }
 
 .case-index-header {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   gap: var(--space-2);
-  padding: var(--space-3) var(--space-4);
-  border-bottom: var(--hairline) solid var(--line);
+  padding: var(--space-4) var(--space-4) var(--space-3);
 }
 
 .case-index-count {
+  padding: 0 var(--space-4) var(--space-3);
   font-family: var(--font-mono);
-  font-size: var(--type-xs);
+  font-size: var(--type-xxs);
+  letter-spacing: var(--tracking-wide);
   color: var(--text-muted);
+  border-bottom: var(--hairline) solid var(--line);
+}
+
+/* segmented view switch — the active chip is the one sanctioned green fill */
+.panel-switch {
+  display: flex;
+  gap: var(--space-0);
+  padding: var(--space-0);
+  background: var(--bg-inset);
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-row);
+}
+
+.panel-switch-chip {
+  font-family: var(--font-mono);
+  font-size: var(--type-xxs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-radius: var(--radius-2);
+  padding: var(--space-1) var(--space-3);
+  cursor: pointer;
+}
+
+.panel-switch-chip:hover {
+  color: var(--text-secondary);
+}
+
+.panel-switch-chip-active,
+.panel-switch-chip-active:hover {
+  font-weight: var(--weight-semibold);
+  color: var(--text-on-signal);
+  background: var(--signal);
+  cursor: default;
 }
 
 .case-index-list {
   margin: 0;
-  padding: var(--space-1);
+  padding: var(--space-2);
   list-style: none;
   overflow-y: auto;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0);
+  /* long lists dissolve at the panel edge instead of clipping */
+  -webkit-mask: var(--fade-list);
+  mask: var(--fade-list);
 }
 
 .case-row {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
   width: 100%;
-  padding: var(--space-2) var(--space-3);
+  box-sizing: border-box;
+  padding: var(--space-3) var(--space-3) var(--space-3) var(--space-4);
   background: none;
   border: none;
-  border-radius: var(--radius-1);
+  border-radius: var(--radius-row);
   text-align: left;
   cursor: pointer;
 }
@@ -174,8 +263,19 @@
 
 .case-row-active {
   background: var(--signal-bg);
-  /* the open file gets a signal rail — inset so the row doesn't shift */
-  box-shadow: inset var(--rail-w) 0 0 var(--signal);
+}
+
+/* the open file gets a glowing signal rail, floated inside the row's radius */
+.case-row-active::before {
+  content: "";
+  position: absolute;
+  left: var(--space-0);
+  top: var(--space-2);
+  bottom: var(--space-2);
+  width: var(--rail-w);
+  border-radius: var(--rail-w);
+  background: var(--signal);
+  box-shadow: var(--glow-signal);
 }
 
 .case-row-primary {
@@ -187,14 +287,11 @@
 
 .case-row-location {
   font-size: var(--type-sm);
+  font-weight: var(--weight-medium);
   color: var(--text-primary);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.case-row-active .case-row-location {
-  color: var(--signal);
 }
 
 .case-row-date {
@@ -210,12 +307,13 @@
   align-items: baseline;
   gap: var(--space-2);
   font-family: var(--font-mono);
-  font-size: var(--type-xs);
+  font-size: var(--type-xxs);
+  letter-spacing: var(--tracking-wide);
   color: var(--text-muted);
 }
 
 .case-row-tag {
-  padding: 0 var(--space-1);
+  padding: 0 var(--space-2);
   border: var(--hairline) solid var(--line);
   border-radius: var(--radius-round);
   white-space: nowrap;
@@ -245,6 +343,9 @@
   padding: var(--space-4);
   overflow-y: auto;
   flex: 1;
+  /* the index view separates header from content at its count row; the
+     analysis view has no count row, so the separator lives here */
+  border-top: var(--hairline) solid var(--line);
 }
 
 .redaction-hero {
@@ -336,9 +437,9 @@
 
 .right-col {
   position: absolute;
-  top: calc(var(--header-h) + var(--space-4) + var(--space-3));
-  right: var(--space-4);
-  bottom: calc(var(--timeline-h) + var(--space-4));
+  top: calc(var(--header-h) + var(--space-5) * 2);
+  right: var(--space-5);
+  bottom: calc(var(--timeline-h) + var(--space-5) + var(--space-4));
   width: var(--drawer-w);
   z-index: 1;
   display: flex;
@@ -356,13 +457,25 @@
 .drawer {
   flex: 0 1 auto;
   min-height: 0;
-  overflow-y: auto;
-  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   background: var(--bg-panel-raised);
-  backdrop-filter: blur(var(--panel-blur));
+  backdrop-filter: blur(var(--panel-blur-raised));
   border: var(--hairline) solid var(--line-strong);
-  border-radius: var(--radius-2);
-  box-shadow: var(--shadow-panel);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel-raised);
+}
+
+/* the inner scroller — the fade mask lives here so the panel's glass and
+   border stay crisp while long case files dissolve at the bottom edge */
+.drawer-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--space-4) var(--space-5) var(--space-6);
+  -webkit-mask: var(--fade-drawer);
+  mask: var(--fade-drawer);
 }
 
 /* ── legend (right column, yields to the drawer) ───────────────────────── */
@@ -371,12 +484,12 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  padding: var(--space-4);
+  padding: var(--space-3) var(--space-4);
   overflow-y: auto;
   background: var(--bg-panel);
   backdrop-filter: blur(var(--panel-blur));
   border: var(--hairline) solid var(--line);
-  border-radius: var(--radius-2);
+  border-radius: var(--radius-bar);
   box-shadow: var(--shadow-panel);
 }
 
@@ -470,11 +583,12 @@
 }
 
 .drawer-header {
+  flex: none;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: var(--space-3);
-  padding-bottom: var(--space-3);
+  padding: var(--space-4) var(--space-5) var(--space-3);
   border-bottom: var(--hairline) solid var(--line);
 }
 
@@ -498,22 +612,29 @@
 
 .status-pill {
   font-family: var(--font-mono);
-  font-size: var(--type-xs);
+  font-size: var(--type-xxs);
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
   color: var(--alert);
   background: var(--alert-bg);
+  border: var(--hairline) solid var(--alert-border);
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-round);
 }
 
 .drawer-close {
+  width: var(--btn-icon);
+  height: var(--btn-icon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: var(--hairline) solid var(--line);
-  border-radius: var(--radius-1);
+  border-radius: var(--radius-2);
   color: var(--text-secondary);
   font-size: var(--type-sm);
-  padding: var(--space-1) var(--space-2);
+  padding: 0;
   cursor: pointer;
 }
 
@@ -554,7 +675,7 @@
 }
 
 .doc-scan {
-  margin: var(--space-4) 0 0;
+  margin: 0; /* the drawer body's padding spaces it */
 }
 
 .doc-scan-btn {
@@ -571,7 +692,7 @@
   width: 100%;
   background: var(--redact); /* shows through while the JPEG streams in */
   border: var(--hairline) solid var(--line);
-  border-radius: var(--radius-1);
+  border-radius: var(--radius-row);
 }
 
 .doc-scan-btn:hover img {
@@ -609,10 +730,9 @@
   align-items: center;
   justify-content: center;
   aspect-ratio: 8.5 / 5.5;
-  margin-top: var(--space-4);
   background: var(--redact);
   border: var(--hairline) solid var(--line);
-  border-radius: var(--radius-1);
+  border-radius: var(--radius-row);
 }
 
 .drawer-summary {
@@ -703,10 +823,10 @@ a.meta-signal:hover {
   padding: var(--space-4) var(--space-5);
   box-sizing: border-box;
   background: var(--bg-panel-raised);
-  backdrop-filter: blur(var(--panel-blur));
+  backdrop-filter: blur(var(--panel-blur-raised));
   border: var(--hairline) solid var(--line-strong);
-  border-radius: var(--radius-2);
-  box-shadow: var(--shadow-panel);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel-raised);
 }
 
 .onboarding-body {
@@ -741,10 +861,10 @@ a.meta-signal:hover {
   padding: var(--space-4) var(--space-5);
   box-sizing: border-box;
   background: var(--bg-panel-raised);
-  backdrop-filter: blur(var(--panel-blur));
+  backdrop-filter: blur(var(--panel-blur-raised));
   border: var(--hairline) solid var(--line-strong);
-  border-radius: var(--radius-2);
-  box-shadow: var(--shadow-panel);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel-raised);
 }
 
 .about-header {
@@ -781,20 +901,22 @@ a.meta-signal:hover {
 
 .rotation-control {
   position: absolute;
-  /* clear of the right column and the timeline: this is a globe control */
-  right: calc(var(--drawer-w) + var(--space-4) + var(--space-3));
-  bottom: calc(var(--timeline-h) + var(--space-4) + var(--space-3));
+  /* floats at the globe's lower-left, clear of the case index and timeline:
+     this is a globe control, not chrome for either panel */
+  left: calc(var(--panel-w) + var(--space-5) + var(--space-4));
+  bottom: calc(var(--timeline-h) + var(--space-5) + var(--space-4));
   z-index: 1;
   font-family: var(--font-mono);
-  font-size: var(--type-xs);
+  font-size: var(--type-xxs);
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
   color: var(--text-muted);
   background: var(--bg-panel);
   backdrop-filter: blur(var(--panel-blur));
   border: var(--hairline) solid var(--line);
-  border-radius: var(--radius-1);
-  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-row);
+  padding: var(--space-2) var(--space-3);
   cursor: pointer;
 }
 
@@ -804,7 +926,7 @@ a.meta-signal:hover {
 
 .rotation-control-on {
   color: var(--signal);
-  box-shadow: var(--glow-signal);
+  box-shadow: var(--glow-soft);
 }
 
 /* ── skeptic layer (drawer section) ────────────────────────────────────── */
@@ -859,19 +981,20 @@ a.meta-signal:hover {
 
 .timeline {
   position: absolute;
-  left: var(--space-4);
-  right: var(--space-4);
-  bottom: var(--space-4);
+  left: var(--space-5);
+  right: var(--space-5);
+  bottom: var(--space-5);
   height: var(--timeline-h);
   z-index: 1;
   display: flex;
   align-items: center;
   gap: var(--space-4);
-  padding: 0 var(--space-4);
+  padding: 0 var(--space-5);
+  box-sizing: border-box;
   background: var(--bg-panel);
   backdrop-filter: blur(var(--panel-blur));
   border: var(--hairline) solid var(--line);
-  border-radius: var(--radius-2);
+  border-radius: var(--radius-bar);
   box-shadow: var(--shadow-panel);
 }
 
@@ -880,11 +1003,13 @@ a.meta-signal:hover {
   font-size: var(--type-xs);
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
   color: var(--signal); /* interactive control — signal is its job */
   background: var(--signal-bg);
-  border: var(--hairline) solid var(--line);
-  border-radius: var(--radius-1);
+  border: var(--hairline) solid var(--signal-border);
+  border-radius: var(--radius-2);
   padding: var(--space-1) var(--space-3);
+  white-space: nowrap;
   cursor: pointer;
 }
 
@@ -895,8 +1020,10 @@ a.meta-signal:hover {
 .timeline-empty,
 .timeline-count {
   font-family: var(--font-mono);
-  font-size: var(--type-xs);
+  font-size: var(--type-xxs);
+  letter-spacing: var(--tracking-wide);
   color: var(--text-muted);
+  white-space: nowrap;
 }
 
 .timeline-year {
@@ -928,12 +1055,19 @@ a.meta-signal:hover {
 
 .timeline-bar {
   flex: 1;
+  border-radius: var(--timeline-bar-radius);
   background: var(--timeline-bar-color);
 }
 
 .timeline-bar-solid {
   /* nonzero years never disappear, however tall the peak is */
   min-height: var(--timeline-bar-min-h);
+}
+
+.timeline-bar-zero {
+  /* zero-count years read as faint axis stubs, not data */
+  height: var(--timeline-bar-zero-h);
+  opacity: var(--timeline-bar-zero-opacity);
 }
 
 .timeline-bar-active {
@@ -980,4 +1114,136 @@ a.meta-signal:hover {
   border: none;
   border-radius: var(--radius-1);
   box-shadow: var(--glow-signal);
+}
+
+/* ── sheet (desktop: layout ghost · mobile: the bottom sheet) ──────────── */
+
+.sheet {
+  display: contents;
+}
+
+.sheet-handle {
+  display: none;
+}
+
+/* ── mobile (≤720px): globe hero on top, panels dock into a bottom sheet.
+   720px is structural (media queries can't read var()) — see tokens.css. ── */
+
+@media (max-width: 720px) {
+  .app-header {
+    top: var(--space-4);
+    left: var(--space-4);
+    right: var(--space-4);
+    height: var(--header-h-mobile);
+    gap: var(--space-3);
+    padding: 0 var(--space-4);
+  }
+
+  .app-header-tagline,
+  .header-divider {
+    display: none;
+  }
+
+  .app-header-count {
+    flex: 1;
+    text-align: right;
+  }
+
+  .sheet {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: var(--sheet-top);
+    bottom: var(--timeline-h-mobile);
+    z-index: 1;
+    background: var(--bg-panel-raised);
+    backdrop-filter: blur(var(--panel-blur-raised));
+    border-top: var(--hairline) solid var(--line-strong);
+    border-radius: var(--radius-sheet) var(--radius-sheet) 0 0;
+    box-shadow: var(--shadow-sheet);
+  }
+
+  .sheet-expanded {
+    top: var(--sheet-top-expanded);
+  }
+
+  .sheet-handle {
+    display: flex;
+    justify-content: center;
+    flex: none;
+    padding: var(--space-3) 0 var(--space-2);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .sheet-handle-bar {
+    width: var(--sheet-handle-w);
+    height: var(--sheet-handle-h);
+    border-radius: var(--radius-round);
+    background: var(--line-strong);
+  }
+
+  /* the panels give up their own glass — the sheet is the glass now */
+  .case-index,
+  .right-col {
+    position: static;
+    width: auto;
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  .case-index {
+    background: none;
+    backdrop-filter: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .drawer {
+    flex: 1 1 auto;
+    background: none;
+    backdrop-filter: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* one thing at a time: the case file when a case is open, else the index */
+  .app[data-selected] .case-index {
+    display: none;
+  }
+
+  .app:not([data-selected]) .right-col {
+    display: none;
+  }
+
+  .legend,
+  .legend-toggle,
+  .rotation-control,
+  .onboarding {
+    display: none;
+  }
+
+  .timeline {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--timeline-h-mobile);
+    gap: var(--space-3);
+    padding: 0 var(--space-4);
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .timeline > .mono-label,
+  .timeline-count {
+    display: none;
+  }
 }

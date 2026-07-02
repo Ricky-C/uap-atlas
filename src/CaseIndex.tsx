@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import type { UAPRecord } from "../schema";
 import { isLunar, isPlottable } from "./data";
 import { prefersReducedMotion } from "./theme";
+import { PanelSwitch } from "./PanelSwitch";
 import type { HoverState } from "./selection";
 
 // The case index: the FULL corpus, plotted and unplotted alike (TICKETS.md T2).
@@ -69,14 +70,12 @@ export function CaseIndex({
     <section className="case-index" aria-label="Case index">
       <header className="case-index-header">
         <span className="mono-label">case index</span>
-        <span className="case-index-count">
-          {plottedCount} on globe{lunarCount > 0 ? ` · ${lunarCount} lunar` : ""} ·{" "}
-          {unplottedCount} unplotted
-        </span>
-        <button type="button" className="panel-toggle" onClick={onShowAnalysis}>
-          analysis
-        </button>
+        <PanelSwitch active="cases" onSwitch={(v) => v === "analysis" && onShowAnalysis()} />
       </header>
+      <div className="case-index-count">
+        {plottedCount} on globe{lunarCount > 0 ? ` · ${lunarCount} lunar` : ""} · {unplottedCount}{" "}
+        unplotted
+      </div>
       <ul className="case-index-list">
         {records.map((r) => {
           const plotted = isPlottable(r);

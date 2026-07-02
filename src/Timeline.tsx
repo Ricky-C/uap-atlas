@@ -37,7 +37,8 @@ export function Timeline({ records, maxYear, onChange }: TimelineProps) {
   const lastYear = years[years.length - 1];
 
   // One bar per calendar year over the continuous range — zero-count years
-  // render as gaps, which is what makes the clustering legible.
+  // render as faint axis stubs (.timeline-bar-zero), so clustering stays
+  // legible without empty years vanishing from the axis.
   const { bars, peak } = useMemo(() => {
     if (years.length === 0) return { bars: [], peak: 0 };
     const counts = new Map<number, number>();
@@ -80,8 +81,8 @@ export function Timeline({ records, maxYear, onChange }: TimelineProps) {
       <footer className="timeline">
         <span className="mono-label">timeline</span>
         <span className="timeline-empty">
-          no dated cases yet — incident dates arrive with the portal-index join ·{" "}
-          {undatedCount} undated
+          no dated cases yet — incident dates arrive with the portal-index join · {undatedCount}{" "}
+          undated
         </span>
       </footer>
     );
@@ -102,7 +103,7 @@ export function Timeline({ records, maxYear, onChange }: TimelineProps) {
         }}
         aria-label={playing ? "Pause the year sweep" : "Play the year sweep"}
       >
-        {playing ? "pause" : "play"}
+        <span aria-hidden="true">{playing ? "❚❚" : "▶"}</span> {playing ? "pause" : "play"}
       </button>
       <span className="timeline-year">{minYear}</span>
       <div className="timeline-track">
@@ -112,13 +113,16 @@ export function Timeline({ records, maxYear, onChange }: TimelineProps) {
               key={b.year}
               className={[
                 "timeline-bar",
-                b.count > 0 ? "timeline-bar-solid" : "",
+                b.count > 0 ? "timeline-bar-solid" : "timeline-bar-zero",
                 b.year <= value ? "timeline-bar-active" : "",
               ]
                 .filter(Boolean)
                 .join(" ")}
               // Height is data (count/peak), not styling — rounded per rule 7.
-              style={{ height: b.count === 0 ? 0 : `${Math.round((b.count / peak) * 100)}%` }}
+              // Zero years take their faint stub height from the CSS class.
+              style={
+                b.count === 0 ? undefined : { height: `${Math.round((b.count / peak) * 100)}%` }
+              }
             />
           ))}
         </div>
@@ -137,8 +141,11 @@ export function Timeline({ records, maxYear, onChange }: TimelineProps) {
         />
       </div>
       <span className="timeline-year timeline-year-active">{value}</span>
-      <span className="timeline-count">
-        {shown} dated shown · {undatedCount} undated always shown
+      <span
+        className="timeline-count"
+        title="undated cases are always shown — hiding them would imply we know when they happened"
+      >
+        {shown} dated · {undatedCount} undated
       </span>
     </footer>
   );

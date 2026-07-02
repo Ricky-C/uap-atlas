@@ -31,9 +31,9 @@ export function Onboarding({ onDismiss }: OnboardingProps) {
         index only.
       </p>
       <p className="onboarding-body">
-        Summaries are neutral digests of public-domain records. This is an independent project —
-        not affiliated with any government agency — and it presents the records without asserting
-        what the phenomena were.
+        Summaries are neutral digests of public-domain records. This is an independent project — not
+        affiliated with any government agency — and it presents the records without asserting what
+        the phenomena were.
       </p>
       <button type="button" className="panel-toggle" onClick={onDismiss}>
         got it

@@ -15,8 +15,18 @@ interface DrawerProps {
 const DASH = "—";
 
 const MONTHS = [
-  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
 ] as const;
 
 // Humanize the ISO incident date at its source precision: "1947-08-04" →
@@ -153,8 +163,8 @@ function SkepticSection({ record }: { record: UAPRecord }) {
         </>
       )}
       <p className="skeptic-note">
-        {SKEPTIC_SOURCE || "orbital launches near the incident date"}. Context only — no
-        explanation is asserted.
+        {SKEPTIC_SOURCE || "orbital launches near the incident date"}. Context only — no explanation
+        is asserted.
       </p>
     </section>
   );
@@ -172,38 +182,45 @@ function BluebookCard({ record: r, onClose }: { record: UAPRecord; onClose: () =
           <span className="drawer-case-id">unknown #{r.id}</span>
         </div>
         <div className="drawer-header-actions">
-          <button type="button" className="drawer-close" onClick={onClose} aria-label="Close catalog entry">
+          <button
+            type="button"
+            className="drawer-close"
+            onClick={onClose}
+            aria-label="Close catalog entry"
+          >
             ✕
           </button>
         </div>
       </header>
 
-      <dl className="meta-grid drawer-meta-solo">
-        <dt>incident date</dt>
-        <dd>{formatDate(r)}</dd>
-        <dt>location</dt>
-        <dd>{r.locationRaw || DASH}</dd>
-        <dt>coordinates</dt>
-        <dd>{formatCoords(r)}</dd>
-        <dt>geo precision</dt>
-        <dd className="meta-signal">{r.geoPrecision}</dd>
-        <dt>source</dt>
-        <dd>
-          {isHttpUrl(r.sourceUrl) ? (
-            <a className="meta-signal" href={r.sourceUrl} target="_blank" rel="noreferrer">
-              unknowns catalog ↗
-            </a>
-          ) : (
-            DASH
-          )}
-        </dd>
-      </dl>
+      <div className="drawer-body">
+        <dl className="meta-grid drawer-meta-solo">
+          <dt>incident date</dt>
+          <dd>{formatDate(r)}</dd>
+          <dt>location</dt>
+          <dd>{r.locationRaw || DASH}</dd>
+          <dt>coordinates</dt>
+          <dd>{formatCoords(r)}</dd>
+          <dt>geo precision</dt>
+          <dd className="meta-signal">{r.geoPrecision}</dd>
+          <dt>source</dt>
+          <dd>
+            {isHttpUrl(r.sourceUrl) ? (
+              <a className="meta-signal" href={r.sourceUrl} target="_blank" rel="noreferrer">
+                unknowns catalog ↗
+              </a>
+            ) : (
+              DASH
+            )}
+          </dd>
+        </dl>
 
-      <p className="drawer-note">
-        A USAF Project Blue Book case (1947–1969) the Air Force closed as &quot;unidentified.&quot;
-        It is part of the historical basemap: the catalog records only the date and place — no
-        released document accompanies it in the PURSUE archive.
-      </p>
+        <p className="drawer-note">
+          A USAF Project Blue Book case (1947–1969) the Air Force closed as
+          &quot;unidentified.&quot; It is part of the historical basemap: the catalog records only
+          the date and place — no released document accompanies it in the PURSUE archive.
+        </p>
+      </div>
     </aside>
   );
 }
@@ -224,48 +241,57 @@ export function Drawer({ record, onClose }: DrawerProps) {
         </div>
         <div className="drawer-header-actions">
           {!r.resolved && <span className="status-pill">unresolved</span>}
-          <button type="button" className="drawer-close" onClick={onClose} aria-label="Close case file">
+          <button
+            type="button"
+            className="drawer-close"
+            onClick={onClose}
+            aria-label="Close case file"
+          >
             ✕
           </button>
         </div>
       </header>
 
-      <DocScan key={r.id} record={r} />
+      {/* the body is the inner scroller — the fade mask lives here so the
+          panel's glass and border stay crisp while long content dissolves */}
+      <div className="drawer-body">
+        <DocScan key={r.id} record={r} />
 
-      <p className="drawer-summary">{r.summary || "No summary available for this record."}</p>
+        <p className="drawer-summary">{r.summary || "No summary available for this record."}</p>
 
-      {/* where & when lead the file (Phase 5 weighting) — the administrative
+        {/* where & when lead the file (Phase 5 weighting) — the administrative
           fields answer follow-up questions and read quieter */}
-      <dl className="meta-grid">
-        <dt>incident date</dt>
-        <dd className="meta-primary">{formatDate(r)}</dd>
-        <dt>location</dt>
-        <dd className="meta-primary">{r.locationRaw || DASH}</dd>
-        <dt>coordinates</dt>
-        <dd className="meta-quiet">{formatCoords(r)}</dd>
-        <dt>geo precision</dt>
-        <dd className="meta-signal">{r.geoPrecision}</dd>
-        <dt>object class</dt>
-        <dd>{r.objectClass}</dd>
-        <dt>redaction</dt>
-        <dd className="meta-alert">
-          {r.redactionPct === null ? DASH : `${Math.round(r.redactionPct)}%`}
-        </dd>
-        <dt>release</dt>
-        <dd className="meta-quiet">{r.release || DASH}</dd>
-        <dt>source</dt>
-        <dd>
-          {isHttpUrl(r.sourceUrl) ? (
-            <a className="meta-signal" href={r.sourceUrl} target="_blank" rel="noreferrer">
-              government record ↗
-            </a>
-          ) : (
-            DASH
-          )}
-        </dd>
-      </dl>
+        <dl className="meta-grid">
+          <dt>incident date</dt>
+          <dd className="meta-primary">{formatDate(r)}</dd>
+          <dt>location</dt>
+          <dd className="meta-primary">{r.locationRaw || DASH}</dd>
+          <dt>coordinates</dt>
+          <dd className="meta-quiet">{formatCoords(r)}</dd>
+          <dt>geo precision</dt>
+          <dd className="meta-signal">{r.geoPrecision}</dd>
+          <dt>object class</dt>
+          <dd>{r.objectClass}</dd>
+          <dt>redaction</dt>
+          <dd className="meta-alert">
+            {r.redactionPct === null ? DASH : `${Math.round(r.redactionPct)}%`}
+          </dd>
+          <dt>release</dt>
+          <dd className="meta-quiet">{r.release || DASH}</dd>
+          <dt>source</dt>
+          <dd>
+            {isHttpUrl(r.sourceUrl) ? (
+              <a className="meta-signal" href={r.sourceUrl} target="_blank" rel="noreferrer">
+                government record ↗
+              </a>
+            ) : (
+              DASH
+            )}
+          </dd>
+        </dl>
 
-      <SkepticSection record={r} />
+        <SkepticSection record={r} />
+      </div>
     </aside>
   );
 }
