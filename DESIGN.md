@@ -57,7 +57,8 @@ Green-on-black **vibrates** — it blooms and fatigues the eye at small sizes. S
 - **Data / metadata / coordinates / case IDs / agency codes → monospace.** IBM Plex Mono (consistent with the wider portfolio) or JetBrains Mono for a colder edge. This carries most of the sci-fi feel and is authentic to the archive.
 - **Headings / UI chrome → a technical grotesk.** Space Grotesk (subtle character without costume) or Geist/Inter for a more austere read.
 - **Body / summaries → the same grotesk at a readable size, cool off-white.**
-- Sentence case throughout. Two weights (regular + medium). No "alien" display faces, ever.
+- Body and prose stay sentence case; **mono labels render uppercase** (via `text-transform` on `.mono-label` — the strings themselves stay lowercase). Three weights (regular + medium + semibold; semibold is chrome-only: the wordmark, the active segmented chip, the mobile sheet title). No "alien" display faces, ever.
+- The Orbital Glass pass (Claude Design, 2026-07) set the current token values: glass panels `--bg-panel`/`--bg-panel-raised` with blur tiers, radius tiers (`--radius-row/bar/panel/sheet`), scroll fade masks (`--fade-list/--fade-drawer`), and `--text-on-signal` — the one sanctioned dark-ink-on-green inversion, used only for the active chip of the segmented control.
 
 ## The globe
 

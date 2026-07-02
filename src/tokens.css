@@ -7,49 +7,64 @@
 
 :root {
   /* base — near-black indigo, not pure black (a hint of blue reads as "space") */
-  --bg-void: #05070d;
+  --bg-void: #06090f;
   --bg-surface: #0a0e16;
   --bg-raised: #10151f;
   /* glass — panels float over the instrument as translucent surfaces; the globe
-     reads through them faintly (backdrop-filter), which is what sells "screen" */
-  --bg-panel: rgba(8, 12, 20, 0.78);
-  --bg-panel-raised: rgba(13, 18, 28, 0.86);
-  --panel-blur: 10px;
+     reads through them faintly (backdrop-filter), which is what sells "screen".
+     The raised tier (drawer, modals) is a touch more opaque and blurs harder. */
+  --bg-panel: rgba(10, 15, 24, 0.72);
+  --bg-panel-raised: rgba(13, 19, 29, 0.82);
+  --bg-inset: rgba(5, 8, 14, 0.6); /* recessed wells inside panels (segmented control) */
+  --panel-blur: 12px;
+  --panel-blur-raised: 14px;
 
   /* hairlines — faint cool lines, instrument feel */
   --line: rgba(130, 165, 205, 0.14);
-  --line-strong: rgba(130, 165, 205, 0.26);
+  --line-strong: rgba(130, 165, 205, 0.24);
 
   --selection-bg: rgba(92, 242, 160, 0.22); /* text selection */
 
-  /* glow — earned only: the live dot, active controls, the selected row rail */
-  --glow-signal: 0 0 10px rgba(92, 242, 160, 0.25);
+  /* glow — earned only: the live dot, active controls, the selected row rail.
+     --glow-soft is the faintest tier: an ambient wash on quiet active chrome. */
+  --glow-signal: 0 0 10px rgba(92, 242, 160, 0.7);
   --glow-signal-strong: 0 0 18px rgba(92, 242, 160, 0.4);
-  --shadow-panel: 0 10px 36px rgba(1, 2, 5, 0.5);
+  --glow-soft: 0 0 14px rgba(92, 242, 160, 0.12);
+  --shadow-panel: 0 12px 40px rgba(1, 2, 5, 0.5);
+  --shadow-panel-raised: 0 20px 60px rgba(1, 2, 5, 0.6);
+  --shadow-sheet: 0 -18px 50px rgba(1, 2, 5, 0.5); /* mobile bottom sheet */
 
   /* atmosphere — a breath of depth over the void, never louder than the data */
-  --vignette: radial-gradient(ellipse at 50% 42%, transparent 52%, rgba(1, 2, 5, 0.6) 100%);
+  --vignette: radial-gradient(ellipse at 50% 42%, transparent 54%, rgba(1, 2, 5, 0.5) 100%);
   --scanlines: repeating-linear-gradient(
     0deg,
-    rgba(3, 5, 9, 0.16) 0px,
-    rgba(3, 5, 9, 0.16) 1px,
+    rgba(3, 5, 9, 0.14) 0px,
+    rgba(3, 5, 9, 0.14) 1px,
     transparent 1px,
     transparent 3px
   );
+  /* scroll fades — long lists dissolve at the panel's bottom edge instead of
+     clipping; applied as a mask on the inner scroller, never the glass itself */
+  --fade-list: linear-gradient(#000 86%, transparent);
+  --fade-drawer: linear-gradient(#000 90%, transparent);
 
   /* text — cool off-white, NEVER green at paragraph sizes */
-  --text-primary: #d6dde8;
-  --text-secondary: #9aa6b6;
-  --text-muted: #6b7688;
+  --text-primary: #d8dfea;
+  --text-secondary: #94a2b4;
+  --text-muted: #64707f;
+  /* dark ink for text sitting ON a signal-green chip (the one inversion) */
+  --text-on-signal: #04120a;
 
   /* signal — phosphor green, SPARING. accents, active points, live cues, key data */
   --signal: #5cf2a0;
   --signal-dim: #2f9d63;
   --signal-bg: rgba(92, 242, 160, 0.1);
+  --signal-border: rgba(92, 242, 160, 0.25);
 
   /* alert — amber, RESERVED for unresolved status + redaction */
-  --alert: #e6b458;
-  --alert-bg: rgba(230, 180, 88, 0.12);
+  --alert: #e8b85c;
+  --alert-bg: rgba(232, 184, 92, 0.12);
+  --alert-border: rgba(232, 184, 92, 0.3);
 
   /* redaction — blacker than the surface */
   --redact: #04060a;
@@ -59,18 +74,24 @@
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --font-grotesk: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  /* type scale — data-dense instrument sizes; two weights only (400/500) */
+  /* type scale — data-dense instrument sizes; three weights (400/500/600 —
+     semibold is chrome-only: wordmark, active chip, the mobile sheet title) */
+  --type-xxs: 10.5px;
   --type-xs: 11px;
   --type-sm: 13px;
-  --type-md: 15px;
+  --type-md: 14.5px;
   --type-lg: 18px;
+  --type-xl: 22px; /* the mobile sheet's location title */
   --weight-regular: 400;
   --weight-medium: 500;
+  --weight-semibold: 600;
   --leading-body: 1.55;
-  --tracking-wide: 0.08em; /* mono labels / status pills */
-  --tracking-wider: 0.16em; /* the header wordmark */
+  --tracking-wide: 0.1em; /* mono labels / status pills */
+  --tracking-wider: 0.14em; /* section labels */
+  --tracking-wordmark: 0.3em; /* the header wordmark */
 
   /* spacing scale */
+  --space-0: 2px; /* micro: segmented-control inset, row gaps */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -82,8 +103,13 @@
   --rail-w: 2px; /* the selected-row signal rail */
   --radius-1: 4px;
   --radius-2: 8px;
+  --radius-row: 10px; /* list rows, doc-scan card */
+  --radius-bar: 14px; /* header + timeline bars */
+  --radius-panel: 16px; /* the floating index/drawer panels */
+  --radius-sheet: 26px; /* mobile bottom-sheet top corners */
   --radius-round: 999px;
   --hairline: 1px;
+  --btn-icon: 28px; /* square icon buttons (drawer close) */
 
   /* motion — minimal and slow; everything animated respects reduced-motion */
   --dur-fast: 150ms;
@@ -92,12 +118,22 @@
   --pulse-period: 2.8s; /* the live-feed dot — the one ambient motion on screen */
 
   /* layout */
-  --panel-w: 320px; /* left case index */
-  --drawer-w: 400px; /* right case-file drawer */
-  --timeline-h: 76px; /* footer scrubber + density histogram */
-  --header-h: 44px; /* persistent title strip */
+  --panel-w: 322px; /* left case index */
+  --drawer-w: 384px; /* right case-file drawer */
+  --timeline-h: 64px; /* footer scrubber + density histogram */
+  --header-h: 54px; /* persistent title strip */
   --onboarding-w: 440px; /* first-load orientation card */
   --overlay-scrim: rgba(7, 10, 18, 0.72); /* about-modal backdrop, from --bg-void */
+
+  /* mobile — the panels dock into a bottom sheet over the globe hero;
+     the breakpoint itself (720px) lives in app.css media queries, which
+     can't read var() — it's structural, like flex/grid literals */
+  --sheet-top: 48vh; /* collapsed sheet position */
+  --sheet-top-expanded: 12vh; /* raised by the handle tap */
+  --sheet-handle-w: 44px;
+  --sheet-handle-h: 4px;
+  --timeline-h-mobile: 48px; /* compact docked scrubber under the sheet */
+  --header-h-mobile: 48px;
 
   /* charts (redaction analysis) — thin marks, rounded data ends */
   --chart-bar-h: 8px;
@@ -164,7 +200,12 @@
   --timeline-bar-min-h: 2px; /* nonzero years never invisible */
   --timeline-bar-color: var(--signal-dim);
   --timeline-bar-active-color: var(--signal); /* years inside the active range */
-  --timeline-bar-gap: 1px;
+  --timeline-bar-gap: 2px;
+  --timeline-bar-radius: 1px;
+  /* zero-count years render as faint stubs, not gaps — the axis stays legible
+     without implying data where there is none */
+  --timeline-bar-zero-h: 4%;
+  --timeline-bar-zero-opacity: 0.35;
 }
 
 /* Base wiring lives here (tokens.css is exempt from the design-guardian scan),
