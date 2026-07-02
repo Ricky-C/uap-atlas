@@ -1,6 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { UAPRecord } from "../schema";
-import { incidentYear, isLunar, isPlottable } from "./data";
+import {
+  EMPTY_FILTERS,
+  facetCounts,
+  filtersActive,
+  incidentYear,
+  isLunar,
+  isPlottable,
+  type IndexFilters,
+} from "./data";
 import { prefersReducedMotion } from "./theme";
 import { PanelSwitch } from "./PanelSwitch";
 import type { HoverState } from "./selection";
@@ -11,12 +19,17 @@ import type { HoverState } from "./selection";
 // Cases that can't honestly be plotted (geoPrecision "unknown") are tagged
 // "not on globe" instead of being faked onto it (DESIGN.md).
 //
-// The list is grouped by decade under sticky, collapsible headers — 199 rows
-// as one flat scroll was a wall; the decades give it the same temporal shape
-// the timeline already teaches. Undated cases keep their own group at the end.
+// Structure (user-feedback rounds 1+2): faceted quick filters + search narrow
+// the list; decade groups under sticky, collapsible headers shape what's left.
+// Unfiltered, the panel opens as an overview — newest decade expanded, the
+// rest folded into a table of contents; any active filter expands everything
+// that matches. Undated cases keep their own group at the end.
 
 interface CaseIndexProps {
-  records: UAPRecord[]; // year-filtered, index-sorted corpus
+  records: UAPRecord[]; // year- AND filter-narrowed, index-sorted
+  totalRecords: UAPRecord[]; // year-narrowed only — the filterable universe
+  filters: IndexFilters;
+  onFiltersChange: (f: IndexFilters) => void;
   plottedCount: number;
   lunarCount: number;
   unplottedCount: number;
@@ -61,8 +74,24 @@ function groupByDecade(records: UAPRecord[]): DecadeGroup[] {
   return groups;
 }
 
+// The unfiltered overview: newest decade open, every other group folded.
+function defaultCollapsed(groups: DecadeGroup[]): ReadonlySet<string> {
+  return new Set(groups.slice(1).map((g) => g.key));
+}
+
+// Facet <select> options: sorted by how much they'd show, ties alphabetical.
+// The active selection stays listed even at zero so the control never strands.
+function facetOptions(counts: Map<string, number>, selected: string | null): [string, number][] {
+  const entries = [...counts.entries()];
+  if (selected !== null && !counts.has(selected)) entries.push([selected, 0]);
+  return entries.sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+}
+
 export function CaseIndex({
   records,
+  totalRecords,
+  filters,
+  onFiltersChange,
   plottedCount,
   lunarCount,
   unplottedCount,
@@ -73,8 +102,36 @@ export function CaseIndex({
   onShowAnalysis,
 }: CaseIndexProps) {
   const rowRefs = useRef(new Map<string, HTMLLIElement>());
-  const [collapsed, setCollapsed] = useState<ReadonlySet<string>>(new Set());
   const groups = useMemo(() => groupByDecade(records), [records]);
+  const active = filtersActive(filters);
+
+  const [collapsed, setCollapsed] = useState<ReadonlySet<string>>(() =>
+    active ? new Set() : defaultCollapsed(groups),
+  );
+
+  // Any reshape of the visible groups re-derives the fold state
+  // (adjust-state-during-render, the Legend peek pattern): activating a
+  // filter shows every match expanded; clearing restores the overview; a
+  // timeline scrub or facet change that alters the decade set resets to the
+  // mode's default so a stale key can never leave the newest decade folded.
+  // Manual folds survive anything that keeps the same groups.
+  const groupsSignature = groups.map((g) => g.key).join("|");
+  const [prevSignature, setPrevSignature] = useState(groupsSignature);
+  const [prevActive, setPrevActive] = useState(active);
+  if (prevSignature !== groupsSignature || prevActive !== active) {
+    setPrevSignature(groupsSignature);
+    setPrevActive(active);
+    setCollapsed(active ? new Set() : defaultCollapsed(groups));
+  }
+
+  const agencyOptions = useMemo(
+    () => facetOptions(facetCounts(totalRecords, filters, "agency"), filters.agency),
+    [totalRecords, filters],
+  );
+  const classOptions = useMemo(
+    () => facetOptions(facetCounts(totalRecords, filters, "objectClass"), filters.objectClass),
+    [totalRecords, filters],
+  );
 
   // Refs mirror props/state the selection effect needs without re-running on
   // every scrub or collapse toggle (its only trigger is the selection itself).
@@ -97,8 +154,8 @@ export function CaseIndex({
 
   // Hovering a globe point brings its row into view. "nearest" keeps the list
   // still when the row is already visible — no scroll thrash while sweeping
-  // the pointer across points. A row inside a collapsed group isn't rendered,
-  // so the lookup no-ops — hover never yanks groups open.
+  // the pointer across points. A row inside a collapsed group (or filtered
+  // out) isn't rendered, so the lookup no-ops — hover never yanks groups open.
   useEffect(() => {
     if (hover?.source !== "globe") return;
     scrollToRow(hover.id);
@@ -106,7 +163,8 @@ export function CaseIndex({
 
   // Selecting from the globe likewise reveals the row — the list mirrors the
   // fly-to (T7): both sides center on the same case, expanding its decade if
-  // the user had folded it away.
+  // the user had folded it away. A case the filters exclude stays unlisted
+  // (its file still opens in the drawer); filters are never changed silently.
   useEffect(() => {
     // Every new selection (or deselection) invalidates any in-flight deferred
     // scroll — otherwise an earlier expansion could yank the list back to a
@@ -142,86 +200,172 @@ export function CaseIndex({
     });
   };
 
+  const clearFilters = () => onFiltersChange(EMPTY_FILTERS);
+
   return (
     <section className="case-index" aria-label="Case index">
       <header className="case-index-header">
         <span className="mono-label">case index</span>
         <PanelSwitch active="cases" onSwitch={(v) => v === "analysis" && onShowAnalysis()} />
       </header>
-      <div className="case-index-count">
-        {plottedCount} on globe{lunarCount > 0 ? ` · ${lunarCount} lunar` : ""} · {unplottedCount}{" "}
-        unplotted
+
+      <div className="index-controls">
+        <input
+          type="search"
+          className="index-search"
+          value={filters.query}
+          onChange={(e) => onFiltersChange({ ...filters, query: e.target.value })}
+          placeholder="search location, agency, class…"
+          aria-label="Search cases"
+        />
+        <div className="index-filter-row">
+          <select
+            className="index-filter"
+            aria-label="Filter by agency"
+            value={filters.agency ?? ""}
+            onChange={(e) =>
+              onFiltersChange({ ...filters, agency: e.target.value === "" ? null : e.target.value })
+            }
+          >
+            <option value="">agency · all</option>
+            {agencyOptions.map(([k, n]) => (
+              <option key={k} value={k}>
+                {k} ({n})
+              </option>
+            ))}
+          </select>
+          <select
+            className="index-filter"
+            aria-label="Filter by object class"
+            value={filters.objectClass ?? ""}
+            onChange={(e) =>
+              onFiltersChange({
+                ...filters,
+                objectClass: e.target.value === "" ? null : e.target.value,
+              })
+            }
+          >
+            <option value="">class · all</option>
+            {classOptions.map(([k, n]) => (
+              <option key={k} value={k}>
+                {k} ({n})
+              </option>
+            ))}
+          </select>
+          <button
+            type="button"
+            className="index-filter-toggle"
+            aria-pressed={filters.onGlobeOnly}
+            onClick={() => onFiltersChange({ ...filters, onGlobeOnly: !filters.onGlobeOnly })}
+          >
+            on globe
+          </button>
+        </div>
       </div>
-      <ul className="case-index-list">
-        {groups.map((g) => {
-          const isCollapsed = collapsed.has(g.key);
-          return (
-            <li key={g.key} className="index-group">
-              <button
-                type="button"
-                className="mono-label index-group-header"
-                aria-expanded={!isCollapsed}
-                aria-label={`${g.key}, ${g.records.length} cases`}
-                onClick={() => toggleGroup(g.key)}
-              >
-                <span className="index-group-caret" aria-hidden="true">
-                  {isCollapsed ? "▸" : "▾"}
-                </span>
-                <span className="index-group-label">{g.key}</span>
-                <span className="index-group-count">{g.records.length}</span>
-              </button>
-              {!isCollapsed && (
-                <ul className="index-group-list">
-                  {g.records.map((r) => {
-                    const plotted = isPlottable(r);
-                    const lunar = !plotted && isLunar(r);
-                    // Rows with a mark on the globe (Earth point or moon marker)
-                    // emit hover; truly unplotted rows have nothing to emphasize.
-                    const hoverIn =
-                      plotted || lunar ? () => onHover({ id: r.id, source: "list" }) : undefined;
-                    const hoverOut = plotted || lunar ? () => onHover(null) : undefined;
-                    return (
-                      <li
-                        key={r.id}
-                        ref={(el) => {
-                          if (el) rowRefs.current.set(r.id, el);
-                          else rowRefs.current.delete(r.id);
-                        }}
-                      >
-                        <button
-                          type="button"
-                          className={rowClass(r, selectedId, hover)}
-                          onClick={() => onSelect(r.id)}
-                          onMouseEnter={hoverIn}
-                          onMouseLeave={hoverOut}
-                          onFocus={hoverIn}
-                          onBlur={hoverOut}
+
+      {/* the live announcement is its own hidden status node — wrapping the
+          interactive clear button in an aria-live region would re-announce
+          the whole row on every keystroke */}
+      <span className="visually-hidden" role="status">
+        {active ? `${records.length} of ${totalRecords.length} cases match` : ""}
+      </span>
+      <div className="case-index-count">
+        {active ? (
+          <>
+            <span>
+              {records.length} of {totalRecords.length} match
+            </span>
+            <button type="button" className="index-clear" onClick={clearFilters}>
+              clear
+            </button>
+          </>
+        ) : (
+          <span>
+            {plottedCount} on globe{lunarCount > 0 ? ` · ${lunarCount} lunar` : ""} ·{" "}
+            {unplottedCount} unplotted
+          </span>
+        )}
+      </div>
+
+      {records.length === 0 ? (
+        <p className="index-empty">
+          no cases match —{" "}
+          <button type="button" className="index-clear" onClick={clearFilters}>
+            clear filters
+          </button>
+        </p>
+      ) : (
+        <ul className="case-index-list">
+          {groups.map((g) => {
+            const isCollapsed = collapsed.has(g.key);
+            return (
+              <li key={g.key} className="index-group">
+                <button
+                  type="button"
+                  className="mono-label index-group-header"
+                  aria-expanded={!isCollapsed}
+                  aria-label={`${g.key}, ${g.records.length} cases`}
+                  onClick={() => toggleGroup(g.key)}
+                >
+                  <span className="index-group-caret" aria-hidden="true">
+                    {isCollapsed ? "▸" : "▾"}
+                  </span>
+                  <span className="index-group-label">{g.key}</span>
+                  <span className="index-group-count">{g.records.length}</span>
+                </button>
+                {!isCollapsed && (
+                  <ul className="index-group-list">
+                    {g.records.map((r) => {
+                      const plotted = isPlottable(r);
+                      const lunar = !plotted && isLunar(r);
+                      // Rows with a mark on the globe (Earth point or moon marker)
+                      // emit hover; truly unplotted rows have nothing to emphasize.
+                      const hoverIn =
+                        plotted || lunar ? () => onHover({ id: r.id, source: "list" }) : undefined;
+                      const hoverOut = plotted || lunar ? () => onHover(null) : undefined;
+                      return (
+                        <li
+                          key={r.id}
+                          ref={(el) => {
+                            if (el) rowRefs.current.set(r.id, el);
+                            else rowRefs.current.delete(r.id);
+                          }}
                         >
-                          <span className="case-row-primary">
-                            <span className="case-row-location">
-                              {r.locationRaw || "location unknown"}
+                          <button
+                            type="button"
+                            className={rowClass(r, selectedId, hover)}
+                            onClick={() => onSelect(r.id)}
+                            onMouseEnter={hoverIn}
+                            onMouseLeave={hoverOut}
+                            onFocus={hoverIn}
+                            onBlur={hoverOut}
+                          >
+                            <span className="case-row-primary">
+                              <span className="case-row-location">
+                                {r.locationRaw || "location unknown"}
+                              </span>
+                              <span className="case-row-date">{r.incidentDate ?? "undated"}</span>
                             </span>
-                            <span className="case-row-date">{r.incidentDate ?? "undated"}</span>
-                          </span>
-                          <span className="case-row-meta">
-                            <span className="case-row-class">
-                              {r.sourceAgency} · {r.objectClass}
+                            <span className="case-row-meta">
+                              <span className="case-row-class">
+                                {r.sourceAgency} · {r.objectClass}
+                              </span>
+                              {lunar && <span className="case-row-tag">lunar</span>}
+                              {!plotted && !lunar && (
+                                <span className="case-row-tag">not on globe</span>
+                              )}
                             </span>
-                            {lunar && <span className="case-row-tag">lunar</span>}
-                            {!plotted && !lunar && (
-                              <span className="case-row-tag">not on globe</span>
-                            )}
-                          </span>
-                        </button>
-                      </li>
-                    );
-                  })}
-                </ul>
-              )}
-            </li>
-          );
-        })}
-      </ul>
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </section>
   );
 }

@@ -82,6 +82,7 @@
   --type-md: 14.5px;
   --type-lg: 18px;
   --type-xl: 22px; /* the mobile sheet's location title */
+  --type-touch: 16px; /* text inputs on mobile — anything smaller triggers iOS focus-zoom */
   --weight-regular: 400;
   --weight-medium: 500;
   --weight-semibold: 600;

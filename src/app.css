@@ -57,6 +57,19 @@
 
 /* ── shared chrome ─────────────────────────────────────────────────────── */
 
+/* screen-reader-only content (all structural values) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
 .mono-label {
   font-family: var(--font-mono);
   font-size: var(--type-xs);
@@ -180,7 +193,106 @@
   padding: var(--space-4) var(--space-4) var(--space-3);
 }
 
+/* quick filters — the faceted-navigation block between header and list */
+.index-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: 0 var(--space-4) var(--space-3);
+}
+
+.index-search {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-mono);
+  font-size: var(--type-sm);
+  color: var(--text-primary);
+  background: var(--bg-inset);
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-2);
+  padding: var(--space-2) var(--space-3);
+}
+
+.index-search::placeholder {
+  color: var(--text-muted);
+}
+
+.index-filter-row {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.index-filter {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-mono);
+  font-size: var(--type-xxs);
+  color: var(--text-secondary);
+  background: var(--bg-inset);
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-2);
+  padding: var(--space-1) var(--space-2);
+  cursor: pointer;
+}
+
+.index-filter-toggle {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: var(--type-xxs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--bg-inset);
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-2);
+  padding: var(--space-1) var(--space-2);
+  cursor: pointer;
+}
+
+/* active facet = interactive state — signal's job */
+.index-filter-toggle[aria-pressed="true"] {
+  color: var(--signal);
+  border-color: var(--signal-border);
+}
+
+.index-search:focus-visible,
+.index-filter:focus-visible,
+.index-filter-toggle:focus-visible {
+  outline: none;
+  border-color: var(--signal-border);
+}
+
+.index-clear {
+  font-family: var(--font-mono);
+  font-size: var(--type-xxs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--signal); /* interactive control */
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.index-clear:hover {
+  text-decoration: underline;
+}
+
+.index-empty {
+  margin: 0;
+  padding: var(--space-4);
+  font-size: var(--type-sm);
+  line-height: var(--leading-body);
+  color: var(--text-muted);
+}
+
 .case-index-count {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
   padding: 0 var(--space-4) var(--space-3);
   font-family: var(--font-mono);
   font-size: var(--type-xxs);
@@ -1306,5 +1418,10 @@ a.meta-signal:hover {
   .timeline > .mono-label,
   .timeline-count {
     display: none;
+  }
+
+  .index-search {
+    /* below 16px, iOS zooms the page on input focus */
+    font-size: var(--type-touch);
   }
 }

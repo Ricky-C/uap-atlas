@@ -9,7 +9,17 @@ import { Header } from "./Header";
 import { Onboarding } from "./Onboarding";
 import { About } from "./About";
 import { RotationControl } from "./RotationControl";
-import { RECORDS, BLUEBOOK, isPlottable, isLunar, incidentYear, sortForIndex } from "./data";
+import {
+  RECORDS,
+  BLUEBOOK,
+  EMPTY_FILTERS,
+  filterForIndex,
+  isPlottable,
+  isLunar,
+  incidentYear,
+  sortForIndex,
+  type IndexFilters,
+} from "./data";
 import { prefersReducedMotion } from "./theme";
 import { useLocalStorageFlag } from "./useLocalStorageFlag";
 import type { HoverState } from "./selection";
@@ -37,6 +47,9 @@ export function App() {
   // Mobile only: the bottom sheet's tap-to-raise state (no drag physics).
   // Desktop ignores it — the sheet wrapper is display:contents there.
   const [sheetExpanded, setSheetExpanded] = useState(false);
+  // Case-index quick filters live here, not in CaseIndex — the INDEX↔ANALYSIS
+  // toggle unmounts the panel and a user's filters must survive the round trip.
+  const [indexFilters, setIndexFilters] = useState<IndexFilters>(EMPTY_FILTERS);
   // Rotation is user intent (T6): on by default, off under reduced motion —
   // but the explicit toggle can still opt in.
   const [rotationOn, setRotationOn] = useState(() => !prefersReducedMotion());
@@ -58,11 +71,20 @@ export function App() {
   const lunar = useMemo(() => RECORDS.filter(isLunar), []);
 
   // The case index is a list, not a canvas — it filters the ordinary way. It
-  // carries the whole corpus (plotted and unplotted), newest incidents first.
+  // carries the whole corpus (plotted and unplotted), newest incidents first;
+  // the quick filters then narrow that year-scoped list, and the panel's
+  // counts describe what survived BOTH cuts.
   const indexRecords = useMemo(() => sortForIndex(upToYear(RECORDS, maxYear)), [maxYear]);
-  const plottedShown = useMemo(() => upToYear(plotted, maxYear).length, [plotted, maxYear]);
-  const lunarShown = useMemo(() => upToYear(lunar, maxYear).length, [lunar, maxYear]);
-  const unplottedShown = indexRecords.length - plottedShown - lunarShown;
+  const filteredRecords = useMemo(
+    () => filterForIndex(indexRecords, indexFilters),
+    [indexRecords, indexFilters],
+  );
+  const plottedShown = useMemo(() => filteredRecords.filter(isPlottable).length, [filteredRecords]);
+  const lunarShown = useMemo(
+    () => filteredRecords.filter((r) => !isPlottable(r) && isLunar(r)).length,
+    [filteredRecords],
+  );
+  const unplottedShown = filteredRecords.length - plottedShown - lunarShown;
   // Deliberately not cleared when the timeline scrubs the selected case out of
   // view: the open case file stays readable; only its globe point recedes.
   // Blue Book basemap dots are selectable too (they open a minimal catalog
@@ -106,7 +128,10 @@ export function App() {
         </button>
         {panel === "cases" ? (
           <CaseIndex
-            records={indexRecords}
+            records={filteredRecords}
+            totalRecords={indexRecords}
+            filters={indexFilters}
+            onFiltersChange={setIndexFilters}
             plottedCount={plottedShown}
             lunarCount={lunarShown}
             unplottedCount={unplottedShown}

@@ -137,6 +137,69 @@ export function isLunar(r: UAPRecord): boolean {
   return /\b(moon|lunar|cislunar)\b/i.test(r.locationRaw);
 }
 
+// Case-index quick filters (faceted navigation): a search string plus three
+// facets. Pure functions — App derives the filtered list and the facet option
+// counts from the same predicate, so the two can never disagree.
+export interface IndexFilters {
+  query: string;
+  agency: string | null;
+  objectClass: string | null;
+  onGlobeOnly: boolean;
+}
+
+// Shared by initial state and every "clear" — safe as a single reference
+// because filters are never mutated in place, only replaced via spread.
+export const EMPTY_FILTERS: IndexFilters = {
+  query: "",
+  agency: null,
+  objectClass: null,
+  onGlobeOnly: false,
+};
+
+export function filtersActive(f: IndexFilters): boolean {
+  return f.query.trim() !== "" || f.agency !== null || f.objectClass !== null || f.onGlobeOnly;
+}
+
+function matchesFilters(
+  r: UAPRecord,
+  f: IndexFilters,
+  skipFacet?: "agency" | "objectClass",
+): boolean {
+  if (skipFacet !== "agency" && f.agency !== null && r.sourceAgency !== f.agency) return false;
+  if (skipFacet !== "objectClass" && f.objectClass !== null && r.objectClass !== f.objectClass)
+    return false;
+  if (f.onGlobeOnly && !isPlottable(r) && !isLunar(r)) return false;
+  const q = f.query.trim().toLowerCase();
+  if (q !== "") {
+    const hay =
+      `${r.locationRaw} ${r.sourceAgency} ${r.objectClass} ${r.docType} ${r.incidentDate ?? ""} ${r.id}`.toLowerCase();
+    if (!hay.includes(q)) return false;
+  }
+  return true;
+}
+
+export function filterForIndex(records: UAPRecord[], f: IndexFilters): UAPRecord[] {
+  if (!filtersActive(f)) return records;
+  return records.filter((r) => matchesFilters(r, f));
+}
+
+// Facet option counts answer "what would selecting this show?" — every OTHER
+// active filter applies; the facet's own current selection does not (standard
+// faceted-navigation behavior).
+export function facetCounts(
+  records: UAPRecord[],
+  f: IndexFilters,
+  facet: "agency" | "objectClass",
+): Map<string, number> {
+  const counts = new Map<string, number>();
+  for (const r of records) {
+    if (!matchesFilters(r, f, facet)) continue;
+    const key = facet === "agency" ? r.sourceAgency : r.objectClass;
+    counts.set(key, (counts.get(key) ?? 0) + 1);
+  }
+  return counts;
+}
+
 // Case-index order (TICKETS.md T2): dated cases newest-first, undated grouped
 // at the end; id breaks ties so the order is stable across renders and rebuilds.
 // incidentDate carries mixed precision ("1949", "2008-07", "1947-12-30"), so a
