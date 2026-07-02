@@ -1,0 +1,29 @@
+{
+  "recordId": "dvids-1006106",
+  "sha256": "dvids-1006106",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "Infrared footage from a sensor aboard a U.S. military platform reportedly shows an area of contrast resembling a football-shaped body with three radial projections, one vertical and two angled downward, over nine seconds in 2024.",
+  "objectClass": "other",
+  "redactionPct": null,
+  "incidentDate": "2024",
+  "incidentLocation": null,
+  "reviewFlags": [
+    "ambiguous-object",
+    "ambiguous-date",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 1991,
+    "output_tokens": 150
+  },
+  "enrichedAt": "2026-07-02T23:24:55.113Z"
+}

@@ -1,0 +1,28 @@
+{
+  "recordId": "dvids-1007788",
+  "sha256": "dvids-1007788",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "A video reportedly from a commercial cellular device's rear camera shows a bright phenomenon with trails of diminishing brightness extending from its center, with the camera panning and zooming on it near Karaganda International Airport, Kazakhstan.",
+  "objectClass": "light",
+  "redactionPct": null,
+  "incidentDate": "2022-02",
+  "incidentLocation": "Karaganda, Kazakhstan",
+  "reviewFlags": [
+    "ambiguous-date",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2197,
+    "output_tokens": 161
+  },
+  "enrichedAt": "2026-07-02T23:24:55.117Z"
+}

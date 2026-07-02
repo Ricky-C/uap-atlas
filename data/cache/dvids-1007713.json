@@ -1,0 +1,27 @@
+{
+  "recordId": "dvids-1007713",
+  "sha256": "dvids-1007713",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "Infrared footage reportedly captured by a U.S. military platform operating in Afghanistan shows a spherical object moving in and out of clouds, appearing as an area of contrast that transits across the frame before losing distinctiveness against the background; the video was later processed with zoom, sharpening, and slowed playback for review.",
+  "objectClass": "orb",
+  "redactionPct": null,
+  "incidentDate": "2020-11-23",
+  "incidentLocation": "Afghanistan",
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2325,
+    "output_tokens": 176
+  },
+  "enrichedAt": "2026-07-02T23:24:55.099Z"
+}

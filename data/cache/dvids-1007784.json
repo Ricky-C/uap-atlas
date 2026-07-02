@@ -1,0 +1,30 @@
+{
+  "recordId": "dvids-1007784",
+  "sha256": "dvids-1007784",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "Infrared sensor footage reportedly from a U.S. military aircraft shows an area of contrast tracked in the frame, followed by what the uploader described as a kinetic interaction in which the object appeared to fragment in a radial pattern.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2023-02-12",
+  "incidentLocation": "Lake Huron",
+  "reviewFlags": [
+    "ambiguous-object",
+    "ambiguous-date",
+    "ambiguous-location",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2190,
+    "output_tokens": 173
+  },
+  "enrichedAt": "2026-07-02T23:24:55.128Z"
+}

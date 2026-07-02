@@ -1,0 +1,29 @@
+{
+  "recordId": "dvids-1006097",
+  "sha256": "dvids-1006097",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "An infrared sensor aboard a U.S. military platform recorded an area of contrast that entered the frame, intermittently faded and reappeared, and was tracked by the sensor as it panned and switched imaging modes over nearly five minutes in 2020. No oral or written witness description accompanied the footage.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2020",
+  "incidentLocation": null,
+  "reviewFlags": [
+    "ambiguous-object",
+    "thin-description",
+    "ambiguous-location"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2268,
+    "output_tokens": 176
+  },
+  "enrichedAt": "2026-07-02T23:24:55.114Z"
+}

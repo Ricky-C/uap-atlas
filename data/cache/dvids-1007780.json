@@ -1,0 +1,29 @@
+{
+  "recordId": "dvids-1007780",
+  "sha256": "dvids-1007780",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "Infrared footage reportedly captured by a fifth-generation military aircraft's sensor on January 20, 2023 shows an area of contrast tracked near the center of the frame, which later moves toward the edge of the field-of-view before a second area of contrast becomes visible.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2023-01-20",
+  "incidentLocation": "United States Northern Command area of responsibility",
+  "reviewFlags": [
+    "ambiguous-object",
+    "ambiguous-location",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2205,
+    "output_tokens": 182
+  },
+  "enrichedAt": "2026-07-02T23:24:55.129Z"
+}

@@ -1,0 +1,28 @@
+{
+  "recordId": "dvids-1007740",
+  "sha256": "dvids-1007740",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "Full-motion and infrared sensor footage reportedly captured aboard a U.S. military platform operating in the U.S. Central Command area shows a sensor tracking an area of contrast near the center of the field of view before panning away.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2021-04-12",
+  "incidentLocation": "United States Central Command area of responsibility",
+  "reviewFlags": [
+    "thin-description",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2126,
+    "output_tokens": 158
+  },
+  "enrichedAt": "2026-07-02T23:24:55.123Z"
+}

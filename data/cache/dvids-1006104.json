@@ -1,0 +1,29 @@
+{
+  "recordId": "dvids-1006104",
+  "sha256": "dvids-1006104",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "Infrared sensor footage from a U.S. military platform reportedly shows an area of contrast being tracked against the background for several minutes before it exits the frame; no oral or written description of the observation was provided by the reporting command.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2020",
+  "incidentLocation": null,
+  "reviewFlags": [
+    "ambiguous-object",
+    "ambiguous-date",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2247,
+    "output_tokens": 149
+  },
+  "enrichedAt": "2026-07-02T23:24:55.116Z"
+}

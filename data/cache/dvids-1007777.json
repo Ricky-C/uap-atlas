@@ -1,0 +1,29 @@
+{
+  "recordId": "dvids-1007777",
+  "sha256": "dvids-1007777",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "An infrared sensor aboard a U.S. Coast Guard platform reportedly recorded an area of contrast that it tracked by panning for roughly 32 seconds before the sensor panned away and the object left the frame.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2024-04-24",
+  "incidentLocation": "Southeastern United States",
+  "reviewFlags": [
+    "ambiguous-object",
+    "thin-description",
+    "ambiguous-date"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2132,
+    "output_tokens": 159
+  },
+  "enrichedAt": "2026-07-02T23:24:55.120Z"
+}

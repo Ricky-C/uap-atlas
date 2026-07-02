@@ -1,0 +1,28 @@
+{
+  "recordId": "dvids-1007720",
+  "sha256": "dvids-1007720",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "Infrared sensor footage reportedly captured aboard a U.S. military platform over the Yellow Sea shows areas of contrast entering and moving through the frame while the sensor pans, zooms, and tracks the phenomena; the uploader-assigned title describes it as spherical in appearance.",
+  "objectClass": "orb",
+  "redactionPct": null,
+  "incidentDate": "2023-01",
+  "incidentLocation": "Yellow Sea",
+  "reviewFlags": [
+    "ambiguous-object",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2377,
+    "output_tokens": 173
+  },
+  "enrichedAt": "2026-07-02T23:24:55.129Z"
+}

@@ -1,0 +1,29 @@
+{
+  "recordId": "dvids-1007779",
+  "sha256": "dvids-1007779",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "Infrared footage reportedly captured by a U.S. military sensor near a submarine on March 25, 2022, shows multiple areas of contrast entering and exiting the frame, some appearing to move in and out of the water, while the sensor operator pans to track them.",
+  "objectClass": "orb",
+  "redactionPct": null,
+  "incidentDate": "2022-03-25",
+  "incidentLocation": null,
+  "reviewFlags": [
+    "ambiguous-object",
+    "ambiguous-location",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2449,
+    "output_tokens": 165
+  },
+  "enrichedAt": "2026-07-02T23:24:55.124Z"
+}

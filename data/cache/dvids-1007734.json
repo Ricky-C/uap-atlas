@@ -1,0 +1,28 @@
+{
+  "recordId": "dvids-1007734",
+  "sha256": "dvids-1007734",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "Infrared and full-motion video footage reportedly from a U.S. military platform operating in the Central Command area in 2021 shows an area of contrast crossing the sensor's field of view, with the sensor panning and zooming to track it before it re-enters frame and is tracked again.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2021",
+  "incidentLocation": "United States Central Command area of responsibility",
+  "reviewFlags": [
+    "ambiguous-object",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2187,
+    "output_tokens": 170
+  },
+  "enrichedAt": "2026-07-02T23:24:55.124Z"
+}

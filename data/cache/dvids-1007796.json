@@ -1,0 +1,30 @@
+{
+  "recordId": "dvids-1007796",
+  "sha256": "dvids-1007796",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "Footage reportedly captured by a full-motion video camera aboard a U.S. military platform in the U.S. Central Command area of responsibility shows an area of contrast entering the frame, being tracked and zoomed in on by the sensor as it stays near the center, before it exits the lower left of the screen.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2020",
+  "incidentLocation": "United States Central Command area of responsibility",
+  "reviewFlags": [
+    "ambiguous-object",
+    "ambiguous-date",
+    "ambiguous-location",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2204,
+    "output_tokens": 194
+  },
+  "enrichedAt": "2026-07-02T23:24:55.103Z"
+}

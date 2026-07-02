@@ -1,0 +1,29 @@
+{
+  "recordId": "dvids-1007712",
+  "sha256": "dvids-1007712",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "Infrared sensor footage reportedly from a U.S. military platform operating in the Central Command area shows one or more areas of contrast entering, exiting, and being tracked across the frame over roughly five minutes.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2020-08",
+  "incidentLocation": "United States Central Command area of responsibility",
+  "reviewFlags": [
+    "ambiguous-object",
+    "ambiguous-date",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2371,
+    "output_tokens": 159
+  },
+  "enrichedAt": "2026-07-02T23:24:55.115Z"
+}

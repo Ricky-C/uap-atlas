@@ -1,0 +1,29 @@
+{
+  "recordId": "dvids-1007715",
+  "sha256": "dvids-1007715",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "An infrared sensor aboard a U.S. military platform operating in the Central Command area of responsibility reportedly recorded an area of contrast entering and being tracked in the frame, with the sensor operator zooming and panning to follow it over several minutes.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2020-08",
+  "incidentLocation": "United States Central Command area of responsibility",
+  "reviewFlags": [
+    "ambiguous-object",
+    "thin-description",
+    "ambiguous-date"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2376,
+    "output_tokens": 172
+  },
+  "enrichedAt": "2026-07-02T23:24:55.131Z"
+}

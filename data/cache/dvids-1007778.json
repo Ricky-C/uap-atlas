@@ -1,0 +1,29 @@
+{
+  "recordId": "dvids-1007778",
+  "sha256": "dvids-1007778",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "Infrared footage reportedly from a U.S. Coast Guard sensor operating over the southeastern United States shows an area of contrast crossing the frame twice; in both instances the sensor failed to track it before it left the field of view.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2024-04-24",
+  "incidentLocation": "Southeastern United States",
+  "reviewFlags": [
+    "ambiguous-object",
+    "ambiguous-date",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2204,
+    "output_tokens": 162
+  },
+  "enrichedAt": "2026-07-02T23:24:55.129Z"
+}

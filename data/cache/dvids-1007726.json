@@ -1,0 +1,30 @@
+{
+  "recordId": "dvids-1007726",
+  "sha256": "dvids-1007726",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "An infrared sensor aboard a U.S. military platform operating in the U.S. Central Command area reportedly recorded multiple areas of contrast entering and moving across the frame in 2018, with the sensor panning and zooming to track them as they separated and additional areas of contrast later appeared.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2018",
+  "incidentLocation": "United States Central Command area of responsibility",
+  "reviewFlags": [
+    "ambiguous-object",
+    "ambiguous-date",
+    "ambiguous-location",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2319,
+    "output_tokens": 191
+  },
+  "enrichedAt": "2026-07-02T23:24:55.114Z"
+}

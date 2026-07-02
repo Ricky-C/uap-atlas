@@ -1,0 +1,30 @@
+{
+  "recordId": "dvids-1007791",
+  "sha256": "dvids-1007791",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "Infrared footage reportedly captured by a U.S. military sensor in the U.S. Central Command area in June 2022 shows the sensor repeatedly tracking, zooming on, and panning to follow one or more areas of contrast that move through and exit the frame at various points.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2022-06",
+  "incidentLocation": "United States Central Command area of responsibility",
+  "reviewFlags": [
+    "ambiguous-object",
+    "ambiguous-date",
+    "ambiguous-location",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2629,
+    "output_tokens": 187
+  },
+  "enrichedAt": "2026-07-02T23:24:55.127Z"
+}

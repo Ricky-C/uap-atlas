@@ -1,0 +1,28 @@
+{
+  "recordId": "dvids-1006111",
+  "sha256": "dvids-1006111",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "Infrared video from a U.S. military platform reportedly shows a sensor tracking two areas of contrast, adjusting zoom and centering while following the objects over the course of about a minute and 49 seconds. No oral or written description of the observation was provided by the reporting service member.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2026",
+  "incidentLocation": null,
+  "reviewFlags": [
+    "ambiguous-object",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2166,
+    "output_tokens": 158
+  },
+  "enrichedAt": "2026-07-02T23:24:55.128Z"
+}

@@ -1,0 +1,29 @@
+{
+  "recordId": "dvids-1007725",
+  "sha256": "dvids-1007725",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "An infrared sensor aboard a U.S. military platform operating in the Gulf of Arabia region reportedly tracked what appeared, at higher magnification, as multiple distinct areas of contrast that moved in and out of the sensor's field of view before exiting the frame.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2020-05",
+  "incidentLocation": "Gulf of Arabia",
+  "reviewFlags": [
+    "ambiguous-object",
+    "ambiguous-date",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2387,
+    "output_tokens": 176
+  },
+  "enrichedAt": "2026-07-02T23:24:55.117Z"
+}

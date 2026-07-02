@@ -1,0 +1,30 @@
+{
+  "recordId": "dvids-1007807",
+  "sha256": "dvids-1007807",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "An infrared video reportedly captured by a sensor aboard a U.S. military platform operating in the U.S. Africa Command area of responsibility shows a brief area of contrast crossing the frame from mid-left to upper-right around the 28-second mark.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2020",
+  "incidentLocation": "United States Africa Command area of responsibility",
+  "reviewFlags": [
+    "ambiguous-object",
+    "ambiguous-date",
+    "ambiguous-location",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2089,
+    "output_tokens": 180
+  },
+  "enrichedAt": "2026-07-02T23:24:55.116Z"
+}

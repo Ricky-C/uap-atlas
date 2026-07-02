@@ -1,0 +1,29 @@
+{
+  "recordId": "dvids-1006089",
+  "sha256": "dvids-1006089",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "An infrared sensor aboard a U.S. military platform reportedly captured five seconds of footage showing a faint area of contrast moving across the corner of the frame, entering from the right edge and exiting near the bottom center of the screen. No oral or written description of the observation was provided by the reporting unit.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2020",
+  "incidentLocation": null,
+  "reviewFlags": [
+    "ambiguous-object",
+    "thin-description",
+    "ambiguous-location"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 1989,
+    "output_tokens": 174
+  },
+  "enrichedAt": "2026-07-02T23:24:55.101Z"
+}

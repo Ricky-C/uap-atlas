@@ -1,0 +1,28 @@
+{
+  "recordId": "dvids-1007706",
+  "sha256": "dvids-1007706",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "An infrared sensor aboard a U.S. military platform operating in the CENTCOM area reportedly recorded four areas of contrast moving across the frame over water near Iran, followed by an additional area of contrast entering the frame moments later.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2022-08-26",
+  "incidentLocation": "over water within the United States Central Command area of responsibility, near Iran",
+  "reviewFlags": [
+    "ambiguous-object",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2154,
+    "output_tokens": 171
+  },
+  "enrichedAt": "2026-07-02T23:24:55.123Z"
+}

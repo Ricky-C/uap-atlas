@@ -1,0 +1,30 @@
+{
+  "recordId": "dvids-1007718",
+  "sha256": "dvids-1007718",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "An infrared video reportedly from a U.S. military platform shows an area of contrast, described in the uploaded title as a spherical object, appearing to pulse over water while remaining generally centered in frame as sensor contrast modes shift.",
+  "objectClass": "orb",
+  "redactionPct": null,
+  "incidentDate": null,
+  "incidentLocation": null,
+  "reviewFlags": [
+    "thin-description",
+    "ambiguous-date",
+    "ambiguous-location",
+    "ambiguous-object"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2169,
+    "output_tokens": 159
+  },
+  "enrichedAt": "2026-07-02T23:24:55.120Z"
+}

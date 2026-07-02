@@ -72,7 +72,10 @@
     "summary": "The document consists only of a section header labeled '1.4(a)' with no accompanying body text or details about any observed object or incident.",
     "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/dow-uap-d8-mission-report-djibouti-2025.pdf",
     "media": {
-      "docImage": "data/raw/release_01/DOW-UAP-D8-Mission-Report-Djibouti-2025.pdf"
+      "docImage": "data/raw/release_01/DOW-UAP-D8-Mission-Report-Djibouti-2025.pdf",
+      "videos": [
+        "1006074"
+      ]
     }
   },
   {
@@ -205,7 +208,10 @@
     "summary": "A U.S. Air Force mission report (MISREP) describes an ISR aircraft conducting operations over the eastern Mediterranean, during which one small unidentified aerial phenomenon was observed at 0117Z, alongside separate observations of reacting aircraft and a probable SU-27/35 landing near Al Assad airfield.",
     "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/dow-uap-d14-mission-report-iraq-may-2022.pdf",
     "media": {
-      "docImage": "data/raw/release_01/DOW-UAP-D14-Mission-Report-Iraq-May-2022.pdf"
+      "docImage": "data/raw/release_01/DOW-UAP-D14-Mission-Report-Iraq-May-2022.pdf",
+      "videos": [
+        "1006059"
+      ]
     }
   },
   {
@@ -718,7 +724,10 @@
     "summary": "A military mission report describes an aircraft flying an ISR mission near Baghdad, Iraq, that observed a possible unidentified aerial phenomenon during its flight; further details are referenced in a separate UAP line entry but not included here.",
     "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/dow-uap-d18-mission-report-iraq-december-2022.pdf",
     "media": {
-      "docImage": "data/raw/release_01/DOW-UAP-D18-Mission-Report-Iraq-December-2022.pdf"
+      "docImage": "data/raw/release_01/DOW-UAP-D18-Mission-Report-Iraq-December-2022.pdf",
+      "videos": [
+        "1006062"
+      ]
     }
   },
   {
@@ -984,7 +993,10 @@
     "summary": "A USAF mission report (Misrep 9329374) describes an ISR aircraft on a support mission that observed one possible unidentified aerial phenomenon during on-station operations, with details of the sighting redacted or referenced only to a separate UAP attachment not included here.",
     "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/dow-uap-d33-mission-report-greece-october-2023.pdf",
     "media": {
-      "docImage": "data/raw/release_01/DOW-UAP-D33-Mission-Report-Greece-October-2023.pdf"
+      "docImage": "data/raw/release_01/DOW-UAP-D33-Mission-Report-Greece-October-2023.pdf",
+      "videos": [
+        "1006080"
+      ]
     }
   },
   {
@@ -1402,7 +1414,10 @@
     "summary": "A range fouler debrief form describes an ISR mission in which a solid white round object flew through the sensor's field of view at night, appearing to make erratic movements above the water; the crew intermittently tracked it, achieving 4x zoom before losing it due to poor track placement.",
     "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/dow-uap-d38-range-fouler-debrief-middle-east-may-2020.pdf",
     "media": {
-      "docImage": "data/raw/release_01/DOW-UAP-D38-Range-Fouler-Debrief-Middle-East-May-2020.pdf"
+      "docImage": "data/raw/release_01/DOW-UAP-D38-Range-Fouler-Debrief-Middle-East-May-2020.pdf",
+      "videos": [
+        "1006083"
+      ]
     }
   },
   {
@@ -1782,7 +1797,10 @@
     "summary": "A U.S. Air Force mission report describes an armed reconnaissance and SIGINT/IMINT flight over Iraq/Syria on 30-31 July 2022, during which the aircrew observed an unidentified aerial phenomenon at a specified location during the mission; the report provides minimal descriptive detail of the object itself.",
     "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/dow-uap-d16-mission-report-syria-july-2022.pdf",
     "media": {
-      "docImage": "data/raw/release_01/DOW-UAP-D16-Mission-Report-Syria-July-2022.pdf"
+      "docImage": "data/raw/release_01/DOW-UAP-D16-Mission-Report-Syria-July-2022.pdf",
+      "videos": [
+        "1006060"
+      ]
     }
   },
   {
@@ -1801,7 +1819,10 @@
     "summary": "A U.S. Air Force ISR mission report (Misrep 9337873) from a 33 SOS/27 SOW aircraft describes the crew conducting FMV/SIGINT collection on-station when they observed one possible unidentified aerial phenomenon, referenced in an attached exhibit (UAP 1) that is not included here.",
     "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/dow-uap-d35-mission-report-greece-october-2023.pdf",
     "media": {
-      "docImage": "data/raw/release_01/DOW-UAP-D35-Mission-Report-Greece-October-2023.pdf"
+      "docImage": "data/raw/release_01/DOW-UAP-D35-Mission-Report-Greece-October-2023.pdf",
+      "videos": [
+        "1006082"
+      ]
     }
   },
   {
@@ -2067,7 +2088,10 @@
     "summary": "The page shows only a section heading, '1.4(a)', with no additional visible text or content describing an incident.",
     "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/dow-uap-d7-mission-report-arabian-gulf-2020.pdf",
     "media": {
-      "docImage": "data/raw/release_01/DOW-UAP-D7-Mission-Report-Arabian-Gulf-2020.pdf"
+      "docImage": "data/raw/release_01/DOW-UAP-D7-Mission-Report-Arabian-Gulf-2020.pdf",
+      "videos": [
+        "1006073"
+      ]
     }
   },
   {
@@ -2223,6 +2247,279 @@
     }
   },
   {
+    "id": "dvids-1006087",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020",
+    "locationRaw": "Arabian Gulf",
+    "lat": 26.5,
+    "lon": 51.5,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared sensor footage from a U.S. military platform reportedly shows an area of contrast entering the frame's bottom left, moving in a generally linear path toward the top of the screen, and exiting the top left area of the field of view.",
+    "sourceUrl": "https://www.dvidshub.net/video/1006087",
+    "media": {
+      "videos": [
+        "1006087"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1006088",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2013",
+    "locationRaw": "Middle East",
+    "lat": 29,
+    "lon": 45,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform reportedly captured an area of contrast resembling an eight-pointed star that moved within the sensor's field of view, leaving a visible trail before exiting and re-entering the frame across the recording.",
+    "sourceUrl": "https://www.dvidshub.net/video/1006088",
+    "media": {
+      "videos": [
+        "1006088"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1006089",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020",
+    "locationRaw": "Arabian Gulf",
+    "lat": 26.5,
+    "lon": 51.5,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform reportedly captured five seconds of footage showing a faint area of contrast moving across the corner of the frame, entering from the right edge and exiting near the bottom center of the screen. No oral or written description of the observation was provided by the reporting unit.",
+    "sourceUrl": "https://www.dvidshub.net/video/1006089",
+    "media": {
+      "videos": [
+        "1006089"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1006093",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020",
+    "locationRaw": "Arabian Gulf",
+    "lat": 26.5,
+    "lon": 51.5,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform reportedly recorded a small thermal signature that brightened against the background, with the sensor panning and adjusting contrast and zoom to track it over about a minute.",
+    "sourceUrl": "https://www.dvidshub.net/video/1006093",
+    "media": {
+      "videos": [
+        "1006093"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1006094",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020",
+    "locationRaw": "Arabian Gulf",
+    "lat": 26.5,
+    "lon": 51.5,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform reportedly recorded an area of contrast entering the frame and being tracked as the sensor panned from left to right for about 90 seconds, according to a report submitted to AARO by U.S. Central Command in 2020. No oral or written description of the observation was provided by the reporter.",
+    "sourceUrl": "https://www.dvidshub.net/video/1006094",
+    "media": {
+      "videos": [
+        "1006094"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1006097",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020",
+    "locationRaw": "Arabian Gulf",
+    "lat": 26.5,
+    "lon": 51.5,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform recorded an area of contrast that entered the frame, intermittently faded and reappeared, and was tracked by the sensor as it panned and switched imaging modes over nearly five minutes in 2020. No oral or written witness description accompanied the footage.",
+    "sourceUrl": "https://www.dvidshub.net/video/1006097",
+    "media": {
+      "videos": [
+        "1006097"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1006104",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020",
+    "locationRaw": "Arabian Gulf",
+    "lat": 26.5,
+    "lon": 51.5,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared sensor footage from a U.S. military platform reportedly shows an area of contrast being tracked against the background for several minutes before it exits the frame; no oral or written description of the observation was provided by the reporting command.",
+    "sourceUrl": "https://www.dvidshub.net/video/1006104",
+    "media": {
+      "videos": [
+        "1006104"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1006105",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020",
+    "locationRaw": "Southern United States",
+    "lat": 32,
+    "lon": -97,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform tracked and locked onto an area of contrast that grew more distinct and larger over the course of roughly a minute before it moved out of frame and exited the sensor's field of view.",
+    "sourceUrl": "https://www.dvidshub.net/video/1006105",
+    "media": {
+      "videos": [
+        "1006105"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1006106",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2024",
+    "locationRaw": "East China Sea",
+    "lat": 29,
+    "lon": 125,
+    "geoPrecision": "region",
+    "objectClass": "other",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared footage from a sensor aboard a U.S. military platform reportedly shows an area of contrast resembling a football-shaped body with three radial projections, one vertical and two angled downward, over nine seconds in 2024.",
+    "sourceUrl": "https://www.dvidshub.net/video/1006106",
+    "media": {
+      "videos": [
+        "1006106"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1006107",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2023",
+    "locationRaw": "Japan",
+    "lat": 36.5,
+    "lon": 138,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform reportedly recorded three areas of contrast that maintained fixed positions and orientation relative to one another for nearly two minutes.",
+    "sourceUrl": "https://www.dvidshub.net/video/1006107",
+    "media": {
+      "videos": [
+        "1006107"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1006110",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2024",
+    "locationRaw": "Indo-PACOM",
+    "lat": 15,
+    "lon": 150,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform in the Indo-Pacific region reportedly tracked an area of contrast that remained near the center of the frame for the duration of the recording. No oral or written description of the observation was provided by the reporting command.",
+    "sourceUrl": "https://www.dvidshub.net/video/1006110",
+    "media": {
+      "videos": [
+        "1006110"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1006111",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2026",
+    "locationRaw": "North America",
+    "lat": 48,
+    "lon": -100,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared video from a U.S. military platform reportedly shows a sensor tracking two areas of contrast, adjusting zoom and centering while following the objects over the course of about a minute and 49 seconds. No oral or written description of the observation was provided by the reporting service member.",
+    "sourceUrl": "https://www.dvidshub.net/video/1006111",
+    "media": {
+      "videos": [
+        "1006111"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1006159",
+    "release": "01",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2025",
+    "locationRaw": "Djibouti",
+    "lat": 11.8,
+    "lon": 42.6,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform reportedly recorded two seconds of footage showing a small area of contrast moving across the field of view before exiting near the bottom right of the frame. No oral or written description of the observation was provided by the reporting command.",
+    "sourceUrl": "https://www.dvidshub.net/video/1006159",
+    "media": {
+      "videos": [
+        "1006159"
+      ]
+    }
+  },
+  {
     "id": "e12c00b3e2d64e35",
     "release": "01",
     "sourceAgency": "DOW",
@@ -2295,7 +2592,11 @@
     "summary": "A mission report from the 50th ATKS describes a remotely piloted aircraft conducting ISR under Operation Spartan Shield that observed two unidentified aerial phenomena during a single sortie on separate occasions, with details referred to separate UAP report lines.",
     "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/dow-uap-d23-mission-report-united-arab-emirates-october-2023.pdf",
     "media": {
-      "docImage": "data/raw/release_01/DOW-UAP-D23-Mission-Report-United-Arab-Emirates-October-2023.pdf"
+      "docImage": "data/raw/release_01/DOW-UAP-D23-Mission-Report-United-Arab-Emirates-October-2023.pdf",
+      "videos": [
+        "1006063",
+        "1006067"
+      ]
     }
   },
   {
@@ -2409,7 +2710,10 @@
     "summary": "A U.S. Air Force mission report from an Operation Inherent Resolve sortie states that during ISR/SIGINT collection an aircrew observed one unidentified aerial phenomenon at 1514Z, with details referenced in an accompanying observation log; the narrative provides no further description of the object's appearance or behavior.",
     "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/dow-uap-d10-mission-report-middle-east-may-2022.pdf",
     "media": {
-      "docImage": "data/raw/release_01/DOW-UAP-D10-Mission-Report-Middle-East-May-2022.pdf"
+      "docImage": "data/raw/release_01/DOW-UAP-D10-Mission-Report-Middle-East-May-2022.pdf",
+      "videos": [
+        "1006056"
+      ]
     }
   },
   {
@@ -2466,7 +2770,12 @@
     "summary": "A military mission report describes an aircraft crew conducting FMV/SIGINT collection sorties during Operation INHERENT RESOLVE; during one sortie the crew reported observing an unidentified aerial phenomenon, with details referenced to a separate UAP annex not included here.",
     "sourceUrl": "https://www.war.gov/medialink/ufo/release_1/dow-uap-d32-mission-report,-syria-october-2024.pdf",
     "media": {
-      "docImage": "data/raw/release_01/DOW-UAP-D32-Mission-Report,-Syria-October-2024.pdf"
+      "docImage": "data/raw/release_01/DOW-UAP-D32-Mission-Report,-Syria-October-2024.pdf",
+      "videos": [
+        "1006076",
+        "1006078",
+        "1006079"
+      ]
     }
   },
   {
@@ -2565,6 +2874,1056 @@
     }
   },
   {
+    "id": "dvids-1007706",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2022-08-26",
+    "locationRaw": "over water within the United States Central Command area of responsibility, near Iran",
+    "lat": 26.5,
+    "lon": 53,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform operating in the CENTCOM area reportedly recorded four areas of contrast moving across the frame over water near Iran, followed by an additional area of contrast entering the frame moments later.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007706",
+    "media": {
+      "videos": [
+        "1007706"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007707",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2021",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform reportedly recorded an area of contrast that the sensor tracked before it rapidly exited the frame, an event assessed as likely occurring within the U.S. Central Command area of responsibility in 2021.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007707",
+    "media": {
+      "videos": [
+        "1007707"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007708",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared footage reportedly from a U.S. military sensor platform shows four areas of contrast, described as forming a formation, moving across the frame and being tracked with varying zoom and filtering over roughly eight minutes before the areas become indistinct as video quality degrades.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007708",
+    "media": {
+      "videos": [
+        "1007708"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007709",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2022-10",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform operating in the Central Command area of responsibility reportedly recorded an area of contrast transiting the field of view from left to right in October 2022.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007709",
+    "media": {
+      "videos": [
+        "1007709"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007711",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2022-08",
+    "locationRaw": "United States European Command area of responsibility",
+    "lat": 50,
+    "lon": 15,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform reportedly recorded an area of contrast in the frame that the sensor operator tracked as it moved, with the footage noted to have been digitally altered before it reached a classified network in a way that affected its apparent movement characteristics.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007711",
+    "media": {
+      "videos": [
+        "1007711"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007712",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020-08",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared sensor footage reportedly from a U.S. military platform operating in the Central Command area shows one or more areas of contrast entering, exiting, and being tracked across the frame over roughly five minutes.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007712",
+    "media": {
+      "videos": [
+        "1007712"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007713",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020-11-23",
+    "locationRaw": "Afghanistan",
+    "lat": 33.9,
+    "lon": 67.7,
+    "geoPrecision": "region",
+    "objectClass": "orb",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared footage reportedly captured by a U.S. military platform operating in Afghanistan shows a spherical object moving in and out of clouds, appearing as an area of contrast that transits across the frame before losing distinctiveness against the background; the video was later processed with zoom, sharpening, and slowed playback for review.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007713",
+    "media": {
+      "videos": [
+        "1007713"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007715",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020-08",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform operating in the Central Command area of responsibility reportedly recorded an area of contrast entering and being tracked in the frame, with the sensor operator zooming and panning to follow it over several minutes.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007715",
+    "media": {
+      "videos": [
+        "1007715"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007716",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020-08-21",
+    "locationRaw": "Persian Gulf",
+    "lat": 26.5,
+    "lon": 51.5,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared footage reportedly recorded from a U.S. military platform in the Persian Gulf region in August 2020 shows an area of contrast that transits across the frame and is tracked briefly by the sensor before becoming indistinguishable from video grain.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007716",
+    "media": {
+      "videos": [
+        "1007716"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007718",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "orb",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared video reportedly from a U.S. military platform shows an area of contrast, described in the uploaded title as a spherical object, appearing to pulse over water while remaining generally centered in frame as sensor contrast modes shift.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007718",
+    "media": {
+      "videos": [
+        "1007718"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007719",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020-08-24",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared footage reportedly captured by a sensor aboard a U.S. military platform in the Central Command area of responsibility shows an area of contrast being tracked, panned, and zoomed in on before repeatedly exiting and re-entering the frame.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007719",
+    "media": {
+      "videos": [
+        "1007719"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007720",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2023-01",
+    "locationRaw": "Yellow Sea",
+    "lat": 36,
+    "lon": 123,
+    "geoPrecision": "region",
+    "objectClass": "orb",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared sensor footage reportedly captured aboard a U.S. military platform over the Yellow Sea shows areas of contrast entering and moving through the frame while the sensor pans, zooms, and tracks the phenomena; the uploader-assigned title describes it as spherical in appearance.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007720",
+    "media": {
+      "videos": [
+        "1007720"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007721",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020-05-05",
+    "locationRaw": "Gulf of Arabia",
+    "lat": 26.5,
+    "lon": 51.5,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared footage reportedly from a U.S. military platform's sensor shows the sensor tracking an area of contrast and several areas of contrast entering and exiting the field of view over the Gulf of Arabia region.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007721",
+    "media": {
+      "videos": [
+        "1007721"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007722",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An electro-optical/infrared sensor aboard a U.S. military platform operating in the Central Command area reportedly recorded an area of contrast entering and moving across the frame, which the sensor operator tracked, zoomed on, and re-acquired after a brief modality change.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007722",
+    "media": {
+      "videos": [
+        "1007722"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007723",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": null,
+    "locationRaw": "Indo-Pacific Command area of responsibility",
+    "lat": 15,
+    "lon": 150,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared video reportedly recorded by a sensor aboard a U.S. military platform operating in the Indo-Pacific region shows an area of contrast tracked near the center of the frame, with the sensor cycling contrast modes and panning to keep the object in view over roughly ten minutes.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007723",
+    "media": {
+      "videos": [
+        "1007723"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007725",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020-05",
+    "locationRaw": "Gulf of Arabia",
+    "lat": 26.5,
+    "lon": 51.5,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform operating in the Gulf of Arabia region reportedly tracked what appeared, at higher magnification, as multiple distinct areas of contrast that moved in and out of the sensor's field of view before exiting the frame.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007725",
+    "media": {
+      "videos": [
+        "1007725"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007726",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2018",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform operating in the U.S. Central Command area reportedly recorded multiple areas of contrast entering and moving across the frame in 2018, with the sensor panning and zooming to track them as they separated and additional areas of contrast later appeared.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007726",
+    "media": {
+      "videos": [
+        "1007726"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007727",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform operating in the Central Command area reportedly recorded an area of contrast that was tracked, zoomed, and reacquired by the sensor operator over roughly five minutes in 2020.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007727",
+    "media": {
+      "videos": [
+        "1007727"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007728",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2019-09-25",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform operating in the CENTCOM area of responsibility reportedly recorded an area of contrast entering its field of view on September 25, 2019, which the sensor operator tracked and magnified through several contrast and zoom adjustments before the recording ends.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007728",
+    "media": {
+      "videos": [
+        "1007728"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007734",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2021",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared and full-motion video footage reportedly from a U.S. military platform operating in the Central Command area in 2021 shows an area of contrast crossing the sensor's field of view, with the sensor panning and zooming to track it before it re-enters frame and is tracked again.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007734",
+    "media": {
+      "videos": [
+        "1007734"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007735",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2021",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared and full-motion video footage from a U.S. military sensor platform in the U.S. Central Command area reportedly shows an area of contrast entering the frame, being tracked by the sensor, and then becoming indistinct against the background as the sensor changed modes.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007735",
+    "media": {
+      "videos": [
+        "1007735"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007737",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": null,
+    "locationRaw": "Persian Gulf",
+    "lat": 26.5,
+    "lon": 51.5,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared footage reportedly captured by a U.S. military sensor over the Persian Gulf area shows multiple areas of contrast that the sensor repeatedly tracks, zooms in and out on, and loses against the background before regaining.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007737",
+    "media": {
+      "videos": [
+        "1007737"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007738",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2019-09-23",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform operating in the Central Command area of responsibility reportedly recorded multiple areas of contrast entering and exiting the frame in 2019, with the sensor panning to track the objects at various points.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007738",
+    "media": {
+      "videos": [
+        "1007738"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007739",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2021",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "orb",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared and full-motion video footage reportedly recorded by a U.S. military platform operating in the Central Command area of responsibility shows a sensor panning and adjusting zoom to keep an area of contrast, described as a spherical object, centered in frame.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007739",
+    "media": {
+      "videos": [
+        "1007739"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007740",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2021-04-12",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Full-motion and infrared sensor footage reportedly captured aboard a U.S. military platform operating in the U.S. Central Command area shows a sensor tracking an area of contrast near the center of the field of view before panning away.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007740",
+    "media": {
+      "videos": [
+        "1007740"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007741",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2017-07",
+    "locationRaw": "Kabul, Afghanistan",
+    "lat": 34.53,
+    "lon": 69.17,
+    "geoPrecision": "city",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared video reportedly captured by a U.S. military sensor over the Kabul area shows an area of contrast entering the frame from the left and moving out of view to the right within about one second.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007741",
+    "media": {
+      "videos": [
+        "1007741"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007777",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2024-04-24",
+    "locationRaw": "Southeastern United States",
+    "lat": 32,
+    "lon": -83,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. Coast Guard platform reportedly recorded an area of contrast that it tracked by panning for roughly 32 seconds before the sensor panned away and the object left the frame.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007777",
+    "media": {
+      "videos": [
+        "1007777"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007778",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2024-04-24",
+    "locationRaw": "Southeastern United States",
+    "lat": 32,
+    "lon": -83,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared footage reportedly from a U.S. Coast Guard sensor operating over the southeastern United States shows an area of contrast crossing the frame twice; in both instances the sensor failed to track it before it left the field of view.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007778",
+    "media": {
+      "videos": [
+        "1007778"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007779",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2022-03-25",
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "orb",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared footage reportedly captured by a U.S. military sensor near a submarine on March 25, 2022, shows multiple areas of contrast entering and exiting the frame, some appearing to move in and out of the water, while the sensor operator pans to track them.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007779",
+    "media": {
+      "videos": [
+        "1007779"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007780",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2023-01-20",
+    "locationRaw": "United States Northern Command area of responsibility",
+    "lat": 45,
+    "lon": -100,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared footage reportedly captured by a fifth-generation military aircraft's sensor on January 20, 2023 shows an area of contrast tracked near the center of the frame, which later moves toward the edge of the field-of-view before a second area of contrast becomes visible.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007780",
+    "media": {
+      "videos": [
+        "1007780"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007781",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2022",
+    "locationRaw": "United States Northern Command area of responsibility",
+    "lat": 45,
+    "lon": -100,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared sensor footage reportedly from a U.S. military aircraft shows a sensor tracking an area of contrast, with a reticle briefly locking onto it before losing track.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007781",
+    "media": {
+      "videos": [
+        "1007781"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007783",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2023-02-13",
+    "locationRaw": "Eglin AFB, United States Northern Command area of responsibility",
+    "lat": 30.46,
+    "lon": -86.55,
+    "geoPrecision": "point",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform reportedly tracked an area of contrast by panning to keep it centered and cycling through contrast modes; the area reportedly lost distinctiveness against the background about 22 seconds into the recording.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007783",
+    "media": {
+      "videos": [
+        "1007783"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007784",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2023-02-12",
+    "locationRaw": "Lake Huron",
+    "lat": 44.8,
+    "lon": -82.4,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared sensor footage reportedly from a U.S. military aircraft shows an area of contrast tracked in the frame, followed by what the uploader described as a kinetic interaction in which the object appeared to fragment in a radial pattern.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007784",
+    "media": {
+      "videos": [
+        "1007784"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007788",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2022-02",
+    "locationRaw": "Karaganda, Kazakhstan",
+    "lat": 49.8,
+    "lon": 73.1,
+    "geoPrecision": "city",
+    "objectClass": "light",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "A video reportedly from a commercial cellular device's rear camera shows a bright phenomenon with trails of diminishing brightness extending from its center, with the camera panning and zooming on it near Karaganda International Airport, Kazakhstan.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007788",
+    "media": {
+      "videos": [
+        "1007788"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007790",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2022-11",
+    "locationRaw": "vicinity of Columbus, Ohio",
+    "lat": 39.96,
+    "lon": -83,
+    "geoPrecision": "city",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform operating near Columbus, Ohio reportedly recorded two areas of contrast that moved through the sensor's field of view, with one briefly obscured by a redacted display element before the sensor lost track of both.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007790",
+    "media": {
+      "videos": [
+        "1007790"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007791",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2022-06",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared footage reportedly captured by a U.S. military sensor in the U.S. Central Command area in June 2022 shows the sensor repeatedly tracking, zooming on, and panning to follow one or more areas of contrast that move through and exit the frame at various points.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007791",
+    "media": {
+      "videos": [
+        "1007791"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007795",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2021-06-09",
+    "locationRaw": "East China Sea",
+    "lat": 29,
+    "lon": 125,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform reportedly panned to track an area of contrast over the East China Sea before losing sight of the object at the 18-second mark.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007795",
+    "media": {
+      "videos": [
+        "1007795"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007796",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Footage reportedly captured by a full-motion video camera aboard a U.S. military platform in the U.S. Central Command area of responsibility shows an area of contrast entering the frame, being tracked and zoomed in on by the sensor as it stays near the center, before it exits the lower left of the screen.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007796",
+    "media": {
+      "videos": [
+        "1007796"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007797",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2019-12",
+    "locationRaw": "East Coast, United States (NORTHCOM area of responsibility)",
+    "lat": 37,
+    "lon": -75.5,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform reportedly tracked an area of contrast off the East Coast in December 2019, with the sensor changing contrast modes while following the object before losing track of it.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007797",
+    "media": {
+      "videos": [
+        "1007797"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007799",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared footage reportedly captured by a U.S. military platform operating in the Central Command area of responsibility shows an area of contrast crossing the frame from bottom to top on three brief occasions.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007799",
+    "media": {
+      "videos": [
+        "1007799"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007800",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared sensor footage reportedly captured by a U.S. military platform in the Central Command area of responsibility shows multiple areas of contrast entering, transiting, and exiting the frame while the sensor cycles zoom levels and tracks one of the objects.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007800",
+    "media": {
+      "videos": [
+        "1007800"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007803",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform operating in the Central Command area reportedly recorded multiple brief instances of an area of contrast entering, crossing, and exiting the camera's field of view, with the sensor at times panning toward or attempting to track it.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007803",
+    "media": {
+      "videos": [
+        "1007803"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007804",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2021-01",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform operating in the CENTCOM area of responsibility reportedly recorded an area of contrast that the sensor tracked and zoomed in on before it exited the frame.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007804",
+    "media": {
+      "videos": [
+        "1007804"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007805",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020-10-18",
+    "locationRaw": "United States Africa Command area of responsibility",
+    "lat": 5,
+    "lon": 20,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared sensor footage reportedly from a U.S. military platform operating in the U.S. Africa Command area of responsibility shows an area of contrast crossing the field of view for a few seconds, entering near the top left and exiting near the bottom right of the frame.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007805",
+    "media": {
+      "videos": [
+        "1007805"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007807",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020",
+    "locationRaw": "United States Africa Command area of responsibility",
+    "lat": 5,
+    "lon": 20,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared video reportedly captured by a sensor aboard a U.S. military platform operating in the U.S. Africa Command area of responsibility shows a brief area of contrast crossing the frame from mid-left to upper-right around the 28-second mark.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007807",
+    "media": {
+      "videos": [
+        "1007807"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007808",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020-10",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform operating in the Central Command area reportedly tracked an area of contrast entering and moving within the frame, cycling zoom and sensor modalities before the contrast faded and briefly reappeared.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007808",
+    "media": {
+      "videos": [
+        "1007808"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007809",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020-11",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform reportedly tracked a low-contrast area whose intensity increased over time, then panned to track a second area of contrast that transited the frame, within the U.S. Central Command area of responsibility in November 2020.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007809",
+    "media": {
+      "videos": [
+        "1007809"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007810",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020-09-17",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Full-motion video reportedly captured by a camera aboard a U.S. military platform shows a brief area of contrast entering the frame from the lower right and exiting the upper left over roughly two seconds.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007810",
+    "media": {
+      "videos": [
+        "1007810"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007812",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020-11",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "light",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "Infrared sensor footage from a U.S. military platform operating in the Central Command area of responsibility reportedly shows a low area of contrast tracked by the sensor, with a second area of contrast appearing and briefly tracked as well, over roughly five minutes in November 2020.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007812",
+    "media": {
+      "videos": [
+        "1007812"
+      ]
+    }
+  },
+  {
+    "id": "dvids-1007816",
+    "release": "02",
+    "sourceAgency": "DOW",
+    "docType": "released video",
+    "incidentDate": "2020-10",
+    "locationRaw": "United States Central Command area of responsibility",
+    "lat": 28,
+    "lon": 47,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
+    "resolved": false,
+    "redactionPct": null,
+    "summary": "An infrared sensor aboard a U.S. military platform operating in the Central Command area reportedly tracked multiple areas of contrast, described as up to three fast-moving objects, over a four-minute period in October 2020.",
+    "sourceUrl": "https://www.dvidshub.net/video/1007816",
+    "media": {
+      "videos": [
+        "1007816"
+      ]
+    }
+  },
+  {
     "id": "ec72132902a2f50d",
     "release": "02",
     "sourceAgency": "DOW",
@@ -2595,8 +3954,8 @@
     "geoPrecision": "region",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "An FBI cover sheet references an enclosure of seven photostats depicting flying saucers, received from Department of the Air Force Headquarters on August 27, 1952, along with routine indices search and FOIPA processing slips.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D012_Newark-Field-Office_1952-1967.pdf",
     "media": {
       "docImage": "data/raw/release_03/FBI-UAP-D012_Newark-Field-Office_1952-1967.pdf"
@@ -2612,10 +3971,10 @@
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "orb",
+    "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
-    "summary": "A rendered night scene depicts a group of small red lights alongside a larger glowing orange orb positioned over a mountain ridge, with no accompanying textual documentation of an actual observation.",
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D014_Digital-Rendering_Incident-1-1_Western-US-Event_2023.jpg",
     "media": {
       "rendering": "data/raw/release_03/FBI-UAP-D014_Digital-Rendering_Incident-1-1_Western-US-Event_2023.jpg"
@@ -2626,15 +3985,15 @@
     "release": "03",
     "sourceAgency": "DOW",
     "docType": "report",
-    "incidentDate": "1948-02-18",
-    "locationRaw": "Norcatur, Kansas",
-    "lat": 39.836,
-    "lon": -100.189,
-    "geoPrecision": "city",
-    "objectClass": "fireball",
+    "incidentDate": null,
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "An Air Force UFO checklist describes a 1948 fireball explosion observed over Norcatur, Kansas, accompanied by a loud blast and smaller explosions, with a bluish-white smoke trail left in the sky. Follow-up notes state meteorite fragments, including a 109-pound stony achondrite, were later recovered, and an amateur photograph captured the resulting vapor trail.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DOW-UAP-D088_US-AirForce_Analysis-of-Flying-Objects-in-the-US_101-172.pdf",
     "media": {
       "docImage": "data/raw/release_03/DOW-UAP-D088_US-AirForce_Analysis-of-Flying-Objects-in-the-US_101-172.pdf"
@@ -2650,10 +4009,10 @@
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "light",
+    "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
-    "summary": "An image shows two silhouetted figures observing a night sky containing a line of small red lights and one larger pale light above a mountainous horizon.",
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D020_Digital-Rendering_Incident-2-5_Western-US-Event_2023.jpg",
     "media": {
       "rendering": "data/raw/release_03/FBI-UAP-D020_Digital-Rendering_Incident-2-5_Western-US-Event_2023.jpg"
@@ -2669,10 +4028,10 @@
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "orb",
+    "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
-    "summary": "An image depicts a rural roadway at dusk with a bright orange orb-like object and smaller red points hovering above distant hills; no accompanying text establishes date, location, or witness details.",
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D015_Digital-Rendering_Incident-1-2_Western-US-Event_2023.jpg",
     "media": {
       "rendering": "data/raw/release_03/FBI-UAP-D015_Digital-Rendering_Incident-1-2_Western-US-Event_2023.jpg"
@@ -2683,15 +4042,15 @@
     "release": "03",
     "sourceAgency": "CIA",
     "docType": "document",
-    "incidentDate": "1955-11",
-    "locationRaw": "Budapest, Hungary",
-    "lat": 47.4979,
-    "lon": 19.0402,
-    "geoPrecision": "city",
-    "objectClass": "disc",
+    "incidentDate": "1955",
+    "locationRaw": "Hungary",
+    "lat": 47.2,
+    "lon": 19.5,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 5,
-    "summary": "A CIA information report from a naturalized U.S. citizen of Hungarian descent relays a November 1955 letter from his niece in Budapest describing fast-moving flying objects, popularly called flying saucers, that reportedly kept scientific groups busy and were estimated to travel at 12,000 km per hour. The letter included a sketch showing several circles in a line formation running roughly from Budapest toward Moscow.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-018_Report_of_Unusual_Flying_Object_Sightings_and_Attendant_Scientific_Activity.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-018_Report_of_Unusual_Flying_Object_Sightings_and_Attendant_Scientific_Activity.pdf"
@@ -2703,14 +4062,14 @@
     "sourceAgency": "FBI",
     "docType": "report",
     "incidentDate": "2022-02",
-    "locationRaw": "Fort Carson, Colorado",
-    "lat": 38.74,
-    "lon": -104.79,
-    "geoPrecision": "point",
-    "objectClass": "other",
+    "locationRaw": "Colorado Springs, Colorado, U.S.",
+    "lat": 38.8339,
+    "lon": -104.8214,
+    "geoPrecision": "city",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 25,
-    "summary": "An FBI FD-302 documents an interview with an Army soldier at Fort Carson who reported that in early February 2022, he and four others observed a motionless, matte white, bean-shaped object hovering over a saddle in Cheyenne Mountain for several minutes before it vanished. The witnesses later compared independently drawn sketches that matched, and one reportedly filed an official report and was later contacted by AARO in 2024.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D001_FD-302_Unresolved-UAP-Report_ColoradoSprings_2022.pdf",
     "media": {
       "docImage": "data/raw/release_03/FBI-UAP-D001_FD-302_Unresolved-UAP-Report_ColoradoSprings_2022.pdf"
@@ -2726,13 +4085,18 @@
     "lat": 43,
     "lon": -73.5,
     "geoPrecision": "region",
-    "objectClass": "orb",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 35,
-    "summary": "An FBI electronic communication documents contact with a witness who reported repeated observations, since November 2021, of unidentified anomalous phenomena appearing as plasma orbs near their residence, sometimes hovering statically or moving near trees and water. The witness provided video clips and reported correlating spikes in gamma radiation and unusual effects on electronics and GPS devices during observations.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D004_FD-1057-02_Northeastern-US_2024.pdf",
     "media": {
-      "docImage": "data/raw/release_03/FBI-UAP-D004_FD-1057-02_Northeastern-US_2024.pdf"
+      "docImage": "data/raw/release_03/FBI-UAP-D004_FD-1057-02_Northeastern-US_2024.pdf",
+      "videos": [
+        "1010263",
+        "1010264",
+        "1010267"
+      ]
     }
   },
   {
@@ -2741,14 +4105,14 @@
     "sourceAgency": "DOW",
     "docType": "report",
     "incidentDate": "2023-10",
-    "locationRaw": "western United States",
+    "locationRaw": "Westen United States",
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "orb",
+    "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
-    "summary": "An illustrative government graphic depicts four separate incidents reported by U.S. federal law enforcement agents in the western United States over several days in October 2023, describing orb-like objects (including one described as launching smaller orbs and another as a fiery orb near a ridgeline) as well as thin, kite-shaped objects with colored lights observed at close range.",
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DOW-UAP-D078_Notional-Map_Western-United-States-Event.pdf",
     "media": {
       "docImage": "data/raw/release_03/DOW-UAP-D078_Notional-Map_Western-United-States-Event.pdf"
@@ -2760,14 +4124,14 @@
     "sourceAgency": "DOW",
     "docType": "report",
     "incidentDate": "2023-10",
-    "locationRaw": "western United States",
+    "locationRaw": "Westen United States",
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "orb",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "A federal law enforcement agent's first-hand narrative describes multiple sightings over two days in October 2023 in the western United States, including a bright orb-like light that expelled smaller red lights, hovering red light formations, and orb-like lights resembling headlights that moved erratically and accelerated instantly across rugged terrain while agents attempted to approach them.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DoW-UAP-D080_Narrative-2_Western-US-Event.pdf",
     "media": {
       "docImage": "data/raw/release_03/DoW-UAP-D080_Narrative-2_Western-US-Event.pdf"
@@ -2785,8 +4149,8 @@
     "geoPrecision": "theater",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 10,
-    "summary": "This is a preliminary NASA transcript of the Gemini IV flight crew debriefing, conducted aboard the USS Wasp and concluded at the Manned Spacecraft Center in June 1965, covering operational aspects of the mission rather than a specific anomalous sighting.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/NASA-UAP-D017_Preliminary-Gemini-4-Crew-Debriefing_Part2_1965.pdf",
     "media": {
       "docImage": "data/raw/release_03/NASA-UAP-D017_Preliminary-Gemini-4-Crew-Debriefing_Part2_1965.pdf"
@@ -2804,8 +4168,8 @@
     "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 5,
-    "summary": "Two administrative tracking records log incoming congressional correspondence forwarded to a legal/policy office: one from Senator Snowe relaying a constituent letter about UFOs and recent Mars photographs, and another from Senator Grassley relaying a constituent request for information on reported UFO sightings by astronauts. Neither record describes a specific sighting or object.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/USG-UAP-D001_Congress-WhiteHouse-UFO-Correspondence_1998.pdf",
     "media": {
       "docImage": "data/raw/release_03/USG-UAP-D001_Congress-WhiteHouse-UFO-Correspondence_1998.pdf"
@@ -2823,8 +4187,8 @@
     "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "A draft transcript describes an astronaut's debriefing account of attempting to use an eye patch to become dark/night adapted during a spaceflight, noting difficulties with the patch sticking and discussing observed star counts and dark adaptation timing during orbit, with no anomalous object reported.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/NASA-UAP-D015_Astronaut-Scientific-Debriefings_1962-1963.pdf",
     "media": {
       "docImage": "data/raw/release_03/NASA-UAP-D015_Astronaut-Scientific-Debriefings_1962-1963.pdf"
@@ -2842,8 +4206,8 @@
     "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 30,
-    "summary": "This document is the cover and title pages of a CIA historical monograph on overhead reconnaissance programs, covering the U-2 and OXCART aircraft programs from 1954 to 1974. It is an administrative history publication, not a report of an observed aerial phenomenon.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-003-THE_CENTRAL_INTELLIGENCE_AGENCY_AND_OVERHEAD_RECONNAISSANCE-THE_U-2_AND_OXCART_PROGRAMS_1954-1974.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-003-THE_CENTRAL_INTELLIGENCE_AGENCY_AND_OVERHEAD_RECONNAISSANCE-THE_U-2_AND_OXCART_PROGRAMS_1954-1974.pdf"
@@ -2861,8 +4225,8 @@
     "geoPrecision": "theater",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "A 1967 CIA information report recounts a US astrophysicist's conversations with Soviet astronomers during a research trip through the USSR, describing their varying levels of interest in and knowledge of unidentified flying object sightings, including a reddish flashing object seen by astronomers in Kiev and a 'peculiar object' observed near Crimea.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-010_REPORT_ON_CONVERSATIONS_WITH_SOVIET_SCIENTISTS_ON_SUBJECT_OF_UNIDENTIFIED_FLYING_OBJECTS_IS_THE_USSR.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-010_REPORT_ON_CONVERSATIONS_WITH_SOVIET_SCIENTISTS_ON_SUBJECT_OF_UNIDENTIFIED_FLYING_OBJECTS_IS_THE_USSR.pdf"
@@ -2874,17 +4238,21 @@
     "sourceAgency": "DOW",
     "docType": "report",
     "incidentDate": "2023-10",
-    "locationRaw": "western United States",
+    "locationRaw": "Westen United States",
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "orb",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "An AARO memorandum records a federal law enforcement agent's first-hand account of two sightings in October 2023 in the western United States, describing an orange orb that expelled smaller red orbs, and a second night with red lights hovering over an airfield and a vehicle that seemed to evade approach before disappearing.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DoW-UAP-D081_Narrative-3_Western-US-Event.pdf",
     "media": {
-      "docImage": "data/raw/release_03/DoW-UAP-D081_Narrative-3_Western-US-Event.pdf"
+      "docImage": "data/raw/release_03/DoW-UAP-D081_Narrative-3_Western-US-Event.pdf",
+      "videos": [
+        "1010272",
+        "1010276"
+      ]
     }
   },
   {
@@ -2899,8 +4267,8 @@
     "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "An internal memo dated January 1958 discusses follow-up contact with a Dr. Leon Davidson regarding a closed case involving a 'space message' and its transmitter; the writer notes records on the matter were reportedly destroyed and describes prior evasive answers given to Davidson about the agency's involvement in his contacts with two named individuals.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-004-CASE_17708_CLOSED_AND_DR_LEON_DAVIDSON.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-004-CASE_17708_CLOSED_AND_DR_LEON_DAVIDSON.pdf"
@@ -2911,15 +4279,15 @@
     "release": "03",
     "sourceAgency": "CIA",
     "docType": "document",
-    "incidentDate": "1971-09",
-    "locationRaw": "Yerevan, Armenia, USSR",
-    "lat": 40.1792,
-    "lon": 44.4991,
-    "geoPrecision": "city",
+    "incidentDate": "1972",
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "A 1972 CIA intelligence report describes a Soviet conference on the origins of life in Yerevan, Armenia in September 1971, where scientists Kardashev and Sakharov presented a speculative physics paper on charged mass collapse and black holes, and another Soviet speaker gave a talk on a USSR committee investigating unusual aerial phenomena (flying saucers), which colleagues reportedly treated with humor and skepticism.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-008_SPECULATIVE_PAPER_BY_N_KARDASHEV_AND_A_SAKHAROV.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-008_SPECULATIVE_PAPER_BY_N_KARDASHEV_AND_A_SAKHAROV.pdf"
@@ -2930,15 +4298,15 @@
     "release": "03",
     "sourceAgency": "CIA",
     "docType": "document",
-    "incidentDate": "2008-07-02",
-    "locationRaw": "Harare International Airport, Zimbabwe",
-    "lat": -17.9318,
-    "lon": 31.0928,
-    "geoPrecision": "point",
-    "objectClass": "disc",
+    "incidentDate": "2008-07",
+    "locationRaw": "Harare, Zimbabwe",
+    "lat": -17.8292,
+    "lon": 31.0522,
+    "geoPrecision": "city",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 35,
-    "summary": "A CIA information report describes an unidentified object hovering at high altitude over Harare International Airport, Zimbabwe, on the afternoon of 2 July 2008, reportedly observed by radar and visually. Witnesses described a disc-like object with a hollow center and rotating lights that changed color before it rapidly ascended out of visual range, prompting a facility to be placed on high alert.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-017_Placement_on_High_Alert_Due_to_Perceived_Aggressive_Foreign_Posturing.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-017_Placement_on_High_Alert_Due_to_Perceived_Aggressive_Foreign_Posturing.pdf"
@@ -2956,8 +4324,8 @@
     "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "A 1953 Secretary of Defense routing slip transmits a CIA cover letter forwarding a scientific panel's report on unidentified flying objects (referred to colloquially as flying saucers) for review and action.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DOW-UAP-D085_Transmission-of-CIA-Scientific-Advisory-Panel-Rept_1953.pdf",
     "media": {
       "docImage": "data/raw/release_03/DOW-UAP-D085_Transmission-of-CIA-Scientific-Advisory-Panel-Rept_1953.pdf"
@@ -2969,14 +4337,14 @@
     "sourceAgency": "CIA",
     "docType": "document",
     "incidentDate": "1976-11",
-    "locationRaw": "USSR",
-    "lat": 60,
-    "lon": 90,
-    "geoPrecision": "theater",
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 5,
-    "summary": "A CIA Domestic Collection Division report on Soviet Aeroflot fatigue-countermeasure research also notes that Dr. Akoyev told colleagues that 99 percent of UFO-type occurrences were traceable to natural or man-made phenomena, with about one percent unexplained and possibly attributable to hallucination.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-012-Combatting_Fatigue_in_Crewmembers.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-012-Combatting_Fatigue_in_Crewmembers.pdf"
@@ -2988,14 +4356,14 @@
     "sourceAgency": "FBI",
     "docType": "report",
     "incidentDate": "1952-07",
-    "locationRaw": "Pasco and Kennewick, Washington",
-    "lat": 46.2,
-    "lon": -119.13,
-    "geoPrecision": "city",
-    "objectClass": "disc",
+    "locationRaw": "Washington State, United States",
+    "lat": 47.4,
+    "lon": -120.5,
+    "geoPrecision": "region",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "Newspaper clippings compiled by the FBI describe multiple witnesses in Pasco and Kennewick, Washington reporting a fast-moving round object with flashing lights, described variously as a 'giant pinwheel' saucer and a disc with lights around its perimeter; some accounts noted it appeared round at times and triangular at times.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D013_WA-UFO-Investigation_1952-1960.pdf",
     "media": {
       "docImage": "data/raw/release_03/FBI-UAP-D013_WA-UFO-Investigation_1952-1960.pdf"
@@ -3006,15 +4374,15 @@
     "release": "03",
     "sourceAgency": "DOW",
     "docType": "report",
-    "incidentDate": "2023-10",
-    "locationRaw": "western United States, near a sensitive national security site",
+    "incidentDate": "2023",
+    "locationRaw": "Western United States",
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "orb",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "An AARO memo describes six federal law enforcement agents who reported observing orange 'mother orbs' near a sensitive national security site in the western U.S. over two days in October 2023, with the orbs appearing to launch clusters of smaller red orbs that moved, hovered, and in one case remained stationary for hours; the phenomena were described as silent and remain unresolved after analysis of flight logs, radar, and ADS-B data.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DOW-UAP-D077_Unresolved-Case-Analysis-Update_Western-United-States-Event.pdf",
     "media": {
       "docImage": "data/raw/release_03/DOW-UAP-D077_Unresolved-Case-Analysis-Update_Western-United-States-Event.pdf"
@@ -3030,10 +4398,10 @@
     "lat": null,
     "lon": null,
     "geoPrecision": "unknown",
-    "objectClass": "craft",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "A NASA memorandum and mission operation report describe planned additional flight activities for the Gemini 4 (GT-4) mission, including extravehicular activity, a hand-held maneuvering unit, and a rendezvous demonstration with the spent booster second stage, which had flashing lights installed to aid the test.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/NASA-UAP-D018_Gemini-4_Experiment-Debriefing_1967.pdf",
     "media": {
       "docImage": "data/raw/release_03/NASA-UAP-D018_Gemini-4_Experiment-Debriefing_1967.pdf"
@@ -3044,15 +4412,15 @@
     "release": "03",
     "sourceAgency": "CIA",
     "docType": "document",
-    "incidentDate": "1955-11",
+    "incidentDate": "1956",
     "locationRaw": "Budapest, Hungary",
     "lat": 47.4979,
     "lon": 19.0402,
     "geoPrecision": "city",
-    "objectClass": "disc",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 5,
-    "summary": "A 1956 CIA information report from Hungary relays a November 1955 letter from a Budapest resident to a naturalized US citizen, describing fast-moving flying objects nicknamed 'flying saucers' that reportedly caused public unease and prompted scientific attention, with a claimed speed of 12,000 km/h. The letter included a sketch showing a formation of circular objects along a flight path between Budapest and Moscow.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-013-Report_of_Unusual_Flying_Object_Sightings_and_Attendant_Scientific_Activity.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-013-Report_of_Unusual_Flying_Object_Sightings_and_Attendant_Scientific_Activity.pdf"
@@ -3068,10 +4436,10 @@
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "light",
+    "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
-    "summary": "An illustration depicts two silhouetted figures viewing a line of small red lights alongside a larger bright orb in a night sky over a desert landscape. No accompanying document text specifies who observed the lights or when.",
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D019_Digital-Rendering_Incident-2-4_Western-US-Event_2023.jpg",
     "media": {
       "rendering": "data/raw/release_03/FBI-UAP-D019_Digital-Rendering_Incident-2-4_Western-US-Event_2023.jpg"
@@ -3083,14 +4451,14 @@
     "sourceAgency": "DOW",
     "docType": "report",
     "incidentDate": "2023-10",
-    "locationRaw": "western United States",
+    "locationRaw": "Westen United States",
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "orb",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "An AARO memorandum presents a first-hand narrative from a federal law enforcement agent describing glowing orbs and lights observed over two nights in October 2023 in the western United States, including a hovering vehicle-like object and a translucent floating object seen while conducting field work.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DoW-UAP-D079_Narrative-1_Western-US-Event.pdf",
     "media": {
       "docImage": "data/raw/release_03/DoW-UAP-D079_Narrative-1_Western-US-Event.pdf"
@@ -3101,15 +4469,15 @@
     "release": "03",
     "sourceAgency": "DOW",
     "docType": "report",
-    "incidentDate": "1947-07-08",
-    "locationRaw": "Muroc Air Field, California",
-    "lat": 34.905,
-    "lon": -117.884,
-    "geoPrecision": "point",
-    "objectClass": "disc",
+    "incidentDate": null,
+    "locationRaw": "United States",
+    "lat": 39.8,
+    "lon": -98.6,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "A billeting officer at Muroc Air Field, California reported seeing two silver, spherical or disc-shaped objects flying about 300 MPH at roughly 8000 feet, headed north; other personnel corroborated the sighting, and a third similar object was later seen circling tightly over the airfield.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DOW-UAP-D087_US-AirForce_Analysis-of-Flying-Objects-in-the-US_1-100.pdf",
     "media": {
       "docImage": "data/raw/release_03/DOW-UAP-D087_US-AirForce_Analysis-of-Flying-Objects-in-the-US_1-100.pdf"
@@ -3127,8 +4495,8 @@
     "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 10,
-    "summary": "A December 1953 CIA memo reviews the status of the UFOB project, describing US Air Force, Navy, and Army handling of unidentified flying object reports, an Air Force camera program to photograph such objects at radar sites, and brief mentions of foreign government interest including Canada, Great Britain, and Sweden.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-007_Current_Status_of_Unidentified_Flying_Objects_UFO_Project.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-007_Current_Status_of_Unidentified_Flying_Objects_UFO_Project.pdf"
@@ -3144,10 +4512,10 @@
     "lat": null,
     "lon": null,
     "geoPrecision": "unknown",
-    "objectClass": "disc",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "A CIA information report transmits a translated article by German scientist Dr. Eduard Ludwig, submitted for publication in a Chilean German-language magazine, offering a theoretical aerodynamic explanation for reported 'flying discs' based on rotary gas-turbine and boundary-layer/Flettner-rotor concepts from wartime German aircraft research.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-005-GERMAN_SCIENTISTS_ ARTICLE_ON_FLYING_DISCS.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-005-GERMAN_SCIENTISTS_ ARTICLE_ON_FLYING_DISCS.pdf"
@@ -3163,10 +4531,10 @@
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "light",
+    "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
-    "summary": "The image shows a nighttime rendering of two occupants inside a vehicle observing a bright, round light hovering above a road ahead. No document text accompanies the image to provide details of the reported event.",
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D022_Digital-Rendering_Incident-2-6_Western-US-Event_2023.jpg",
     "media": {
       "rendering": "data/raw/release_03/FBI-UAP-D022_Digital-Rendering_Incident-2-6_Western-US-Event_2023.jpg"
@@ -3182,10 +4550,10 @@
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "light",
+    "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
-    "summary": "A rendered image depicts two silhouetted figures observing a glowing orb-like light in the night sky above a desert mountain landscape. No accompanying document text is present to establish details of an incident.",
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D018_Digital-Rendering_Incident-2-3_Western-US-Event_2023.jpg",
     "media": {
       "rendering": "data/raw/release_03/FBI-UAP-D018_Digital-Rendering_Incident-2-3_Western-US-Event_2023.jpg"
@@ -3203,8 +4571,8 @@
     "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "This is a cover and title page for Project Blue Book Special Report No. 14, dated 5 May 1955, described as an analysis of reports of unidentified aerial objects compiled by the Air Technical Intelligence Center at Wright-Patterson Air Force Base, Ohio. The document itself contains no specific incident narrative on these pages.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf"
@@ -3220,10 +4588,10 @@
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "light",
+    "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
-    "summary": "An image shows two silhouetted figures standing on a hillside at night, facing away from the camera and looking toward a bright light or celestial object in the sky.",
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D017_Digital-Rendering_Incident-2-2_Western-US-Event_2023.jpg",
     "media": {
       "rendering": "data/raw/release_03/FBI-UAP-D017_Digital-Rendering_Incident-2-2_Western-US-Event_2023.jpg"
@@ -3241,8 +4609,8 @@
     "geoPrecision": "region",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 45,
-    "summary": "An FBI report describes a site survey conducted at a private residence in November 2024 to review areas where the property owner reported observing unidentified aerial phenomena over the past three years, including a treeline and trail camera locations. Agents were shown photos and video from trail cameras and the property owner offered to allow additional equipment to be installed for future monitoring.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D006_FD-1057-05_Northeastern-US_2024.pdf",
     "media": {
       "docImage": "data/raw/release_03/FBI-UAP-D006_FD-1057-05_Northeastern-US_2024.pdf"
@@ -3260,8 +4628,8 @@
     "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "This is a NASA routing slip and attached draft debriefing notes for Gemini IX (1966), covering micrometeorite collection experiments and astronaut observations, including a note that Stafford reported seeing a bright meteor while looking down at Earth. The document does not describe any unidentified aerial phenomenon.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/NASA-UAP-D022_Gemini-9-Debriefing_1966.pdf",
     "media": {
       "docImage": "data/raw/release_03/NASA-UAP-D022_Gemini-9-Debriefing_1966.pdf"
@@ -3273,14 +4641,14 @@
     "sourceAgency": "CIA",
     "docType": "document",
     "incidentDate": "1952-12",
-    "locationRaw": "Yorkshire, United Kingdom",
-    "lat": 53.9,
-    "lon": -1.2,
-    "geoPrecision": "region",
-    "objectClass": "disc",
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 2,
-    "summary": "A 1952 CIA memorandum reports on British activity regarding unidentified flying objects, describing a standing UK committee on flying saucers and an incident at a Yorkshire RAF field about ten to twelve days prior in which senior RAF officials and pilots reportedly observed a 'perfect flying saucer' during a demonstration, generating public press coverage. The memo also references a 1946 Swedish incident and a Naval film from the Tremonton incident, and a follow-up page discusses general potential dangers such as identification delays, mass hysteria, and communications overload from such reports.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-014_British_Activity_in_the_Field_of_Unidentified_Flying_Objects.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-014_British_Activity_in_the_Field_of_Unidentified_Flying_Objects.pdf"
@@ -3298,8 +4666,8 @@
     "geoPrecision": "point",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "This is the cover and preface material for a Gemini V (GT-5) technical flight crew debriefing transcript, Part II, prepared by NASA's Spacecraft Operations Branch and covering a debriefing session held August 30 through September 2, 1965 at Cape Kennedy, Florida. The document describes crew comments on mission operations rather than any anomalous aerial phenomenon.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/NASA-UAP-D020_Gemini-5-Technical-Debriefing_Part2_1965.pdf",
     "media": {
       "docImage": "data/raw/release_03/NASA-UAP-D020_Gemini-5-Technical-Debriefing_Part2_1965.pdf"
@@ -3317,8 +4685,8 @@
     "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "These are official transmittal letters from 1953 concerning a report by a panel of scientific consultants on the subject of unidentified flying objects, convened by the CIA at the recommendation of the Intelligence Advisory Committee, and forwarded to civil defense and national security officials for review.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-002_Scientific-Advisory-Panel-on-Unidentified-Flying-Objects_Report_1952-1953.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-002_Scientific-Advisory-Panel-on-Unidentified-Flying-Objects_Report_1952-1953.pdf"
@@ -3336,8 +4704,8 @@
     "geoPrecision": "theater",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "An Australian Department of Defence Joint Intelligence Organization minute paper discusses attached reports on scientific and intelligence aspects of unidentified aerial reports, referencing US Air Force, CIA, and Project Blue Book records, plus a database of alleged weapon-system-related sightings compiled by researchers at Northwestern University. The accompanying summary alleges that US intelligence agencies used public debunking efforts as a cover for domestic development of advanced propulsion technology.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-019-Australian_Dept_of_Defense_Scientific_and_Intel_Aspects_of_the_UFO_Problem.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-019-Australian_Dept_of_Defense_Scientific_and_Intel_Aspects_of_the_UFO_Problem.pdf"
@@ -3348,15 +4716,15 @@
     "release": "03",
     "sourceAgency": "FBI",
     "docType": "report",
-    "incidentDate": "1948-05",
-    "locationRaw": "Cascade Mountains, Oregon",
-    "lat": 44,
-    "lon": -121.9,
-    "geoPrecision": "region",
-    "objectClass": "light",
+    "incidentDate": "1949",
+    "locationRaw": "",
+    "lat": null,
+    "lon": null,
+    "geoPrecision": "unknown",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "A pastor from McMinnville, Oregon wrote to FBI Director J. Edgar Hoover describing an observation from the previous May of four narrow beams of light converging over the Cascade Mountains, with small clouds forming within the beams and an apparent explosion effect at their meeting point rising to about ten thousand feet, visible for at least ten minutes. Hoover's office replied thanking him for the information without further comment.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D011_DFBI-Correspondence-Referral_1949.pdf",
     "media": {
       "docImage": "data/raw/release_03/FBI-UAP-D011_DFBI-Correspondence-Referral_1949.pdf"
@@ -3367,18 +4735,23 @@
     "release": "03",
     "sourceAgency": "FBI",
     "docType": "report",
-    "incidentDate": "2024-11",
+    "incidentDate": "2024-12",
     "locationRaw": "Northeastern United States",
     "lat": 43,
     "lon": -73.5,
     "geoPrecision": "region",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 45,
-    "summary": "An FBI electronic communication describes special agents conducting a site survey around a redacted property on 12/2024, walking the perimeter and checking areas where UAP activity had reportedly been observed on 11/2024. Agents found no unusual objects at ground or treetop level and assessed the tree cover made nighttime drone or craft flight in the area unrealistic.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D008_FD-1057-07_Northeastern-US_2024.pdf",
     "media": {
-      "docImage": "data/raw/release_03/FBI-UAP-D008_FD-1057-07_Northeastern-US_2024.pdf"
+      "docImage": "data/raw/release_03/FBI-UAP-D008_FD-1057-07_Northeastern-US_2024.pdf",
+      "videos": [
+        "1010263",
+        "1010264",
+        "1010267"
+      ]
     }
   },
   {
@@ -3387,14 +4760,14 @@
     "sourceAgency": "DOW",
     "docType": "report",
     "incidentDate": "2023-10",
-    "locationRaw": "western United States",
+    "locationRaw": "Westen United States",
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "orb",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 5,
-    "summary": "A federal law enforcement agent's field narrative describes a two-day October 2023 observation in a western U.S. wilderness area involving a large orange/red hovering light, smaller red orbs released from it, and later a red-and-white light pair and faint formation lights near a roadway, some viewed with night vision goggles and thermal binoculars.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DoW-UAP-D083_Narrative-5_Western-US-Event.pdf",
     "media": {
       "docImage": "data/raw/release_03/DoW-UAP-D083_Narrative-5_Western-US-Event.pdf"
@@ -3410,10 +4783,10 @@
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "light",
+    "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
-    "summary": "An image depicts two silhouetted figures beside a car observing a curved line of small red lights and two pairs of white lights in the night sky above a mountain range; no accompanying document text is present to establish witness details or circumstances.",
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D023_Digital-Rendering_Incident-2-7_Western-US-Event_2023.jpg",
     "media": {
       "rendering": "data/raw/release_03/FBI-UAP-D023_Digital-Rendering_Incident-2-7_Western-US-Event_2023.jpg"
@@ -3429,10 +4802,10 @@
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "light",
+    "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
-    "summary": "An image shows two silhouetted figures at night looking toward a bright point of light in the sky above a desert landscape. No accompanying text or documentation is present to describe the circumstances of the observation.",
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D016_Digital-Rendering_Incident-2-1_Western-US-Event_2023.jpg",
     "media": {
       "rendering": "data/raw/release_03/FBI-UAP-D016_Digital-Rendering_Incident-2-1_Western-US-Event_2023.jpg"
@@ -3450,8 +4823,8 @@
     "geoPrecision": "unknown",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "This is a 1949 Department of the Army Plans & Operations Division file cover/routing sheet for an evaluation study of a phenomenon referred to as 'flying saucers,' with no specific incident details provided.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DOW-UAP-D084_USArmy-Flying-Saucer-Study_1949.pdf",
     "media": {
       "docImage": "data/raw/release_03/DOW-UAP-D084_USArmy-Flying-Saucer-Study_1949.pdf"
@@ -3462,18 +4835,21 @@
     "release": "03",
     "sourceAgency": "FBI",
     "docType": "report",
-    "incidentDate": "2026-02",
+    "incidentDate": "2026",
     "locationRaw": "Northeastern United States",
     "lat": 43,
     "lon": -73.5,
     "geoPrecision": "region",
-    "objectClass": "orb",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 30,
-    "summary": "An FBI FD-302 interview report describes two witnesses at a private residence who observed a bright red spherical object with a white glowing center hovering near their backyard tree line, later joined by an identical second orb; the two orbs maneuvered together before appearing to merge and depart. Weeks later, one witness reported seeing several smaller white orbs passing overhead at higher altitude.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D009_FD-302-67_Northeastern-Orb-Sighting_2026.pdf",
     "media": {
-      "docImage": "data/raw/release_03/FBI-UAP-D009_FD-302-67_Northeastern-Orb-Sighting_2026.pdf"
+      "docImage": "data/raw/release_03/FBI-UAP-D009_FD-302-67_Northeastern-Orb-Sighting_2026.pdf",
+      "videos": [
+        "1010269"
+      ]
     }
   },
   {
@@ -3482,14 +4858,14 @@
     "sourceAgency": "CIA",
     "docType": "document",
     "incidentDate": "1973-12",
-    "locationRaw": "Sary Shagan Site 7, USSR",
-    "lat": 46,
-    "lon": 73.5,
-    "geoPrecision": "city",
-    "objectClass": "other",
+    "locationRaw": "USSR",
+    "lat": 60,
+    "lon": 90,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 15,
-    "summary": "A CIA intelligence information report on the Sary Shagan weapons testing range in the USSR includes a field account from a former Soviet citizen who reported observing, one evening in late summer 1973, a bright green circular object or mass in the sky near Site 7 that widened and formed concentric green circles before its coloring disappeared within minutes, with no associated sound.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-011-The_Sary_Shagan_Weapons_Testing_Range.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-011-The_Sary_Shagan_Weapons_Testing_Range.pdf"
@@ -3505,13 +4881,16 @@
     "lat": 43,
     "lon": -73.5,
     "geoPrecision": "region",
-    "objectClass": "orb",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 35,
-    "summary": "An FBI FD-302 report documents a witness interview describing multiple sightings: a yellow ball of light and a larger second orb seen near trees behind the witness's home, which appeared to merge before disappearing, followed weeks later by several white orbs traveling overhead at higher altitude. The witness also recalled a separate 1987 incident near power lines involving a red light that circled and hovered before landing.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D010_FD-302-71_Northeastern-Orb-Sighting_2026.pdf",
     "media": {
-      "docImage": "data/raw/release_03/FBI-UAP-D010_FD-302-71_Northeastern-Orb-Sighting_2026.pdf"
+      "docImage": "data/raw/release_03/FBI-UAP-D010_FD-302-71_Northeastern-Orb-Sighting_2026.pdf",
+      "videos": [
+        "1010269"
+      ]
     }
   },
   {
@@ -3519,15 +4898,15 @@
     "release": "03",
     "sourceAgency": "ICA",
     "docType": "report",
-    "incidentDate": "2022-02-15",
-    "locationRaw": "Cheyenne Mountain, Colorado",
-    "lat": 38.744,
-    "lon": -104.846,
-    "geoPrecision": "point",
-    "objectClass": "other",
+    "incidentDate": "2022",
+    "locationRaw": "Colorado Springs, Colorado, U.S.",
+    "lat": 38.8339,
+    "lon": -104.8214,
+    "geoPrecision": "city",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 40,
-    "summary": "A document describes five U.S. Army service members at Fort Carson, Colorado, who reported observing a stationary, angular, potato-shaped airborne object above and behind Cheyenne Mountain for roughly 30-180 seconds before it disappeared. The analyst assessed with low confidence that the object may have been sunlight backscattering off snow-covered terrain and low clouds, noting no anomalous data or unknown adversarial capability.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/ICA-UAP-D001_Analysis_Colorado-Springs-UAP-Incident.pdf",
     "media": {
       "docImage": "data/raw/release_03/ICA-UAP-D001_Analysis_Colorado-Springs-UAP-Incident.pdf"
@@ -3538,15 +4917,15 @@
     "release": "03",
     "sourceAgency": "FBI",
     "docType": "report",
-    "incidentDate": "2021-11",
+    "incidentDate": "2024-10",
     "locationRaw": "Northeastern United States",
     "lat": 43,
     "lon": -73.5,
     "geoPrecision": "region",
-    "objectClass": "light",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 25,
-    "summary": "An FBI electronic communication documents an October 2024 interview with a redacted individual who reported observing lights near their property beginning in November 2021, including one instance where a single light split into two or three lights forming a triangular pattern for about ten minutes. The interviewee also described a 1996 incident where a vehicle's electronics reportedly shut down after being illuminated by a large light, and stated they used ADS-B flight data to try to rule out aircraft as the source of the sightings.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D005_FD-1057-04_Northeastern-US_2024.pdf",
     "media": {
       "docImage": "data/raw/release_03/FBI-UAP-D005_FD-1057-04_Northeastern-US_2024.pdf"
@@ -3557,15 +4936,15 @@
     "release": "03",
     "sourceAgency": "CIA",
     "docType": "document",
-    "incidentDate": "1968-03-04",
-    "locationRaw": "Chang La, Fukche, and Koyul, Ladakh, India",
-    "lat": 33.5,
-    "lon": 78.5,
-    "geoPrecision": "region",
-    "objectClass": "light",
+    "incidentDate": "1968",
+    "locationRaw": "Ladakh, Nepal | Sikkim, India | Bhutam",
+    "lat": 30,
+    "lon": 83,
+    "geoPrecision": "theater",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 10,
-    "summary": "A CIA information report describes multiple sightings of unidentified flying objects over Ladakh, Nepal, Sikkim, and Bhutan between February and March 1968. One entry recounts a 4 March 1968 sighting near Chang La, Fukche, and Koyul in Ladakh in which observers reported a white light traveling east to west accompanied by two blasting sounds, followed by a reddish light and white smoke.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-016-Sightings_of_Unidentified_Flying_Ojbects_in_Ladakh_Nepal_Sikkim_and_Bhutan.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-016-Sightings_of_Unidentified_Flying_Ojbects_in_Ladakh_Nepal_Sikkim_and_Bhutan.pdf"
@@ -3577,14 +4956,14 @@
     "sourceAgency": "NASA",
     "docType": "report",
     "incidentDate": "1965-06-09",
-    "locationRaw": "USS Wasp",
+    "locationRaw": "North Atlantic Ocean",
     "lat": 35,
     "lon": -40,
     "geoPrecision": "theater",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 5,
-    "summary": "This is a NASA preliminary transcript cover and preface for the Gemini IV flight crew debriefing, conducted aboard the recovery ship USS Wasp, covering operational aspects of the mission rather than any anomalous observation.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/NASA-UAP-D016_Preliminary-Gemini-4-Crew-Debriefing_Part1_1965.pdf",
     "media": {
       "docImage": "data/raw/release_03/NASA-UAP-D016_Preliminary-Gemini-4-Crew-Debriefing_Part1_1965.pdf"
@@ -3602,8 +4981,8 @@
     "geoPrecision": "city",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "The document appears to be a heavily degraded scanned form or memo with multiple text blocks, but the poor image quality prevents reliable reading of its content or description of any reported aerial object.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-009-UNKNOWN-FLYING_OBJECTS_OBERVED_OVER_BUDAPEST.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-009-UNKNOWN-FLYING_OBJECTS_OBERVED_OVER_BUDAPEST.pdf"
@@ -3615,14 +4994,14 @@
     "sourceAgency": "DOW",
     "docType": "report",
     "incidentDate": "2023-10",
-    "locationRaw": "western United States",
+    "locationRaw": "Westen United States",
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "light",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "An AARO memorandum records the first-hand narrative of Witness 4, a federal law enforcement agent, describing multiple sightings over two days in October 2023 in the western United States, plus later follow-up sightings. The witness reported orange/yellow/white orbs, clusters and lines of lights, lights that produced smaller lights, chemtrail-like phenomena, and a darker hovering object with a faint red light, all observed from ground vehicles at various distances and altitudes.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DoW-UAP-D082_Narrative-4_Western-US-Event.pdf",
     "media": {
       "docImage": "data/raw/release_03/DoW-UAP-D082_Narrative-4_Western-US-Event.pdf"
@@ -3638,10 +5017,10 @@
     "lat": 40,
     "lon": -113,
     "geoPrecision": "theater",
-    "objectClass": "orb",
+    "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
-    "summary": "The image shows a bright orange spherical object near a mountain ridge above a desert road at night, with no accompanying documentation of witnesses, date, or location.",
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D021_Digital-Rendering_Incident-1-3_Western-US-Event_2023.jpg",
     "media": {
       "rendering": "data/raw/release_03/FBI-UAP-D021_Digital-Rendering_Incident-1-3_Western-US-Event_2023.jpg"
@@ -3657,10 +5036,10 @@
     "lat": 38.8339,
     "lon": -104.8214,
     "geoPrecision": "city",
-    "objectClass": "disc",
+    "objectClass": "unknown",
     "resolved": false,
     "redactionPct": null,
-    "summary": "An image depicts a saucer-shaped object composited over a mountain landscape near a residential area, with no accompanying textual report of an observation.",
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D003_Digital-Rendering_Unresolved-UAP-Report_ColoradoSprings_2022.pdf",
     "media": {
       "docImage": "data/raw/release_03/FBI-UAP-D003_Digital-Rendering_Unresolved-UAP-Report_ColoradoSprings_2022.pdf"
@@ -3678,8 +5057,8 @@
     "geoPrecision": "point",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 5,
-    "summary": "This is a NASA technical debriefing document for the Gemini VII mission, containing a preface explaining the transcript was made from voice tape recordings of the flight crew debriefing conducted December 19-21, 1965 at Cape Kennedy, Florida. The document itself does not describe any aerial phenomenon or unidentified object sighting.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/NASA-UAP-D021_Gemini-7-Technical-Debriefing_1965.pdf",
     "media": {
       "docImage": "data/raw/release_03/NASA-UAP-D021_Gemini-7-Technical-Debriefing_1965.pdf"
@@ -3690,15 +5069,15 @@
     "release": "03",
     "sourceAgency": "CIA",
     "docType": "document",
-    "incidentDate": "1955-10-04",
-    "locationRaw": "Between Baku and Tiflis, Azerbaijan SSR, USSR",
-    "lat": 41.1,
-    "lon": 47.3,
-    "geoPrecision": "region",
-    "objectClass": "triangle",
+    "incidentDate": "1955-11",
+    "locationRaw": "Baku, Azerbaijan",
+    "lat": 40.4093,
+    "lon": 49.8671,
+    "geoPrecision": "city",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "A CIA information report recounts a US business executive's account of observing a triangular object with three lights near an airfield along the Caspian Sea coast while traveling by train from Baku to Tiflis. The object reportedly performed several rapid spirals before climbing steeply at about 45 degrees, tracked by a searchlight, and a train steward later closed the compartment blinds reportedly on orders from an accompanying official.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-006_Sighting_of_Unconventional_Aircraft.pdf",
     "media": {
       "docImage": "data/raw/release_03/CIA-UAP-006_Sighting_of_Unconventional_Aircraft.pdf"
@@ -3714,10 +5093,10 @@
     "lat": 43,
     "lon": -73.5,
     "geoPrecision": "region",
-    "objectClass": "light",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 55,
-    "summary": "An FBI electronic communication describes two special agents visiting a witness's home in November 2024 to confirm previously reported UAP sightings. During surveillance, agents observed pulsating white lights near a tree line that moved erratically, appeared and disappeared over roughly ten seconds, and did not appear to reflect off nearby water or illuminate the ground; five photographs taken were reported to be mostly blurry.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D007_FD-1057-06_Northeastern-US_2024.pdf",
     "media": {
       "docImage": "data/raw/release_03/FBI-UAP-D007_FD-1057-06_Northeastern-US_2024.pdf"
@@ -3729,14 +5108,14 @@
     "sourceAgency": "FBI",
     "docType": "report",
     "incidentDate": "2022",
-    "locationRaw": "Cheyenne Mountains",
-    "lat": 38.744,
-    "lon": -104.846,
+    "locationRaw": "Colorado Springs, Colorado, U.S.",
+    "lat": 38.8339,
+    "lon": -104.8214,
     "geoPrecision": "city",
-    "objectClass": "other",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 35,
-    "summary": "An FBI report describes a forensic sketch interview with a former U.S. Army intelligence officer who, along with four colleagues, observed a potato-shaped, opalescent object hovering over the Cheyenne Mountains for about two minutes before it reportedly vanished instantly without leaving a shadow.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/FBI-UAP-D002_FD-1057_Unresolved-UAP-Report_ColoradoSprings_2022.pdf",
     "media": {
       "docImage": "data/raw/release_03/FBI-UAP-D002_FD-1057_Unresolved-UAP-Report_ColoradoSprings_2022.pdf"
@@ -3747,15 +5126,15 @@
     "release": "03",
     "sourceAgency": "DOW",
     "docType": "report",
-    "incidentDate": "1948",
+    "incidentDate": null,
     "locationRaw": "",
     "lat": null,
     "lon": null,
     "geoPrecision": "unknown",
-    "objectClass": "disc",
+    "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "A 1948 Navy directive from the Chief of Naval Operations, forwarded by the Commandant of the Fifth Naval District, instructs naval stations to report sightings of 'flying discs' or other unidentified aerial objects to the nearest Air Force command and Naval District Intelligence Office, and to obtain photographic evidence when possible.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/DOW-UAP-D086_USNavy-Report-of-Flying-Discs_1948.pdf",
     "media": {
       "docImage": "data/raw/release_03/DOW-UAP-D086_USNavy-Report-of-Flying-Discs_1948.pdf"
@@ -3773,8 +5152,8 @@
     "geoPrecision": "point",
     "objectClass": "unknown",
     "resolved": false,
-    "redactionPct": 0,
-    "summary": "This is a preliminary NASA transcript cover and preface for the Gemini V flight crew technical debriefing, describing the crew's general operational account of the mission recorded at Cape Kennedy, Florida in August-September 1965; it references a later section covering visual sightings among other topics but no sighting content is included in this excerpt.",
+    "redactionPct": null,
+    "summary": "",
     "sourceUrl": "https://www.war.gov/medialink/ufo/061226/release_03/documents/NASA-UAP-D019_Gemini-5-Technical-Debriefing_Part1_1965.pdf",
     "media": {
       "docImage": "data/raw/release_03/NASA-UAP-D019_Gemini-5-Technical-Debriefing_Part1_1965.pdf"

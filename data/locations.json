@@ -6,14 +6,12 @@
   "Hanford Site, Washington": { "lat": 46.5506, "lon": -119.4881, "geoPrecision": "city" },
   "Jacksonville, Florida": { "lat": 30.3322, "lon": -81.6557, "geoPrecision": "city" },
   "Washington, D.C.": { "lat": 38.9072, "lon": -77.0369, "geoPrecision": "city" },
-
   "AFRICOM": { "lat": 5.0, "lon": 20.0, "geoPrecision": "theater" },
   "CENTCOM": { "lat": 27.0, "lon": 50.0, "geoPrecision": "theater" },
   "EUCOM": { "lat": 50.0, "lon": 15.0, "geoPrecision": "theater" },
   "INDOPACOM": { "lat": 15.0, "lon": 150.0, "geoPrecision": "theater" },
   "Indo-PACOM": { "lat": 15.0, "lon": 150.0, "geoPrecision": "theater" },
   "NORTHCOM": { "lat": 45.0, "lon": -100.0, "geoPrecision": "theater" },
-
   "Aegean Sea": { "lat": 39.0, "lon": 25.0, "geoPrecision": "region" },
   "Arabian Gulf": { "lat": 26.5, "lon": 51.5, "geoPrecision": "region" },
   "Arabian Sea": { "lat": 15.0, "lon": 65.0, "geoPrecision": "theater" },
@@ -25,7 +23,6 @@
   "Pacific Ocean": { "lat": 0.0, "lon": -160.0, "geoPrecision": "theater" },
   "Strait of Hormuz": { "lat": 26.6, "lon": 56.5, "geoPrecision": "region" },
   "Yellow Sea": { "lat": 36.0, "lon": 123.0, "geoPrecision": "region" },
-
   "Australia": { "lat": -25.3, "lon": 134.0, "geoPrecision": "theater" },
   "Azerbaijan": { "lat": 40.3, "lon": 47.7, "geoPrecision": "region" },
   "Djibouti": { "lat": 11.8, "lon": 42.6, "geoPrecision": "region" },
@@ -44,7 +41,6 @@
   "Turkmenistan": { "lat": 39.0, "lon": 59.5, "geoPrecision": "region" },
   "USSR": { "lat": 60.0, "lon": 90.0, "geoPrecision": "theater" },
   "United Arab Emirates": { "lat": 24.0, "lon": 54.0, "geoPrecision": "region" },
-
   "Baku, Azerbaijan": { "lat": 40.4093, "lon": 49.8671, "geoPrecision": "city" },
   "Budapest, Hungary": { "lat": 47.4979, "lon": 19.0402, "geoPrecision": "city" },
   "Cape Kennedy, Florida": { "lat": 28.4889, "lon": -80.5778, "geoPrecision": "point" },
@@ -52,12 +48,10 @@
   "Detroit, MI": { "lat": 42.3314, "lon": -83.0458, "geoPrecision": "city" },
   "Harare, Zimbabwe": { "lat": -17.8292, "lon": 31.0522, "geoPrecision": "city" },
   "Houston, Texas": { "lat": 29.7604, "lon": -95.3698, "geoPrecision": "city" },
-
   "New Jersey, United States": { "lat": 40.06, "lon": -74.4, "geoPrecision": "region" },
   "New Mexico": { "lat": 34.4, "lon": -106.1, "geoPrecision": "region" },
   "Texas": { "lat": 31.3, "lon": -99.2, "geoPrecision": "region" },
   "Washington State, United States": { "lat": 47.4, "lon": -120.5, "geoPrecision": "region" },
-
   "Midwestern United States": { "lat": 41.5, "lon": -93.0, "geoPrecision": "region" },
   "Northeastern United States": { "lat": 43.0, "lon": -73.5, "geoPrecision": "region" },
   "Southeastern United States": { "lat": 32.0, "lon": -83.0, "geoPrecision": "region" },
@@ -67,10 +61,8 @@
   "Pacific Time Zone": { "lat": 40.0, "lon": -120.0, "geoPrecision": "theater" },
   "United States": { "lat": 39.8, "lon": -98.6, "geoPrecision": "theater" },
   "North America": { "lat": 48.0, "lon": -100.0, "geoPrecision": "theater" },
-
   "Middle East": { "lat": 29.0, "lon": 45.0, "geoPrecision": "theater" },
   "Ladakh, Nepal | Sikkim, India | Bhutam": { "lat": 30.0, "lon": 83.0, "geoPrecision": "theater" },
-
   "Oak Ridge, Tennessee": { "lat": 35.9645, "lon": -84.2696, "geoPrecision": "city" },
   "Los Angeles, California": { "lat": 34.0522, "lon": -118.2437, "geoPrecision": "city" },
   "Savannah River Plant, South Carolina": { "lat": 33.34, "lon": -81.74, "geoPrecision": "city" },
@@ -97,7 +89,6 @@
   "Sary Shagan testing range, Site 7, USSR": { "lat": 46.0, "lon": 73.5, "geoPrecision": "city" },
   "Sary Shagan Site 7, USSR": { "lat": 46.0, "lon": 73.5, "geoPrecision": "city" },
   "Over Kazakhstan, near 45N 55E": { "lat": 45.0, "lon": 55.0, "geoPrecision": "city" },
-
   "Yorkshire, United Kingdom": { "lat": 53.9, "lon": -1.2, "geoPrecision": "region" },
   "Hobson, Ohio": { "lat": 39.0, "lon": -82.0, "geoPrecision": "region" },
   "Cascade Mountains, Oregon": { "lat": 44.0, "lon": -121.9, "geoPrecision": "region" },
@@ -110,7 +101,6 @@
   "Eastern Mediterranean": { "lat": 34.0, "lon": 32.0, "geoPrecision": "theater" },
   "Arabian Gulf, Strait of Hormuz and Gulf of Oman": { "lat": 25.8, "lon": 55.0, "geoPrecision": "theater" },
   "Arabian Gulf, Strait of Hormuz, and Gulf of Oman": { "lat": 25.8, "lon": 55.0, "geoPrecision": "theater" },
-
   "Western U.S.": { "lat": 40.0, "lon": -113.0, "geoPrecision": "theater" },
   "western United States": { "lat": 40.0, "lon": -113.0, "geoPrecision": "theater" },
   "western United States, near a sensitive national security site": { "lat": 40.0, "lon": -113.0, "geoPrecision": "theater" },
@@ -118,11 +108,25 @@
   "Keithsburg, Iowa and Ascension Parish, Louisiana": { "lat": 36.0, "lon": -91.0, "geoPrecision": "theater" },
   "between Newark, New Jersey and Detroit, Michigan (over Philipsburg and Bradford, Pennsylvania/Cleveland, Ohio)": { "lat": 41.3, "lon": -78.8, "geoPrecision": "theater" },
   "USS Wasp": { "lat": 35.0, "lon": -40.0, "geoPrecision": "theater" },
-
   "Moon": null,
   "Cislunar Space": null,
   "Low Earth Orbit": null,
   "Lunar orbit / cislunar space (Apollo 12 mission)": null,
   "in transit between Earth and the moon": null,
-  "mountainous test range (specific range unnamed)": null
+  "mountainous test range (specific range unnamed)": null,
+  "United States Central Command area of responsibility": { "lat": 28.0, "lon": 47.0, "geoPrecision": "theater" },
+  "over water within the United States Central Command area of responsibility, near Iran": { "lat": 26.5, "lon": 53.0, "geoPrecision": "theater" },
+  "United States European Command area of responsibility": { "lat": 50.0, "lon": 15.0, "geoPrecision": "theater" },
+  "United States Northern Command area of responsibility": { "lat": 45.0, "lon": -100.0, "geoPrecision": "theater" },
+  "United States Africa Command area of responsibility": { "lat": 5.0, "lon": 20.0, "geoPrecision": "theater" },
+  "Indo-Pacific Command area of responsibility": { "lat": 15.0, "lon": 150.0, "geoPrecision": "theater" },
+  "East Coast, United States (NORTHCOM area of responsibility)": { "lat": 37.0, "lon": -75.5, "geoPrecision": "theater" },
+  "Persian Gulf": { "lat": 26.5, "lon": 51.5, "geoPrecision": "region" },
+  "Gulf of Arabia": { "lat": 26.5, "lon": 51.5, "geoPrecision": "region" },
+  "Lake Huron": { "lat": 44.8, "lon": -82.4, "geoPrecision": "region" },
+  "Afghanistan": { "lat": 33.9, "lon": 67.7, "geoPrecision": "region" },
+  "Kabul, Afghanistan": { "lat": 34.53, "lon": 69.17, "geoPrecision": "city" },
+  "Karaganda, Kazakhstan": { "lat": 49.8, "lon": 73.1, "geoPrecision": "city" },
+  "vicinity of Columbus, Ohio": { "lat": 39.96, "lon": -83.0, "geoPrecision": "city" },
+  "Eglin AFB, United States Northern Command area of responsibility": { "lat": 30.46, "lon": -86.55, "geoPrecision": "point" }
 }

@@ -1,0 +1,30 @@
+{
+  "recordId": "dvids-1007723",
+  "sha256": "dvids-1007723",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "An infrared video reportedly recorded by a sensor aboard a U.S. military platform operating in the Indo-Pacific region shows an area of contrast tracked near the center of the frame, with the sensor cycling contrast modes and panning to keep the object in view over roughly ten minutes.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": null,
+  "incidentLocation": "Indo-Pacific Command area of responsibility",
+  "reviewFlags": [
+    "ambiguous-object",
+    "ambiguous-date",
+    "ambiguous-location",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2383,
+    "output_tokens": 194
+  },
+  "enrichedAt": "2026-07-02T23:24:55.103Z"
+}

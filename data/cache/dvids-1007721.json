@@ -1,0 +1,28 @@
+{
+  "recordId": "dvids-1007721",
+  "sha256": "dvids-1007721",
+  "model": "claude-sonnet-5",
+  "promptSha": "11675523d3a409f87448e476631dcb03527fc9f5d2ded21aa2115faebee5b33c",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
+  "strategy": {
+    "pagesSent": 0,
+    "pageCount": 0,
+    "renderPx": 0,
+    "maxPages": 0
+  },
+  "summary": "Infrared footage reportedly from a U.S. military platform's sensor shows the sensor tracking an area of contrast and several areas of contrast entering and exiting the field of view over the Gulf of Arabia region.",
+  "objectClass": "unknown",
+  "redactionPct": null,
+  "incidentDate": "2020-05-05",
+  "incidentLocation": "Gulf of Arabia",
+  "reviewFlags": [
+    "ambiguous-object",
+    "thin-description"
+  ],
+  "stopReason": "end_turn",
+  "usage": {
+    "input_tokens": 2199,
+    "output_tokens": 152
+  },
+  "enrichedAt": "2026-07-02T23:24:55.107Z"
+}
