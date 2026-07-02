@@ -1140,7 +1140,9 @@ a.meta-signal:hover {
   }
 
   .app-header-tagline,
-  .header-divider {
+  .header-divider,
+  .header-count-detail {
+    /* the narrow header keeps the bare count; the wording is desktop's */
     display: none;
   }
 

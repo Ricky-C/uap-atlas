@@ -18,7 +18,11 @@ export function Header({ onOpenAbout }: HeaderProps) {
         an independent atlas of the U.S. government&apos;s declassified UAP records
       </span>
       <span className="app-header-count">
-        {RECORDS.length} cases · {String(RELEASE_COUNT).padStart(2, "0")} releases
+        {RECORDS.length}
+        <span className="header-count-detail">
+          {" "}
+          cases · {String(RELEASE_COUNT).padStart(2, "0")} releases
+        </span>
       </span>
       <button type="button" className="header-about" onClick={onOpenAbout}>
         about
