@@ -14,9 +14,21 @@ interface DrawerProps {
 
 const DASH = "—";
 
+const MONTHS = [
+  "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
+] as const;
+
+// Humanize the ISO incident date at its source precision: "1947-08-04" →
+// "Aug 4, 1947"; "2008-07" → "Jul 2008"; "1948" stays "1948". Anything that
+// doesn't parse falls back to the raw string — display-only, never a crash.
 function formatDate(r: UAPRecord): string {
-  if (r.incidentDate) return r.incidentDate;
-  return incidentYear(r) !== null ? String(incidentYear(r)) : "undated";
+  const d = r.incidentDate;
+  if (!d) return incidentYear(r) !== null ? String(incidentYear(r)) : "undated";
+  const [y, m, day] = d.split("-");
+  const month = m !== undefined ? MONTHS[Number(m) - 1] : undefined;
+  if (!month) return y ?? d;
+  return day !== undefined ? `${month} ${Number(day)}, ${y}` : `${month} ${y}`;
 }
 
 function formatCoords(r: UAPRecord): string {

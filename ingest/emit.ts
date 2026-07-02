@@ -5,7 +5,7 @@
 // document that recurs across tranches stays one record rather than duplicating.
 // Idempotent: re-running with unchanged inputs writes nothing.
 
-import { existsSync, writeFileSync } from "node:fs";
+import { existsSync, renameSync, writeFileSync } from "node:fs";
 
 import { readJson } from "./io";
 import type { UAPRecord } from "../schema";
@@ -39,7 +39,11 @@ export function byReleaseThenId(a: UAPRecord, b: UAPRecord): number {
 // matter which pass wrote last. A clean re-run therefore produces no spurious diff.
 export function writeRecordsFile(records: UAPRecord[], outPath: string): void {
   const sorted = [...records].sort(byReleaseThenId);
-  writeFileSync(outPath, `${JSON.stringify(sorted, null, 2)}\n`, "utf8");
+  // Atomic (temp + rename): a killed process never leaves a truncated
+  // records.json — same discipline as the enrichment cache writes.
+  const tmp = `${outPath}.tmp`;
+  writeFileSync(tmp, `${JSON.stringify(sorted, null, 2)}\n`, "utf8");
+  renameSync(tmp, outPath);
 }
 
 export function emitRecords(releaseId: string, incoming: UAPRecord[], outPath: string): EmitDiff {

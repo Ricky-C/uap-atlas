@@ -1,6 +1,5 @@
-import { useCallback, useMemo, useState } from "react";
+import { lazy, Suspense, useCallback, useMemo, useState } from "react";
 import type { UAPRecord } from "../schema";
-import { Globe } from "./Globe";
 import { Drawer } from "./Drawer";
 import { Timeline } from "./Timeline";
 import { CaseIndex } from "./CaseIndex";
@@ -14,6 +13,10 @@ import { RECORDS, BLUEBOOK, isPlottable, isLunar, incidentYear, sortForIndex } f
 import { prefersReducedMotion } from "./theme";
 import { useLocalStorageFlag } from "./useLocalStorageFlag";
 import type { HoverState } from "./selection";
+
+// The globe carries three.js + react-globe.gl (~600 KB gz) — split it into an
+// async chunk so the chrome paints first; the void shows through until it lands.
+const Globe = lazy(() => import("./Globe").then((m) => ({ default: m.Globe })));
 
 // The timeline hides dated cases after the cutoff; undated cases always show —
 // hiding them would imply we know when they happened.
@@ -70,17 +73,19 @@ export function App() {
 
   return (
     <main className="app">
-      <Globe
-        records={plotted}
-        basemap={basemap}
-        lunar={lunar}
-        maxYear={maxYear}
-        selectedId={selectedId}
-        hoveredId={hover?.id ?? null}
-        rotationOn={rotationOn}
-        onSelect={setSelectedId}
-        onHover={(id) => setHoverGuarded(id ? { id, source: "globe" } : null)}
-      />
+      <Suspense fallback={null}>
+        <Globe
+          records={plotted}
+          basemap={basemap}
+          lunar={lunar}
+          maxYear={maxYear}
+          selectedId={selectedId}
+          hoveredId={hover?.id ?? null}
+          rotationOn={rotationOn}
+          onSelect={setSelectedId}
+          onHover={(id) => setHoverGuarded(id ? { id, source: "globe" } : null)}
+        />
+      </Suspense>
       <Header onOpenAbout={() => setAboutOpen(true)} />
       {panel === "cases" ? (
         <CaseIndex

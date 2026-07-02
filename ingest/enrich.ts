@@ -253,10 +253,46 @@ function ensureCacheDir(): void {
 
 const cachePath = (recordId: string): string => join(CACHE_DIR, `${recordId}.json`);
 
+// Cache files are external data (hand-editable, survive schema changes), so
+// they're validated at the boundary like everything else. A malformed entry
+// reads as a cache miss — worst case one document re-bills, never a crash or
+// a corrupt value patched into records.json.
+function parseCacheEntry(v: unknown): CacheEntry | null {
+  if (typeof v !== "object" || v === null) return null;
+  const e = v as Record<string, unknown>;
+  const s = e.strategy as Record<string, unknown> | undefined;
+  const ok =
+    typeof e.recordId === "string" &&
+    typeof e.model === "string" &&
+    typeof e.promptSha === "string" &&
+    typeof e.schemaSha === "string" &&
+    typeof s === "object" &&
+    s !== null &&
+    typeof s.pagesSent === "number" &&
+    typeof s.renderPx === "number" &&
+    typeof e.summary === "string" &&
+    typeof e.objectClass === "string" &&
+    (OBJECT_CLASSES as readonly string[]).includes(e.objectClass) &&
+    (e.redactionPct === null || typeof e.redactionPct === "number") &&
+    (e.incidentDate === null || e.incidentDate === undefined || typeof e.incidentDate === "string") &&
+    (e.incidentLocation === null ||
+      e.incidentLocation === undefined ||
+      typeof e.incidentLocation === "string") &&
+    Array.isArray(e.reviewFlags);
+  return ok ? (v as CacheEntry) : null;
+}
+
 function readCache(recordId: string): CacheEntry | null {
   const p = cachePath(recordId);
   if (!existsSync(p)) return null;
-  return readJson(p) as CacheEntry;
+  // A truncated/corrupted file (JSON syntax error) is a cache miss like a
+  // shape mismatch — one document re-bills, the run never crashes.
+  try {
+    return parseCacheEntry(readJson(p));
+  } catch {
+    console.warn(`ingest/enrich: unreadable cache file ${p} — treating as uncached`);
+    return null;
+  }
 }
 
 // Atomic write (temp + rename) so a killed process never leaves a partial cache.
@@ -424,7 +460,10 @@ function mergeLocation(
   id: string,
 ): string {
   const doc = (extractedRaw ?? "").trim();
-  if (doc === "" || isRedactedLocation(doc) || doc === portal) return portal;
+  if (doc === "" || isRedactedLocation(doc)) return portal;
+  // Case-only differences are agreement, not conflict — keep the portal string
+  // (it's the one the geocode table is already keyed on).
+  if (doc.toLowerCase() === portal.toLowerCase()) return portal;
   if (portal !== "") conflicts.push(`  ${id}: location portal="${portal}" → document="${doc}"`);
   return doc;
 }
