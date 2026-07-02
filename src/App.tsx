@@ -4,6 +4,7 @@ import { Globe } from "./Globe";
 import { Drawer } from "./Drawer";
 import { Timeline } from "./Timeline";
 import { CaseIndex } from "./CaseIndex";
+import { Redaction } from "./Redaction";
 import { RECORDS, BLUEBOOK, isPlottable, incidentYear } from "./data";
 
 // The timeline hides dated cases after the cutoff; undated cases always show —
@@ -19,6 +20,7 @@ function upToYear(records: UAPRecord[], maxYear: number | null): UAPRecord[] {
 export function App() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [maxYear, setMaxYear] = useState<number | null>(null);
+  const [panel, setPanel] = useState<"cases" | "analysis">("cases");
 
   // The Globe receives the FULL plottable sets plus the cutoff — points past the
   // cutoff tween to radius 0 there rather than unmounting, so scrubbing animates.
@@ -45,12 +47,17 @@ export function App() {
         selectedId={selectedId}
         onSelect={setSelectedId}
       />
-      <CaseIndex
-        records={unplotted}
-        plottedCount={plottedShown}
-        selectedId={selectedId}
-        onSelect={setSelectedId}
-      />
+      {panel === "cases" ? (
+        <CaseIndex
+          records={unplotted}
+          plottedCount={plottedShown}
+          selectedId={selectedId}
+          onSelect={setSelectedId}
+          onShowAnalysis={() => setPanel("analysis")}
+        />
+      ) : (
+        <Redaction records={RECORDS} onShowCases={() => setPanel("cases")} />
+      )}
       <Drawer record={selected} onClose={() => setSelectedId(null)} />
       <Timeline records={timelineRecords} maxYear={maxYear} onChange={setMaxYear} />
     </main>

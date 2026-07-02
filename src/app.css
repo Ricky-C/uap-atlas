@@ -104,6 +104,116 @@
   color: var(--text-muted);
 }
 
+/* ── redaction analysis (left panel alternate view) ────────────────────── */
+
+.panel-toggle {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  color: var(--signal); /* interactive control */
+  background: none;
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-1);
+  padding: var(--space-1) var(--space-2);
+  cursor: pointer;
+}
+
+.panel-toggle:hover {
+  background: var(--signal-bg);
+}
+
+.redaction-body {
+  padding: var(--space-4);
+  overflow-y: auto;
+  flex: 1;
+}
+
+.redaction-hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-bottom: var(--space-4);
+  border-bottom: var(--hairline) solid var(--line);
+}
+
+.redaction-hero-value {
+  font-family: var(--font-mono);
+  font-size: var(--type-lg);
+  font-weight: var(--weight-medium);
+  color: var(--alert); /* amber is the redaction color */
+}
+
+.redaction-hero-caption {
+  font-size: var(--type-xs);
+  color: var(--text-secondary);
+}
+
+.redaction-section {
+  display: block;
+  margin: var(--space-5) 0 var(--space-2);
+  font-weight: var(--weight-medium);
+}
+
+.redaction-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.redaction-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+}
+
+.redaction-row-label {
+  color: var(--text-primary);
+  min-width: var(--space-6);
+}
+
+.redaction-track {
+  display: block;
+  height: var(--chart-bar-h);
+  background: var(--alert-bg);
+  border-radius: var(--chart-bar-radius);
+  overflow: hidden;
+}
+
+.redaction-bar {
+  display: block;
+  height: 100%;
+  background: var(--alert);
+  border-radius: var(--chart-bar-radius);
+}
+
+.redaction-row-value {
+  display: flex;
+  gap: var(--space-2);
+  align-items: baseline;
+}
+
+.redaction-pct {
+  color: var(--alert); /* redaction values are amber, as in the drawer */
+}
+
+.redaction-n {
+  color: var(--text-muted);
+}
+
+.redaction-note {
+  margin: var(--space-5) 0 0;
+  font-size: var(--type-xs);
+  line-height: var(--leading-body);
+  color: var(--text-muted);
+}
+
 /* ── drawer (right panel, the case file) ───────────────────────────────── */
 
 .drawer {

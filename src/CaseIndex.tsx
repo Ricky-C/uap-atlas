@@ -9,9 +9,16 @@ interface CaseIndexProps {
   plottedCount: number;
   selectedId: string | null;
   onSelect: (id: string) => void;
+  onShowAnalysis: () => void;
 }
 
-export function CaseIndex({ records, plottedCount, selectedId, onSelect }: CaseIndexProps) {
+export function CaseIndex({
+  records,
+  plottedCount,
+  selectedId,
+  onSelect,
+  onShowAnalysis,
+}: CaseIndexProps) {
   return (
     <section className="case-index" aria-label="Case index">
       <header className="case-index-header">
@@ -19,6 +26,9 @@ export function CaseIndex({ records, plottedCount, selectedId, onSelect }: CaseI
         <span className="case-index-count">
           {records.length} unplotted · {plottedCount} on globe
         </span>
+        <button type="button" className="panel-toggle" onClick={onShowAnalysis}>
+          analysis
+        </button>
       </header>
       <ul className="case-index-list">
         {records.map((r) => (

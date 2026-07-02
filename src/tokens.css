@@ -71,6 +71,10 @@
   --drawer-w: 400px; /* right case-file drawer */
   --timeline-h: 56px;
 
+  /* charts (redaction analysis) — thin marks, rounded data ends */
+  --chart-bar-h: 8px;
+  --chart-bar-radius: 4px;
+
   /* globe parameters — unitless values read at runtime by Globe.tsx so the
      Claude Design pass can tune the instrument from tokens alone */
   --globe-atmosphere-alt: 0.12;
