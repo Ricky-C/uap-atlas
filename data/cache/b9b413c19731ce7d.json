@@ -2,26 +2,29 @@
   "recordId": "b9b413c19731ce7d",
   "sha256": "b9b413c19731ce7d",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 1,
     "pageCount": 1,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "This appears to be a sensor or targeting display frame with a timestamp and reticle overlay, showing no clearly described object or event; multiple data fields have been redacted.",
+  "summary": "A sensor display frame with a crosshair reticle shows a small dark spot near the center against a grainy gray background; associated identifying text along the top and sides has been redacted, leaving only a timestamp visible.",
   "objectClass": "unknown",
-  "redactionPct": 20,
+  "redactionPct": 25,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
     "heavily-redacted",
     "ambiguous-object",
-    "illegible"
+    "ambiguous-date",
+    "ambiguous-location"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 3633,
-    "output_tokens": 111
+    "input_tokens": 4231,
+    "output_tokens": 155
   },
-  "enrichedAt": "2026-07-01T21:48:55.278Z"
+  "enrichedAt": "2026-07-02T04:13:52.019Z"
 }

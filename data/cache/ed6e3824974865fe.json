@@ -2,24 +2,28 @@
   "recordId": "ed6e3824974865fe",
   "sha256": "ed6e3824974865fe",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 124,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "FBI records compile press clippings on reported sightings: a Michigan pizza shop owner's 1960 color slide photo of a saucer-like object silhouetted against the moon, and a 1959 wire report of an American Airlines pilot and crew describing three bright objects that appeared to trail their plane for 45 minutes near Detroit.",
+  "summary": "FBI file materials compile press clippings about UFO sightings, including a pizza shop owner's photo of a saucer-like object in Grand Blanc, Michigan and a pilot's report of three bright objects trailing an airliner near Detroit.",
   "objectClass": "disc",
   "redactionPct": 0,
+  "incidentDate": "1959-02-25",
+  "incidentLocation": "between Newark, New Jersey and Detroit, Michigan (over Philipsburg and Bradford, Pennsylvania/Cleveland, Ohio)",
   "reviewFlags": [
-    "ambiguous-object"
+    "ambiguous-object",
+    "ambiguous-date",
+    "ambiguous-location"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8567,
-    "output_tokens": 154
+    "input_tokens": 9165,
+    "output_tokens": 216
   },
-  "enrichedAt": "2026-07-01T21:48:55.284Z"
+  "enrichedAt": "2026-07-02T04:13:52.015Z"
 }

@@ -2,24 +2,28 @@
   "recordId": "8565c159b82f50a6",
   "sha256": "8565c159b82f50a6",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 4,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "Slide describes multiple sightings by federal law enforcement agents in the western U.S., including groups of red orbs reportedly emitted from a larger orange orb, a hovering glowing orange orb near a rock formation, and a dark kite-shaped object with red and white lights that reportedly moved laterally without changing orientation.",
+  "summary": "Federal law enforcement agents in the western U.S. reported multiple sightings, including orange orbs launching smaller red orbs, a large glowing orange orb hovering near a rock formation, and a dark kite-shaped object with red and white lights that moved laterally off a road at 15-20mph.",
   "objectClass": "orb",
   "redactionPct": 0,
+  "incidentDate": null,
+  "incidentLocation": "Western U.S.",
   "reviewFlags": [
+    "ambiguous-date",
+    "ambiguous-location",
     "ambiguous-object"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 6663,
-    "output_tokens": 149
+    "input_tokens": 7261,
+    "output_tokens": 180
   },
-  "enrichedAt": "2026-07-01T21:45:25.808Z"
+  "enrichedAt": "2026-07-02T04:11:08.404Z"
 }

@@ -2,24 +2,27 @@
   "recordId": "d3039ed486d8400b",
   "sha256": "d3039ed486d8400b",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 3,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A CIA field report on the Sary Shagan weapons testing range in the USSR includes an account from a former Soviet source who, in late summer 1973 while stepping outside during a televised sports event, observed a sharp bright green circular mass in the sky west of a test site; within seconds it widened and formed concentric green circles before the coloring faded within minutes, with no associated sound.",
+  "summary": "A field report from a former Soviet citizen who worked at the Sary Shagan weapons testing range describes an evening in late summer 1973 when he stepped outside during a television broadcast and observed a bright green circular object or mass in the sky west of Site 7, which widened into concentric green circles over 10-15 seconds before the coloring disappeared within minutes; no sound was noted and the source offered no explanation.",
   "objectClass": "other",
   "redactionPct": 15,
+  "incidentDate": "1973",
+  "incidentLocation": "Sary Shagan testing range, Site 7, USSR",
   "reviewFlags": [
-    "ambiguous-object"
+    "ambiguous-object",
+    "ambiguous-date"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8679,
-    "output_tokens": 164
+    "input_tokens": 9277,
+    "output_tokens": 221
   },
-  "enrichedAt": "2026-07-01T21:51:31.379Z"
+  "enrichedAt": "2026-07-02T04:16:28.974Z"
 }

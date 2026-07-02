@@ -2,25 +2,28 @@
   "recordId": "d6614ddb85556a5a",
   "sha256": "d6614ddb85556a5a",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 1,
     "pageCount": 1,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A declassified USCENTCOM sensor image, recommended for release by MG Richard A. Harrison, shows a faint elongated light or streak circled in red against a grainy grayscale background; no observer account or location details are provided in the visible text.",
+  "summary": "A declassified overhead surveillance image, cleared for public release, shows a faint bright streak or point of light circled in red over a terrain background; no accompanying narrative describes the observation circumstances.",
   "objectClass": "light",
   "redactionPct": 8,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
     "ambiguous-object",
-    "heavily-redacted"
+    "ambiguous-date",
+    "ambiguous-location"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 3745,
-    "output_tokens": 129
+    "input_tokens": 4343,
+    "output_tokens": 141
   },
-  "enrichedAt": "2026-07-01T21:48:55.280Z"
+  "enrichedAt": "2026-07-02T04:13:52.017Z"
 }

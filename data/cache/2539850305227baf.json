@@ -2,24 +2,26 @@
   "recordId": "2539850305227baf",
   "sha256": "2539850305227baf",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 2,
     "pageCount": 2,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A July 1952 memorandum records that General Samford, Air Force A-2, told an inquirer that flying saucer phenomena remained a complete enigma but had been reported for over 100 years, with increased reporting attributed to improved observation methods and publicity. The memo notes that credible observers reported incredible things and that the Air Force treated the phenomena as a concern only because they were not understood, with little support given to theories of man-made or controlled origin.",
+  "summary": "An internal 1952 memorandum reports that an Air Force official told an inquirer that flying saucer phenomena remain a complete enigma, noting such reports have existed for over a century and that credible observers, including pilots and radar operators, are reporting incidents that cannot be fully explained by known causes. The memo states the Air Force does not seriously consider the objects to be man-made or foreign-controlled craft.",
   "objectClass": "unknown",
   "redactionPct": 0,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
     "ambiguous-object"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 6212,
-    "output_tokens": 188
+    "input_tokens": 6810,
+    "output_tokens": 195
   },
-  "enrichedAt": "2026-07-01T21:42:56.487Z"
+  "enrichedAt": "2026-07-02T04:08:43.883Z"
 }

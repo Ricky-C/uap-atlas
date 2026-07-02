@@ -2,25 +2,28 @@
   "recordId": "60c1239f7a6bad96",
   "sha256": "60c1239f7a6bad96",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 3,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A multi-page declassified field report describes a joint helicopter search operation investigating earlier eyewitness reports of orbs, lights, and ground impact sounds near a mountain range. Personnel aboard the helicopter and at a listening post repeatedly observed orbs and swarms of lights that flared up and down in formations, hovered near the aircraft, moved at high speed, and appeared to interact with military aircraft in the area over several hours.",
+  "summary": "A heavily redacted field report describes a nighttime aerial search near a mountain range in 2025, during which a helicopter crew and observers on the ground reported multiple sightings of orb-like lights that flared up and down in formation, sometimes appearing near the aircraft and near unspecified military aircraft conducting a training mission. Witnesses described the objects as oval, orange with white/yellow centers, moving at high speed, and at times splitting into multiple objects before being lost from view.",
   "objectClass": "orb",
   "redactionPct": 30,
+  "incidentDate": "2025",
+  "incidentLocation": null,
   "reviewFlags": [
     "heavily-redacted",
-    "ambiguous-object"
+    "ambiguous-location",
+    "ambiguous-date"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8679,
-    "output_tokens": 194
+    "input_tokens": 9277,
+    "output_tokens": 235
   },
-  "enrichedAt": "2026-07-01T21:45:25.798Z"
+  "enrichedAt": "2026-07-02T04:11:08.411Z"
 }

@@ -2,26 +2,28 @@
   "recordId": "a9abc1e6d69201bd",
   "sha256": "a9abc1e6d69201bd",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 1,
     "pageCount": 1,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A sensor/camera still with a timestamp shows a small dark blob near the center crosshair, with surrounding text fields redacted; no descriptive narrative is visible.",
+  "summary": "A sensor or camera still shows a small dark object near the center of a crosshair reticle, with a timestamp overlay but no accompanying textual description of the sighting.",
   "objectClass": "unknown",
-  "redactionPct": 25,
+  "redactionPct": null,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
+    "non-document-media",
     "ambiguous-object",
-    "heavily-redacted",
-    "illegible"
+    "heavily-redacted"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 3633,
-    "output_tokens": 112
+    "input_tokens": 4231,
+    "output_tokens": 131
   },
-  "enrichedAt": "2026-07-01T21:45:25.796Z"
+  "enrichedAt": "2026-07-02T04:11:08.407Z"
 }

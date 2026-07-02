@@ -2,26 +2,28 @@
   "recordId": "64c4b8d8df93af93",
   "sha256": "64c4b8d8df93af93",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 1,
     "pageCount": 1,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A sensor still with a timestamp shows two small dark blob-like objects near the frame center against a grey background, with a calibration crosshair overlay and multiple redacted text fields surrounding it. No shape detail or contextual description is legible to characterize the object further.",
+  "summary": "A sensor/video still with an on-screen timestamp shows a small dark object near the center of the frame against a gray background, with a scale reference marked on the crosshair overlay; no accompanying narrative text is visible.",
   "objectClass": "unknown",
-  "redactionPct": 20,
+  "redactionPct": 25,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
-    "heavily-redacted",
+    "non-document-media",
     "ambiguous-object",
-    "non-document-media"
+    "heavily-redacted"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 3633,
-    "output_tokens": 143
+    "input_tokens": 4231,
+    "output_tokens": 147
   },
-  "enrichedAt": "2026-07-01T21:45:25.798Z"
+  "enrichedAt": "2026-07-02T04:11:08.407Z"
 }

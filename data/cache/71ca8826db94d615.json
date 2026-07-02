@@ -2,25 +2,28 @@
   "recordId": "71ca8826db94d615",
   "sha256": "71ca8826db94d615",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 6,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A 2023 USAF misrep describes a two-ship F-16CM flight out of Prince Sultan Air Base flying a defensive counter-air mission over Iraq and Syria; during the mission the crew reported observing multiple possible unidentified aerial phenomena before continuing the mission and returning to base without further incident.",
+  "summary": "A MISREP describes a 2-ship F-16CM flight out of Prince Sultan Air Base flying a defensive counter-air mission in the ESSA over Iraq and Syria. During the mission, at approximately 2302Z, the flight reportedly observed multiple possible unidentified aerial phenomena, referenced to a separate UAP report, with no further details in this narrative.",
   "objectClass": "unknown",
   "redactionPct": 10,
+  "incidentDate": "2023-03-31",
+  "incidentLocation": null,
   "reviewFlags": [
+    "heavily-redacted",
     "ambiguous-object",
-    "heavily-redacted"
+    "ambiguous-location"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8679,
-    "output_tokens": 158
+    "input_tokens": 9277,
+    "output_tokens": 210
   },
-  "enrichedAt": "2026-07-01T21:45:25.816Z"
+  "enrichedAt": "2026-07-02T04:11:08.410Z"
 }

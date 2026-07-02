@@ -2,24 +2,27 @@
   "recordId": "6004fb66d76ccf50",
   "sha256": "6004fb66d76ccf50",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 1,
     "pageCount": 1,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A 1956 CIA information report from Hungary describes a naturalized US citizen's niece in Budapest writing that 'flying saucers (rockets)' had been observed speeding overhead for several weeks, causing public unease and prompting scientific investigation, with speeds estimated at 12,000 km/hour; the letter included a hand-drawn sketch showing a formation of circular objects on a course between Budapest and Moscow.",
+  "summary": "A 1956 CIA information report from Hungary relays a November 1955 letter from a Budapest resident to a naturalized US citizen, describing fast-moving flying objects nicknamed 'flying saucers' that reportedly caused public unease and prompted scientific attention, with a claimed speed of 12,000 km/h. The letter included a sketch showing a formation of circular objects along a flight path between Budapest and Moscow.",
   "objectClass": "disc",
-  "redactionPct": 2,
+  "redactionPct": 5,
+  "incidentDate": "1955-11",
+  "incidentLocation": "Budapest, Hungary",
   "reviewFlags": [
-    "ambiguous-object"
+    "ambiguous-object",
+    "ambiguous-location"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 3745,
-    "output_tokens": 183
+    "input_tokens": 4343,
+    "output_tokens": 222
   },
-  "enrichedAt": "2026-07-01T21:54:54.234Z"
+  "enrichedAt": "2026-07-02T04:20:23.766Z"
 }

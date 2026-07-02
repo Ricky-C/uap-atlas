@@ -2,24 +2,28 @@
   "recordId": "f96457d53f3cd65a",
   "sha256": "f96457d53f3cd65a",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 3,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A December 1948 Navy memorandum from the Fifth Naval District forwards a Chief of Naval Operations directive instructing all naval districts to report sightings of 'flying discs' or other unidentified aerial objects to the nearest Air Force command and Naval District Intelligence Office, including photographic evidence when possible, due to an anticipated new cycle of reported sightings.",
+  "summary": "A 1948 Navy directive from the Chief of Naval Operations, forwarded by the Commandant of the Fifth Naval District, instructs naval stations to report sightings of 'flying discs' or other unidentified aerial objects to the nearest Air Force command and Naval District Intelligence Office, and to obtain photographic evidence when possible.",
   "objectClass": "disc",
   "redactionPct": 0,
+  "incidentDate": "1948",
+  "incidentLocation": null,
   "reviewFlags": [
+    "ambiguous-object",
+    "ambiguous-date",
     "illegible"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 7559,
-    "output_tokens": 164
+    "input_tokens": 8157,
+    "output_tokens": 190
   },
-  "enrichedAt": "2026-07-01T21:56:35.114Z"
+  "enrichedAt": "2026-07-02T04:21:31.415Z"
 }

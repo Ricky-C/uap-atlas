@@ -2,25 +2,27 @@
   "recordId": "d52431b354af55b1",
   "sha256": "d52431b354af55b1",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 1,
     "pageCount": 1,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "An Air Force pilot's debrief form dated 08/31/20 reports a dusk-time ISR mission sighting of an object at approximately 18,000 feet moving at 150 degrees/230 knots. The pilot describes visually tracking an initial object that was overtaken by another of similar size and shape but much higher speed, with up to three objects observed moving among each other at once.",
-  "objectClass": "unknown",
-  "redactionPct": 10,
+  "summary": "An Air Force pilot's debrief form reports that during a dusk ISR mission on 08/31/20, an object was tracked on sensor after being seen flying through the screen; it was surpassed by a second similar object of higher speed, and at one point three such objects appeared moving among each other. The objects were described as round with apparent propulsion and were assessed as moving at approximately 150 degrees/230 knots.",
+  "objectClass": "orb",
+  "redactionPct": 5,
+  "incidentDate": "2020-08-31",
+  "incidentLocation": null,
   "reviewFlags": [
-    "ambiguous-object",
+    "ambiguous-location",
     "heavily-redacted"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 3745,
-    "output_tokens": 174
+    "input_tokens": 4343,
+    "output_tokens": 206
   },
-  "enrichedAt": "2026-07-01T21:48:55.280Z"
+  "enrichedAt": "2026-07-02T04:13:52.023Z"
 }

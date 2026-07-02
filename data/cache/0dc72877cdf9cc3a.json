@@ -2,24 +2,26 @@
   "recordId": "0dc72877cdf9cc3a",
   "sha256": "0dc72877cdf9cc3a",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 181,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "This is a 1996 RTI final report for the Air Force 30th and 45th Space Wing safety offices modeling unlikely space-booster failures (Mode-5 responses) in risk calculations, including a history of Atlas, Delta, and Titan launch anomalies through August 1996. It is a technical/administrative report and does not describe an anomalous aerial object.",
-  "objectClass": "unknown",
+  "summary": "This is a 1996 RTI technical report prepared for U.S. Air Force space wings describing statistical modeling of low-probability space-booster failure scenarios (Mode-5 failures) for launch risk calculations, including a history of Atlas, Delta, and Titan launch failures. It does not describe any anomalous aerial phenomenon.",
+  "objectClass": "other",
   "redactionPct": 0,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
     "ambiguous-object"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8679,
-    "output_tokens": 164
+    "input_tokens": 9277,
+    "output_tokens": 174
   },
-  "enrichedAt": "2026-07-01T21:42:56.492Z"
+  "enrichedAt": "2026-07-02T04:08:43.882Z"
 }

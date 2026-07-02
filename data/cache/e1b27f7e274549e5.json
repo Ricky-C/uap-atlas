@@ -2,24 +2,26 @@
   "recordId": "e1b27f7e274549e5",
   "sha256": "e1b27f7e274549e5",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 5,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A 2004 State Department cable from Embassy Ashgabat describes a Turkmen civil society NGO called the Union of UFOlogists of Turkmenabat, noting the group's history assisting local businesses and NGOs with registration; the cable reports the group's president said Turkmen military and government officials had consulted him about unusual occurrences in Turkmen airspace but that there had been no confirmed UFO sightings in Turkmenistan.",
+  "summary": "A 2004 State Department cable from Embassy Ashgabat describes a Turkmen NGO called the Union of UFOlogists, originally formed to study life on other planets, which had shifted to practical civic work such as business registration and humanitarian aid distribution. The document reports no confirmed UFO sightings in Turkmenistan, noting officials had occasionally consulted the group's president about unexplained occurrences in Turkmen airspace.",
   "objectClass": "unknown",
   "redactionPct": 0,
+  "incidentDate": null,
+  "incidentLocation": "Turkmenistan",
   "reviewFlags": [
     "ambiguous-object"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8679,
-    "output_tokens": 190
+    "input_tokens": 9277,
+    "output_tokens": 214
   },
-  "enrichedAt": "2026-07-01T21:48:55.278Z"
+  "enrichedAt": "2026-07-02T04:13:52.021Z"
 }

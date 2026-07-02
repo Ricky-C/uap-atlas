@@ -2,24 +2,28 @@
   "recordId": "c33b63109ce1e9d5",
   "sha256": "c33b63109ce1e9d5",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 3,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "An FBI electronic communication documents an interview with a redacted witness who described repeated sightings of lights near their property since 2021, including an initial 2021 sighting where a single light split into two or three lights forming a triangular pattern, plus a separate 1996 incident of a large light stopping a vehicle in New Mexico. The witness described cross-referencing sightings with ADS-B flight data to rule out aircraft and stated activity increased since September.",
+  "summary": "An FBI electronic communication documents an October 2024 interview with a redacted individual who reported observing lights near their property beginning in November 2021, including one instance where a single light split into two or three lights forming a triangular pattern for about ten minutes. The interviewee also described a 1996 incident where a vehicle's electronics reportedly shut down after being illuminated by a large light, and stated they used ADS-B flight data to try to rule out aircraft as the source of the sightings.",
   "objectClass": "light",
-  "redactionPct": 35,
+  "redactionPct": 25,
+  "incidentDate": "2021-11",
+  "incidentLocation": null,
   "reviewFlags": [
-    "heavily-redacted"
+    "heavily-redacted",
+    "ambiguous-location",
+    "ambiguous-date"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8679,
-    "output_tokens": 186
+    "input_tokens": 9277,
+    "output_tokens": 233
   },
-  "enrichedAt": "2026-07-01T21:54:54.222Z"
+  "enrichedAt": "2026-07-02T04:20:23.766Z"
 }

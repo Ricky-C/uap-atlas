@@ -2,24 +2,26 @@
   "recordId": "23482936d9dbf8de",
   "sha256": "23482936d9dbf8de",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 178,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A checklist report describes an incident near Norcatur, Kansas on 18 February 1948, based on a newspaper account from an editor, describing a bluish-white smoke smudge with a mushroom shape at an estimated altitude of 30-35 miles, accompanied by one large explosion followed by smaller ones, and disintegrating afterward.",
-  "objectClass": "other",
-  "redactionPct": 10,
+  "summary": "A checklist-format field report describes a newspaper account from an editor in Norton, Kansas, of an object observed over Norcatur, Kansas that produced one big explosion followed by smaller explosions and left a bluish-white smoke smudge in a mushroom shape at high altitude before disintegrating.",
+  "objectClass": "fireball",
+  "redactionPct": 5,
+  "incidentDate": "1948-02-18",
+  "incidentLocation": "Norcatur, Kansas",
   "reviewFlags": [
     "ambiguous-object"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8511,
-    "output_tokens": 155
+    "input_tokens": 9109,
+    "output_tokens": 176
   },
-  "enrichedAt": "2026-07-01T21:42:56.494Z"
+  "enrichedAt": "2026-07-02T04:08:43.883Z"
 }

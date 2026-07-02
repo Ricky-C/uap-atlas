@@ -2,25 +2,29 @@
   "recordId": "fd4deb1e48fcfa7f",
   "sha256": "fd4deb1e48fcfa7f",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 10,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A 12 SOS aircraft mission report describes an unspecified aircraft conducting FMV/SIGINT collection sorties over Iraq/Syria on an ISR tasking, noting that at 1559Z the crew observed an unidentified aerial phenomenon referenced as UAP 1, with no further description provided in this narrative section.",
+  "summary": "A military mission report describes an aircraft crew conducting FMV/SIGINT collection sorties during Operation INHERENT RESOLVE; during one sortie the crew reported observing an unidentified aerial phenomenon, with details referenced to a separate UAP annex not included here.",
   "objectClass": "unknown",
-  "redactionPct": 10,
+  "redactionPct": 15,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
+    "heavily-redacted",
     "ambiguous-object",
-    "heavily-redacted"
+    "ambiguous-date",
+    "ambiguous-location"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8679,
-    "output_tokens": 164
+    "input_tokens": 9277,
+    "output_tokens": 180
   },
-  "enrichedAt": "2026-07-01T21:51:31.384Z"
+  "enrichedAt": "2026-07-02T04:16:28.982Z"
 }

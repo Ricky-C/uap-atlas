@@ -5,7 +5,7 @@ description: Extracts the read-the-document fields of a UAPRecord — a neutral 
 
 # Case extraction
 
-Turns one PURSUE document (a scanned page, photograph, rendering, or video still) into the enrichment fields of a `UAPRecord`. It covers only the fields that require *reading* the document — `summary`, `objectClass`, and `redactionPct`. The rest of a record (agency, doc type, location, date) comes from filename parsing and geocoding and is out of scope here. See `DATA.md` for the full schema.
+Turns one PURSUE document (a scanned page, photograph, rendering, or video still) into the enrichment fields of a `UAPRecord`. It covers the fields that require *reading* the document — `summary`, `objectClass`, `redactionPct`, and (since the portal CSV proved incomplete and sometimes wrong) `incidentDate` and `incidentLocation`. Document-extracted date/location take precedence over the CSV-joined values at patch time; a null extraction never erases a CSV value. Agency and doc type still come from filename parsing; coordinates come from geocoding `locationRaw`. See `DATA.md` for the full schema.
 
 ## When this applies
 
@@ -30,13 +30,17 @@ The model returns strict JSON, no preamble:
   "summary": "one or two neutral sentences describing what the document reports",
   "objectClass": "orb | disc | fireball | light | triangle | craft | other | unknown",
   "redactionPct": 0,
+  "incidentDate": "1947-08-04",
+  "incidentLocation": "near Boston, Massachusetts",
   "reviewFlags": []
 }
 ```
 
 - `summary`, `objectClass`, and `redactionPct` map to the `UAPRecord` fields of the same name.
 - `redactionPct` is an integer 0–100 (percent of page area obscured by redaction bars), or `null` when the media is not a page scan.
-- `reviewFlags` is **not** persisted to the record — ingest surfaces it so a human can check flagged cases. Values like `"illegible"`, `"ambiguous-object"`, `"non-document-media"`, `"heavily-redacted"`.
+- `incidentDate` is the date of the **incident** (never the document/letter/interview date), ISO at the precision the document states — `"1947-08-04"`, `"2008-07"`, or `"1948"` — or `null` when unstated. Re-normalized through `normalizeDate` at patch time; document wins over the portal CSV, except that an agreeing-but-finer CSV value is kept.
+- `incidentLocation` is a concise place string for where the incident occurred, as the document states it, or `null` when unstated **or redacted** (a withheld location is never reconstructed). Maps to `locationRaw`; resolves to coordinates via `data/locations.json`.
+- `reviewFlags` is **not** persisted to the record — ingest surfaces it so a human can check flagged cases. Values like `"illegible"`, `"ambiguous-object"`, `"non-document-media"`, `"heavily-redacted"`, `"ambiguous-date"`, `"ambiguous-location"`.
 - When a value can't be determined, use `unknown`/`null` and add a flag. Never invent one.
 
 ## Hard rules

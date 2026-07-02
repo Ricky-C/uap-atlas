@@ -2,24 +2,27 @@
   "recordId": "23c76f92be6a0441",
   "sha256": "23c76f92be6a0441",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 3,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "This is a NASA Apollo 17 crew debriefing on science observations, including a scientist discussing UV background surveys, Coma cluster hydrogen searches, Lyman-alpha hydrogen radiation studies, and Earth spectrum observations; it does not describe any anomalous aerial object.",
+  "summary": "This is an Apollo 17 crew debriefing on scientific experiments, including a discussion by a scientist named Henry about UV background radiation observations, X-ray and gamma-ray backgrounds, Lyman-alpha hydrogen radiation, and Earth spectrum observations made from the spacecraft. It contains no report of an anomalous aerial object.",
   "objectClass": "unknown",
   "redactionPct": 0,
+  "incidentDate": "1972-12",
+  "incidentLocation": null,
   "reviewFlags": [
-    "ambiguous-object"
+    "ambiguous-object",
+    "ambiguous-date"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8511,
-    "output_tokens": 144
+    "input_tokens": 9109,
+    "output_tokens": 193
   },
-  "enrichedAt": "2026-07-01T21:42:56.496Z"
+  "enrichedAt": "2026-07-02T04:08:43.874Z"
 }

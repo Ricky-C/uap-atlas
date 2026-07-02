@@ -2,24 +2,26 @@
   "recordId": "fc5b1c8ab5661570",
   "sha256": "fc5b1c8ab5661570",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 7,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "This is an administrative cover sheet and correspondence routing document from the Directorate of Intelligence, HQ USAF, dated November 1948, transmitting extracts of a special intelligence organization's reports from the European Command for review; it does not describe an observed aerial object.",
+  "summary": "A November 1948 U.S. Air Force intelligence memo transmits extracts from a teletype forwarding a complete set of reports prepared by a European Command special intelligence organization, sent for inspection and possible use in arguing for Air Force funding; no specific sighting or aerial object is described in this cover material.",
   "objectClass": "unknown",
   "redactionPct": 0,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
     "ambiguous-object"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8455,
-    "output_tokens": 132
+    "input_tokens": 9053,
+    "output_tokens": 164
   },
-  "enrichedAt": "2026-07-01T21:48:55.279Z"
+  "enrichedAt": "2026-07-02T04:13:52.021Z"
 }

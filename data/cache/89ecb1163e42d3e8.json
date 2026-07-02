@@ -2,24 +2,26 @@
   "recordId": "89ecb1163e42d3e8",
   "sha256": "89ecb1163e42d3e8",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 1,
     "pageCount": 1,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A club newsletter from Pajarito Astronomers announces a May 1986 meeting featuring a guest speaker discussing why scientists should be concerned about UFO reports; it does not describe any specific sighting or object.",
+  "summary": "A club newsletter from the Pajarito Astronomers announces an upcoming meeting where a scientist affiliated with a national laboratory group will speak on why scientists should be concerned about UFOs; the document itself does not describe any specific sighting.",
   "objectClass": "unknown",
-  "redactionPct": 5,
+  "redactionPct": 10,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
     "ambiguous-object"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 3745,
-    "output_tokens": 116
+    "input_tokens": 4343,
+    "output_tokens": 144
   },
-  "enrichedAt": "2026-07-01T21:51:31.382Z"
+  "enrichedAt": "2026-07-02T04:16:28.978Z"
 }

@@ -2,22 +2,26 @@
   "recordId": "373070ab867b592e",
   "sha256": "373070ab867b592e",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 28,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A series of 1947 U.S. Air Materiel Command memos discusses continued reports of 'flying discs' from qualified observers and forwards these reports to Air Force headquarters. A follow-up directive establishes an official project (code named 'Sign') to collect, evaluate, and distribute information on aerial sighting reports of concern to national security.",
+  "summary": "A December 1947 Air Materiel Command letter to the Chief of Staff, USAF, references prior reports on flying discs and states qualified observers continue to submit reports of the phenomenon, prompting continued intelligence collection and analysis. A follow-up December 1947 memo from Air Force headquarters directs AMC to establish a formal project (code named SIGN) to collect, evaluate, and distribute information on aerial sightings of potential national security interest.",
   "objectClass": "disc",
   "redactionPct": 0,
-  "reviewFlags": [],
+  "incidentDate": null,
+  "incidentLocation": null,
+  "reviewFlags": [
+    "ambiguous-object"
+  ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8119,
-    "output_tokens": 148
+    "input_tokens": 8717,
+    "output_tokens": 212
   },
-  "enrichedAt": "2026-07-01T21:42:56.497Z"
+  "enrichedAt": "2026-07-02T04:08:43.880Z"
 }

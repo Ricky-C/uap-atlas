@@ -2,22 +2,26 @@
   "recordId": "5eb571dbfd4faa81",
   "sha256": "5eb571dbfd4faa81",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 4,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "An AARO memorandum describes six federal law enforcement agents reporting, over two days in October 2023, luminous orange 'mother orbs' near dusk that appeared to release clusters of smaller red 'orbs' exhibiting varied horizontal and altitude movement, with one red orb reportedly stationary for several hours; the report states the case remains unresolved after analysis of flight, radar, and ADS-B data.",
+  "summary": "An AARO memo describes six federal law enforcement agents who reported observing orange 'mother orbs' near a sensitive national security site in the western U.S. over two days in October 2023, with the orbs appearing to launch clusters of smaller red orbs that moved, hovered, and in one case remained stationary for hours; the phenomena were described as silent and remain unresolved after analysis of flight logs, radar, and ADS-B data.",
   "objectClass": "orb",
   "redactionPct": 0,
-  "reviewFlags": [],
+  "incidentDate": "2023-10",
+  "incidentLocation": "western United States, near a sensitive national security site",
+  "reviewFlags": [
+    "ambiguous-location"
+  ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8679,
-    "output_tokens": 172
+    "input_tokens": 9277,
+    "output_tokens": 218
   },
-  "enrichedAt": "2026-07-01T21:51:31.380Z"
+  "enrichedAt": "2026-07-02T04:16:28.979Z"
 }

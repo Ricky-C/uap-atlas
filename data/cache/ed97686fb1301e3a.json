@@ -2,22 +2,26 @@
   "recordId": "ed97686fb1301e3a",
   "sha256": "ed97686fb1301e3a",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 209,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A 1949 FBI office memo from the San Antonio field office to the Director relayed information from Fourth Army G-2 about a Galveston, Texas newspaper article reporting that a business club in Alexandria, Louisiana planned a convention for people who had reported seeing flying saucers, noting two such reports occurred in the area shortly before publication.",
+  "summary": "An FBI San Antonio memo reports that Fourth Army G-2 relayed a newspaper article stating a business club in Alexandria, Louisiana was planning a convention for people who had seen flying saucers, noting that flying disks were reported twice in the area the week before the article ran.",
   "objectClass": "disc",
-  "redactionPct": 2,
-  "reviewFlags": [],
+  "redactionPct": 5,
+  "incidentDate": "1949-07",
+  "incidentLocation": "Alexandria, Louisiana",
+  "reviewFlags": [
+    "ambiguous-date"
+  ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8735,
-    "output_tokens": 149
+    "input_tokens": 9333,
+    "output_tokens": 168
   },
-  "enrichedAt": "2026-07-01T21:48:55.279Z"
+  "enrichedAt": "2026-07-02T04:13:52.022Z"
 }

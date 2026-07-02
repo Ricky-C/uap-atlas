@@ -2,26 +2,29 @@
   "recordId": "6a456b9add3f4f6d",
   "sha256": "6a456b9add3f4f6d",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 1,
     "pageCount": 1,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A sensor or scope display shows crosshair grid overlays with timestamp 12/31/99 18:11:19, but the main content areas including the object itself are redacted with black bars, leaving no visible object description.",
+  "summary": "This appears to be a sensor or camera overlay frame with a targeting reticle and range markings, timestamped 12/31/99 18:11:19, but the surrounding descriptive text and imagery are redacted, leaving no discernible account of an observed object.",
   "objectClass": "unknown",
   "redactionPct": 25,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
     "heavily-redacted",
     "ambiguous-object",
+    "ambiguous-date",
     "non-document-media"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 3633,
-    "output_tokens": 126
+    "input_tokens": 4231,
+    "output_tokens": 168
   },
-  "enrichedAt": "2026-07-01T21:45:25.824Z"
+  "enrichedAt": "2026-07-02T04:11:08.409Z"
 }

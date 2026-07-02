@@ -2,24 +2,27 @@
   "recordId": "490841ebe7487b3e",
   "sha256": "490841ebe7487b3e",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 2,
     "pageCount": 2,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A 1976 CIA Domestic Collection Division report on Soviet aviation medicine describes Aeroflot officials discussing pilot fatigue, biological testing equipment, and radiation research; a section notes a radiation biologist's explanation of cosmic ray particles causing pilots to perceive flashes of light during night flying, and a scientist reportedly stated that 99 percent of UFO occurrences were traceable to natural or man-made phenomena, with one percent unexplained.",
-  "objectClass": "light",
-  "redactionPct": 10,
+  "summary": "A CIA Domestic Collection Division report on Soviet Aeroflot fatigue-countermeasure research also notes that Dr. Akoyev told colleagues that 99 percent of UFO-type occurrences were traceable to natural or man-made phenomena, with about one percent unexplained and possibly attributable to hallucination.",
+  "objectClass": "unknown",
+  "redactionPct": 5,
+  "incidentDate": null,
+  "incidentLocation": "USSR",
   "reviewFlags": [
-    "ambiguous-object"
+    "ambiguous-object",
+    "ambiguous-location"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 6212,
-    "output_tokens": 201
+    "input_tokens": 6810,
+    "output_tokens": 183
   },
-  "enrichedAt": "2026-07-01T21:51:31.381Z"
+  "enrichedAt": "2026-07-02T04:16:28.981Z"
 }

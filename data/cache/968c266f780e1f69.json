@@ -2,24 +2,27 @@
   "recordId": "968c266f780e1f69",
   "sha256": "968c266f780e1f69",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 5,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A 2001 State Department cable from the US Embassy in Moscow reports Russian officials denying that Russian aircraft bombed or overflew the Kodori Gorge in Georgia, with an MFA official comparing unverified reports of planes in the area to sightings of UFOs. The cable primarily concerns Russian troop withdrawals and diplomatic exchanges, mentioning the term 'UFO' only as a dismissive comparison used by a Russian official, not as a description of an actual observed phenomenon.",
+  "summary": "A 2001 State Department cable from Moscow relays a Russian MFA official's dismissal of reports of unidentified planes over Georgia's Kodori Gorge as comparable to 'UFO' sightings, in the context of denying Russian military bombing runs there.",
   "objectClass": "unknown",
   "redactionPct": 0,
+  "incidentDate": "2001-10",
+  "incidentLocation": "Kodori Gorge, Abkhazia, Georgia",
   "reviewFlags": [
-    "ambiguous-object"
+    "ambiguous-object",
+    "ambiguous-date"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8679,
-    "output_tokens": 213
+    "input_tokens": 9277,
+    "output_tokens": 181
   },
-  "enrichedAt": "2026-07-01T21:45:25.794Z"
+  "enrichedAt": "2026-07-02T04:11:08.404Z"
 }

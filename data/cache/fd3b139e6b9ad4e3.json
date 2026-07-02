@@ -2,24 +2,27 @@
   "recordId": "fd3b139e6b9ad4e3",
   "sha256": "fd3b139e6b9ad4e3",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 223,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "This is the cover and preface of a declassified NASA Gemini V technical debriefing transcript (Part 1), prepared by the Spacecraft Operations Branch in September 1965, summarizing crew accounts of the mission from an operational viewpoint; it does not itself describe any anomalous object.",
+  "summary": "This is a preliminary NASA transcript cover and preface for the Gemini V flight crew technical debriefing, describing the crew's general operational account of the mission recorded at Cape Kennedy, Florida in August-September 1965; it references a later section covering visual sightings among other topics but no sighting content is included in this excerpt.",
   "objectClass": "unknown",
   "redactionPct": 0,
+  "incidentDate": "1965-08",
+  "incidentLocation": "Cape Kennedy, Florida",
   "reviewFlags": [
-    "ambiguous-object"
+    "ambiguous-object",
+    "ambiguous-date"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8511,
-    "output_tokens": 142
+    "input_tokens": 9109,
+    "output_tokens": 192
   },
-  "enrichedAt": "2026-07-01T21:56:35.112Z"
+  "enrichedAt": "2026-07-02T04:21:31.415Z"
 }

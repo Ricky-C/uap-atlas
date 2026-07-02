@@ -2,24 +2,24 @@
   "recordId": "c1c48d35943e6522",
   "sha256": "c1c48d35943e6522",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 209,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A checklist report describes 1st Lt Joseph C. McHenry at Muroc Air Field, California, on 8 July 1947 sighting two silver disc-like or spherical objects moving at about 300 MPH at roughly 8,000 feet, heading north; other witnesses including S/Sgt Gerald E. Nauman, T/Sgt Joseph Ruvolo, and Miss Jannette Marie Scotte confirmed the sighting, and a third similar object was later reportedly seen performing a tight circle over the airfield.",
+  "summary": "A billeting officer at Muroc Air Field, California reported seeing two silver disc-like or spherical objects flying about 300 MPH at roughly 8000 feet, later observing a third similar object performing a tight circle over the airfield; several other witnesses corroborated the sighting.",
   "objectClass": "disc",
   "redactionPct": 5,
-  "reviewFlags": [
-    "ambiguous-object"
-  ],
+  "incidentDate": "1947-07-08",
+  "incidentLocation": "Muroc Air Field, Muroc, California",
+  "reviewFlags": [],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8903,
-    "output_tokens": 222
+    "input_tokens": 9501,
+    "output_tokens": 166
   },
-  "enrichedAt": "2026-07-01T21:48:55.283Z"
+  "enrichedAt": "2026-07-02T04:13:52.017Z"
 }

@@ -2,25 +2,28 @@
   "recordId": "1822564fbae08f15",
   "sha256": "1822564fbae08f15",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 9,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A 50 ATKS mission report (MISREP) describes an ISR aircraft sortie over the eastern Mediterranean and Syria, during which the aircraft was reacted to by 1-3 aircraft including a possible RJAF Su-30, observed a probable Su-27/35 landing at Al Assad airfield, and reported one possible small unidentified aerial phenomenon at 0117Z.",
+  "summary": "A U.S. Air Force mission report (MISREP) describes an ISR aircraft conducting operations over the eastern Mediterranean, during which one small unidentified aerial phenomenon was observed at 0117Z, alongside separate observations of reacting aircraft and a probable SU-27/35 landing near Al Assad airfield.",
   "objectClass": "unknown",
   "redactionPct": 15,
+  "incidentDate": null,
+  "incidentLocation": "Eastern Mediterranean",
   "reviewFlags": [
     "ambiguous-object",
+    "ambiguous-date",
     "heavily-redacted"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8679,
-    "output_tokens": 185
+    "input_tokens": 9277,
+    "output_tokens": 199
   },
-  "enrichedAt": "2026-07-01T21:42:56.492Z"
+  "enrichedAt": "2026-07-02T04:08:43.879Z"
 }

@@ -2,24 +2,28 @@
   "recordId": "24438d15d989c8b1",
   "sha256": "24438d15d989c8b1",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 3,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "An FBI electronic communication documents contact with a reporting individual who provided videos and described repeated nighttime observations near their residence, appearing as plasma-like orbs, dating back to 2021, sometimes hovering, moving, or near water and trees, along with reported instrument anomalies such as gamma radiation spikes and electronic/GPS interference.",
+  "summary": "An FBI electronic communication documents contact with a witness who reported repeated observations, since November 2021, of unidentified anomalous phenomena appearing as plasma orbs near their residence, sometimes hovering statically or moving near trees and water. The witness provided video clips and reported correlating spikes in gamma radiation and unusual effects on electronics and GPS devices during observations.",
   "objectClass": "orb",
   "redactionPct": 35,
+  "incidentDate": "2024-10",
+  "incidentLocation": null,
   "reviewFlags": [
-    "heavily-redacted"
+    "heavily-redacted",
+    "ambiguous-location",
+    "ambiguous-date"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8679,
-    "output_tokens": 158
+    "input_tokens": 9277,
+    "output_tokens": 205
   },
-  "enrichedAt": "2026-07-01T21:51:31.383Z"
+  "enrichedAt": "2026-07-02T04:16:28.979Z"
 }

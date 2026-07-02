@@ -2,25 +2,28 @@
   "recordId": "46701a48cefa62a8",
   "sha256": "46701a48cefa62a8",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 10,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A 389th EFS mission report describes a 2-ship F-15E flight conducting defensive counter air near Shaddadi, Syria, during which crews observed 3 possible unidentified aerial phenomena at FL240 and later a possible balloon at FL210; no threat reaction was fired and no further tracking resulted.",
+  "summary": "A mission report from a 2-ship F-15E flight conducting defensive counter-air operations over Shaddadi describes two separate observations: three possible unidentified aerial phenomena at flight level 240 and, in a separate entry, a possible balloon at flight level 210. No further engagement or resolution is noted, and both events are marked as no factors to report.",
   "objectClass": "unknown",
-  "redactionPct": 10,
+  "redactionPct": 15,
+  "incidentDate": null,
+  "incidentLocation": "Shaddadi, Syria",
   "reviewFlags": [
-    "heavily-redacted",
-    "ambiguous-object"
+    "ambiguous-object",
+    "ambiguous-date",
+    "heavily-redacted"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8679,
-    "output_tokens": 158
+    "input_tokens": 9277,
+    "output_tokens": 203
   },
-  "enrichedAt": "2026-07-01T21:42:56.498Z"
+  "enrichedAt": "2026-07-02T04:08:43.876Z"
 }

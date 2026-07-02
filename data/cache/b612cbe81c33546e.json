@@ -2,25 +2,28 @@
   "recordId": "b612cbe81c33546e",
   "sha256": "b612cbe81c33546e",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 2,
     "pageCount": 2,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "An FBI FD-302 report describes witnesses observing a yellow, basketball-sized ball of light and a larger beach-ball-sized light near trees behind their property around 9:15pm, which appeared to move laterally and merge before disappearing; the account also mentions later sightings of white orbs and a separate 1987 incident involving a red light near power lines.",
+  "summary": "An FBI FD-302 report documents a witness interview describing multiple sightings: a yellow ball of light and a larger second orb seen near trees behind the witness's home, which appeared to merge before disappearing, followed weeks later by several white orbs traveling overhead at higher altitude. The witness also recalled a separate 1987 incident near power lines involving a red light that circled and hovered before landing.",
   "objectClass": "orb",
-  "redactionPct": 40,
+  "redactionPct": 35,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
     "heavily-redacted",
-    "ambiguous-object"
+    "ambiguous-date",
+    "ambiguous-location"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 6212,
-    "output_tokens": 167
+    "input_tokens": 6810,
+    "output_tokens": 208
   },
-  "enrichedAt": "2026-07-01T21:54:54.221Z"
+  "enrichedAt": "2026-07-02T04:20:23.764Z"
 }

@@ -2,24 +2,27 @@
   "recordId": "c2bd370cdadc2f17",
   "sha256": "c2bd370cdadc2f17",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 1,
     "pageCount": 1,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A pilot from the 77 EFS reported a night-time DCA mission on 10/27/20 in which a radar and targeting pod contact showed two IR-significant objects, one circling the other, that vanished within a fraction of a second. The observer described red blinking strobes and received noise jamming, with the contacts moving at reported speed/direction of 060/20 and unable to be approached closer than 16.9 nautical miles.",
-  "objectClass": "unknown",
+  "summary": "An Air Force debrief form describes an aircrew's radar and targeting-pod contact with two unknown 'range fouler' objects during a night defensive counter-air mission over an unspecified working area. The pod showed two infrared-significant contacts, one circling the other, exhibiting red blinking strobes and noise jamming before disappearing rapidly; the crew could not close within 16.9 nautical miles for a better identification.",
+  "objectClass": "other",
   "redactionPct": 5,
+  "incidentDate": "2020-10-27",
+  "incidentLocation": null,
   "reviewFlags": [
-    "ambiguous-object"
+    "ambiguous-object",
+    "ambiguous-location"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 3745,
-    "output_tokens": 181
+    "input_tokens": 4343,
+    "output_tokens": 212
   },
-  "enrichedAt": "2026-07-01T21:48:55.284Z"
+  "enrichedAt": "2026-07-02T04:13:52.021Z"
 }

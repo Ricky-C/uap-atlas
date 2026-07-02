@@ -2,24 +2,24 @@
   "recordId": "77043137eec2494b",
   "sha256": "77043137eec2494b",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 126,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "Two Pan American Airways crew members flying a Constellation aircraft between Gander and La Guardia on 4 August 1947 independently reported sighting an unidentified elongated orange/gold object near Boston, estimated at 15-20 feet long, traveling at 150-175 mph before contact was lost when the aircraft banked or a cloud obscured the view.",
+  "summary": "An Air Defense Command summary describes two Pan American Airways crew members, pilot Alpheus Powell and navigator Walter White, independently sighting unidentified elongated objects near Boston, Massachusetts while flying a Constellation aircraft from Gander to New York on 4 August 1947. Both described a bright orange/gold, cylindrical or elliptical object with blunt ends, viewed briefly at a distance before being lost from sight.",
   "objectClass": "other",
   "redactionPct": 0,
-  "reviewFlags": [
-    "ambiguous-object"
-  ],
+  "incidentDate": "1947-08-04",
+  "incidentLocation": "between Everett and Bedford, near Boston, Massachusetts",
+  "reviewFlags": [],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8959,
-    "output_tokens": 161
+    "input_tokens": 9557,
+    "output_tokens": 225
   },
-  "enrichedAt": "2026-07-01T21:45:25.824Z"
+  "enrichedAt": "2026-07-02T04:11:08.402Z"
 }

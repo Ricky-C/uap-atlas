@@ -2,25 +2,28 @@
   "recordId": "f5cfb310e3064e34",
   "sha256": "f5cfb310e3064e34",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 4,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "An FBI electronic communication describes two special agents visiting a witness's home in November 2024 to confirm prior reports of aerial phenomena observed over three years. During the visit, agents reportedly observed pulsating white and blue/white lights near the tree line that moved erratically before disappearing, and photographs taken were described as mostly blurry with little contextual detail.",
+  "summary": "An FBI electronic communication describes two special agents visiting a witness's home in November 2024 to confirm previously reported UAP sightings. During surveillance, agents observed pulsating white lights near a tree line that moved erratically, appeared and disappeared over roughly ten seconds, and did not appear to reflect off nearby water or illuminate the ground; five photographs taken were reported to be mostly blurry.",
   "objectClass": "light",
   "redactionPct": 55,
+  "incidentDate": "2024-11",
+  "incidentLocation": null,
   "reviewFlags": [
     "heavily-redacted",
-    "ambiguous-object"
+    "ambiguous-date",
+    "ambiguous-location"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8679,
-    "output_tokens": 168
+    "input_tokens": 9277,
+    "output_tokens": 214
   },
-  "enrichedAt": "2026-07-01T21:56:35.112Z"
+  "enrichedAt": "2026-07-02T04:21:31.415Z"
 }

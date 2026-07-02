@@ -2,24 +2,26 @@
   "recordId": "90b353682ba21811",
   "sha256": "90b353682ba21811",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 1,
     "pageCount": 1,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "An aircrew debrief form reports that during a night ISR mission on 05/14/20, sensor operators observed a solid white, round object moving over water, which was tracked intermittently with intermittent loss and reacquisition of the sensor lock.",
+  "summary": "A range fouler debrief form describes an ISR mission in which a solid white round object flew through the sensor's field of view at night, appearing to make erratic movements above the water; the crew intermittently tracked it, achieving 4x zoom before losing it due to poor track placement.",
   "objectClass": "orb",
   "redactionPct": 5,
+  "incidentDate": "2020-05-14",
+  "incidentLocation": null,
   "reviewFlags": [
-    "ambiguous-object"
+    "ambiguous-location"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 3745,
-    "output_tokens": 122
+    "input_tokens": 4343,
+    "output_tokens": 155
   },
-  "enrichedAt": "2026-07-01T21:45:25.819Z"
+  "enrichedAt": "2026-07-02T04:11:08.412Z"
 }

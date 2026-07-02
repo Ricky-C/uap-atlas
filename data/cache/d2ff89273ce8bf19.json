@@ -2,25 +2,29 @@
   "recordId": "d2ff89273ce8bf19",
   "sha256": "d2ff89273ce8bf19",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 1,
     "pageCount": 1,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A form-based government document, largely illegible due to poor scan quality, appears to record procedural or policy guidance rather than a specific witness sighting account.",
+  "summary": "The document appears to be a heavily degraded scanned form or memo with multiple text blocks, but the poor image quality prevents reliable reading of its content or description of any reported aerial object.",
   "objectClass": "unknown",
   "redactionPct": 0,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
     "illegible",
-    "ambiguous-object"
+    "ambiguous-object",
+    "ambiguous-date",
+    "ambiguous-location"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 3185,
-    "output_tokens": 97
+    "input_tokens": 3783,
+    "output_tokens": 143
   },
-  "enrichedAt": "2026-07-01T21:54:54.232Z"
+  "enrichedAt": "2026-07-02T04:20:23.770Z"
 }

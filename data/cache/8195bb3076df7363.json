@@ -2,26 +2,29 @@
   "recordId": "8195bb3076df7363",
   "sha256": "8195bb3076df7363",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 1,
     "pageCount": 1,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A sensor/camera still with crosshair overlay and timestamp shows a small dark dot near the center of frame against a gray sky background; surrounding text fields are redacted.",
+  "summary": "A sensor or scope display with crosshair reticle and timestamp shows a small dark dot near center against a uniform gray background; no accompanying descriptive text is visible due to redaction.",
   "objectClass": "unknown",
-  "redactionPct": 20,
+  "redactionPct": 25,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
-    "ambiguous-object",
     "non-document-media",
-    "heavily-redacted"
+    "ambiguous-object",
+    "heavily-redacted",
+    "ambiguous-date"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 3633,
-    "output_tokens": 115
+    "input_tokens": 4231,
+    "output_tokens": 146
   },
-  "enrichedAt": "2026-07-01T21:45:25.794Z"
+  "enrichedAt": "2026-07-02T04:11:08.411Z"
 }

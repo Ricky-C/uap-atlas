@@ -2,25 +2,28 @@
   "recordId": "ce62e46b3535a468",
   "sha256": "ce62e46b3535a468",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 1,
     "pageCount": 1,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "An Apollo-era lunar surface photograph shows a barren landscape with hills on the horizon; an inset zoom of the sky area highlights two small colored points of light against the dark background.",
+  "summary": "A lunar surface photograph shows a rocky horizon and foreground shadow with a highlighted inset zooming in on two small light-colored points visible in the dark sky above the terrain.",
   "objectClass": "light",
   "redactionPct": null,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
     "non-document-media",
-    "ambiguous-object"
+    "ambiguous-object",
+    "ambiguous-location"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 4305,
-    "output_tokens": 109
+    "input_tokens": 4903,
+    "output_tokens": 136
   },
-  "enrichedAt": "2026-07-01T21:48:55.280Z"
+  "enrichedAt": "2026-07-02T04:13:52.023Z"
 }

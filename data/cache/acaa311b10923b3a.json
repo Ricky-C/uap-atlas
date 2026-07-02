@@ -2,25 +2,29 @@
   "recordId": "acaa311b10923b3a",
   "sha256": "acaa311b10923b3a",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 1,
     "pageCount": 1,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "An Apollo-era lunar surface photograph shows an astronaut's shadow in the foreground, with two zoomed inset panels (Area 1 and Area 2) highlighting faint colored specks in the dark sky above the horizon, reportedly examined for anomalous points of light.",
+  "summary": "An annotated lunar surface photograph highlights two small bright specks in the dark sky above the horizon, labeled Area 1 and Area 2, with enlarged crops shown for closer inspection.",
   "objectClass": "light",
   "redactionPct": null,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
     "non-document-media",
-    "ambiguous-object"
+    "ambiguous-object",
+    "ambiguous-date",
+    "ambiguous-location"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 4305,
-    "output_tokens": 141
+    "input_tokens": 4903,
+    "output_tokens": 148
   },
-  "enrichedAt": "2026-07-01T21:45:25.824Z"
+  "enrichedAt": "2026-07-02T04:11:08.406Z"
 }

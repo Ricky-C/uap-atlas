@@ -1,5 +1,9 @@
-// Phase 2 enrichment — fills the three "read-the-document" fields of every
-// UAPRecord (summary / objectClass / redactionPct) with claude-sonnet-5.
+// Phase 2 enrichment — fills the "read-the-document" fields of every UAPRecord
+// (summary / objectClass / redactionPct / incidentDate / incidentLocation) with
+// claude-sonnet-5. Date and location are extracted from the document because the
+// portal CSV proved incomplete (72/294 rows N/A) and sometimes wrong (a 1987
+// sighting indexed as 2026): the document is the primary source, so at patch
+// time a non-null extraction wins over the CSV value — but never erases one.
 //
 // Two modes:
 //   pnpm enrich --probe [file] [--yes]   single live doc, spot-check (page 1 only)
@@ -29,7 +33,10 @@ import { tmpdir } from "node:os";
 import { basename, extname, join } from "node:path";
 
 import { writeRecordsFile } from "./emit";
+import { fetchLocationTable } from "./fetch";
+import { geocodeRecords, isRedactedLocation } from "./geocode";
 import { readJson } from "./io";
+import { normalizeDate } from "./parse";
 import { pageCount, renderDocToImages, type ImageMediaType, type RenderedImage } from "./render";
 import { OBJECT_CLASSES, type ObjectClass, type UAPRecord } from "../schema";
 
@@ -43,7 +50,7 @@ const MAX_PAGES = 3; // first N pages per doc — the incident is usually within
 // uses the measured ~170 output tokens/doc for the output side.
 const BATCH_PRICE_IN = 1.0;
 const BATCH_PRICE_OUT = 5.0;
-const EST_OUTPUT_TOKENS_PER_DOC = 170; // measured on the probe; realistic, not worst-case
+const EST_OUTPUT_TOKENS_PER_DOC = 200; // measured ~170 + the two new date/location fields
 const SUBMIT_CAP_USD = 3.0; // abort above this — expected run is ~$1.45; higher ⇒ misconfig
 const POLL_INTERVAL_MS = 30_000;
 // The Batch API request cap is 256MB, but a single ~160MB upload proved unreliable
@@ -58,6 +65,7 @@ const PROBE_CONFIRM_ABOVE_USD = 0.25;
 
 const PROMPT_PATH = join(".claude", "skills", "case-extraction", "references", "prompt.md");
 const RECORDS_PATH = join("data", "records.json");
+const LOCATIONS_PATH = join("data", "locations.json");
 const CACHE_DIR = join("data", "cache");
 const BATCH_STATE_PATH = join(CACHE_DIR, "_batch-state.json");
 
@@ -76,9 +84,11 @@ const OUTPUT_SCHEMA: Record<string, unknown> = {
     summary: { type: "string" },
     objectClass: { type: "string", enum: [...OBJECT_CLASSES] },
     redactionPct: { anyOf: [{ type: "integer" }, { type: "null" }] },
+    incidentDate: { anyOf: [{ type: "string" }, { type: "null" }] },
+    incidentLocation: { anyOf: [{ type: "string" }, { type: "null" }] },
     reviewFlags: { type: "array", items: { type: "string" } },
   },
-  required: ["summary", "objectClass", "redactionPct", "reviewFlags"],
+  required: ["summary", "objectClass", "redactionPct", "incidentDate", "incidentLocation", "reviewFlags"],
 };
 
 interface CacheStrategy {
@@ -92,6 +102,8 @@ interface Extracted {
   summary: string;
   objectClass: ObjectClass;
   redactionPct: number | null;
+  incidentDate: string | null; // ISO at source precision, as extracted (re-normalized at patch)
+  incidentLocation: string | null;
   reviewFlags: string[];
 }
 
@@ -198,6 +210,18 @@ function validate(v: unknown): Check[] {
         redactionPct === null ||
         (typeof redactionPct === "number" && Number.isInteger(redactionPct) && redactionPct >= 0 && redactionPct <= 100),
       detail: redactionPct === null ? "null" : String(redactionPct),
+    },
+    {
+      // Shape check only: format drift ("August 4, 1947") degrades to null via
+      // normalizeDate at patch time rather than failing the whole document.
+      field: "incidentDate",
+      ok: o.incidentDate === null || typeof o.incidentDate === "string",
+      detail: String(o.incidentDate),
+    },
+    {
+      field: "incidentLocation",
+      ok: o.incidentLocation === null || typeof o.incidentLocation === "string",
+      detail: String(o.incidentLocation),
     },
     {
       field: "reviewFlags",
@@ -364,27 +388,83 @@ function extractAndValidate(message: Anthropic.Message, customId: string): Extra
     summary: o.summary as string,
     objectClass: o.objectClass as ObjectClass,
     redactionPct: o.redactionPct as number | null,
+    incidentDate: o.incidentDate as string | null,
+    incidentLocation: o.incidentLocation as string | null,
     reviewFlags: o.reviewFlags as string[],
   };
 }
 
+// Document-extracted incidentDate vs the CSV-joined value. The document is the
+// primary source, so a non-null extraction wins — with two carve-outs: a null
+// extraction never erases a CSV value, and when the CSV agrees but is FINER
+// ("2008-07" vs an extracted "2008") the finer value is kept. Only genuine
+// disagreements are reported as conflicts; refinements are silent.
+function mergeDate(
+  portal: string | null,
+  extractedRaw: string | null,
+  conflicts: string[],
+  id: string,
+): string | null {
+  const doc = normalizeDate(extractedRaw);
+  if (doc === null || doc === portal) return portal;
+  if (portal !== null && portal.startsWith(doc)) return portal; // agreeing, portal finer
+  if (portal !== null && !doc.startsWith(portal)) {
+    conflicts.push(`  ${id}: incidentDate portal="${portal}" → document="${doc}"`);
+  }
+  return doc;
+}
+
+// Same precedence for the location string. A redaction marker is never written
+// into locationRaw, whatever the model returned (never de-anonymize — the
+// prompt already demands null, this is the belt-and-suspenders).
+function mergeLocation(
+  portal: string,
+  extractedRaw: string | null,
+  conflicts: string[],
+  id: string,
+): string {
+  const doc = (extractedRaw ?? "").trim();
+  if (doc === "" || isRedactedLocation(doc) || doc === portal) return portal;
+  if (portal !== "") conflicts.push(`  ${id}: location portal="${portal}" → document="${doc}"`);
+  return doc;
+}
+
 // Apply cached fields into records.json, writing only if something changed (so a
-// clean re-run leaves the file byte-identical). reviewFlags is not a UAPRecord
-// field — it is printed for the human spot-check, never persisted.
+// clean re-run leaves the file byte-identical). Document-extracted date/location
+// are merged with document-wins precedence, then every record is re-geocoded so
+// new location strings resolve against data/locations.json (misses are printed
+// for curation, exactly like the ingest-time pass). reviewFlags is not a
+// UAPRecord field — it is printed for the human spot-check, never persisted.
 function patchRecords(): boolean {
   const records = readRecords();
-  let changed = false;
+  const before = JSON.stringify(records);
+  const conflicts: string[] = [];
   for (const rec of records) {
     const c = readCache(rec.id);
     if (!c) continue;
-    if (rec.summary !== c.summary || rec.objectClass !== c.objectClass || rec.redactionPct !== c.redactionPct) {
-      rec.summary = c.summary;
-      rec.objectClass = c.objectClass;
-      rec.redactionPct = c.redactionPct;
-      changed = true;
-    }
+    rec.summary = c.summary;
+    rec.objectClass = c.objectClass;
+    rec.redactionPct = c.redactionPct;
+    rec.incidentDate = mergeDate(rec.incidentDate, c.incidentDate ?? null, conflicts, rec.id);
+    rec.locationRaw = mergeLocation(rec.locationRaw, c.incidentLocation ?? null, conflicts, rec.id);
   }
-  if (changed) writeRecordsFile(records, RECORDS_PATH);
+
+  const { records: geocoded, misses, redacted } = geocodeRecords(records, fetchLocationTable(LOCATIONS_PATH));
+
+  if (conflicts.length > 0) {
+    console.log(`portal-vs-document conflicts (document won — spot-check these ${conflicts.length}):`);
+    for (const line of conflicts) console.log(line);
+  }
+  if (misses.length > 0) {
+    console.log(`geocode misses — add to ${LOCATIONS_PATH} (${misses.length}):`);
+    for (const m of misses) console.log(`  ${JSON.stringify(m)}`);
+  }
+  if (redacted.length > 0) {
+    console.log(`redacted locations (never geocoded): ${redacted.length}`);
+  }
+
+  const changed = JSON.stringify(geocoded) !== before;
+  if (changed) writeRecordsFile(geocoded, RECORDS_PATH);
   return changed;
 }
 
@@ -454,7 +534,9 @@ async function finishBatch(client: Anthropic, state: SubmittedState): Promise<vo
       prior.strategy.pagesSent === strategy.pagesSent &&
       prior.summary === extracted.summary &&
       prior.objectClass === extracted.objectClass &&
-      prior.redactionPct === extracted.redactionPct;
+      prior.redactionPct === extracted.redactionPct &&
+      prior.incidentDate === extracted.incidentDate &&
+      prior.incidentLocation === extracted.incidentLocation;
     if (!unchanged) writeJsonAtomic(cachePath(item.custom_id), entry);
     succeeded++;
     if (extracted.reviewFlags.length > 0) flagReport.push(`  ${item.custom_id}: ${extracted.reviewFlags.join(", ")}`);

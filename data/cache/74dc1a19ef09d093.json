@@ -2,22 +2,27 @@
   "recordId": "74dc1a19ef09d093",
   "sha256": "74dc1a19ef09d093",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 4,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "This is Apollo 12 mission transcript covering communications between mission control and the crew, including a lunar module pilot's report of particles of light seen through the AOT while looking into a dark quadrant that appeared to move away into space, and a later reported flashing anomaly on the AGS display attributed to electromagnetic interference.",
+  "summary": "Apollo 12 mission transcripts document routine air-to-ground communications between Houston and the Intrepid/Yankee Clipper crews, including one crew member reporting particles of light seen through the LM's alignment optical telescope that appeared to originate near the observer and drift off into space, initially suspected to be water dropped from a boiler vent. A separate later exchange describes an LMP noting an anomalous flashing '8' pattern on the AGS DEDA display, later attributed by ground personnel to electromagnetic interference seen previously during spacecraft testing.",
   "objectClass": "light",
   "redactionPct": 0,
-  "reviewFlags": [],
+  "incidentDate": "1969-11",
+  "incidentLocation": "Lunar orbit / cislunar space (Apollo 12 mission)",
+  "reviewFlags": [
+    "ambiguous-date",
+    "ambiguous-object"
+  ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8679,
-    "output_tokens": 138
+    "input_tokens": 9277,
+    "output_tokens": 280
   },
-  "enrichedAt": "2026-07-01T21:45:25.826Z"
+  "enrichedAt": "2026-07-02T04:11:08.404Z"
 }

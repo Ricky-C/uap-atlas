@@ -2,25 +2,27 @@
   "recordId": "3a11822b45f559ac",
   "sha256": "3a11822b45f559ac",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 406,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "This is a title/cover page for a CIA history publication on the U-2 and OXCART overhead reconnaissance programs from 1954-1974, authored by Gregory W. Pedlow and Donald E. Welzenbach and published by the CIA History Staff in 1992. It does not describe any observed aerial phenomenon.",
+  "summary": "This document is the cover and title pages of a CIA historical monograph on overhead reconnaissance programs, covering the U-2 and OXCART aircraft programs from 1954 to 1974. It is an administrative history publication, not a report of an observed aerial phenomenon.",
   "objectClass": "unknown",
-  "redactionPct": 45,
+  "redactionPct": 30,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
-    "non-document-media",
-    "ambiguous-object"
+    "ambiguous-object",
+    "heavily-redacted"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8679,
-    "output_tokens": 157
+    "input_tokens": 9277,
+    "output_tokens": 160
   },
-  "enrichedAt": "2026-07-01T21:51:31.385Z"
+  "enrichedAt": "2026-07-02T04:16:28.982Z"
 }

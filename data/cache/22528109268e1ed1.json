@@ -2,24 +2,27 @@
   "recordId": "22528109268e1ed1",
   "sha256": "22528109268e1ed1",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 2,
     "pageCount": 2,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "An FBI FD-302 report describes an interview with a soldier who, along with four others at Fort Carson in early February 2022, observed a motionless, matte white, oval or bean-shaped object hovering over a saddle in Cheyenne Mountain for 3-5 minutes before it vanished. The witness noted the object had intersecting lines forming an abstract polygon pattern and reported no sound, later stating he was contacted by AARO in 2024 but never formally interviewed.",
+  "summary": "An FBI FD-302 documents an interview with an Army soldier at Fort Carson who reported that in early February 2022, he and four others observed a motionless, matte white, bean-shaped object hovering over a saddle in Cheyenne Mountain for several minutes before it vanished. The witnesses later compared independently drawn sketches that matched, and one reportedly filed an official report and was later contacted by AARO in 2024.",
   "objectClass": "other",
   "redactionPct": 25,
+  "incidentDate": "2022-02",
+  "incidentLocation": "Fort Carson, Colorado",
   "reviewFlags": [
-    "heavily-redacted"
+    "heavily-redacted",
+    "ambiguous-object"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 6212,
-    "output_tokens": 198
+    "input_tokens": 6810,
+    "output_tokens": 221
   },
-  "enrichedAt": "2026-07-01T21:51:31.379Z"
+  "enrichedAt": "2026-07-02T04:16:28.976Z"
 }

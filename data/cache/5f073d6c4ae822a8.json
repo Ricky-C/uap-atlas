@@ -2,22 +2,26 @@
   "recordId": "5f073d6c4ae822a8",
   "sha256": "5f073d6c4ae822a8",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 224,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "NASA memoranda from June 1965 describe the routing and additional flight activities planned for the Gemini IV (GT-4) mission, including extravehicular activity, use of a hand-held maneuvering unit, and a demonstration rendezvous with the spent booster's second stage, which had flashing lights installed for tracking purposes.",
+  "summary": "A NASA memorandum and mission operation report describe planned additional flight activities for the Gemini 4 (GT-4) mission, including extravehicular activity, a hand-held maneuvering unit, and a rendezvous demonstration with the spent booster second stage, which had flashing lights installed to aid the test.",
   "objectClass": "craft",
   "redactionPct": 0,
-  "reviewFlags": [],
+  "incidentDate": "1965-06",
+  "incidentLocation": null,
+  "reviewFlags": [
+    "ambiguous-date"
+  ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 7951,
-    "output_tokens": 144
+    "input_tokens": 8549,
+    "output_tokens": 167
   },
-  "enrichedAt": "2026-07-01T21:54:54.236Z"
+  "enrichedAt": "2026-07-02T04:20:23.768Z"
 }

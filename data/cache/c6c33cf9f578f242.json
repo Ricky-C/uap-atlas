@@ -2,24 +2,27 @@
   "recordId": "c6c33cf9f578f242",
   "sha256": "c6c33cf9f578f242",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 6,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A 1968 CIA information report describes multiple sightings of unidentified flying objects over Ladakh, Nepal, Sikkim, and Bhutan between February and March 1968, compiling witness observations of lights and bright objects seen in the sky. One entry from March 4, 1968 near Chang La, Fukche, and Koyul describes a white light accompanied by two blasting sounds, followed by a reddish light and white smoke.",
+  "summary": "A CIA information report describes multiple sightings of unidentified flying objects over Ladakh, Nepal, Sikkim, and Bhutan between February and March 1968. One entry recounts a 4 March 1968 sighting near Chang La, Fukche, and Koyul in Ladakh in which observers reported a white light traveling east to west accompanied by two blasting sounds, followed by a reddish light and white smoke.",
   "objectClass": "light",
   "redactionPct": 10,
+  "incidentDate": "1968-03-04",
+  "incidentLocation": "Chang La, Fukche, and Koyul, Ladakh, India",
   "reviewFlags": [
-    "ambiguous-object"
+    "ambiguous-object",
+    "heavily-redacted"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8735,
-    "output_tokens": 185
+    "input_tokens": 9333,
+    "output_tokens": 235
   },
-  "enrichedAt": "2026-07-01T21:54:54.230Z"
+  "enrichedAt": "2026-07-02T04:20:23.771Z"
 }

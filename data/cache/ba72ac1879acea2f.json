@@ -2,22 +2,24 @@
   "recordId": "ba72ac1879acea2f",
   "sha256": "ba72ac1879acea2f",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 190,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "An FBI San Francisco office memo from September 1947 forwards an Army Air Force intelligence letter requesting an exhaustive interview with F.M. Johnson of Portland, Oregon regarding his reported sighting of a 'flying disc' on June 24, 1947, noting similarity to Kenneth Arnold's earlier report and possible newspaper influence.",
+  "summary": "An FBI office memo and an accompanying Army Air Forces letter discuss a report by F.M. Johnson of Portland, Oregon, who claimed to have sighted a flying disc on June 24, 1947. Fourth Air Force intelligence forwarded the report to the FBI, noting similarities to Kenneth Arnold's earlier sighting and requesting that Johnson be interviewed rather than investigated by the Air Force.",
   "objectClass": "disc",
   "redactionPct": 0,
+  "incidentDate": "1947-06-24",
+  "incidentLocation": "Portland, Oregon",
   "reviewFlags": [],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8791,
-    "output_tokens": 157
+    "input_tokens": 9389,
+    "output_tokens": 210
   },
-  "enrichedAt": "2026-07-01T21:48:55.285Z"
+  "enrichedAt": "2026-07-02T04:13:52.020Z"
 }

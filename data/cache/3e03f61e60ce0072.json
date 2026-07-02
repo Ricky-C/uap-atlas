@@ -2,24 +2,28 @@
   "recordId": "3e03f61e60ce0072",
   "sha256": "3e03f61e60ce0072",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 1,
     "pageCount": 1,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A 1958 CIA memo discusses Dr. Leon Davidson's inquiries about a space message and its transmitter, noting that records were reportedly destroyed by the evaluating agency and that Davidson had not been informed he was dealing with the Agency during earlier contacts.",
+  "summary": "An internal memo dated January 1958 discusses follow-up contact with a Dr. Leon Davidson regarding a closed case involving a 'space message' and its transmitter; the writer notes records on the matter were reportedly destroyed and describes prior evasive answers given to Davidson about the agency's involvement in his contacts with two named individuals.",
   "objectClass": "unknown",
   "redactionPct": 0,
+  "incidentDate": null,
+  "incidentLocation": null,
   "reviewFlags": [
-    "ambiguous-object"
+    "ambiguous-object",
+    "ambiguous-date",
+    "ambiguous-location"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 3745,
-    "output_tokens": 136
+    "input_tokens": 4343,
+    "output_tokens": 192
   },
-  "enrichedAt": "2026-07-01T21:51:31.378Z"
+  "enrichedAt": "2026-07-02T04:16:28.979Z"
 }

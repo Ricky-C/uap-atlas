@@ -2,25 +2,28 @@
   "recordId": "ad3b37eb9fbd20e6",
   "sha256": "ad3b37eb9fbd20e6",
   "model": "claude-sonnet-5",
-  "promptSha": "e7e3afd9453de9db01ce0d3500f1ea45522d51b0906b74091497b3386715b3fb",
-  "schemaSha": "eb8cb31fab8749cbe87ff7eecf824b638e3e60f08c2146da6ea4082834742f91",
+  "promptSha": "8b0e7328f7f7294942442d94f0aca85b0343396d83ec5d4fa378f843cde485e2",
+  "schemaSha": "3b3ccb1f2cfbd42aff63130b9e684d2c8eb8e2be0493ab612bfa09967dcdd7a2",
   "strategy": {
     "pagesSent": 3,
     "pageCount": 8,
     "renderPx": 1568,
     "maxPages": 3
   },
-  "summary": "A 482ATKS mission report (Misrep 4871281) describes an aircraft supporting NAVCENT operations over the Arabian Gulf, Strait of Hormuz, and Gulf of Oman, during which crew received multiple guard calls and, at 1829Z, observed one unidentified anomalous phenomenon (UAP), with full-motion video exploited by DGS-1.",
+  "summary": "A misrep documents a military ISR aircraft mission over the Arabian Gulf, Strait of Hormuz, and Gulf of Oman that included multiple guard calls and one observation of a UAP during the flight, with limited further detail on the object's characteristics provided in the visible text.",
   "objectClass": "unknown",
   "redactionPct": 10,
+  "incidentDate": null,
+  "incidentLocation": "Arabian Gulf, Strait of Hormuz and Gulf of Oman",
   "reviewFlags": [
-    "heavily-redacted",
-    "ambiguous-object"
+    "ambiguous-object",
+    "ambiguous-date",
+    "heavily-redacted"
   ],
   "stopReason": "end_turn",
   "usage": {
-    "input_tokens": 8679,
-    "output_tokens": 181
+    "input_tokens": 9277,
+    "output_tokens": 199
   },
-  "enrichedAt": "2026-07-01T21:45:25.804Z"
+  "enrichedAt": "2026-07-02T04:11:08.409Z"
 }
