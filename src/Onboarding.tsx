@@ -26,9 +26,11 @@ export function Onboarding({ onDismiss }: OnboardingProps) {
       <p className="onboarding-body">
         {total} records from the U.S. government&apos;s PURSUE UAP declassification releases (
         {releases} {releases === 1 ? "release" : "releases"} so far), plotted where the documents
-        place them — {plottable} have a usable location. Mark size and softness show how precise
-        that location really is; see the legend. Cases with no honest location live in the case
-        index only.
+        place them — {plottable} have a usable location. Green marks are these PURSUE cases; the
+        faint blue dots beneath them are Project Blue Book, the U.S. Air Force&apos;s 1947–1969 UAP
+        investigation, shown as historical context. Mark size and softness show how precise a
+        location really is; see the legend. Cases with no honest location live in the case index
+        only.
       </p>
       <p className="onboarding-body">
         Summaries are neutral digests of public-domain records. This is an independent project — not

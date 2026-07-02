@@ -96,7 +96,10 @@ export function Legend({ collapsed }: LegendProps) {
               <span className="legend-swatch legend-swatch-signal" />
             </span>
             <span className="legend-tier-label">green</span>
-            <span className="legend-tier-note">a case — active, hovered, or selected</span>
+            <span className="legend-tier-note">
+              a PURSUE case — a document from the government&apos;s ongoing UAP declassification
+              releases (2025–); brightest when hovered or selected
+            </span>
           </li>
           <li className="legend-row">
             <span className="legend-swatch-cell" aria-hidden="true">
@@ -110,7 +113,11 @@ export function Legend({ collapsed }: LegendProps) {
               <span className="legend-swatch legend-swatch-bluebook" />
             </span>
             <span className="legend-tier-label">blue</span>
-            <span className="legend-tier-note">project blue book — historical basemap</span>
+            <span className="legend-tier-note">
+              Project Blue Book — the U.S. Air Force&apos;s 1947–1969 UAP investigation; its cases
+              closed as &quot;unidentified,&quot; shown as historical context (catalog entries, no
+              released document)
+            </span>
           </li>
           <li className="legend-row">
             <span className="legend-swatch-cell" aria-hidden="true">

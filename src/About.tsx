@@ -96,6 +96,16 @@ export function About({ onClose }: AboutProps) {
             historical basemap layer is Project Blue Book (USAF, 1947–1969).
           </p>
 
+          <h2 className="about-section">green vs. blue — the two layers</h2>
+          <p>
+            Green marks are PURSUE cases: records with a released government document behind them,
+            from the declassification effort that began in 2025. Blue dots are Project Blue Book —
+            the U.S. Air Force&apos;s UAP investigation that ran from 1947 to 1969 — drawn as a
+            historical basemap. Blue Book&apos;s catalog here holds only the cases the Air Force
+            itself closed as &quot;unidentified,&quot; and each is a catalog entry (a date and a
+            place), not a released document; click one to see exactly that much.
+          </p>
+
           <h2 className="about-section">what &quot;unresolved&quot; means</h2>
           <p>
             &quot;Unresolved&quot; is the government&apos;s own status for a record — the source
