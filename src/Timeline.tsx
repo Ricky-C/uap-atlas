@@ -5,6 +5,8 @@ import { tokenNumber, prefersReducedMotion } from "./theme";
 
 // A scrubber over incidentDate: show cases up to the chosen year, with a play
 // control that sweeps the full range (the globe tweens points in as it runs).
+// The track is a per-year density histogram (TICKETS.md T5) — empty years stay
+// empty so clustering is visible; years inside the active range render brighter.
 // Undated cases are never hidden by the scrubber — hiding them would imply the
 // scrubber knows when they happened.
 
@@ -33,6 +35,22 @@ export function Timeline({ records, maxYear, onChange }: TimelineProps) {
 
   const minYear = years[0];
   const lastYear = years[years.length - 1];
+
+  // One bar per calendar year over the continuous range — zero-count years
+  // render as gaps, which is what makes the clustering legible.
+  const { bars, peak } = useMemo(() => {
+    if (years.length === 0) return { bars: [], peak: 0 };
+    const counts = new Map<number, number>();
+    for (const y of years) counts.set(y, (counts.get(y) ?? 0) + 1);
+    const out: { year: number; count: number }[] = [];
+    let max = 0;
+    for (let y = years[0]; y <= years[years.length - 1]; y++) {
+      const count = counts.get(y) ?? 0;
+      if (count > max) max = count;
+      out.push({ year: y, count });
+    }
+    return { bars: out, peak: max };
+  }, [years]);
 
   useEffect(() => {
     if (!playing || minYear === undefined) return;
@@ -87,19 +105,37 @@ export function Timeline({ records, maxYear, onChange }: TimelineProps) {
         {playing ? "pause" : "play"}
       </button>
       <span className="timeline-year">{minYear}</span>
-      <input
-        className="timeline-scrubber"
-        type="range"
-        min={minYear}
-        max={lastYear}
-        value={value}
-        onChange={(e) => {
-          setPlaying(false); // a manual scrub takes the wheel
-          const y = Number(e.target.value);
-          onChange(y >= lastYear ? null : y);
-        }}
-        aria-label="Show cases up to year"
-      />
+      <div className="timeline-track">
+        <div className="timeline-hist" aria-hidden="true">
+          {bars.map((b) => (
+            <span
+              key={b.year}
+              className={[
+                "timeline-bar",
+                b.count > 0 ? "timeline-bar-solid" : "",
+                b.year <= value ? "timeline-bar-active" : "",
+              ]
+                .filter(Boolean)
+                .join(" ")}
+              // Height is data (count/peak), not styling — rounded per rule 7.
+              style={{ height: b.count === 0 ? 0 : `${Math.round((b.count / peak) * 100)}%` }}
+            />
+          ))}
+        </div>
+        <input
+          className="timeline-scrubber"
+          type="range"
+          min={minYear}
+          max={lastYear}
+          value={value}
+          onChange={(e) => {
+            setPlaying(false); // a manual scrub takes the wheel
+            const y = Number(e.target.value);
+            onChange(y >= lastYear ? null : y);
+          }}
+          aria-label="Show cases up to year"
+        />
+      </div>
       <span className="timeline-year timeline-year-active">{value}</span>
       <span className="timeline-count">
         {shown} dated shown · {undatedCount} undated always shown

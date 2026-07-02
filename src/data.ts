@@ -130,6 +130,30 @@ export function isPlottable(r: UAPRecord): boolean {
   return r.lat !== null && r.lon !== null && r.geoPrecision !== "unknown";
 }
 
+// Case-index order (TICKETS.md T2): dated cases newest-first, undated grouped
+// at the end; id breaks ties so the order is stable across renders and rebuilds.
+// incidentDate carries mixed precision ("1949", "2008-07", "1947-12-30"), so a
+// bare lexical compare would put "2008" before "2008-07" descending; padding
+// the missing parts with a high sentinel sorts lower-precision dates at the
+// newest end of the period they name.
+function dateSortKey(d: string): string {
+  return `${d}-99-99`.slice(0, 10);
+}
+
+export function sortForIndex(records: UAPRecord[]): UAPRecord[] {
+  return [...records].sort((a, b) => {
+    if (a.incidentDate !== null && b.incidentDate !== null) {
+      return (
+        dateSortKey(b.incidentDate).localeCompare(dateSortKey(a.incidentDate)) ||
+        a.id.localeCompare(b.id)
+      );
+    }
+    if (a.incidentDate !== null) return -1;
+    if (b.incidentDate !== null) return 1;
+    return a.id.localeCompare(b.id);
+  });
+}
+
 export function incidentYear(r: UAPRecord): number | null {
   if (!r.incidentDate) return null;
   const year = Number(r.incidentDate.slice(0, 4));

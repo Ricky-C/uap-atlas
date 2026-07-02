@@ -69,7 +69,10 @@
   /* layout */
   --panel-w: 320px; /* left case index */
   --drawer-w: 400px; /* right case-file drawer */
-  --timeline-h: 56px;
+  --timeline-h: 76px; /* footer scrubber + density histogram */
+  --header-h: 44px; /* persistent title strip */
+  --onboarding-w: 440px; /* first-load orientation card */
+  --overlay-scrim: rgba(7, 10, 18, 0.72); /* about-modal backdrop, from --bg-void */
 
   /* charts (redaction analysis) — thin marks, rounded data ends */
   --chart-bar-h: 8px;
@@ -98,6 +101,23 @@
   --globe-color-basemap: rgba(47, 157, 99, 0.35); /* point + city — crisp, dim */
   --globe-color-basemap-region: rgba(47, 157, 99, 0.18);
   --globe-color-basemap-theater: rgba(47, 157, 99, 0.09);
+
+  /* globe interaction (T4/T6/T7) */
+  --globe-hover-scale: 1.5; /* linked-hover point emphasis multiplier */
+  --globe-focus-altitude: 1.8; /* fly-to framing — frames the point, no surface zoom */
+  --globe-focus-ms: 1000; /* fly-to transition duration */
+  --globe-rotate-resume-ms: 4000; /* idle delay before auto-rotation resumes */
+
+  /* legend — swatch sizes derive from the globe radius tokens (shared style map) */
+  --legend-swatch-unit: 9px; /* px per globe-radius unit */
+  --legend-swatch-max: 24px; /* clamp so the theater swatch stays in the row */
+
+  /* timeline density histogram */
+  --timeline-hist-h: 32px; /* bar area under the scrubber */
+  --timeline-bar-min-h: 2px; /* nonzero years never invisible */
+  --timeline-bar-color: var(--signal-dim);
+  --timeline-bar-active-color: var(--signal); /* years inside the active range */
+  --timeline-bar-gap: 1px;
 }
 
 /* Base wiring lives here (tokens.css is exempt from the design-guardian scan),

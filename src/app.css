@@ -27,11 +27,42 @@
   color: var(--text-secondary);
 }
 
+/* ── header (persistent title strip) ───────────────────────────────────── */
+
+.app-header {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  right: var(--space-4);
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 0 var(--space-4);
+  box-sizing: border-box;
+  background: var(--bg-surface);
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-2);
+}
+
+.app-header-title {
+  color: var(--text-primary);
+}
+
+.app-header-tagline {
+  flex: 1;
+  font-size: var(--type-sm);
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* ── case index (left panel) ───────────────────────────────────────────── */
 
 .case-index {
   position: absolute;
-  top: var(--space-4);
+  top: calc(var(--header-h) + var(--space-4) + var(--space-3));
   left: var(--space-4);
   bottom: calc(var(--timeline-h) + var(--space-4));
   width: var(--panel-w);
@@ -78,7 +109,10 @@
   cursor: pointer;
 }
 
-.case-row:hover {
+.case-row:hover,
+.case-row-hovered {
+  /* .case-row-hovered mirrors :hover — it's the globe-originated half of the
+     linked hover (T4), painted from shared state instead of the pointer */
   background: var(--bg-raised);
 }
 
@@ -86,22 +120,47 @@
   background: var(--signal-bg);
 }
 
-.case-row-id {
-  font-family: var(--font-mono);
-  font-size: var(--type-sm);
-  color: var(--text-primary);
+.case-row-primary {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
 }
 
-.case-row-active .case-row-id {
+.case-row-location {
+  font-size: var(--type-sm);
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.case-row-active .case-row-location {
   color: var(--signal);
+}
+
+.case-row-date {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  color: var(--text-secondary);
+  white-space: nowrap;
 }
 
 .case-row-meta {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
   font-family: var(--font-mono);
   font-size: var(--type-xs);
   color: var(--text-muted);
+}
+
+.case-row-tag {
+  padding: 0 var(--space-1);
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-round);
+  white-space: nowrap;
 }
 
 /* ── redaction analysis (left panel alternate view) ────────────────────── */
@@ -214,19 +273,124 @@
   color: var(--text-muted);
 }
 
-/* ── drawer (right panel, the case file) ───────────────────────────────── */
+/* ── right column (case-file drawer + legend share it) ─────────────────── */
 
-.drawer {
+.right-col {
   position: absolute;
-  top: var(--space-4);
+  top: calc(var(--header-h) + var(--space-4) + var(--space-3));
   right: var(--space-4);
   bottom: calc(var(--timeline-h) + var(--space-4));
   width: var(--drawer-w);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  /* the column is a layout ghost — only its children catch the pointer,
+     so the globe stays draggable through the empty space */
+  pointer-events: none;
+}
+
+.right-col > * {
+  pointer-events: auto;
+}
+
+.drawer {
+  flex: 0 1 auto;
+  min-height: 0;
   overflow-y: auto;
   padding: var(--space-4);
   background: var(--bg-raised);
   border: var(--hairline) solid var(--line-strong);
   border-radius: var(--radius-2);
+}
+
+/* ── legend (right column, yields to the drawer) ───────────────────────── */
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  overflow-y: auto;
+  background: var(--bg-surface);
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-2);
+}
+
+.legend-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.legend-toggle {
+  align-self: flex-end;
+}
+
+.legend-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.legend-row {
+  display: grid;
+  grid-template-columns: var(--legend-swatch-max) auto 1fr;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.legend-swatch-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.legend-swatch {
+  display: inline-block;
+  border-radius: var(--radius-round);
+}
+
+.legend-swatch-signal {
+  width: var(--space-3);
+  height: var(--space-3);
+  background: var(--signal);
+}
+
+.legend-swatch-alert {
+  width: var(--space-3);
+  height: var(--space-3);
+  background: var(--alert);
+}
+
+.legend-swatch-none {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  color: var(--text-muted);
+}
+
+.legend-tier-label {
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.legend-tier-note {
+  font-size: var(--type-xs);
+  line-height: var(--leading-body);
+  color: var(--text-muted);
+}
+
+.legend-colors {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: var(--space-3);
+  border-top: var(--hairline) solid var(--line);
 }
 
 .drawer-header {
@@ -362,6 +526,117 @@ a.meta-signal:hover {
   color: var(--alert);
 }
 
+/* ── onboarding (dismissible first-load card) ──────────────────────────── */
+
+.onboarding {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--timeline-h) + var(--space-4) + var(--space-5));
+  transform: translateX(-50%);
+  width: var(--onboarding-w);
+  max-width: calc(100vw - var(--space-6));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  box-sizing: border-box;
+  background: var(--bg-raised);
+  border: var(--hairline) solid var(--line-strong);
+  border-radius: var(--radius-2);
+}
+
+.onboarding-body {
+  margin: 0;
+  font-size: var(--type-sm);
+  line-height: var(--leading-body);
+  color: var(--text-primary);
+}
+
+.onboarding .panel-toggle {
+  align-self: flex-end;
+}
+
+/* ── about / methodology (modal from the header) ───────────────────────── */
+
+.about-scrim {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--overlay-scrim);
+}
+
+.about {
+  width: var(--onboarding-w);
+  max-width: calc(100vw - var(--space-6));
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-4) var(--space-5);
+  box-sizing: border-box;
+  background: var(--bg-raised);
+  border: var(--hairline) solid var(--line-strong);
+  border-radius: var(--radius-2);
+}
+
+.about-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: var(--hairline) solid var(--line);
+}
+
+.about-body {
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.about-body p {
+  margin: 0 0 var(--space-3);
+  font-size: var(--type-sm);
+  line-height: var(--leading-body);
+  color: var(--text-primary);
+}
+
+.about-section {
+  margin: var(--space-4) 0 var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-secondary);
+}
+
+/* ── rotation control (globe spin — NOT the timeline's play) ───────────── */
+
+.rotation-control {
+  position: absolute;
+  /* clear of the right column and the timeline: this is a globe control */
+  right: calc(var(--drawer-w) + var(--space-4) + var(--space-3));
+  bottom: calc(var(--timeline-h) + var(--space-4) + var(--space-3));
+  font-family: var(--font-mono);
+  font-size: var(--type-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-muted);
+  background: var(--bg-surface);
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-1);
+  padding: var(--space-1) var(--space-2);
+  cursor: pointer;
+}
+
+.rotation-control:hover {
+  background: var(--bg-raised);
+}
+
+.rotation-control-on {
+  color: var(--signal);
+}
+
 /* ── skeptic layer (drawer section) ────────────────────────────────────── */
 
 .skeptic {
@@ -457,7 +732,73 @@ a.meta-signal:hover {
   color: var(--signal); /* key data value — signal, not body text */
 }
 
-.timeline-scrubber {
+/* the track: a per-year density histogram with the native range input riding
+   transparently on top — bars carry the data, the input carries the a11y */
+.timeline-track {
+  position: relative;
   flex: 1;
+  height: var(--timeline-hist-h);
+  align-self: center;
+}
+
+.timeline-hist {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: var(--timeline-bar-gap);
+}
+
+.timeline-bar {
+  flex: 1;
+  background: var(--timeline-bar-color);
+}
+
+.timeline-bar-solid {
+  /* nonzero years never disappear, however tall the peak is */
+  min-height: var(--timeline-bar-min-h);
+}
+
+.timeline-bar-active {
+  background: var(--timeline-bar-active-color);
+}
+
+.timeline-scrubber {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  cursor: pointer;
   accent-color: var(--signal);
+}
+
+.timeline-scrubber::-webkit-slider-runnable-track {
+  height: 100%;
+  background: transparent;
+}
+
+.timeline-scrubber::-moz-range-track {
+  background: transparent;
+}
+
+.timeline-scrubber::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--space-1);
+  height: var(--timeline-hist-h);
+  background: var(--signal);
+  border: none;
+  border-radius: var(--radius-1);
+}
+
+.timeline-scrubber::-moz-range-thumb {
+  width: var(--space-1);
+  height: var(--timeline-hist-h);
+  background: var(--signal);
+  border: none;
+  border-radius: var(--radius-1);
 }
