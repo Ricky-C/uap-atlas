@@ -1,0 +1,6 @@
+# Never upload raw source bundles or local artifacts to Vercel — the site is the
+# built static output; datasets the app needs are committed and bundled at build.
+data/raw
+node_modules
+dist
+.env
