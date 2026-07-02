@@ -209,6 +209,10 @@ export function Globe({
         }}
         pointAltitude={theme.pointAlt}
         pointsTransitionDuration={reducedMotion ? 0 : theme.pointsTransitionMs}
+        // The basemap is texture, not UI: without this filter its points still
+        // catch the raycast — they show a pointer cursor that lies, and a dot
+        // sharing coordinates with a hero case swallows that case's click.
+        pointerEventsFilter={(_, data) => !data || !isBasemap(data as UAPRecord)}
         onPointClick={(d) => {
           const r = d as UAPRecord;
           // The basemap is texture, not UI; a scrubbed-out (radius 0) point isn't a target.

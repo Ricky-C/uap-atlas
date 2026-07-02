@@ -49,6 +49,14 @@ const globeRef = useRef<GlobeMethods | undefined>(undefined);
   for identity before it becomes a re-render (see `setHoverGuarded` in App).
 - Basemap and scrubbed-out (radius 0) points must be excluded in BOTH
   `onPointClick` and `onPointHover` — a radius-0 point is still a raycast target.
+- **`pointerEventsFilter={(obj, data) => boolean}`** is the real exclusion:
+  handler-level ignoring is not enough, because an ignored point still catches
+  the raycast — it shows a lying pointer cursor (globe.gl marks every point
+  `.clickable`) and, at equal `pointAltitude`, a basemap dot sharing
+  coordinates with a hero point SWALLOWS the hero's click (verified: 6/6 dead
+  clicks on an overlapped case before the filter). Return `false` for
+  non-interactive data and the ray passes through to the point beneath. Keep
+  `data === undefined` returning `true` so the globe itself stays interactive.
 - `pointsTransitionDuration` — the grow/shrink tween for scrub/hover/selection;
   `0` under reduced motion.
 - Rings layer (select ping): `ringsData`, `ringLat/ringLng`, `ringColor`
