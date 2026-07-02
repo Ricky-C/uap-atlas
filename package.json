@@ -18,6 +18,8 @@
     "skeptic": "tsx ingest/skeptic.ts"
   },
   "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.2.7",
+    "@fontsource/space-grotesk": "^5.2.10",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-globe.gl": "^2.38.0",

@@ -10,11 +10,49 @@
   overflow: hidden;
 }
 
+/* atmosphere: a vignette that deepens the void toward the edges, and faint
+   scanlines over the instrument. Painted between the globe and the panels
+   (panels sit at z-index 1) so the chrome stays crisp. Static — no motion. */
+.app::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--scanlines), var(--vignette);
+}
+
 /* ── globe ─────────────────────────────────────────────────────────────── */
 
 .globe-layer {
   position: absolute;
   inset: 0;
+  z-index: 0;
+}
+
+/* ── selection + scrollbars (instrument-wide) ──────────────────────────── */
+
+::selection {
+  background: var(--selection-bg);
+  color: var(--text-primary);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+::-webkit-scrollbar {
+  width: var(--space-2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--line-strong);
+  border-radius: var(--radius-round);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 /* ── shared chrome ─────────────────────────────────────────────────────── */
@@ -35,18 +73,33 @@
   left: var(--space-4);
   right: var(--space-4);
   height: var(--header-h);
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: var(--space-4);
   padding: 0 var(--space-4);
   box-sizing: border-box;
-  background: var(--bg-surface);
+  background: var(--bg-panel);
+  backdrop-filter: blur(var(--panel-blur));
   border: var(--hairline) solid var(--line);
   border-radius: var(--radius-2);
+  box-shadow: var(--shadow-panel);
+}
+
+/* the live-feed dot — the one ambient glow on screen, and it's earned:
+   the instrument is watching */
+.header-live {
+  width: var(--space-2);
+  height: var(--space-2);
+  flex: none;
+  border-radius: var(--radius-round);
+  background: var(--signal);
+  box-shadow: var(--glow-signal);
 }
 
 .app-header-title {
   color: var(--text-primary);
+  letter-spacing: var(--tracking-wider);
 }
 
 .app-header-tagline {
@@ -66,11 +119,14 @@
   left: var(--space-4);
   bottom: calc(var(--timeline-h) + var(--space-4));
   width: var(--panel-w);
+  z-index: 1;
   display: flex;
   flex-direction: column;
-  background: var(--bg-surface);
+  background: var(--bg-panel);
+  backdrop-filter: blur(var(--panel-blur));
   border: var(--hairline) solid var(--line);
   border-radius: var(--radius-2);
+  box-shadow: var(--shadow-panel);
 }
 
 .case-index-header {
@@ -118,6 +174,8 @@
 
 .case-row-active {
   background: var(--signal-bg);
+  /* the open file gets a signal rail — inset so the row doesn't shift */
+  box-shadow: inset var(--rail-w) 0 0 var(--signal);
 }
 
 .case-row-primary {
@@ -180,6 +238,7 @@
 
 .panel-toggle:hover {
   background: var(--signal-bg);
+  box-shadow: var(--glow-signal);
 }
 
 .redaction-body {
@@ -281,6 +340,7 @@
   right: var(--space-4);
   bottom: calc(var(--timeline-h) + var(--space-4));
   width: var(--drawer-w);
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
@@ -298,9 +358,11 @@
   min-height: 0;
   overflow-y: auto;
   padding: var(--space-4);
-  background: var(--bg-raised);
+  background: var(--bg-panel-raised);
+  backdrop-filter: blur(var(--panel-blur));
   border: var(--hairline) solid var(--line-strong);
   border-radius: var(--radius-2);
+  box-shadow: var(--shadow-panel);
 }
 
 /* ── legend (right column, yields to the drawer) ───────────────────────── */
@@ -311,9 +373,11 @@
   gap: var(--space-3);
   padding: var(--space-4);
   overflow-y: auto;
-  background: var(--bg-surface);
+  background: var(--bg-panel);
+  backdrop-filter: blur(var(--panel-blur));
   border: var(--hairline) solid var(--line);
   border-radius: var(--radius-2);
+  box-shadow: var(--shadow-panel);
 }
 
 .legend-header {
@@ -465,10 +529,41 @@
   .drawer-close {
     transition: color var(--dur-fast) var(--ease);
   }
+  .panel-toggle,
+  .timeline-play,
+  .rotation-control {
+    transition:
+      background var(--dur-fast) var(--ease),
+      box-shadow var(--dur-fast) var(--ease);
+  }
+  /* the live-feed dot breathes — the single ambient motion in the chrome.
+     Opacity only (the motion rule allows transform/opacity); the glow is a
+     constant box-shadow that fades with the element. */
+  @keyframes live-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+  }
+  .header-live {
+    animation: live-pulse var(--pulse-period) var(--ease) infinite;
+  }
 }
 
 .doc-scan {
   margin: var(--space-4) 0 0;
+}
+
+.doc-scan-btn {
+  display: block;
+  width: 100%;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: zoom-in;
 }
 
 .doc-scan img {
@@ -477,6 +572,32 @@
   background: var(--redact); /* shows through while the JPEG streams in */
   border: var(--hairline) solid var(--line);
   border-radius: var(--radius-1);
+}
+
+.doc-scan-btn:hover img {
+  border-color: var(--line-strong);
+}
+
+/* the enlarged scan — a document held up to the light */
+.scan-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  box-sizing: border-box;
+  background: var(--overlay-scrim);
+  cursor: zoom-out;
+}
+
+.scan-lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  border: var(--hairline) solid var(--line-strong);
+  border-radius: var(--radius-1);
+  box-shadow: var(--shadow-panel);
 }
 
 .doc-scan figcaption {
@@ -522,6 +643,18 @@
   overflow-wrap: anywhere;
 }
 
+/* where & when carry the file — grotesk, a size up */
+.meta-primary {
+  font-family: var(--font-grotesk);
+  font-size: var(--type-md);
+  font-weight: var(--weight-medium);
+}
+
+/* administrative details recede */
+.meta-quiet {
+  color: var(--text-secondary);
+}
+
 .meta-signal {
   color: var(--signal);
 }
@@ -563,14 +696,17 @@ a.meta-signal:hover {
   transform: translateX(-50%);
   width: var(--onboarding-w);
   max-width: calc(100vw - var(--space-6));
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
   padding: var(--space-4) var(--space-5);
   box-sizing: border-box;
-  background: var(--bg-raised);
+  background: var(--bg-panel-raised);
+  backdrop-filter: blur(var(--panel-blur));
   border: var(--hairline) solid var(--line-strong);
   border-radius: var(--radius-2);
+  box-shadow: var(--shadow-panel);
 }
 
 .onboarding-body {
@@ -589,6 +725,7 @@ a.meta-signal:hover {
 .about-scrim {
   position: fixed;
   inset: 0;
+  z-index: 2; /* modals sit above the z-index:1 panels */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -603,9 +740,11 @@ a.meta-signal:hover {
   flex-direction: column;
   padding: var(--space-4) var(--space-5);
   box-sizing: border-box;
-  background: var(--bg-raised);
+  background: var(--bg-panel-raised);
+  backdrop-filter: blur(var(--panel-blur));
   border: var(--hairline) solid var(--line-strong);
   border-radius: var(--radius-2);
+  box-shadow: var(--shadow-panel);
 }
 
 .about-header {
@@ -645,12 +784,14 @@ a.meta-signal:hover {
   /* clear of the right column and the timeline: this is a globe control */
   right: calc(var(--drawer-w) + var(--space-4) + var(--space-3));
   bottom: calc(var(--timeline-h) + var(--space-4) + var(--space-3));
+  z-index: 1;
   font-family: var(--font-mono);
   font-size: var(--type-xs);
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-wide);
   color: var(--text-muted);
-  background: var(--bg-surface);
+  background: var(--bg-panel);
+  backdrop-filter: blur(var(--panel-blur));
   border: var(--hairline) solid var(--line);
   border-radius: var(--radius-1);
   padding: var(--space-1) var(--space-2);
@@ -663,6 +804,7 @@ a.meta-signal:hover {
 
 .rotation-control-on {
   color: var(--signal);
+  box-shadow: var(--glow-signal);
 }
 
 /* ── skeptic layer (drawer section) ────────────────────────────────────── */
@@ -721,13 +863,16 @@ a.meta-signal:hover {
   right: var(--space-4);
   bottom: var(--space-4);
   height: var(--timeline-h);
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: var(--space-4);
   padding: 0 var(--space-4);
-  background: var(--bg-surface);
+  background: var(--bg-panel);
+  backdrop-filter: blur(var(--panel-blur));
   border: var(--hairline) solid var(--line);
   border-radius: var(--radius-2);
+  box-shadow: var(--shadow-panel);
 }
 
 .timeline-play {
@@ -741,6 +886,10 @@ a.meta-signal:hover {
   border-radius: var(--radius-1);
   padding: var(--space-1) var(--space-3);
   cursor: pointer;
+}
+
+.timeline-play:hover {
+  box-shadow: var(--glow-signal);
 }
 
 .timeline-empty,
@@ -821,6 +970,7 @@ a.meta-signal:hover {
   background: var(--signal);
   border: none;
   border-radius: var(--radius-1);
+  box-shadow: var(--glow-signal);
 }
 
 .timeline-scrubber::-moz-range-thumb {
@@ -829,4 +979,5 @@ a.meta-signal:hover {
   background: var(--signal);
   border: none;
   border-radius: var(--radius-1);
+  box-shadow: var(--glow-signal);
 }

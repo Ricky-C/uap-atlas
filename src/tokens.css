@@ -7,13 +7,35 @@
 
 :root {
   /* base — near-black indigo, not pure black (a hint of blue reads as "space") */
-  --bg-void: #070a12;
+  --bg-void: #05070d;
   --bg-surface: #0a0e16;
   --bg-raised: #10151f;
+  /* glass — panels float over the instrument as translucent surfaces; the globe
+     reads through them faintly (backdrop-filter), which is what sells "screen" */
+  --bg-panel: rgba(8, 12, 20, 0.78);
+  --bg-panel-raised: rgba(13, 18, 28, 0.86);
+  --panel-blur: 10px;
 
   /* hairlines — faint cool lines, instrument feel */
   --line: rgba(130, 165, 205, 0.14);
-  --line-strong: rgba(130, 165, 205, 0.24);
+  --line-strong: rgba(130, 165, 205, 0.26);
+
+  --selection-bg: rgba(92, 242, 160, 0.22); /* text selection */
+
+  /* glow — earned only: the live dot, active controls, the selected row rail */
+  --glow-signal: 0 0 10px rgba(92, 242, 160, 0.25);
+  --glow-signal-strong: 0 0 18px rgba(92, 242, 160, 0.4);
+  --shadow-panel: 0 10px 36px rgba(1, 2, 5, 0.5);
+
+  /* atmosphere — a breath of depth over the void, never louder than the data */
+  --vignette: radial-gradient(ellipse at 50% 42%, transparent 52%, rgba(1, 2, 5, 0.6) 100%);
+  --scanlines: repeating-linear-gradient(
+    0deg,
+    rgba(3, 5, 9, 0.16) 0px,
+    rgba(3, 5, 9, 0.16) 1px,
+    transparent 1px,
+    transparent 3px
+  );
 
   /* text — cool off-white, NEVER green at paragraph sizes */
   --text-primary: #d6dde8;
@@ -46,6 +68,7 @@
   --weight-medium: 500;
   --leading-body: 1.55;
   --tracking-wide: 0.08em; /* mono labels / status pills */
+  --tracking-wider: 0.16em; /* the header wordmark */
 
   /* spacing scale */
   --space-1: 4px;
@@ -56,6 +79,7 @@
   --space-6: 32px;
 
   /* shape */
+  --rail-w: 2px; /* the selected-row signal rail */
   --radius-1: 4px;
   --radius-2: 8px;
   --radius-round: 999px;
@@ -65,6 +89,7 @@
   --dur-fast: 150ms;
   --dur-slow: 400ms;
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --pulse-period: 2.8s; /* the live-feed dot — the one ambient motion on screen */
 
   /* layout */
   --panel-w: 320px; /* left case index */
@@ -80,16 +105,16 @@
 
   /* globe parameters — unitless values read at runtime by Globe.tsx so the
      Claude Design pass can tune the instrument from tokens alone */
-  --globe-atmosphere-alt: 0.12;
+  --globe-atmosphere-alt: 0.16; /* a touch more rim glow — the one free luxury */
   --globe-rotate-speed: 0.35;
   --globe-point-alt: 0.01;
-  --globe-radius-crisp: 0.4; /* point + city tiers — crisp dot */
-  --globe-radius-region: 1.2; /* soft blob at the centroid */
-  --globe-radius-theater: 2.4; /* large low-confidence area */
+  --globe-radius-crisp: 0.35; /* point + city tiers — crisp dot, a hair finer */
+  --globe-radius-region: 1.1; /* soft blob at the centroid */
+  --globe-radius-theater: 2.2; /* large low-confidence area */
   --globe-color-region: rgba(47, 157, 99, 0.55); /* --signal-dim, reduced */
   --globe-color-theater: rgba(47, 157, 99, 0.28); /* --signal-dim, faint */
-  --globe-ring-period-ms: 1800; /* select "ping" ripple */
-  --globe-ring-max-radius: 5;
+  --globe-ring-period-ms: 2200; /* select "ping" ripple — slow, unhurried */
+  --globe-ring-max-radius: 4;
   --globe-ring-propagation-speed: 1;
   /* the Blue Book historical basemap: the same precision-tier shape hierarchy as
      the hero layer (crisp point / soft blob / faint area), uniformly de-emphasized —

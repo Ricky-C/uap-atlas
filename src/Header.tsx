@@ -9,6 +9,7 @@ interface HeaderProps {
 export function Header({ onOpenAbout }: HeaderProps) {
   return (
     <header className="app-header">
+      <span className="header-live" aria-hidden="true" />
       <span className="app-header-title mono-label">uap-atlas</span>
       <span className="app-header-tagline">
         an independent atlas of the U.S. government&apos;s declassified UAP records
