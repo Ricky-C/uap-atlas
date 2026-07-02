@@ -105,6 +105,22 @@ export function Legend({ collapsed }: LegendProps) {
             <span className="legend-tier-label">amber</span>
             <span className="legend-tier-note">unresolved status · redaction</span>
           </li>
+          <li className="legend-row">
+            <span className="legend-swatch-cell" aria-hidden="true">
+              <span className="legend-swatch legend-swatch-bluebook" />
+            </span>
+            <span className="legend-tier-label">blue</span>
+            <span className="legend-tier-note">project blue book — historical basemap</span>
+          </li>
+          <li className="legend-row">
+            <span className="legend-swatch-cell" aria-hidden="true">
+              <span className="legend-swatch legend-swatch-moon" />
+            </span>
+            <span className="legend-tier-label">moon</span>
+            <span className="legend-tier-note">
+              lunar &amp; cislunar cases anchor here — marker, not to scale
+            </span>
+          </li>
         </ul>
       </div>
     </section>

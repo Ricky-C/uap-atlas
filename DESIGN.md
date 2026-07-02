@@ -41,6 +41,10 @@ Near-black base, one luminous signal accent, one warm alert. Values below are th
   --alert-bg:       rgba(230,180,88,0.12);
   /* redaction — blacker than the surface */
   --redact:         #04060a;
+  /* blue book — muted blue, RESERVED for the historical basemap layer
+     (--globe-color-basemap*). Hover/selected basemap dots still switch to
+     --signal: blue says "historical layer", green says "active". */
+  /* moon — regolith gray (--globe-moon-color) for the symbolic lunar marker */
 }
 ```
 

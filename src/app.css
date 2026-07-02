@@ -366,6 +366,18 @@
   background: var(--alert);
 }
 
+.legend-swatch-bluebook {
+  width: var(--space-3);
+  height: var(--space-3);
+  background: var(--globe-color-basemap);
+}
+
+.legend-swatch-moon {
+  width: var(--space-3);
+  height: var(--space-3);
+  background: var(--globe-moon-color);
+}
+
 .legend-swatch-none {
   font-family: var(--font-mono);
   font-size: var(--type-xs);

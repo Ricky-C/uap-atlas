@@ -101,9 +101,26 @@
   --globe-points-transition-ms: 600; /* scrub tween: points grow/shrink, no hard cuts */
   --timeline-play-step-ms: 180; /* year-sweep cadence for the timeline play control */
   --timeline-play-step-ms-reduced: 700; /* calmer sweep when reduced motion disables the tween */
-  --globe-color-basemap: rgba(47, 157, 99, 0.35); /* point + city — crisp, dim */
-  --globe-color-basemap-region: rgba(47, 157, 99, 0.18);
-  --globe-color-basemap-theater: rgba(47, 157, 99, 0.09);
+  /* Blue Book basemap wears blue — a distinct historical layer, not competing
+     with signal green. Hover/selected still switch to --signal (active state). */
+  --globe-color-basemap: rgba(122, 162, 235, 0.5); /* point + city — crisp, dim */
+  --globe-color-basemap-region: rgba(122, 162, 235, 0.26);
+  --globe-color-basemap-theater: rgba(122, 162, 235, 0.13);
+
+  /* the moon — a symbolic orbit marker anchoring the lunar/cislunar cases.
+     Deliberately NOT to scale or true distance (the real moon sits 60 Earth
+     radii out); the legend says so. World units assume globe radius = 100. */
+  --globe-moon-lat: 18; /* anchor lat/lng — rotates with the globe */
+  --globe-moon-lng: -152;
+  --globe-moon-alt: 2.4; /* center height above the surface, in globe radii */
+  --globe-moon-radius: 9; /* sphere radius, world units */
+  --globe-moon-color: #8d95a6; /* muted regolith gray */
+  --globe-moon-case-radius: 1.6; /* lunar case marker spheres */
+  --globe-moon-case-spread: 3.4; /* ring of markers around the moon, degrees */
+  --globe-moon-focus-altitude: 4.6; /* camera altitude when framing the moon */
+  --globe-moon-emissive: 0.25; /* moon sphere glow — readable on the night side */
+  --globe-marker-emissive: 0.4; /* lunar case marker, idle */
+  --globe-marker-emissive-active: 1; /* lunar case marker, hovered/selected */
 
   /* globe interaction (T4/T6/T7) */
   --globe-hover-scale: 1.5; /* linked-hover point emphasis multiplier */

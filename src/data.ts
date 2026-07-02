@@ -130,6 +130,13 @@ export function isPlottable(r: UAPRecord): boolean {
   return r.lat !== null && r.lon !== null && r.geoPrecision !== "unknown";
 }
 
+// Lunar/cislunar cases (Apollo-era NASA records): unplottable on Earth but not
+// locationless — they anchor to the symbolic moon marker instead. Low Earth
+// Orbit stays unplotted; it is neither an Earth location nor a lunar one.
+export function isLunar(r: UAPRecord): boolean {
+  return /\b(moon|lunar|cislunar)\b/i.test(r.locationRaw);
+}
+
 // Case-index order (TICKETS.md T2): dated cases newest-first, undated grouped
 // at the end; id breaks ties so the order is stable across renders and rebuilds.
 // incidentDate carries mixed precision ("1949", "2008-07", "1947-12-30"), so a

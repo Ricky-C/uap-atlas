@@ -131,7 +131,7 @@ export function legendTiers(t: PrecisionTheme): LegendTier[] {
       key: "basemap",
       precision: ["point", "city", "region", "theater"],
       label: "blue book basemap",
-      note: "historical USAF unknowns (1947–1969) — dim; click for the catalog entry",
+      note: "historical USAF unknowns (1947–1969) — blue; click for the catalog entry",
       color: t.colorBasemap,
       radius: t.radiusCrisp * t.emphasisBasemap,
     },

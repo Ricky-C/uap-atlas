@@ -10,7 +10,7 @@ import { Header } from "./Header";
 import { Onboarding } from "./Onboarding";
 import { About } from "./About";
 import { RotationControl } from "./RotationControl";
-import { RECORDS, BLUEBOOK, isPlottable, incidentYear, sortForIndex } from "./data";
+import { RECORDS, BLUEBOOK, isPlottable, isLunar, incidentYear, sortForIndex } from "./data";
 import { prefersReducedMotion } from "./theme";
 import { useLocalStorageFlag } from "./useLocalStorageFlag";
 import type { HoverState } from "./selection";
@@ -50,12 +50,15 @@ export function App() {
   // cutoff tween to radius 0 there rather than unmounting, so scrubbing animates.
   const plotted = useMemo(() => RECORDS.filter(isPlottable), []);
   const basemap = useMemo(() => BLUEBOOK.filter(isPlottable), []);
+  // Lunar/cislunar cases anchor to the moon marker instead of an Earth point.
+  const lunar = useMemo(() => RECORDS.filter(isLunar), []);
 
   // The case index is a list, not a canvas — it filters the ordinary way. It
   // carries the whole corpus (plotted and unplotted), newest incidents first.
   const indexRecords = useMemo(() => sortForIndex(upToYear(RECORDS, maxYear)), [maxYear]);
   const plottedShown = useMemo(() => upToYear(plotted, maxYear).length, [plotted, maxYear]);
-  const unplottedShown = indexRecords.length - plottedShown;
+  const lunarShown = useMemo(() => upToYear(lunar, maxYear).length, [lunar, maxYear]);
+  const unplottedShown = indexRecords.length - plottedShown - lunarShown;
   // Deliberately not cleared when the timeline scrubs the selected case out of
   // view: the open case file stays readable; only its globe point recedes.
   // Blue Book basemap dots are selectable too (they open a minimal catalog
@@ -70,6 +73,7 @@ export function App() {
       <Globe
         records={plotted}
         basemap={basemap}
+        lunar={lunar}
         maxYear={maxYear}
         selectedId={selectedId}
         hoveredId={hover?.id ?? null}
@@ -82,6 +86,7 @@ export function App() {
         <CaseIndex
           records={indexRecords}
           plottedCount={plottedShown}
+          lunarCount={lunarShown}
           unplottedCount={unplottedShown}
           selectedId={selectedId}
           hover={hover}

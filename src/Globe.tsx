@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import GlobeGL, { type GlobeMethods } from "react-globe.gl";
+import { Color, Mesh, MeshLambertMaterial, SphereGeometry, type Object3D } from "three";
 import type { UAPRecord } from "../schema";
 import { isBasemap, incidentYear } from "./data";
 import { token, tokenNumber, prefersReducedMotion } from "./theme";
@@ -15,6 +16,7 @@ import { pointColorFor, pointRadiusFor, readPrecisionTheme } from "./precision";
 interface GlobeProps {
   records: UAPRecord[]; // ALL plottable hero records (PURSUE) — year filter applied here
   basemap: UAPRecord[]; // ALL plottable Blue Book records — low emphasis, minimal case card on click
+  lunar: UAPRecord[]; // lunar/cislunar cases — anchored to the symbolic moon marker
   maxYear: number | null; // timeline cutoff; null = everything
   selectedId: string | null;
   hoveredId: string | null; // linked hover from either the list or the globe (T4)
@@ -22,6 +24,12 @@ interface GlobeProps {
   onSelect: (id: string) => void;
   onHover: (id: string | null) => void;
 }
+
+// Objects-layer data: the moon itself plus one marker per lunar case, ringed
+// around it so each stays individually clickable.
+type MoonObj =
+  | { kind: "moon"; lat: number; lng: number; alt: number }
+  | { kind: "case"; record: UAPRecord; lat: number; lng: number; alt: number };
 
 function useWindowSize() {
   const [size, setSize] = useState({ w: window.innerWidth, h: window.innerHeight });
@@ -36,6 +44,7 @@ function useWindowSize() {
 export function Globe({
   records,
   basemap,
+  lunar,
   maxYear,
   selectedId,
   hoveredId,
@@ -64,6 +73,17 @@ export function Globe({
       focusAltitude: tokenNumber("--globe-focus-altitude", 1.8),
       focusMs: tokenNumber("--globe-focus-ms", 1000),
       rotateResumeMs: tokenNumber("--globe-rotate-resume-ms", 4000),
+      moonLat: tokenNumber("--globe-moon-lat", 18),
+      moonLng: tokenNumber("--globe-moon-lng", -152),
+      moonAlt: tokenNumber("--globe-moon-alt", 2.4),
+      moonRadius: tokenNumber("--globe-moon-radius", 9),
+      moonColor: token("--globe-moon-color"),
+      moonCaseRadius: tokenNumber("--globe-moon-case-radius", 1.6),
+      moonCaseSpread: tokenNumber("--globe-moon-case-spread", 3.4),
+      moonFocusAltitude: tokenNumber("--globe-moon-focus-altitude", 4.6),
+      moonEmissive: tokenNumber("--globe-moon-emissive", 0.25),
+      markerEmissive: tokenNumber("--globe-marker-emissive", 0.4),
+      markerEmissiveActive: tokenNumber("--globe-marker-emissive-active", 1),
     }),
     [],
   );
@@ -153,16 +173,75 @@ export function Globe({
   // Basemap first so hero points draw over it at equal lat/lng.
   const points = useMemo(() => [...basemap, ...records], [basemap, records]);
 
+  // ── the moon and its lunar cases (objects layer) ────────────────────────
+  // A symbolic marker in "orbit" (not to scale — the legend says so). Each
+  // lunar case is a small sphere ringed around the moon so it can be hovered
+  // and clicked individually. The timeline cutoff applies like everywhere else.
+  const moonObjects = useMemo<MoonObj[]>(() => {
+    const objs: MoonObj[] = [
+      { kind: "moon", lat: theme.moonLat, lng: theme.moonLng, alt: theme.moonAlt },
+    ];
+    const shown = lunar.filter((r) => {
+      if (maxYear === null) return true;
+      const y = incidentYear(r);
+      return y === null || y <= maxYear;
+    });
+    shown.forEach((record, i) => {
+      const a = (2 * Math.PI * i) / shown.length;
+      objs.push({
+        kind: "case",
+        record,
+        lat: theme.moonLat + theme.moonCaseSpread * Math.sin(a),
+        lng: theme.moonLng + theme.moonCaseSpread * Math.cos(a),
+        alt: theme.moonAlt,
+      });
+    });
+    return objs;
+  }, [lunar, maxYear, theme]);
+
+  // Marker materials by record id, so selection/hover emphasis can mutate the
+  // existing meshes instead of rebuilding the objects layer.
+  const markerMats = useRef(new Map<string, MeshLambertMaterial>());
+  const moonObjectFor = (d: MoonObj): Object3D => {
+    if (d.kind === "moon") {
+      const mat = new MeshLambertMaterial({ color: new Color(theme.moonColor) });
+      mat.emissive = new Color(theme.moonColor);
+      mat.emissiveIntensity = theme.moonEmissive;
+      return new Mesh(new SphereGeometry(theme.moonRadius, 32, 32), mat);
+    }
+    const mat = new MeshLambertMaterial({ color: new Color(theme.signal) });
+    mat.emissive = new Color(theme.signal);
+    mat.emissiveIntensity = theme.markerEmissive;
+    markerMats.current.set(d.record.id, mat);
+    return new Mesh(new SphereGeometry(theme.moonCaseRadius, 16, 16), mat);
+  };
+
+  useEffect(() => {
+    for (const [id, mat] of markerMats.current) {
+      mat.emissiveIntensity =
+        id === selectedId || id === hoveredId ? theme.markerEmissiveActive : theme.markerEmissive;
+    }
+  }, [selectedId, hoveredId, theme.markerEmissiveActive, theme.markerEmissive]);
+
   useEffect(() => {
     const globe = globeRef.current;
     if (!globe || selectedId === null) return;
     const r = points.find((x) => x.id === selectedId);
-    if (!r || r.lat === null || r.lon === null) return;
-    globe.pointOfView(
-      { lat: r.lat, lng: r.lon, altitude: theme.focusAltitude },
-      reducedMotion ? 0 : theme.focusMs,
-    );
-  }, [selectedId, points, theme.focusAltitude, theme.focusMs, reducedMotion]);
+    if (r && r.lat !== null && r.lon !== null) {
+      globe.pointOfView(
+        { lat: r.lat, lng: r.lon, altitude: theme.focusAltitude },
+        reducedMotion ? 0 : theme.focusMs,
+      );
+      return;
+    }
+    // A lunar case centers the camera on the moon anchor instead.
+    if (lunar.some((x) => x.id === selectedId)) {
+      globe.pointOfView(
+        { lat: theme.moonLat, lng: theme.moonLng, altitude: theme.moonFocusAltitude },
+        reducedMotion ? 0 : theme.focusMs,
+      );
+    }
+  }, [selectedId, points, lunar, theme, reducedMotion]);
 
   // Timeline visibility: dated records past the cutoff shrink to radius 0 (the
   // points stay mounted so the scrub tweens instead of hard-cutting); undated
@@ -232,6 +311,25 @@ export function Globe({
         ringMaxRadius={theme.ringMaxRadius}
         ringPropagationSpeed={theme.ringPropagationSpeed}
         ringRepeatPeriod={theme.ringPeriodMs}
+        objectsData={moonObjects}
+        objectLat={(d) => (d as MoonObj).lat}
+        objectLng={(d) => (d as MoonObj).lng}
+        objectAltitude={(d) => (d as MoonObj).alt}
+        objectThreeObject={(d) => moonObjectFor(d as MoonObj)}
+        onObjectClick={(d) => {
+          const o = d as MoonObj;
+          if (o.kind === "case") onSelect(o.record.id);
+          // Clicking the moon itself frames it — a viewport for the lunar cases.
+          else
+            globeRef.current?.pointOfView(
+              { lat: theme.moonLat, lng: theme.moonLng, altitude: theme.moonFocusAltitude },
+              reducedMotion ? 0 : theme.focusMs,
+            );
+        }}
+        onObjectHover={(d) => {
+          const o = d as MoonObj | null;
+          onHover(o && o.kind === "case" ? o.record.id : null);
+        }}
       />
     </div>
   );

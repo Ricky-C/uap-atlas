@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import type { UAPRecord } from "../schema";
-import { isPlottable } from "./data";
+import { isLunar, isPlottable } from "./data";
 import { prefersReducedMotion } from "./theme";
 import type { HoverState } from "./selection";
 
@@ -13,6 +13,7 @@ import type { HoverState } from "./selection";
 interface CaseIndexProps {
   records: UAPRecord[]; // year-filtered, index-sorted corpus
   plottedCount: number;
+  lunarCount: number;
   unplottedCount: number;
   selectedId: string | null;
   hover: HoverState | null;
@@ -33,6 +34,7 @@ function rowClass(r: UAPRecord, selectedId: string | null, hover: HoverState | n
 export function CaseIndex({
   records,
   plottedCount,
+  lunarCount,
   unplottedCount,
   selectedId,
   hover,
@@ -68,7 +70,8 @@ export function CaseIndex({
       <header className="case-index-header">
         <span className="mono-label">case index</span>
         <span className="case-index-count">
-          {plottedCount} on globe · {unplottedCount} unplotted
+          {plottedCount} on globe{lunarCount > 0 ? ` · ${lunarCount} lunar` : ""} ·{" "}
+          {unplottedCount} unplotted
         </span>
         <button type="button" className="panel-toggle" onClick={onShowAnalysis}>
           analysis
@@ -77,9 +80,12 @@ export function CaseIndex({
       <ul className="case-index-list">
         {records.map((r) => {
           const plotted = isPlottable(r);
-          // Unplotted rows emit no hover — there is no globe point to emphasize.
-          const hoverIn = plotted ? () => onHover({ id: r.id, source: "list" }) : undefined;
-          const hoverOut = plotted ? () => onHover(null) : undefined;
+          const lunar = !plotted && isLunar(r);
+          // Rows with a mark on the globe (Earth point or moon marker) emit
+          // hover; truly unplotted rows have nothing to emphasize.
+          const hoverIn =
+            plotted || lunar ? () => onHover({ id: r.id, source: "list" }) : undefined;
+          const hoverOut = plotted || lunar ? () => onHover(null) : undefined;
           return (
             <li
               key={r.id}
@@ -105,7 +111,8 @@ export function CaseIndex({
                   <span className="case-row-class">
                     {r.sourceAgency} · {r.objectClass}
                   </span>
-                  {!plotted && <span className="case-row-tag">not on globe</span>}
+                  {lunar && <span className="case-row-tag">lunar</span>}
+                  {!plotted && !lunar && <span className="case-row-tag">not on globe</span>}
                 </span>
               </button>
             </li>
