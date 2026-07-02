@@ -270,7 +270,10 @@ export function geocodeBBLocation(
   if (embedded !== null) return embedded;
 
   const cleaned = locationRaw.replace(QUALIFIER, "").trim();
-  const parts = cleaned.split(",").map((p) => p.trim()).filter(Boolean);
+  const parts = cleaned
+    .split(",")
+    .map((p) => p.trim())
+    .filter(Boolean);
   if (parts.length < 2) return unresolved; // no state/country hint — curate via overrides
 
   const tail = parts[parts.length - 1].toLowerCase().replace(/\.$/, "");

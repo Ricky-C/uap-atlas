@@ -31,8 +31,18 @@ const GCAT_BASE = "https://planet4589.org/space/gcat";
 const FULL_DATE = /^\d{4}-\d{2}-\d{2}$/;
 
 const MONTHS: Record<string, string> = {
-  Jan: "01", Feb: "02", Mar: "03", Apr: "04", May: "05", Jun: "06",
-  Jul: "07", Aug: "08", Sep: "09", Oct: "10", Nov: "11", Dec: "12",
+  Jan: "01",
+  Feb: "02",
+  Mar: "03",
+  Apr: "04",
+  May: "05",
+  Jun: "06",
+  Jul: "07",
+  Aug: "08",
+  Sep: "09",
+  Oct: "10",
+  Nov: "11",
+  Dec: "12",
 };
 
 function requireFile(name: string): string {
@@ -51,7 +61,11 @@ function requireFile(name: string): string {
 // loud (missing column) instead of silently reading the wrong field.
 function parseTsv(name: string, text: string): { col: (n: string) => number; rows: string[][] } {
   const lines = text.split("\n");
-  const header = lines[0]?.replace(/^#/, "").split("\t").map((h) => h.trim()) ?? [];
+  const header =
+    lines[0]
+      ?.replace(/^#/, "")
+      .split("\t")
+      .map((h) => h.trim()) ?? [];
   const col = (n: string): number => {
     const i = header.indexOf(n);
     if (i === -1) throw new Error(`ingest/skeptic: ${name} has no "${n}" column (format change?)`);

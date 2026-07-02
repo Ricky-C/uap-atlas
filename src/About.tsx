@@ -93,7 +93,9 @@ export function About({ onClose }: AboutProps) {
             . The documents are public domain, and the government explicitly invites private
             analysis of them. Currently: {total} records across {releases}{" "}
             {releases === 1 ? "release" : "releases"}, {plottable} with a plottable location. The
-            historical basemap layer is Project Blue Book (USAF, 1947–1969).
+            historical basemap layer is Project Blue Book (USAF, 1947–1969). Released videos are
+            published through DVIDS — the Department of War&apos;s public distribution service — and
+            play here in the official DVIDS embed; this site never hosts or alters the footage.
           </p>
 
           <h2 className="about-section">green vs. blue — the two layers</h2>

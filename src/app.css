@@ -483,6 +483,11 @@
   color: var(--text-muted);
 }
 
+.case-row-tags {
+  display: flex;
+  gap: var(--space-1);
+}
+
 .case-row-tag {
   padding: 0 var(--space-2);
   border: var(--hairline) solid var(--line);
@@ -904,6 +909,56 @@
   background: var(--redact);
   border: var(--hairline) solid var(--line);
   border-radius: var(--radius-row);
+}
+
+/* ── released video (drawer) — click-to-load official DVIDS embed ─────── */
+
+.video-embed {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+/* the facade: no third-party request until the reader asks for the player */
+.video-facade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--redact);
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-row);
+  cursor: pointer;
+}
+
+.video-facade:hover {
+  border-color: var(--line-strong);
+}
+
+.video-facade-glyph {
+  font-size: var(--type-xl);
+  color: var(--signal); /* the play affordance — interactive, signal's job */
+}
+
+.video-facade:hover .video-facade-glyph {
+  text-shadow: var(--glow-signal);
+}
+
+.video-frame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--redact);
+  border: var(--hairline) solid var(--line);
+  border-radius: var(--radius-row);
+}
+
+.video-embed-caption {
+  font-size: var(--type-xxs);
 }
 
 .drawer-summary {

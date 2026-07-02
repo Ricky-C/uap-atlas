@@ -1,10 +1,11 @@
 // war.gov portal CSV -> per-release index entries. Pure: no IO (fetch.ts reads the
 // file and passes text in). The portal's filterable index exports as one CSV covering
 // every release (Featured, Redaction, Release Date, Title, Type, ..., Agency,
-// Incident Date, Incident Location, PDF | Image Link, ...). This module parses it,
-// keeps the document/image rows (video/audio are excluded from the corpus by project
-// decision), and joins them to on-disk filenames so their fields can override the
-// filename-derived values exactly like a hand-authored index.json row would.
+// Incident Date, Incident Location, PDF | Image Link, ...). This module parses the
+// document/image rows and joins them to on-disk filenames so their fields can override
+// the filename-derived values exactly like a hand-authored index.json row would; the
+// VID rows parse separately into released-video rows (parsePortalVideos — they carry a
+// DVIDS id and no file link). Audio rows stay excluded.
 //
 // The CSV is untrusted external data: validated at the edge, fail loud naming the row.
 // Quirks handled here, all observed in the real export:
@@ -101,8 +102,8 @@ const AGENCY_CODES: Record<string, string> = {
   "u.s. government": "USG",
 };
 
-// Document/image rows carry the file we ingest; video/audio rows are excluded from
-// the corpus (project decision) and only ever share a link with their paired document.
+// Document/image rows carry the file we ingest; a video row only ever shares a
+// link with its paired document (its own home is parsePortalVideos below).
 const DOCUMENT_TYPES = new Set(["PDF", "IMG"]);
 
 export interface PortalRow {
@@ -114,6 +115,49 @@ export interface PortalRow {
   incidentDate?: string; // raw portal text; normalized later in parse.ts
   incidentLocation?: string;
   sourceUrl: string; // https link to the official record
+  videoPairing: string[]; // normalized case codes of paired released videos ([] when none)
+}
+
+// ── case codes ──────────────────────────────────────────────────────────────
+// Pairing columns and titles name cases in drifting formats ("DoW-UAP-D010",
+// "PR-019", "FBI-UAP-PR003"). Everything reduces to a canonical
+// AGENCY-UAP-SERIES<n> form (uppercase, id without leading zeros) so the video
+// join can never miss on cosmetics. A bare series code ("PR-019") borrows the
+// agency of the row it appears on. Unrecognizable text → null, never a guess.
+
+export function normalizeCaseCode(raw: string, contextAgency?: string): string | null {
+  const s = raw.trim().toUpperCase();
+  if (s === "") return null;
+  let m = /^([A-Z]{2,6})-UAP-([A-Z]{0,3})-?0*(\d+)$/.exec(s);
+  if (m) return `${m[1]}-UAP-${m[2]}${Number(m[3])}`;
+  m = /^([A-Z]{1,3})-?0*(\d+)$/.exec(s);
+  if (m && contextAgency) return `${contextAgency}-UAP-${m[1]}${Number(m[2])}`;
+  return null;
+}
+
+// The code embedded at the start of an on-disk filename ("DOW-UAP-D084_USArmy-…")
+// — the same convention parse.ts derives agency/docType from.
+export function caseCodeFromFile(file: string): string | null {
+  const m = /^([A-Za-z]{2,6})-UAP-([A-Za-z]{0,3})?0*(\d+)/.exec(file);
+  return m ? `${m[1].toUpperCase()}-UAP-${(m[2] ?? "").toUpperCase()}${Number(m[3])}` : null;
+}
+
+// Find every full case code mentioned in free text (a title or blurb). Bare
+// series codes are NOT matched here — without a row context they'd be guesses.
+export function caseCodesInText(text: string): string[] {
+  const out = new Set<string>();
+  for (const m of text.matchAll(/([A-Za-z]{2,6})-UAP-([A-Za-z]{0,3})?0*(\d+)/g)) {
+    out.add(`${m[1].toUpperCase()}-UAP-${(m[2] ?? "").toUpperCase()}${Number(m[3])}`);
+  }
+  return [...out];
+}
+
+// A pairing cell can list several codes ("FBI-UAP-D009 | FBI-UAP-D010").
+function parsePairingCell(cell: string, contextAgency?: string): string[] {
+  return cell
+    .split(/[|;,&]/)
+    .map((c) => normalizeCaseCode(c, contextAgency))
+    .filter((c): c is string => c !== null);
 }
 
 const REQUIRED_HEADERS = [
@@ -164,7 +208,10 @@ export function parsePortalCsv(source: string, text: string): PortalRow[] {
     if (!releaseMatch) {
       throw new Error(`ingest/portal: ${where} link "${url}" has no /release_NN/ path segment`);
     }
-    const file = safeName(`ingest/portal: ${where}`, decodeURIComponent(url.split("/").at(-1) ?? ""));
+    const file = safeName(
+      `ingest/portal: ${where}`,
+      decodeURIComponent(url.split("/").at(-1) ?? ""),
+    );
 
     const agencyRaw = at("Agency");
     const agency = AGENCY_CODES[agencyRaw.toLowerCase()];
@@ -177,9 +224,107 @@ export function parsePortalCsv(source: string, text: string): PortalRow[] {
       incidentDate: at("Incident Date") || undefined,
       incidentLocation: at("Incident Location") || undefined,
       sourceUrl: url,
+      videoPairing: parsePairingCell(at("Video Pairing"), agency),
     });
   });
   return out;
+}
+
+// ── released videos (VID rows) ──────────────────────────────────────────────
+// VID rows ship no file link — they were excluded from the corpus until the
+// video pass. Each carries a DVIDS id (DoD's public distribution service; the
+// app embeds the official player from it), the usual index fields, a long
+// description blurb, and sometimes an explicit pairing to document cases.
+// Release attribution: VID rows have no /release_NN/ URL, but their Release
+// Date matches the document rows' exactly — the date→release map is derived
+// from the document rows in the same export, never hardcoded.
+
+export interface PortalVideoRow {
+  code: string | null; // normalized case code from the Title (e.g. "FBI-UAP-PR3")
+  title: string;
+  dvidsId: string; // numeric string, validated — page/embed URLs are built from it
+  release: string; // zero-padded, via the Release-Date map
+  agency?: string;
+  agencyRaw?: string;
+  incidentDate?: string; // raw portal text; normalized later
+  incidentLocation?: string;
+  blurb: string; // Description Blurb — the enrichment pass reads this
+  pdfPairing: string[]; // normalized codes of paired document cases ([] when none)
+}
+
+export interface PortalVideos {
+  rows: PortalVideoRow[];
+  skipped: string[]; // VID rows dropped for a stated reason (curator log)
+}
+
+export function parsePortalVideos(source: string, text: string): PortalVideos {
+  const rows = parseCsv(text);
+  if (rows.length === 0) throw new Error(`ingest/portal: ${source} is empty`);
+  const header = rows[0].map((h) => h.trim());
+  const col: Record<string, number> = {};
+  header.forEach((h, i) => {
+    if (!(h in col)) col[h] = i;
+  });
+
+  // Older exports may predate the video columns — no videos, not an error.
+  if (!("DVIDS Video ID" in col) || !("Release Date" in col) || !("Title" in col)) {
+    return { rows: [], skipped: [] };
+  }
+
+  // Release-Date → release map from the document rows' URLs. Ambiguous dates
+  // (one date, several releases) are unusable — affected VID rows are skipped
+  // loudly rather than mis-attributed.
+  const dateToReleases = new Map<string, Set<string>>();
+  for (const cells of rows.slice(1)) {
+    const url = cleanCell(cells[col["PDF | Image Link"]]);
+    const m = /\/release_(\d+)\//.exec(url);
+    if (!m) continue;
+    const date = cleanCell(cells[col["Release Date"]]);
+    if (date === "") continue;
+    const set = dateToReleases.get(date) ?? new Set<string>();
+    set.add(m[1].padStart(2, "0"));
+    dateToReleases.set(date, set);
+  }
+
+  const out: PortalVideoRow[] = [];
+  const skipped: string[] = [];
+  rows.slice(1).forEach((cells, i) => {
+    const where = `${source} row ${i + 2}`;
+    const at = (name: string): string => (name in col ? cleanCell(cells[col[name]]) : "");
+    if (at("Type").toUpperCase() !== "VID") return;
+
+    const title = at("Title");
+    const dvidsId = at("DVIDS Video ID");
+    if (!/^\d+$/.test(dvidsId)) {
+      // The id becomes a dvidshub.net URL in the app — numeric only, fail soft per row.
+      skipped.push(`${where} ("${title}"): DVIDS id "${dvidsId}" is not numeric`);
+      return;
+    }
+    const releases = dateToReleases.get(at("Release Date"));
+    if (releases === undefined || releases.size !== 1) {
+      skipped.push(
+        `${where} ("${title}"): Release Date "${at("Release Date")}" maps to ` +
+          `${releases === undefined ? "no" : releases.size} release(s)`,
+      );
+      return;
+    }
+
+    const agencyRaw = at("Agency");
+    const agency = AGENCY_CODES[agencyRaw.toLowerCase()];
+    out.push({
+      code: caseCodesInText(title)[0] ?? null,
+      title,
+      dvidsId,
+      release: [...releases][0],
+      agency,
+      agencyRaw: agency === undefined && agencyRaw !== "" ? agencyRaw : undefined,
+      incidentDate: at("Incident Date") || undefined,
+      incidentLocation: at("Incident Location") || undefined,
+      blurb: at("Description Blurb"),
+      pdfPairing: parsePairingCell(at("PDF Pairing"), agency),
+    });
+  });
+  return { rows: out, skipped };
 }
 
 export interface PortalJoin {

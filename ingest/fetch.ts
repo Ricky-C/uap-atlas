@@ -34,7 +34,14 @@ import { extname, isAbsolute, join, relative, sep } from "node:path";
 
 import { readJson } from "./io";
 import { parseLocationTable, type LocationTable } from "./geocode";
-import { joinPortalRows, parsePortalCsv, safeName, type PortalRow } from "./portal";
+import {
+  joinPortalRows,
+  parsePortalCsv,
+  parsePortalVideos,
+  safeName,
+  type PortalRow,
+  type PortalVideoRow,
+} from "./portal";
 
 export type MediaType = "document" | "image" | "video";
 
@@ -67,6 +74,11 @@ export interface FetchedRelease {
   indexSource: string | null; // which index joined this run (index.json / a CSV), if any
   orphanIndex: string[]; // index rows whose file isn't on disk (partial download/export)
   unmappedAgencies: string[]; // portal agency names with no short code yet (curator log)
+  // Released videos, portal-CSV releases only (a hand-authored index.json run —
+  // fixtures — stays hermetic: no videos). Both lists are this release's rows.
+  videoRows: PortalVideoRow[];
+  portalDocRows: PortalRow[]; // for the document-side "Video Pairing" column
+  videoSkipped: string[]; // VID rows dropped with a stated reason (curator log)
 }
 
 // Source roots in precedence order: a real extracted bundle wins over the fixture.
@@ -119,7 +131,9 @@ function listSourceFiles(base: string): string[] {
 // is false for a symlink-to-dir, so a symlinked release dir is never traversed (both
 // detectNewestRelease and resolveRelease rely on this).
 function hasFiles(dir: string): boolean {
-  return existsSync(dir) && lstatSync(dir).isDirectory() && listSourceFiles(filesBase(dir)).length > 0;
+  return (
+    existsSync(dir) && lstatSync(dir).isDirectory() && listSourceFiles(filesBase(dir)).length > 0
+  );
 }
 
 // Defense in depth against symlinked path components in a malicious bundle (a `files`
@@ -129,7 +143,9 @@ function hasFiles(dir: string): boolean {
 function assertContained(base: string, root: string): void {
   const rel = relative(realpathSync(root), realpathSync(base));
   if (rel === ".." || rel.startsWith(`..${sep}`) || isAbsolute(rel)) {
-    throw new Error(`ingest/fetch: ${base} resolves outside ${root} — refusing to read (symlink escape)`);
+    throw new Error(
+      `ingest/fetch: ${base} resolves outside ${root} — refusing to read (symlink escape)`,
+    );
   }
 }
 
@@ -259,7 +275,29 @@ function loadPortalRows(): { rows: PortalRow[]; source: string | null } {
     const path = join(PORTAL_CSV_DIR, n);
     return parsePortalCsv(path, readFileSync(path, "utf8"));
   });
-  return { rows, source: csvs.length > 0 ? csvs.map((n) => join(PORTAL_CSV_DIR, n)).join(", ") : null };
+  return {
+    rows,
+    source: csvs.length > 0 ? csvs.map((n) => join(PORTAL_CSV_DIR, n)).join(", ") : null,
+  };
+}
+
+// Every portal-export CSV's VID rows, all releases. Read separately from
+// loadPortalRows because enrich.ts also needs the blurbs at patch time.
+export function fetchVideoRows(): { rows: PortalVideoRow[]; skipped: string[] } {
+  if (!existsSync(PORTAL_CSV_DIR)) return { rows: [], skipped: [] };
+  const csvs = readdirSync(PORTAL_CSV_DIR)
+    .filter((n) => n.toLowerCase().endsWith(".csv"))
+    .filter((n) => lstatSync(join(PORTAL_CSV_DIR, n)).isFile())
+    .sort();
+  const rows: PortalVideoRow[] = [];
+  const skipped: string[] = [];
+  for (const n of csvs) {
+    const path = join(PORTAL_CSV_DIR, n);
+    const parsed = parsePortalVideos(path, readFileSync(path, "utf8"));
+    rows.push(...parsed.rows);
+    skipped.push(...parsed.skipped);
+  }
+  return { rows, skipped };
 }
 
 interface ResolvedIndex {
@@ -267,10 +305,15 @@ interface ResolvedIndex {
   indexSource: string | null;
   orphanIndex: string[];
   unmappedAgencies: string[];
+  videoRows: PortalVideoRow[];
+  portalDocRows: PortalRow[];
+  videoSkipped: string[];
 }
 
-// Precedence: a hand-authored <dir>/index.json wins over the portal CSV export.
+// Precedence: a hand-authored <dir>/index.json wins over the portal CSV export —
+// and such a run (fixtures) carries no videos, keeping it hermetic.
 function resolveIndex(dir: string, releaseId: string, names: string[]): ResolvedIndex {
+  const noVideos = { videoRows: [], portalDocRows: [], videoSkipped: [] };
   if (existsSync(join(dir, INDEX_FILENAME))) {
     const index = loadIndex(dir);
     const onDisk = new Set(names);
@@ -279,18 +322,29 @@ function resolveIndex(dir: string, releaseId: string, names: string[]): Resolved
       indexSource: join(dir, INDEX_FILENAME),
       orphanIndex: [...index.keys()].filter((name) => !onDisk.has(name)).sort(),
       unmappedAgencies: [],
+      ...noVideos,
     };
   }
   const { rows, source } = loadPortalRows();
   if (source === null) {
-    return { index: new Map(), indexSource: null, orphanIndex: [], unmappedAgencies: [] };
+    return {
+      index: new Map(),
+      indexSource: null,
+      orphanIndex: [],
+      unmappedAgencies: [],
+      ...noVideos,
+    };
   }
   const joined = joinPortalRows(rows, releaseId, names);
+  const videos = fetchVideoRows();
   return {
     index: joined.index,
     indexSource: source,
     orphanIndex: joined.unmatchedDocs,
     unmappedAgencies: joined.unmappedAgencies,
+    videoRows: videos.rows.filter((r) => r.release === releaseId),
+    portalDocRows: rows.filter((r) => r.release === releaseId),
+    videoSkipped: videos.skipped,
   };
 }
 
@@ -299,7 +353,15 @@ export function fetchRelease(releaseId: string): FetchedRelease {
   const base = filesBase(dir);
   assertContained(base, root); // defense in depth: base must resolve inside the source root
   const names = listSourceFiles(base);
-  const { index, indexSource, orphanIndex, unmappedAgencies } = resolveIndex(dir, releaseId, names);
+  const {
+    index,
+    indexSource,
+    orphanIndex,
+    unmappedAgencies,
+    videoRows,
+    portalDocRows,
+    videoSkipped,
+  } = resolveIndex(dir, releaseId, names);
 
   const files = names.map((name): FetchedFile => {
     const relPath = join(base, name);
@@ -312,10 +374,27 @@ export function fetchRelease(releaseId: string): FetchedRelease {
     }
     const entry = index.get(name) ?? null;
     const sha256 = createHash("sha256").update(readFileSync(relPath)).digest("hex");
-    return { file: name, relPath, sha256, mediaType: entry?.mediaType ?? mediaTypeForExt(name), entry };
+    return {
+      file: name,
+      relPath,
+      sha256,
+      mediaType: entry?.mediaType ?? mediaTypeForExt(name),
+      entry,
+    };
   });
 
-  return { releaseId, dir, fromFixture, files, indexSource, orphanIndex, unmappedAgencies };
+  return {
+    releaseId,
+    dir,
+    fromFixture,
+    files,
+    indexSource,
+    orphanIndex,
+    unmappedAgencies,
+    videoRows,
+    portalDocRows,
+    videoSkipped,
+  };
 }
 
 // The hand-curated geocode table is input, so its read lives here too (not in run.ts).

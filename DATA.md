@@ -27,8 +27,8 @@ export interface UAPRecord {
   sourceUrl: string;          // link back to the government record
   media: {
     docImage?: string;
-    video?: string;
     rendering?: string;
+    videos?: string[];          // DVIDS video ids; the app embeds the official player
   };
 }
 ```
@@ -76,7 +76,7 @@ That alone produces records: `mediaType` is derived from the file extension, and
 
 Incident date, incident location, and the source URL live in war.gov's separate filterable index, which ships separately from the file bundle. Ingest joins it from either of two sources; a hand-authored `index.json` wins when both exist:
 
-1. **`data/csv/*.csv` — the portal's own CSV export (the normal path).** Export war.gov's filterable index as CSV and drop it in `data/csv/` (committed); one export covers every release. `ingest/portal.ts` parses it (columns used: Type, Agency, Incident Date, Incident Location, PDF | Image Link), derives the release and filename from each row's link, and joins case-insensitively to the files on disk — the export's URL casing drifts from the bundle's, so the on-disk name is canonical. Video/audio rows are skipped (excluded from the corpus by project decision); when a document row and its paired video rows share a link, the document row wins. Portal agency names map to the short codes the schema uses (`Department of War` → `DOW`, `Department of State` → `DOS`, …) via `AGENCY_CODES` in `ingest/portal.ts`; an unmapped name is logged for a curator, never guessed.
+1. **`data/csv/*.csv` — the portal's own CSV export (the normal path).** Export war.gov's filterable index as CSV and drop it in `data/csv/` (committed); one export covers every release. `ingest/portal.ts` parses it (columns used: Type, Agency, Incident Date, Incident Location, PDF | Image Link), derives the release and filename from each row's link, and joins case-insensitively to the files on disk — the export's URL casing drifts from the bundle's, so the on-disk name is canonical. When a document row and its paired video rows share a link, the document row wins. **VID rows join the corpus as released videos** (`ingest/videos.ts`): each carries a DVIDS video id (DoD's public distribution service — the app embeds the official player, never hosting footage). A VID row that names document cases (its `PDF Pairing` column, a document row's `Video Pairing` column, or a full case code in its blurb) attaches its DVIDS id to those documents' `media.videos`; an unpaired VID row becomes a standalone record (`id: dvids-<id>`, `docType: "released video"`, sourceUrl = the DVIDS page, dated/located from the CSV columns, summary/objectClass from the text-mode enrichment pass over its Description Blurb — see `.claude/skills/case-extraction/references/video-prompt.md`). VID rows have no `/release_NN/` link; release attribution derives from the Release Date → release map built from the document rows in the same export. Audio rows remain excluded. Portal agency names map to the short codes the schema uses (`Department of War` → `DOW`, `Department of State` → `DOS`, …) via `AGENCY_CODES` in `ingest/portal.ts`; an unmapped name is logged for a curator, never guessed.
 1. **`data/raw/release_NN/index.json` — hand-authored (the override path).** A JSON array keyed by `file`; its fields **override** the derived values. Only `file` is required — every other field is optional and fills a gap when present:
 
 ```jsonc

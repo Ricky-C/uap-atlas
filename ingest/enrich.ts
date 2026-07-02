@@ -24,16 +24,30 @@
 //
 // The canonical prompt lives in .claude/skills/case-extraction/references/prompt.md
 // and is read verbatim — it is the single source of truth, never duplicated here.
+//
+// Video records (standalone DVIDS releases, media.videos with no still media) take
+// a TEXT-mode path: the model reads the portal CSV's official description blurb, no
+// vision. They use their own prompt file (video-prompt.md) with its own sha, so the
+// document corpus' cache keys never move — adding videos re-bills zero documents.
 
 import Anthropic from "@anthropic-ai/sdk";
 import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
-import { existsSync, mkdirSync, mkdtempSync, readFileSync, renameSync, rmSync, unlinkSync, writeFileSync } from "node:fs";
+import {
+  existsSync,
+  mkdirSync,
+  mkdtempSync,
+  readFileSync,
+  renameSync,
+  rmSync,
+  unlinkSync,
+  writeFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { basename, extname, join } from "node:path";
 
 import { writeRecordsFile } from "./emit";
-import { fetchLocationTable } from "./fetch";
+import { fetchLocationTable, fetchVideoRows } from "./fetch";
 import { geocodeRecords, isRedactedLocation } from "./geocode";
 import { readJson } from "./io";
 import { normalizeDate } from "./parse";
@@ -64,13 +78,22 @@ const PROBE_PRICE_OUT = 10.0;
 const PROBE_CONFIRM_ABOVE_USD = 0.25;
 
 const PROMPT_PATH = join(".claude", "skills", "case-extraction", "references", "prompt.md");
+const VIDEO_PROMPT_PATH = join(
+  ".claude",
+  "skills",
+  "case-extraction",
+  "references",
+  "video-prompt.md",
+);
 const RECORDS_PATH = join("data", "records.json");
 const LOCATIONS_PATH = join("data", "locations.json");
 const CACHE_DIR = join("data", "cache");
 const BATCH_STATE_PATH = join(CACHE_DIR, "_batch-state.json");
 
 const DEFAULT_PROBE_DOC = join(
-  "data", "raw", "release_03",
+  "data",
+  "raw",
+  "release_03",
   "FBI-UAP-D001_FD-302_Unresolved-UAP-Report_ColoradoSprings_2022.pdf",
 );
 
@@ -88,7 +111,14 @@ const OUTPUT_SCHEMA: Record<string, unknown> = {
     incidentLocation: { anyOf: [{ type: "string" }, { type: "null" }] },
     reviewFlags: { type: "array", items: { type: "string" } },
   },
-  required: ["summary", "objectClass", "redactionPct", "incidentDate", "incidentLocation", "reviewFlags"],
+  required: [
+    "summary",
+    "objectClass",
+    "redactionPct",
+    "incidentDate",
+    "incidentLocation",
+    "reviewFlags",
+  ],
 };
 
 interface CacheStrategy {
@@ -127,9 +157,9 @@ interface BatchState {
   model: string;
   promptSha: string;
   schemaSha: string;
-  renderPx: number;
-  maxPages: number;
   customIds: string[];
+  // Per-request strategies — the ONLY source cache entries are keyed from
+  // (document batches carry page strategies, video batches carry the zeros).
   docStrategies: Record<string, CacheStrategy>;
   submittedAt: string;
 }
@@ -171,12 +201,12 @@ function requireKey(): void {
   }
 }
 
-// Read the canonical prompt body verbatim (only the "## Prompt text" section, so
+// Read a canonical prompt body verbatim (only the "## Prompt text" section, so
 // editing maintainer notes below it does not change the promptSha and re-bill).
-function loadPrompt(): string {
-  const md = readFileSync(PROMPT_PATH, "utf8");
+function loadPrompt(path: string): string {
+  const md = readFileSync(path, "utf8");
   const body = md.split("## Prompt text")[1]?.split("## Notes for maintainers")[0];
-  if (!body) throw new Error(`ingest/enrich: could not find the prompt body in ${PROMPT_PATH}`);
+  if (!body) throw new Error(`ingest/enrich: could not find the prompt body in ${path}`);
   return body.trim();
 }
 
@@ -197,18 +227,26 @@ function validate(v: unknown): Check[] {
     {
       field: "summary",
       ok: typeof summary === "string" && summary.length > 0,
-      detail: typeof summary === "string" ? `${summary.length} chars` : `not a string (${typeof summary})`,
+      detail:
+        typeof summary === "string"
+          ? `${summary.length} chars`
+          : `not a string (${typeof summary})`,
     },
     {
       field: "objectClass",
-      ok: typeof objectClass === "string" && (OBJECT_CLASSES as readonly string[]).includes(objectClass),
+      ok:
+        typeof objectClass === "string" &&
+        (OBJECT_CLASSES as readonly string[]).includes(objectClass),
       detail: String(objectClass),
     },
     {
       field: "redactionPct",
       ok:
         redactionPct === null ||
-        (typeof redactionPct === "number" && Number.isInteger(redactionPct) && redactionPct >= 0 && redactionPct <= 100),
+        (typeof redactionPct === "number" &&
+          Number.isInteger(redactionPct) &&
+          redactionPct >= 0 &&
+          redactionPct <= 100),
       detail: redactionPct === null ? "null" : String(redactionPct),
     },
     {
@@ -226,7 +264,9 @@ function validate(v: unknown): Check[] {
     {
       field: "reviewFlags",
       ok: Array.isArray(reviewFlags) && reviewFlags.every((x) => typeof x === "string"),
-      detail: Array.isArray(reviewFlags) ? JSON.stringify(reviewFlags) : `not an array (${typeof reviewFlags})`,
+      detail: Array.isArray(reviewFlags)
+        ? JSON.stringify(reviewFlags)
+        : `not an array (${typeof reviewFlags})`,
     },
   ];
 }
@@ -236,10 +276,22 @@ function validate(v: unknown): Check[] {
 // ---------------------------------------------------------------------------
 
 function mediaPathFor(record: UAPRecord): string {
-  const p = record.media.docImage ?? record.media.rendering ?? record.media.video;
-  if (!p) throw new Error(`ingest/enrich: record ${record.id} has no media path`);
+  const p = record.media.docImage ?? record.media.rendering;
+  if (!p) throw new Error(`ingest/enrich: record ${record.id} has no still media path`);
   return p;
 }
+
+function hasStillMedia(r: UAPRecord): boolean {
+  return r.media.docImage !== undefined || r.media.rendering !== undefined;
+}
+
+function isVideoOnly(r: UAPRecord): boolean {
+  return !hasStillMedia(r) && (r.media.videos?.length ?? 0) > 0;
+}
+
+// Text-mode records carry no rendered pages; the zeros key their cache
+// entries distinctly from any real page strategy.
+const VIDEO_STRATEGY: CacheStrategy = { pagesSent: 0, pageCount: 0, renderPx: 0, maxPages: 0 };
 
 function readRecords(): UAPRecord[] {
   const value = readJson(RECORDS_PATH);
@@ -274,7 +326,9 @@ function parseCacheEntry(v: unknown): CacheEntry | null {
     typeof e.objectClass === "string" &&
     (OBJECT_CLASSES as readonly string[]).includes(e.objectClass) &&
     (e.redactionPct === null || typeof e.redactionPct === "number") &&
-    (e.incidentDate === null || e.incidentDate === undefined || typeof e.incidentDate === "string") &&
+    (e.incidentDate === null ||
+      e.incidentDate === undefined ||
+      typeof e.incidentDate === "string") &&
     (e.incidentLocation === null ||
       e.incidentLocation === undefined ||
       typeof e.incidentLocation === "string") &&
@@ -305,16 +359,17 @@ function writeJsonAtomic(path: string, value: unknown): void {
 // A cache is a hit (skip, never re-bill) only when every keyed field matches the
 // current config. pagesSent captures maxPages/pageCount changes precisely: a
 // short doc whose pagesSent is unchanged stays cached when maxPages is bumped.
+// Text-mode (video) entries key on renderPx/pagesSent 0 and the video prompt sha.
 function isCacheValid(
   entry: CacheEntry | null,
-  cfg: { promptSha: string; schemaSha: string; pagesSent: number },
+  cfg: { promptSha: string; schemaSha: string; pagesSent: number; renderPx: number },
 ): boolean {
   return (
     entry !== null &&
     entry.model === MODEL &&
     entry.promptSha === cfg.promptSha &&
     entry.schemaSha === cfg.schemaSha &&
-    entry.strategy.renderPx === RENDER_PX &&
+    entry.strategy.renderPx === cfg.renderPx &&
     entry.strategy.pagesSent === cfg.pagesSent
   );
 }
@@ -325,14 +380,15 @@ function planDoc(record: UAPRecord): DocPlan {
   return { record, mediaPath, pageCount: pc, pagesSent: Math.min(MAX_PAGES, pc) };
 }
 
-function buildParams(images: RenderedImage[], prompt: string): Anthropic.MessageCreateParamsNonStreaming {
+function buildParams(
+  images: RenderedImage[],
+  prompt: string,
+): Anthropic.MessageCreateParamsNonStreaming {
   const content: Anthropic.ContentBlockParam[] = [
-    ...images.map(
-      (img): Anthropic.ContentBlockParam => ({
-        type: "image",
-        source: { type: "base64", media_type: img.mediaType, data: img.data },
-      }),
-    ),
+    ...images.map((img): Anthropic.ContentBlockParam => ({
+      type: "image",
+      source: { type: "base64", media_type: img.mediaType, data: img.data },
+    })),
     { type: "text", text: prompt },
   ];
   return {
@@ -341,6 +397,20 @@ function buildParams(images: RenderedImage[], prompt: string): Anthropic.Message
     messages: [{ role: "user", content }],
     // effort:"low" bounds adaptive thinking so it can't eat max_tokens; structured
     // outputs is belt-and-suspenders on top of the prompt's own JSON-only instruction.
+    output_config: { effort: "low", format: { type: "json_schema", schema: OUTPUT_SCHEMA } },
+  };
+}
+
+// Text-mode request for a video record: the official release blurb IS the document.
+function buildVideoParams(
+  blurb: string,
+  prompt: string,
+): Anthropic.MessageCreateParamsNonStreaming {
+  const text = `${prompt}\n\n--- OFFICIAL RELEASE DESCRIPTION ---\n\n${blurb}`;
+  return {
+    model: MODEL,
+    max_tokens: MAX_TOKENS,
+    messages: [{ role: "user", content: [{ type: "text", text }] }],
     output_config: { effort: "low", format: { type: "json_schema", schema: OUTPUT_SCHEMA } },
   };
 }
@@ -381,7 +451,8 @@ async function findInterruptedBatch(
     if (b.processing_status === "ended") {
       const ids = new Set<string>();
       for await (const item of await client.messages.batches.results(b.id)) ids.add(item.custom_id);
-      if (ids.size === target.size && [...target].every((id) => ids.has(id))) return { kind: "adopt", batch: b };
+      if (ids.size === target.size && [...target].every((id) => ids.has(id)))
+        return { kind: "adopt", batch: b };
     } else {
       // in_progress / canceling: can't read ids yet, but a same-size batch created
       // right after our interrupted submit is almost certainly ours — wait for it.
@@ -405,7 +476,11 @@ function extractAndValidate(message: Anthropic.Message, customId: string): Extra
     console.warn(`  ${customId}: FAILED (no text block) — not cached`);
     return null;
   }
-  const raw = textBlock.text.trim().replace(/^```(?:json)?/i, "").replace(/```$/i, "").trim();
+  const raw = textBlock.text
+    .trim()
+    .replace(/^```(?:json)?/i, "")
+    .replace(/```$/i, "")
+    .trim();
   let parsed: unknown;
   try {
     parsed = JSON.parse(raw);
@@ -416,7 +491,9 @@ function extractAndValidate(message: Anthropic.Message, customId: string): Extra
   const checks = validate(parsed);
   const bad = checks.filter((c) => !c.ok);
   if (bad.length > 0) {
-    console.warn(`  ${customId}: FAILED (${bad.map((c) => `${c.field}=${c.detail}`).join("; ")}) — not cached`);
+    console.warn(
+      `  ${customId}: FAILED (${bad.map((c) => `${c.field}=${c.detail}`).join("; ")}) — not cached`,
+    );
     return null;
   }
   const o = parsed as Record<string, unknown>;
@@ -483,15 +560,23 @@ function patchRecords(): boolean {
     if (!c) continue;
     rec.summary = c.summary;
     rec.objectClass = c.objectClass;
-    rec.redactionPct = c.redactionPct;
+    // A video has no page area to redact — pinned null whatever the model said
+    // (the prompt already demands it; this is the belt-and-suspenders).
+    rec.redactionPct = isVideoOnly(rec) ? null : c.redactionPct;
     rec.incidentDate = mergeDate(rec.incidentDate, c.incidentDate ?? null, conflicts, rec.id);
     rec.locationRaw = mergeLocation(rec.locationRaw, c.incidentLocation ?? null, conflicts, rec.id);
   }
 
-  const { records: geocoded, misses, redacted } = geocodeRecords(records, fetchLocationTable(LOCATIONS_PATH));
+  const {
+    records: geocoded,
+    misses,
+    redacted,
+  } = geocodeRecords(records, fetchLocationTable(LOCATIONS_PATH));
 
   if (conflicts.length > 0) {
-    console.log(`portal-vs-document conflicts (document won — spot-check these ${conflicts.length}):`);
+    console.log(
+      `portal-vs-document conflicts (document won — spot-check these ${conflicts.length}):`,
+    );
     for (const line of conflicts) console.log(line);
   }
   if (misses.length > 0) {
@@ -533,8 +618,11 @@ async function finishBatch(client: Anthropic, state: SubmittedState): Promise<vo
   for await (const item of await client.messages.batches.results(state.batchId)) {
     if (item.result.type !== "succeeded") {
       failed++;
-      const detail = item.result.type === "errored" ? `: ${JSON.stringify(item.result.error.error)}` : "";
-      console.warn(`  ${item.custom_id}: ${item.result.type}${detail} — not cached (free retry next run)`);
+      const detail =
+        item.result.type === "errored" ? `: ${JSON.stringify(item.result.error.error)}` : "";
+      console.warn(
+        `  ${item.custom_id}: ${item.result.type}${detail} — not cached (free retry next run)`,
+      );
       continue;
     }
     const message = item.result.message;
@@ -543,12 +631,15 @@ async function finishBatch(client: Anthropic, state: SubmittedState): Promise<vo
       failed++;
       continue;
     }
-    const strategy = state.docStrategies[item.custom_id] ?? {
-      pagesSent: 0,
-      pageCount: 0,
-      renderPx: state.renderPx,
-      maxPages: state.maxPages,
-    };
+    // Never fabricate a strategy: a wrong one would be cached, fail validation
+    // forever, and silently re-bill that record on every future run (golden
+    // rule 4). A missing entry is a failed item — reported, uncached, free retry.
+    const strategy = state.docStrategies[item.custom_id];
+    if (strategy === undefined) {
+      failed++;
+      console.warn(`  ${item.custom_id}: no recorded strategy in the batch state — not cached`);
+      continue;
+    }
     const entry: CacheEntry = {
       recordId: item.custom_id,
       sha256: item.custom_id, // record.id is already the source-file content hash slice
@@ -558,7 +649,10 @@ async function finishBatch(client: Anthropic, state: SubmittedState): Promise<vo
       strategy,
       ...extracted,
       stopReason: message.stop_reason,
-      usage: { input_tokens: message.usage.input_tokens, output_tokens: message.usage.output_tokens },
+      usage: {
+        input_tokens: message.usage.input_tokens,
+        output_tokens: message.usage.output_tokens,
+      },
       enrichedAt: new Date().toISOString(),
     };
     // Skip the write if an equivalent entry already exists (a re-collect after a
@@ -578,7 +672,8 @@ async function finishBatch(client: Anthropic, state: SubmittedState): Promise<vo
       prior.incidentLocation === extracted.incidentLocation;
     if (!unchanged) writeJsonAtomic(cachePath(item.custom_id), entry);
     succeeded++;
-    if (extracted.reviewFlags.length > 0) flagReport.push(`  ${item.custom_id}: ${extracted.reviewFlags.join(", ")}`);
+    if (extracted.reviewFlags.length > 0)
+      flagReport.push(`  ${item.custom_id}: ${extracted.reviewFlags.join(", ")}`);
   }
 
   console.log(`collected: ${succeeded} succeeded, ${failed} failed of ${state.customIds.length}.`);
@@ -592,9 +687,10 @@ async function finishBatch(client: Anthropic, state: SubmittedState): Promise<vo
 }
 
 interface BuiltRequest {
-  plan: DocPlan;
+  recordId: string;
+  strategy: CacheStrategy; // cached alongside the result — keys future validity
   request: { custom_id: string; params: Anthropic.MessageCreateParamsNonStreaming };
-  bytes: number; // approximate serialized image+prompt payload, for batch chunking
+  bytes: number; // approximate serialized payload, for batch chunking
 }
 
 // Greedily pack requests into batches each ≤ targetBytes (a single request always
@@ -619,23 +715,21 @@ function chunkByPayload(items: BuiltRequest[], targetBytes: number): BuiltReques
 // Submit one chunk as a batch and collect it. Writes the "submitting" marker BEFORE
 // create() (so an orphan is discoverable on the next run), then the id, then polls
 // and collects. finishBatch clears the state file, so the next chunk starts clean.
-async function submitChunk(client: Anthropic, chunk: BuiltRequest[], promptSha: string, schemaSha: string): Promise<void> {
+async function submitChunk(
+  client: Anthropic,
+  chunk: BuiltRequest[],
+  promptSha: string,
+  schemaSha: string,
+): Promise<void> {
   const docStrategies: Record<string, CacheStrategy> = {};
   for (const b of chunk) {
-    docStrategies[b.plan.record.id] = {
-      pagesSent: b.plan.pagesSent,
-      pageCount: b.plan.pageCount,
-      renderPx: RENDER_PX,
-      maxPages: MAX_PAGES,
-    };
+    docStrategies[b.recordId] = b.strategy;
   }
   const base = {
     model: MODEL,
     promptSha,
     schemaSha,
-    renderPx: RENDER_PX,
-    maxPages: MAX_PAGES,
-    customIds: chunk.map((b) => b.plan.record.id),
+    customIds: chunk.map((b) => b.recordId),
     docStrategies,
     submittedAt: new Date().toISOString(),
   };
@@ -643,11 +737,16 @@ async function submitChunk(client: Anthropic, chunk: BuiltRequest[], promptSha: 
   const batch = await client.messages.batches.create({ requests: chunk.map((b) => b.request) });
   const submitted: SubmittedState = { ...base, batchId: batch.id, status: "submitted" };
   writeJsonAtomic(BATCH_STATE_PATH, submitted);
-  console.log(`  submitted batch ${batch.id} (${chunk.length} docs). polling…`);
+  console.log(`  submitted batch ${batch.id} (${chunk.length} requests). polling…`);
   await finishBatch(client, submitted);
 }
 
-async function runBatch(opts: { dryRun: boolean; yes: boolean; only?: string[]; limit?: number }): Promise<void> {
+async function runBatch(opts: {
+  dryRun: boolean;
+  yes: boolean;
+  only?: string[];
+  limit?: number;
+}): Promise<void> {
   requireKey();
   ensureCacheDir();
   const client = new Anthropic();
@@ -659,7 +758,9 @@ async function runBatch(opts: { dryRun: boolean; yes: boolean; only?: string[]; 
       // A recorded in-flight batch: resume and collect it (dry-run reports only).
       if (opts.dryRun) {
         const b = await client.messages.batches.retrieve(state.batchId);
-        console.log(`enrich --dry-run: batch ${state.batchId} is ${b.processing_status} (submitted ${state.submittedAt}). Re-run without --dry-run to collect.`);
+        console.log(
+          `enrich --dry-run: batch ${state.batchId} is ${b.processing_status} (submitted ${state.submittedAt}). Re-run without --dry-run to collect.`,
+        );
         return;
       }
       console.log(`resuming batch ${state.batchId} (submitted ${state.submittedAt}).`);
@@ -667,86 +768,204 @@ async function runBatch(opts: { dryRun: boolean; yes: boolean; only?: string[]; 
     } else {
       // Interrupted submit: the "submitting" marker exists but no id was recorded.
       if (opts.dryRun) {
-        console.log("enrich --dry-run: a prior submit was interrupted; re-run without --dry-run to reconcile.");
+        console.log(
+          "enrich --dry-run: a prior submit was interrupted; re-run without --dry-run to reconcile.",
+        );
         return;
       }
-      console.warn("a prior submit was interrupted before the batch id was recorded — reconciling with the server…");
+      console.warn(
+        "a prior submit was interrupted before the batch id was recorded — reconciling with the server…",
+      );
       const decision = await findInterruptedBatch(client, state.customIds, state.submittedAt);
       if (decision.kind === "wait") {
-        throw new Error(`ingest/enrich: a matching batch ${decision.batch.id} is ${decision.batch.processing_status} — wait for it, then re-run to collect`);
+        throw new Error(
+          `ingest/enrich: a matching batch ${decision.batch.id} is ${decision.batch.processing_status} — wait for it, then re-run to collect`,
+        );
       }
       if (decision.kind === "adopt") {
-        const adopted: SubmittedState = { ...state, batchId: decision.batch.id, status: "submitted" };
+        const adopted: SubmittedState = {
+          ...state,
+          batchId: decision.batch.id,
+          status: "submitted",
+        };
         writeJsonAtomic(BATCH_STATE_PATH, adopted);
-        console.log(`adopted batch ${decision.batch.id} from the interrupted submit — collecting, not resubmitting.`);
+        console.log(
+          `adopted batch ${decision.batch.id} from the interrupted submit — collecting, not resubmitting.`,
+        );
         await finishBatch(client, adopted);
       } else {
-        console.log("no batch was created by the interrupted submit — clearing the marker and continuing.");
+        console.log(
+          "no batch was created by the interrupted submit — clearing the marker and continuing.",
+        );
         clearBatchState();
       }
     }
     // fall through to partition + (chunked) submit of any remaining uncached docs
   }
 
-  const prompt = loadPrompt();
-  const promptSha = sha256(prompt);
+  const docPrompt = loadPrompt(PROMPT_PATH);
+  const docPromptSha = sha256(docPrompt);
+  const videoPrompt = loadPrompt(VIDEO_PROMPT_PATH);
+  const videoPromptSha = sha256(videoPrompt);
   const schemaSha = sha256(JSON.stringify(OUTPUT_SCHEMA));
 
   const records = readRecords();
-  const plans = records.map(planDoc);
-  const uncached = plans.filter((p) => !isCacheValid(readCache(p.record.id), { promptSha, schemaSha, pagesSent: p.pagesSent }));
+  const docRecords = records.filter(hasStillMedia);
+  const videoRecords = records.filter(isVideoOnly);
+  const noMedia = records.length - docRecords.length - videoRecords.length;
+  if (noMedia > 0) {
+    console.warn(`enrich: ${noMedia} record(s) have neither still media nor videos — skipped`);
+  }
+
+  const docPlans = docRecords.map(planDoc);
+  const uncachedDocs = docPlans.filter(
+    (p) =>
+      !isCacheValid(readCache(p.record.id), {
+        promptSha: docPromptSha,
+        schemaSha,
+        pagesSent: p.pagesSent,
+        renderPx: RENDER_PX,
+      }),
+  );
+
+  // Video records read their official release blurb from the portal CSV — the
+  // blurb never lives in records.json. A video record whose blurb has vanished
+  // from data/csv/ is named and skipped, never sent empty.
+  const blurbById = new Map(fetchVideoRows().rows.map((r) => [`dvids-${r.dvidsId}`, r.blurb]));
+  interface VideoPlan {
+    record: UAPRecord;
+    blurb: string;
+  }
+  const videoPlans: VideoPlan[] = [];
+  const noBlurb: string[] = [];
+  for (const r of videoRecords) {
+    const blurb = blurbById.get(r.id);
+    if (blurb === undefined || blurb === "") noBlurb.push(r.id);
+    else videoPlans.push({ record: r, blurb });
+  }
+  if (noBlurb.length > 0) {
+    console.warn(
+      `enrich: ${noBlurb.length} video record(s) have no CSV blurb — skipped: ${noBlurb.join(", ")}`,
+    );
+  }
+  const uncachedVideos = videoPlans.filter(
+    (p) =>
+      !isCacheValid(readCache(p.record.id), {
+        promptSha: videoPromptSha,
+        schemaSha,
+        pagesSent: 0,
+        renderPx: 0,
+      }),
+  );
+
+  type Pending = { kind: "doc"; doc: DocPlan } | { kind: "video"; video: VideoPlan };
+  const idOf = (p: Pending): string => (p.kind === "doc" ? p.doc.record.id : p.video.record.id);
+  const uncached: Pending[] = [
+    ...uncachedDocs.map((doc): Pending => ({ kind: "doc", doc })),
+    ...uncachedVideos.map((video): Pending => ({ kind: "video", video })),
+  ];
 
   // Optional subset for a bounded live test: --only=<id,id,...> or --limit=<n>.
   let selected = uncached;
   if (opts.only) {
     const want = new Set(opts.only);
-    const missing = opts.only.filter((id) => !uncached.some((p) => p.record.id === id));
-    if (missing.length > 0) console.warn(`--only: ignoring ${missing.length} id(s) not in the uncached set: ${missing.join(", ")}`);
-    selected = uncached.filter((p) => want.has(p.record.id));
+    const missing = opts.only.filter((id) => !uncached.some((p) => idOf(p) === id));
+    if (missing.length > 0)
+      console.warn(
+        `--only: ignoring ${missing.length} id(s) not in the uncached set: ${missing.join(", ")}`,
+      );
+    selected = uncached.filter((p) => want.has(idOf(p)));
   } else if (opts.limit !== undefined) {
     selected = uncached.slice(0, opts.limit);
   }
 
+  const planTotal = docPlans.length + videoPlans.length;
   if (selected.length === 0) {
     const patched = patchRecords();
-    const scope = opts.only || opts.limit !== undefined ? "for this selection" : `(all ${plans.length} records)`;
-    console.log(`enrich: nothing to enrich ${scope}. records.json ${patched ? "updated" : "unchanged"}.`);
+    const scope =
+      opts.only || opts.limit !== undefined ? "for this selection" : `(all ${planTotal} records)`;
+    console.log(
+      `enrich: nothing to enrich ${scope}. records.json ${patched ? "updated" : "unchanged"}.`,
+    );
     return;
   }
 
   const subsetNote = selected.length === uncached.length ? "" : ` (of ${uncached.length} uncached)`;
-  console.log(`enrich: ${selected.length}/${plans.length} records to enrich this run${subsetNote}.`);
+  console.log(`enrich: ${selected.length}/${planTotal} records to enrich this run${subsetNote}.`);
 
-  // Render + count_tokens (both free) over the selected set to price the run exactly.
-  const built: BuiltRequest[] = [];
+  // Render + count_tokens (both free) over the selected set to price the run
+  // exactly. Documents and videos are built into separate request sets: each
+  // batch must be homogeneous in promptSha (the batch state records one).
+  const docBuilt: BuiltRequest[] = [];
+  const videoBuilt: BuiltRequest[] = [];
   let totalInput = 0;
   let totalPayloadBytes = 0;
-  for (const p of selected) {
-    const rendered = renderDocToImages(p.mediaPath, { renderPx: RENDER_PX, maxPages: MAX_PAGES });
-    const params = buildParams(rendered.images, prompt);
-    const ct = await client.messages.countTokens({ model: MODEL, messages: params.messages });
-    totalInput += ct.input_tokens;
-    const bytes = rendered.images.reduce((s, im) => s + im.data.length, 0) + prompt.length;
-    totalPayloadBytes += bytes;
-    // Key the cache on planDoc's INTENDED pagesSent (= min(MAX_PAGES, pageCount)),
-    // which isCacheValid recomputes the same way at read time. Using the actual
-    // rendered image count here would drift (and re-bill forever) if pdftoppm ever
-    // emits fewer pages than pdfinfo reports for a malformed page.
-    built.push({ plan: p, request: { custom_id: p.record.id, params }, bytes });
+  for (const pend of selected) {
+    if (pend.kind === "doc") {
+      const p = pend.doc;
+      const rendered = renderDocToImages(p.mediaPath, { renderPx: RENDER_PX, maxPages: MAX_PAGES });
+      const params = buildParams(rendered.images, docPrompt);
+      const ct = await client.messages.countTokens({ model: MODEL, messages: params.messages });
+      totalInput += ct.input_tokens;
+      const bytes = rendered.images.reduce((s, im) => s + im.data.length, 0) + docPrompt.length;
+      totalPayloadBytes += bytes;
+      // Key the cache on planDoc's INTENDED pagesSent (= min(MAX_PAGES, pageCount)),
+      // which isCacheValid recomputes the same way at read time. Using the actual
+      // rendered image count here would drift (and re-bill forever) if pdftoppm ever
+      // emits fewer pages than pdfinfo reports for a malformed page.
+      docBuilt.push({
+        recordId: p.record.id,
+        strategy: {
+          pagesSent: p.pagesSent,
+          pageCount: p.pageCount,
+          renderPx: RENDER_PX,
+          maxPages: MAX_PAGES,
+        },
+        request: { custom_id: p.record.id, params },
+        bytes,
+      });
+    } else {
+      const p = pend.video;
+      const params = buildVideoParams(p.blurb, videoPrompt);
+      const ct = await client.messages.countTokens({ model: MODEL, messages: params.messages });
+      totalInput += ct.input_tokens;
+      const bytes = p.blurb.length + videoPrompt.length;
+      totalPayloadBytes += bytes;
+      videoBuilt.push({
+        recordId: p.record.id,
+        strategy: VIDEO_STRATEGY,
+        request: { custom_id: p.record.id, params },
+        bytes,
+      });
+    }
   }
 
+  const builtCount = docBuilt.length + videoBuilt.length;
   const inputCost = (totalInput / 1e6) * BATCH_PRICE_IN;
-  const estOutputCost = ((built.length * EST_OUTPUT_TOKENS_PER_DOC) / 1e6) * BATCH_PRICE_OUT;
+  const estOutputCost = ((builtCount * EST_OUTPUT_TOKENS_PER_DOC) / 1e6) * BATCH_PRICE_OUT;
   const estTotal = inputCost + estOutputCost;
-  const worstTotal = inputCost + ((built.length * MAX_TOKENS) / 1e6) * BATCH_PRICE_OUT;
+  const worstTotal = inputCost + ((builtCount * MAX_TOKENS) / 1e6) * BATCH_PRICE_OUT;
 
   const payloadMB = totalPayloadBytes / (1024 * 1024);
-  const chunks = chunkByPayload(built, CHUNK_TARGET_BYTES);
-  console.log(`\n  --- cost estimate (Batch API, ${MODEL} intro pricing $${BATCH_PRICE_IN}/$${BATCH_PRICE_OUT} per MTok) ---`);
-  console.log(`  ${built.length} docs, ${totalInput} input tokens (exact, count_tokens) → ${usd(inputCost)} in`);
-  console.log(`  output est. @${EST_OUTPUT_TOKENS_PER_DOC} tok/doc (measured) → ${usd(estOutputCost)} out`);
-  console.log(`  estimated total: ${usd(estTotal)}   (worst case if every doc emits ${MAX_TOKENS} out: ${usd(worstTotal)})`);
-  console.log(`  request payload: ~${payloadMB.toFixed(0)} MB → ${chunks.length} batch(es) of ≤${(CHUNK_TARGET_BYTES / 1024 / 1024).toFixed(0)} MB`);
+  const docChunks = chunkByPayload(docBuilt, CHUNK_TARGET_BYTES);
+  const videoChunks = chunkByPayload(videoBuilt, CHUNK_TARGET_BYTES);
+  const chunkCount = docChunks.length + videoChunks.length;
+  console.log(
+    `\n  --- cost estimate (Batch API, ${MODEL} intro pricing $${BATCH_PRICE_IN}/$${BATCH_PRICE_OUT} per MTok) ---`,
+  );
+  console.log(
+    `  ${builtCount} records (${docBuilt.length} documents, ${videoBuilt.length} videos), ` +
+      `${totalInput} input tokens (exact, count_tokens) → ${usd(inputCost)} in`,
+  );
+  console.log(
+    `  output est. @${EST_OUTPUT_TOKENS_PER_DOC} tok/record (measured) → ${usd(estOutputCost)} out`,
+  );
+  console.log(
+    `  estimated total: ${usd(estTotal)}   (worst case if every record emits ${MAX_TOKENS} out: ${usd(worstTotal)})`,
+  );
+  console.log(
+    `  request payload: ~${payloadMB.toFixed(0)} MB → ${chunkCount} batch(es) of ≤${(CHUNK_TARGET_BYTES / 1024 / 1024).toFixed(0)} MB`,
+  );
 
   if (opts.dryRun) {
     console.log("\n  dry run — no batch submitted, no spend.");
@@ -761,26 +980,36 @@ async function runBatch(opts: { dryRun: boolean; yes: boolean; only?: string[]; 
   }
 
   if (!opts.yes) {
-    console.log(`\n  estimate ${usd(estTotal)} is within the ${usd(SUBMIT_CAP_USD)} cap. Re-run with --yes to submit the paid batch.`);
+    console.log(
+      `\n  estimate ${usd(estTotal)} is within the ${usd(SUBMIT_CAP_USD)} cap. Re-run with --yes to submit the paid batch.`,
+    );
     return;
   }
 
   // Double-submit guard: never submit while another (unrelated) batch is still running.
   for await (const b of client.messages.batches.list()) {
     if (b.processing_status === "in_progress" || b.processing_status === "canceling") {
-      throw new Error(`ingest/enrich: batch ${b.id} is already ${b.processing_status} — refusing to submit another`);
+      throw new Error(
+        `ingest/enrich: batch ${b.id} is already ${b.processing_status} — refusing to submit another`,
+      );
     }
   }
 
-  // Submit as one or more payload-bounded batches, sequentially. Each is fully
+  // Submit as one or more payload-bounded batches, sequentially — document
+  // batches (doc prompt) first, then video batches (video prompt). Each is fully
   // collected (its state cleared) before the next is submitted, so an interruption
   // resumes the in-flight batch and a re-run continues the remaining chunks.
-  console.log(`\n  submitting ${built.length} docs as ${chunks.length} batch(es)…`);
-  for (let i = 0; i < chunks.length; i++) {
-    console.log(`\n  --- batch ${i + 1}/${chunks.length} (${chunks[i].length} docs) ---`);
-    await submitChunk(client, chunks[i], promptSha, schemaSha);
+  console.log(`\n  submitting ${builtCount} records as ${chunkCount} batch(es)…`);
+  let n = 0;
+  for (const chunk of docChunks) {
+    console.log(`\n  --- batch ${++n}/${chunkCount} (${chunk.length} documents) ---`);
+    await submitChunk(client, chunk, docPromptSha, schemaSha);
   }
-  console.log(`\n  all ${chunks.length} batch(es) collected.`);
+  for (const chunk of videoChunks) {
+    console.log(`\n  --- batch ${++n}/${chunkCount} (${chunk.length} videos) ---`);
+    await submitChunk(client, chunk, videoPromptSha, schemaSha);
+  }
+  console.log(`\n  all ${chunkCount} batch(es) collected.`);
 }
 
 // ---------------------------------------------------------------------------
@@ -796,7 +1025,18 @@ function probeImage(file: string): { data: string; media: ImageMediaType; note: 
     const scratch = mkdtempSync(join(tmpdir(), "enrich-probe-"));
     try {
       const prefix = join(scratch, "page");
-      execFileSync("pdftoppm", ["-png", "-singlefile", "-f", "1", "-l", "1", "-scale-to", String(RENDER_PX), file, prefix]);
+      execFileSync("pdftoppm", [
+        "-png",
+        "-singlefile",
+        "-f",
+        "1",
+        "-l",
+        "1",
+        "-scale-to",
+        String(RENDER_PX),
+        file,
+        prefix,
+      ]);
       const data = readFileSync(`${prefix}.png`).toString("base64");
       return { data, media: "image/png", note: `rendered page 1 @${RENDER_PX}px` };
     } finally {
@@ -811,7 +1051,7 @@ async function runProbe(file: string, yes: boolean): Promise<void> {
   requireKey();
   if (!existsSync(file)) throw new Error(`ingest/enrich: file not found: ${file}`);
 
-  const prompt = loadPrompt();
+  const prompt = loadPrompt(PROMPT_PATH);
   const img = probeImage(file);
   const content: Anthropic.ContentBlockParam[] = [
     { type: "image", source: { type: "base64", media_type: img.media, data: img.data } },
@@ -843,7 +1083,11 @@ async function runProbe(file: string, yes: boolean): Promise<void> {
   if (!textBlock || textBlock.type !== "text") {
     throw new Error(`ingest/enrich: no text block in response (stop_reason: ${resp.stop_reason})`);
   }
-  const raw = textBlock.text.trim().replace(/^```(?:json)?/i, "").replace(/```$/i, "").trim();
+  const raw = textBlock.text
+    .trim()
+    .replace(/^```(?:json)?/i, "")
+    .replace(/```$/i, "")
+    .trim();
 
   let parsed: unknown;
   try {
@@ -853,10 +1097,17 @@ async function runProbe(file: string, yes: boolean): Promise<void> {
   }
 
   const checks = validate(parsed);
-  const cost = (resp.usage.input_tokens / 1e6) * PROBE_PRICE_IN + (resp.usage.output_tokens / 1e6) * PROBE_PRICE_OUT;
+  const cost =
+    (resp.usage.input_tokens / 1e6) * PROBE_PRICE_IN +
+    (resp.usage.output_tokens / 1e6) * PROBE_PRICE_OUT;
 
   console.log("\n  --- extracted record fields ---");
-  console.log(JSON.stringify(parsed, null, 2).split("\n").map((l) => "  " + l).join("\n"));
+  console.log(
+    JSON.stringify(parsed, null, 2)
+      .split("\n")
+      .map((l) => "  " + l)
+      .join("\n"),
+  );
   console.log("\n  --- output-contract check ---");
   for (const c of checks) console.log(`  ${c.ok ? "PASS" : "FAIL"}  ${c.field}: ${c.detail}`);
   const allOk = checks.every((c) => c.ok);
@@ -864,7 +1115,9 @@ async function runProbe(file: string, yes: boolean): Promise<void> {
     `\n  usage: ${resp.usage.input_tokens} in + ${resp.usage.output_tokens} out tokens -> ` +
       `actual cost ${usd(cost)} (single live call, Sonnet 5 intro pricing)`,
   );
-  console.log(`  stop_reason: ${resp.stop_reason} | contract: ${allOk ? "all fields valid" : "SOME FIELDS INVALID"}`);
+  console.log(
+    `  stop_reason: ${resp.stop_reason} | contract: ${allOk ? "all fields valid" : "SOME FIELDS INVALID"}`,
+  );
 }
 
 function flagValue(args: string[], name: string): string | undefined {
@@ -885,7 +1138,12 @@ async function main(): Promise<void> {
   await runBatch({
     dryRun: args.includes("--dry-run"),
     yes,
-    only: only ? only.split(",").map((s) => s.trim()).filter(Boolean) : undefined,
+    only: only
+      ? only
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean)
+      : undefined,
     limit: limit !== undefined ? Number(limit) : undefined,
   });
 }

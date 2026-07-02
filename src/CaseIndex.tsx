@@ -350,10 +350,15 @@ export function CaseIndex({
                               <span className="case-row-class">
                                 {r.sourceAgency} · {r.objectClass}
                               </span>
-                              {lunar && <span className="case-row-tag">lunar</span>}
-                              {!plotted && !lunar && (
-                                <span className="case-row-tag">not on globe</span>
-                              )}
+                              <span className="case-row-tags">
+                                {(r.media.videos?.length ?? 0) > 0 && (
+                                  <span className="case-row-tag">▶ video</span>
+                                )}
+                                {lunar && <span className="case-row-tag">lunar</span>}
+                                {!plotted && !lunar && (
+                                  <span className="case-row-tag">not on globe</span>
+                                )}
+                              </span>
                             </span>
                           </button>
                         </li>

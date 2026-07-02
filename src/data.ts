@@ -61,8 +61,12 @@ function parseRecord(v: unknown): UAPRecord | null {
     sourceUrl: asString(r.sourceUrl),
     media: {
       docImage: typeof media.docImage === "string" ? media.docImage : undefined,
-      video: typeof media.video === "string" ? media.video : undefined,
       rendering: typeof media.rendering === "string" ? media.rendering : undefined,
+      // DVIDS ids — numeric strings only (they become dvidshub.net URLs in the
+      // drawer); a malformed entry degrades to "no videos", never a bad href.
+      videos: Array.isArray(media.videos)
+        ? media.videos.filter((v): v is string => typeof v === "string" && /^\d+$/.test(v))
+        : undefined,
     },
   };
 }

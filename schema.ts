@@ -50,7 +50,11 @@ export interface UAPRecord {
   sourceUrl: string; // link back to the government record
   media: {
     docImage?: string;
-    video?: string;
     rendering?: string;
+    // DVIDS video ids (numeric strings). Released videos live on DVIDS — DoD's
+    // own distribution service — and embed from there; the atlas never hosts
+    // video bytes. One document case can reference several videos; a standalone
+    // video record carries exactly one. Player URL: dvidshub.net/video/embed/<id>.
+    videos?: string[];
   };
 }

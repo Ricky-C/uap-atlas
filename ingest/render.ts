@@ -132,7 +132,14 @@ export function renderDocToImages(mediaPath: string, opts: RenderOptions = {}): 
   const inputCoder = mediaType === "image/png" ? "png" : "jpg";
   const buf = execFileSync(
     "magick",
-    [`${inputCoder}:-`, "-resize", `${renderPx}x${renderPx}>`, "-quality", String(jpegQuality), "jpg:-"],
+    [
+      `${inputCoder}:-`,
+      "-resize",
+      `${renderPx}x${renderPx}>`,
+      "-quality",
+      String(jpegQuality),
+      "jpg:-",
+    ],
     { input: readFileSync(mediaPath), maxBuffer: 64 * 1024 * 1024 },
   );
   return {

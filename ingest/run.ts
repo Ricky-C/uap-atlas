@@ -12,6 +12,7 @@ import { join } from "node:path";
 import { detectNewestRelease, fetchLocationTable, fetchRelease } from "./fetch";
 import { geocodeRecords } from "./geocode";
 import { parseRelease } from "./parse";
+import { applyVideos } from "./videos";
 import { emitRecords } from "./emit";
 
 const RECORDS_PATH = join("data", "records.json");
@@ -48,7 +49,34 @@ export function run(releaseArg?: string): void {
   }
 
   const parsed = parseRelease(fetched);
-  const { records, misses, redacted } = geocodeRecords(parsed, fetchLocationTable(LOCATIONS_PATH));
+
+  // Released videos: pair to documents where the export names a pairing,
+  // synthesize standalone records for the rest (see ingest/videos.ts).
+  const videos = applyVideos(parsed, fetched.files, fetched.videoRows, fetched.portalDocRows);
+  console.log(
+    `ingest: videos — ${videos.pairedVideos} paired to documents, ` +
+      `${videos.standaloneCount} standalone video record(s)`,
+  );
+  if (fetched.videoSkipped.length > 0) {
+    console.warn(`\n  ${fetched.videoSkipped.length} VID row(s) skipped:`);
+    for (const s of fetched.videoSkipped) console.warn(`    · ${s}`);
+    console.warn("");
+  }
+  if (videos.unmatchedPairings.length > 0) {
+    console.warn(`\n  ${videos.unmatchedPairings.length} pairing code(s) resolved to nothing:`);
+    for (const u of videos.unmatchedPairings) console.warn(`    · ${u}`);
+    console.warn("");
+  }
+  if (videos.rangeNotes.length > 0) {
+    console.warn(`\n  ${videos.rangeNotes.length} blurb range(s) — interior codes need a curator:`);
+    for (const n of videos.rangeNotes) console.warn(`    · ${n}`);
+    console.warn("");
+  }
+
+  const { records, misses, redacted } = geocodeRecords(
+    videos.records,
+    fetchLocationTable(LOCATIONS_PATH),
+  );
 
   if (redacted.length > 0) {
     console.log(

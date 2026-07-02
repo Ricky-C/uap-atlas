@@ -54,6 +54,7 @@ The model returns strict JSON, no preamble:
 
 Read these as the task requires, not all upfront:
 
-- `references/prompt.md` — the canonical extraction prompt. Source of truth; `enrich.ts` mirrors it. Read when writing or tuning enrichment.
+- `references/prompt.md` — the canonical extraction prompt for DOCUMENT images. Source of truth; `enrich.ts` mirrors it. Read when writing or tuning enrichment. Editing its "## Prompt text" re-bills the whole document corpus.
+- `references/video-prompt.md` — the canonical prompt for RELEASED VIDEOS (text mode: the model reads the portal CSV's Description Blurb, no image). Same output contract; separate file/sha so tuning it never re-bills documents.
 - `references/object-taxonomy.md` — object-class definitions, government-term mappings, and disambiguation rules. Read when classifying or adding a class.
 - `references/examples.md` — few-shot good/bad summaries and edge cases. Read when tuning the prompt or judging whether a summary is neutral.

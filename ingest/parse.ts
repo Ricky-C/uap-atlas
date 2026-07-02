@@ -64,13 +64,25 @@ function deriveDocType(file: string): string {
 // becomes null. See DATA.md "Incident dates".
 
 const MONTHS: Record<string, number> = {
-  january: 1, february: 2, march: 3, april: 4, may: 5, june: 6,
-  july: 7, august: 8, september: 9, october: 10, november: 11, december: 12,
+  january: 1,
+  february: 2,
+  march: 3,
+  april: 4,
+  may: 5,
+  june: 6,
+  july: 7,
+  august: 8,
+  september: 9,
+  october: 10,
+  november: 11,
+  december: 12,
 };
 
 function monthNumber(name: string): number | null {
   const lower = name.toLowerCase();
-  const hit = Object.keys(MONTHS).find((m) => m === lower || (lower.length >= 3 && m.startsWith(lower)));
+  const hit = Object.keys(MONTHS).find(
+    (m) => m === lower || (lower.length >= 3 && m.startsWith(lower)),
+  );
   return hit ? MONTHS[hit] : null;
 }
 
@@ -138,7 +150,9 @@ export function normalizeDate(raw: string | null | undefined): string | null {
 }
 
 function mediaFor(file: FetchedFile): UAPRecord["media"] {
-  if (file.mediaType === "video") return { video: file.relPath };
+  // A video FILE in a bundle has no still media (media.videos carries DVIDS ids,
+  // joined from the portal CSV in videos.ts — not file paths). None ship today.
+  if (file.mediaType === "video") return {};
   if (file.mediaType === "image") {
     // Only synthetic renderings (Digital-Rendering, the IMG series) belong in the rendering
     // slot. A video-still (VS) is a real captured frame, not a rendering, so it stays a
