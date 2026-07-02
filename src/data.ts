@@ -3,6 +3,7 @@
 // Fail soft: a malformed field degrades to its honest default, never a crash.
 
 import raw from "../data/records.json";
+import rawBluebook from "../data/bluebook.json";
 import {
   OBJECT_CLASSES,
   type GeoPrecision,
@@ -73,6 +74,16 @@ function parseRecord(v: unknown): UAPRecord | null {
 export const RECORDS: UAPRecord[] = (raw as unknown[])
   .map(parseRecord)
   .filter((r): r is UAPRecord => r !== null);
+
+// The Project Blue Book historical basemap (1947-1969 USAF "unknowns") — rendered
+// as a low-emphasis layer beneath the PURSUE hero cases, never in the case index.
+export const BLUEBOOK: UAPRecord[] = (rawBluebook as unknown[])
+  .map(parseRecord)
+  .filter((r): r is UAPRecord => r !== null);
+
+export function isBasemap(r: UAPRecord): boolean {
+  return r.release === "bluebook";
+}
 
 // A record is plottable only when it has coordinates AND an honest precision
 // tier; "unknown" precision is never drawn on the globe (DESIGN.md), it lives

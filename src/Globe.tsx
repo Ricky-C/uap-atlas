@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import GlobeGL, { type GlobeMethods } from "react-globe.gl";
 import type { UAPRecord } from "../schema";
+import { isBasemap } from "./data";
 import { token, tokenNumber, prefersReducedMotion } from "./theme";
 
 // The observatory instrument: NASA Black Marble night lights, a soft signal-dim
@@ -9,7 +10,8 @@ import { token, tokenNumber, prefersReducedMotion } from "./theme";
 // them into the CaseIndex instead of faking certainty here.
 
 interface GlobeProps {
-  records: UAPRecord[]; // plottable records only
+  records: UAPRecord[]; // plottable hero records (PURSUE)
+  basemap: UAPRecord[]; // plottable Blue Book historical layer — low emphasis, not clickable
   selectedId: string | null;
   onSelect: (id: string) => void;
 }
@@ -24,7 +26,7 @@ function useWindowSize() {
   return size;
 }
 
-export function Globe({ records, selectedId, onSelect }: GlobeProps) {
+export function Globe({ records, basemap, selectedId, onSelect }: GlobeProps) {
   const globeRef = useRef<GlobeMethods | undefined>(undefined);
   const { w, h } = useWindowSize();
   const reducedMotion = useMemo(() => prefersReducedMotion(), []);
@@ -46,6 +48,10 @@ export function Globe({ records, selectedId, onSelect }: GlobeProps) {
       ringPeriodMs: tokenNumber("--globe-ring-period-ms", 1800),
       ringMaxRadius: tokenNumber("--globe-ring-max-radius", 5),
       ringPropagationSpeed: tokenNumber("--globe-ring-propagation-speed", 1),
+      emphasisBasemap: tokenNumber("--globe-emphasis-basemap", 0.55),
+      colorBasemap: token("--globe-color-basemap"),
+      colorBasemapRegion: token("--globe-color-basemap-region"),
+      colorBasemapTheater: token("--globe-color-basemap-theater"),
     }),
     [],
   );
@@ -57,7 +63,20 @@ export function Globe({ records, selectedId, onSelect }: GlobeProps) {
     controls.autoRotateSpeed = theme.rotateSpeed;
   }, [reducedMotion, theme.rotateSpeed]);
 
+  // The basemap keeps the same precision-tier shape hierarchy as the hero layer
+  // (crisp point / soft blob / faint area — the honesty rule applies to both),
+  // just uniformly de-emphasized.
   const pointColor = (r: UAPRecord): string => {
+    if (isBasemap(r)) {
+      switch (r.geoPrecision) {
+        case "region":
+          return theme.colorBasemapRegion;
+        case "theater":
+          return theme.colorBasemapTheater;
+        default:
+          return theme.colorBasemap;
+      }
+    }
     if (r.id === selectedId) return theme.signal;
     switch (r.geoPrecision) {
       case "region":
@@ -70,19 +89,21 @@ export function Globe({ records, selectedId, onSelect }: GlobeProps) {
   };
 
   const pointRadius = (r: UAPRecord): number => {
-    switch (r.geoPrecision) {
-      case "region":
-        return theme.radiusRegion;
-      case "theater":
-        return theme.radiusTheater;
-      default:
-        return theme.radiusCrisp;
-    }
+    const tier =
+      r.geoPrecision === "region"
+        ? theme.radiusRegion
+        : r.geoPrecision === "theater"
+          ? theme.radiusTheater
+          : theme.radiusCrisp;
+    return isBasemap(r) ? tier * theme.emphasisBasemap : tier;
   };
 
   // A single "ping" ripple on the selected case (skipped under reduced motion).
   const selected = records.find((r) => r.id === selectedId);
   const ringsData = !reducedMotion && selected ? [selected] : [];
+
+  // Basemap first so hero points draw over it at equal altitude.
+  const points = useMemo(() => [...basemap, ...records], [basemap, records]);
 
   return (
     <div className="globe-layer" aria-hidden="true">
@@ -94,13 +115,16 @@ export function Globe({ records, selectedId, onSelect }: GlobeProps) {
         backgroundColor={theme.void}
         atmosphereColor={theme.signalDim}
         atmosphereAltitude={theme.atmosphereAlt}
-        pointsData={records}
+        pointsData={points}
         pointLat={(d) => (d as UAPRecord).lat ?? 0}
         pointLng={(d) => (d as UAPRecord).lon ?? 0}
         pointColor={(d) => pointColor(d as UAPRecord)}
         pointRadius={(d) => pointRadius(d as UAPRecord)}
         pointAltitude={theme.pointAlt}
-        onPointClick={(d) => onSelect((d as UAPRecord).id)}
+        onPointClick={(d) => {
+          const r = d as UAPRecord;
+          if (!isBasemap(r)) onSelect(r.id); // the basemap is texture, not UI
+        }}
         ringsData={ringsData}
         ringLat={(d) => (d as UAPRecord).lat ?? 0}
         ringLng={(d) => (d as UAPRecord).lon ?? 0}

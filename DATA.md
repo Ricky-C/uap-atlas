@@ -126,7 +126,18 @@ Geocoding is a hand-curated `data/locations.json` lookup, not a geocoding servic
 
 Table conventions: keys are the portal's location strings **verbatim** (including its typos — `"Westen United States"` is a faithful alias next to the correct spelling, because `locationRaw` stays faithful to source). A key mapped to **`null`** means a curator ruled it unplottable on an Earth globe (`"Moon"`, `"Low Earth Orbit"`, `"Cislunar Space"`): the record stays honestly unresolved and side-index-only, without reappearing in the miss list every run. One curation judgment worth recording: `"Georgia"` is the country (the corpus row is a Tbilisi embassy cable) — if a future tranche means the U.S. state, that row's `locationRaw` will need a distinguishing key.
 
-## Hard rules
+## The Blue Book layer (`pnpm bluebook`)
+
+The Phase-3 historical basemap: the ~535 cases Project Blue Book (USAF, 1947–1969) itself closed as **unidentified**, rendered as a low-emphasis layer beneath the PURSUE hero cases. Output is `data/bluebook.json` (committed), same `UAPRecord` schema, `release: "bluebook"`. Basemap records are texture: not clickable, never in the case index; they do feed the timeline.
+
+**Sources** (both in gitignored `data/raw/`, downloaded once by hand — the script prints the command if missing):
+
+- `data/raw/bluebook/unknowns.html` — NICAP's hosting (nicap.org/bluebook/unknowns.htm) of Don Berliner's catalog of Blue Book unknowns (Fund for UFO Research), compiled from the public-domain Blue Book files at Maxwell AFB. **We extract facts only — date and location, which originate in the government case files — and do not commit or republish the catalog's prose.** Blue Book records themselves are declassified U.S. government works (public domain, per NARA).
+- `data/raw/gazetteer/` — GeoNames dumps (`cities1000.txt`, `admin1CodesASCII.txt`, `countryInfo.txt`) for deterministic offline geocoding at city precision. *This product includes data from GeoNames (geonames.org), licensed under CC BY 4.0.*
+
+**Geocoding order:** curated `data/bluebook-locations.json` (committed; same shape as `locations.json`, `null` = curated unplottable) → embedded report coordinates when the entry carries them (`point` tier) → gazetteer city match (with deterministic aliases for the catalog's 1947–69 vocabulary: "West Germany", "French Morocco", installation suffixes, Ft./Mt./Pt.). Misses are flagged and stay unplotted, never guessed.
+
+**Curation judgments on the source's own errors** (all deterministic and reviewable): years outside the program window whose 8→5 OCR correction lands inside 1947–1969 are corrected (the page is chronological and confirms, e.g. "June 25, 1982" sits between 1952 entries); the "200 miles north of Venezuela (69° 57 E.)" entry is overridden to 69.95°**W** at `region` tier — the source's E contradicts its own stated geography.
 
 1. **Never de-anonymize.** The government redacted witness identities and sensitive facility locations deliberately. Do not attempt to recover, infer, or cross-reference them. Preserve redactions as redactions.
 1. **Never imply government affiliation.** The UI must be clearly independent.

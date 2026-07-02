@@ -42,8 +42,11 @@ uap-atlas/
 │   ├── geocode.ts         # location_raw → {lat, lon, precision} via lookup table
 │   └── emit.ts            # merge into records.json, report the diff
 ├── data/
-│   ├── records.json       # canonical dataset (committed output)
+│   ├── records.json       # canonical PURSUE dataset (committed output)
+│   ├── bluebook.json      # Blue Book historical basemap (committed output)
 │   ├── locations.json     # hand-curated geocode table (committed input)
+│   ├── bluebook-locations.json  # curated Blue Book geocode overrides (committed input)
+│   ├── csv/               # war.gov portal index export (committed input)
 │   └── cache/             # per-file enrichment cache (committed)
 ├── src/                   # Vite/React globe app
 │   ├── tokens.css         # design tokens — the ONLY place raw values live
@@ -73,6 +76,7 @@ pnpm ingest             # run the ingest script for the newest local release bun
 pnpm ingest:release 01  # run ingest for a specific release
 pnpm enrich             # Claude enrichment pass (cached docs re-bill nothing)
 pnpm media              # render web preview assets into public/media/ (no API cost)
+pnpm bluebook           # rebuild the Blue Book historical basemap (data/bluebook.json)
 ```
 
 If a command above doesn't exist yet, wire it in `package.json` as part of the phase that introduces it (see `PLAN.md`) rather than inventing an alternative.

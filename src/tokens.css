@@ -84,6 +84,13 @@
   --globe-ring-period-ms: 1800; /* select "ping" ripple */
   --globe-ring-max-radius: 5;
   --globe-ring-propagation-speed: 1;
+  /* the Blue Book historical basemap: the same precision-tier shape hierarchy as
+     the hero layer (crisp point / soft blob / faint area), uniformly de-emphasized —
+     radius = hero tier radius x the emphasis factor, color per tier at low alpha */
+  --globe-emphasis-basemap: 0.55;
+  --globe-color-basemap: rgba(47, 157, 99, 0.35); /* point + city — crisp, dim */
+  --globe-color-basemap-region: rgba(47, 157, 99, 0.18);
+  --globe-color-basemap-theater: rgba(47, 157, 99, 0.09);
 }
 
 /* Base wiring lives here (tokens.css is exempt from the design-guardian scan),
