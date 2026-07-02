@@ -22,6 +22,17 @@ export const OBJECT_CLASSES = [
 
 export type ObjectClass = (typeof OBJECT_CLASSES)[number];
 
+// One prosaic-context candidate from the skeptic layer (Phase 4): an orbital
+// launch near a record's incident date. Produced by ingest/skeptic.ts into
+// data/skeptic.json (keyed by record id); rendered neutrally in the drawer —
+// context only, never asserted as an explanation.
+export interface SkepticCandidate {
+  date: string; // ISO day of the launch
+  vehicle: string; // e.g. "Falcon 9"
+  payload: string; // flight/mission name
+  site: string; // launch site (human-readable where GCAT's table resolves it)
+}
+
 export interface UAPRecord {
   id: string; // stable, content-addressed (hash of source file)
   release: string; // "01" | "02" | "03" ...

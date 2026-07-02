@@ -14,7 +14,8 @@
     "ingest:release": "tsx ingest/run.ts",
     "enrich": "tsx ingest/enrich.ts",
     "media": "tsx ingest/media.ts",
-    "bluebook": "tsx ingest/bluebook.ts"
+    "bluebook": "tsx ingest/bluebook.ts",
+    "skeptic": "tsx ingest/skeptic.ts"
   },
   "dependencies": {
     "react": "^19.2.7",

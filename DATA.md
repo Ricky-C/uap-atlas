@@ -139,6 +139,14 @@ The Phase-3 historical basemap: the ~535 cases Project Blue Book (USAF, 1947–1
 
 **Curation judgments on the source's own errors** (all deterministic and reviewable): years outside the program window whose 8→5 OCR correction lands inside 1947–1969 are corrected (the page is chronological and confirms, e.g. "June 25, 1982" sits between 1952 entries); the "200 miles north of Venezuela (69° 57 E.)" entry is overridden to 69.95°**W** at `region` tier — the source's E contradicts its own stated geography.
 
+## The skeptic layer (`pnpm skeptic`)
+
+Phase-4 "can we explain this?" cross-referencing, first source: **orbital launches**. For every PURSUE record whose `incidentDate` has full day precision, `ingest/skeptic.ts` lists orbital launch attempts within ±1 day from **GCAT** (Jonathan McDowell's General Catalog of Artificial Space Objects, planet4589.org/space/gcat — CC BY 4.0; `launch.tsv` + `sites.tsv` live in gitignored `data/raw/gcat/`, the script prints the download commands). Output is `data/skeptic.json` (committed), keyed by record id.
+
+Neutrality rules, enforced in both the data and the drawer copy: candidates are **context, never explanation** — the UI says so verbatim. Three states are kept distinct because the distinction is the honesty of the feature: an id with a non-empty list (cross-referenced, candidates found), an id with an empty list (cross-referenced, none found), and an absent id (not checkable — the incident date lacks day precision). Only orbital attempts (GCAT `LaunchCode O*`) qualify: they're the event class a ground observer plausibly reports (boost plumes, fuel dumps, re-entries); sounding rockets and missile tests would flood the window. Future skeptic sources (satellite passes, ADS-B) need time-of-day data the corpus mostly lacks.
+
+## Hard rules
+
 1. **Never de-anonymize.** The government redacted witness identities and sensitive facility locations deliberately. Do not attempt to recover, infer, or cross-reference them. Preserve redactions as redactions.
 1. **Never imply government affiliation.** The UI must be clearly independent.
 1. **Neutral framing only.** Summaries and labels describe; they do not sensationalize or conclude.

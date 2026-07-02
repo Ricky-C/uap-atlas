@@ -77,6 +77,7 @@ pnpm ingest:release 01  # run ingest for a specific release
 pnpm enrich             # Claude enrichment pass (cached docs re-bill nothing)
 pnpm media              # render web preview assets into public/media/ (no API cost)
 pnpm bluebook           # rebuild the Blue Book historical basemap (data/bluebook.json)
+pnpm skeptic            # rebuild the launch cross-reference (data/skeptic.json)
 ```
 
 If a command above doesn't exist yet, wire it in `package.json` as part of the phase that introduces it (see `PLAN.md`) rather than inventing an alternative.

@@ -4,10 +4,12 @@
 
 import raw from "../data/records.json";
 import rawBluebook from "../data/bluebook.json";
+import rawSkeptic from "../data/skeptic.json";
 import {
   OBJECT_CLASSES,
   type GeoPrecision,
   type ObjectClass,
+  type SkepticCandidate,
   type UAPRecord,
 } from "../schema";
 
@@ -83,6 +85,42 @@ export const BLUEBOOK: UAPRecord[] = (rawBluebook as unknown[])
 
 export function isBasemap(r: UAPRecord): boolean {
   return r.release === "bluebook";
+}
+
+// Skeptic layer (data/skeptic.json, built by `pnpm skeptic`). Parsed at the edge
+// like everything external. Three states per record, and the distinction is the
+// honesty of the feature: an array (possibly empty) = cross-referenced; undefined
+// = not checkable (no day-precision incident date).
+function parseCandidate(v: unknown): SkepticCandidate | null {
+  if (typeof v !== "object" || v === null) return null;
+  const c = v as Record<string, unknown>;
+  if (typeof c.date !== "string") return null;
+  return {
+    date: c.date,
+    vehicle: asString(c.vehicle, "unknown vehicle"),
+    payload: asString(c.payload, "unnamed payload"),
+    site: asString(c.site),
+  };
+}
+
+const skepticSource: string =
+  typeof (rawSkeptic as { source?: unknown }).source === "string"
+    ? (rawSkeptic as { source: string }).source
+    : "";
+
+const skepticById = new Map<string, SkepticCandidate[]>(
+  Object.entries((rawSkeptic as { byId?: unknown }).byId ?? {}).map(([id, list]) => [
+    id,
+    (Array.isArray(list) ? list : [])
+      .map(parseCandidate)
+      .filter((c): c is SkepticCandidate => c !== null),
+  ]),
+);
+
+export const SKEPTIC_SOURCE = skepticSource;
+
+export function skepticCandidates(id: string): SkepticCandidate[] | undefined {
+  return skepticById.get(id);
 }
 
 // A record is plottable only when it has coordinates AND an honest precision

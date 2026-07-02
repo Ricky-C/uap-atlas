@@ -1,0 +1,639 @@
+{
+  "source": "GCAT (J. McDowell, https://planet4589.org/space/gcat), CC BY 4.0 — orbital launch attempts within ±1 day",
+  "byId": {
+    "00afb60938d05101": [
+      {
+        "date": "2022-05-19",
+        "vehicle": "Soyuz-2-1A",
+        "payload": "Kosmos-2556",
+        "site": "Plesetsk"
+      },
+      {
+        "date": "2022-05-19",
+        "vehicle": "Atlas V N22",
+        "payload": "Starliner OFT-2",
+        "site": "Canaveral"
+      },
+      {
+        "date": "2022-05-20",
+        "vehicle": "Chang Zheng 2C/YZ-1S",
+        "payload": "BSX-1/2",
+        "site": "Jiuquan"
+      }
+    ],
+    "0dc72877cdf9cc3a": [
+      {
+        "date": "1996-09-11",
+        "vehicle": "Ariane 42P",
+        "payload": "Echostar 2",
+        "site": "Kourou"
+      }
+    ],
+    "0dd7855ac3c69e39": [
+      {
+        "date": "2000-02-03",
+        "vehicle": "Zenit-2",
+        "payload": "Kosmos-2369",
+        "site": "Baykonur"
+      },
+      {
+        "date": "2000-02-03",
+        "vehicle": "Atlas IIAS",
+        "payload": "Hispasat 1C",
+        "site": "Canaveral"
+      }
+    ],
+    "10c11e9bf4d66861": [
+      {
+        "date": "2025-04-10",
+        "vehicle": "Chang Zheng 3B",
+        "payload": "TJS 17",
+        "site": "Xichang"
+      }
+    ],
+    "10e3ba274b83d773": [],
+    "1822564fbae08f15": [],
+    "1fe6258aa15843c8": [
+      {
+        "date": "1965-12-04",
+        "vehicle": "Titan II GLV",
+        "payload": "Gemini 7",
+        "site": "Canaveral"
+      },
+      {
+        "date": "1965-12-06",
+        "vehicle": "Scout X-4",
+        "payload": "FR-1",
+        "site": "Vandenberg"
+      }
+    ],
+    "2539850305227baf": [],
+    "2565433b0ac938d6": [
+      {
+        "date": "2020-09-03",
+        "vehicle": "Vega",
+        "payload": "SSMS",
+        "site": "Kourou"
+      },
+      {
+        "date": "2020-09-03",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-12",
+        "site": "Kennedy"
+      },
+      {
+        "date": "2020-09-04",
+        "vehicle": "Chang Zheng 2F",
+        "payload": "CSSHQ",
+        "site": "Jiuquan"
+      }
+    ],
+    "257e2388f838975f": [],
+    "29ed0fb7cbe0be3c": [
+      {
+        "date": "2023-08-31",
+        "vehicle": "Chang Zheng 2D",
+        "payload": "YG-39 01",
+        "site": "Xichang"
+      },
+      {
+        "date": "2023-09-01",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-104",
+        "site": "Canaveral"
+      },
+      {
+        "date": "2023-09-02",
+        "vehicle": "Falcon 9",
+        "payload": "SDA-0B",
+        "site": "Vandenberg"
+      }
+    ],
+    "30708df4aa8484c6": [
+      {
+        "date": "2023-11-08",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-122",
+        "site": "Canaveral"
+      },
+      {
+        "date": "2023-11-09",
+        "vehicle": "Chang Zheng 3B",
+        "payload": "Zhongxing 6E",
+        "site": "Xichang"
+      },
+      {
+        "date": "2023-11-10",
+        "vehicle": "Falcon 9",
+        "payload": "Dragon CRS-29",
+        "site": "Kennedy"
+      }
+    ],
+    "36708d3c6121b00c": [
+      {
+        "date": "2020-09-15",
+        "vehicle": "Chang Zheng 11",
+        "payload": "Jilin-1 03B/03C",
+        "site": "Huang Hai"
+      }
+    ],
+    "36b00fdf99e456df": [],
+    "373070ab867b592e": [],
+    "39126406547c89db": [
+      {
+        "date": "2020-08-07",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-10",
+        "site": "Kennedy"
+      }
+    ],
+    "3fc7a74876b36b32": [],
+    "46701a48cefa62a8": [],
+    "4752dd830144b21c": [
+      {
+        "date": "2022-11-30",
+        "vehicle": "Soyuz-2-1B",
+        "payload": "Kosmos-2565/Kosmos-2566",
+        "site": "Plesetsk"
+      }
+    ],
+    "4ce20fc566edf4a3": [],
+    "5479dd8f1138ef43": [],
+    "566894d9cb31e158": [
+      {
+        "date": "1985-01-23",
+        "vehicle": "Tsiklon-2",
+        "payload": "Kosmos-1625",
+        "site": "Baykonur"
+      },
+      {
+        "date": "1985-01-24",
+        "vehicle": "Tsiklon-3",
+        "payload": "Kosmos-1626",
+        "site": "Plesetsk"
+      },
+      {
+        "date": "1985-01-24",
+        "vehicle": "Space Shuttle",
+        "payload": "USA 8      (ORION 1)",
+        "site": "Kennedy"
+      }
+    ],
+    "672b79390fe65958": [],
+    "7078d96f334dbf39": [
+      {
+        "date": "2023-10-26",
+        "vehicle": "Chang Zheng 2F",
+        "payload": "Shenzhou 17",
+        "site": "Jiuquan"
+      },
+      {
+        "date": "2023-10-27",
+        "vehicle": "Soyuz-2-1B",
+        "payload": "Kosmos-2570/Kosmos-2571",
+        "site": "Plesetsk"
+      }
+    ],
+    "71ca8826db94d615": [
+      {
+        "date": "2023-03-30",
+        "vehicle": "Chang Zheng 2D",
+        "payload": "PIESAT 1-4",
+        "site": "Taiyuan"
+      },
+      {
+        "date": "2023-03-31",
+        "vehicle": "Chang Zheng 4C",
+        "payload": "YG-34 04",
+        "site": "Jiuquan"
+      }
+    ],
+    "8422fceb10b2eafc": [],
+    "86275421f6458356": [
+      {
+        "date": "2024-06-06",
+        "vehicle": "Gushenxing 1",
+        "payload": "Love On Top",
+        "site": "Jiuquan"
+      },
+      {
+        "date": "2024-06-06",
+        "vehicle": "Starship V1.0",
+        "payload": "Starship Flight 4",
+        "site": "Starbase"
+      },
+      {
+        "date": "2024-06-08",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-174",
+        "site": "Canaveral"
+      },
+      {
+        "date": "2024-06-08",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-175",
+        "site": "Vandenberg"
+      }
+    ],
+    "90570293e61c9b22": [
+      {
+        "date": "2024-10-30",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-202",
+        "site": "Vandenberg"
+      },
+      {
+        "date": "2024-10-30",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-203",
+        "site": "Canaveral"
+      },
+      {
+        "date": "2024-10-31",
+        "vehicle": "Soyuz-2-1A",
+        "payload": "Kosmos-2579",
+        "site": "Plesetsk"
+      }
+    ],
+    "90b353682ba21811": [],
+    "9127fb5a81efacf0": [
+      {
+        "date": "2020-08-23",
+        "vehicle": "Chang Zheng 2D",
+        "payload": "Gao Fen 9-05",
+        "site": "Jiuquan"
+      }
+    ],
+    "968c266f780e1f69": [],
+    "9d15960073133810": [],
+    "abe02815d6331854": [
+      {
+        "date": "2023-08-31",
+        "vehicle": "Chang Zheng 2D",
+        "payload": "YG-39 01",
+        "site": "Xichang"
+      },
+      {
+        "date": "2023-09-01",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-104",
+        "site": "Canaveral"
+      },
+      {
+        "date": "2023-09-02",
+        "vehicle": "Falcon 9",
+        "payload": "SDA-0B",
+        "site": "Vandenberg"
+      }
+    ],
+    "ad3b37eb9fbd20e6": [],
+    "b18179d90564ecae": [
+      {
+        "date": "2023-08-31",
+        "vehicle": "Chang Zheng 2D",
+        "payload": "YG-39 01",
+        "site": "Xichang"
+      },
+      {
+        "date": "2023-09-01",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-104",
+        "site": "Canaveral"
+      },
+      {
+        "date": "2023-09-02",
+        "vehicle": "Falcon 9",
+        "payload": "SDA-0B",
+        "site": "Vandenberg"
+      }
+    ],
+    "b3b3f023d70bcce3": [
+      {
+        "date": "2022-08-01",
+        "vehicle": "Soyuz-2-1V",
+        "payload": "Kosmos-2558",
+        "site": "Plesetsk"
+      }
+    ],
+    "b4f4f4ce6dc7687a": [
+      {
+        "date": "2023-10-29",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-119",
+        "site": "Vandenberg"
+      },
+      {
+        "date": "2023-10-30",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-120",
+        "site": "Canaveral"
+      }
+    ],
+    "bd5478d2e420f6ff": [
+      {
+        "date": "2024-01-24",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-137",
+        "site": "Vandenberg"
+      }
+    ],
+    "bfbc281190a14c52": [
+      {
+        "date": "2020-07-15",
+        "vehicle": "Minotaur IV",
+        "payload": "NROL-129",
+        "site": "Wallops MARS"
+      }
+    ],
+    "c2bd370cdadc2f17": [
+      {
+        "date": "2020-10-26",
+        "vehicle": "Chang Zheng 2C",
+        "payload": "Yaogan 30 07 zu",
+        "site": "Xichang"
+      },
+      {
+        "date": "2020-10-28",
+        "vehicle": "Electron",
+        "payload": "In Focus",
+        "site": "Mahia"
+      }
+    ],
+    "c38d267441b19350": [
+      {
+        "date": "2023-08-31",
+        "vehicle": "Chang Zheng 2D",
+        "payload": "YG-39 01",
+        "site": "Xichang"
+      },
+      {
+        "date": "2023-09-01",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-104",
+        "site": "Canaveral"
+      },
+      {
+        "date": "2023-09-02",
+        "vehicle": "Falcon 9",
+        "payload": "SDA-0B",
+        "site": "Vandenberg"
+      }
+    ],
+    "c5cfbc8bacca29db": [
+      {
+        "date": "2020-10-14",
+        "vehicle": "Soyuz-2-1A",
+        "payload": "Soyuz MS-17",
+        "site": "Baykonur"
+      }
+    ],
+    "cddcc196385c373e": [
+      {
+        "date": "1963-07-19",
+        "vehicle": "Thor Agena D",
+        "payload": "CORONA 67/9057",
+        "site": "Vandenberg"
+      },
+      {
+        "date": "1963-07-19",
+        "vehicle": "Atlas Agena B",
+        "payload": "Midas 9",
+        "site": "Pt Arguello"
+      }
+    ],
+    "d52431b354af55b1": [
+      {
+        "date": "2020-08-30",
+        "vehicle": "Falcon 9",
+        "payload": "SAOCOM-1B",
+        "site": "Canaveral"
+      },
+      {
+        "date": "2020-08-31",
+        "vehicle": "Electron",
+        "payload": "I Can't Believe It's..",
+        "site": "Mahia"
+      }
+    ],
+    "d64b69da88d045bb": [],
+    "e12c00b3e2d64e35": [
+      {
+        "date": "2024-09-19",
+        "vehicle": "Chang Zheng 3B/YZ-1",
+        "payload": "Beidou DW 59/60",
+        "site": "Xichang"
+      },
+      {
+        "date": "2024-09-20",
+        "vehicle": "Chang Zheng 2D",
+        "payload": "Jilin-1 Kuanfu 02B",
+        "site": "Taiyuan"
+      },
+      {
+        "date": "2024-09-20",
+        "vehicle": "Kuaizhou-1A",
+        "payload": "Tianqi 29-32",
+        "site": "Xichang"
+      },
+      {
+        "date": "2024-09-20",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-195",
+        "site": "Vandenberg"
+      },
+      {
+        "date": "2024-09-20",
+        "vehicle": "Electron",
+        "payload": "Kineis Killed the RadIOT",
+        "site": "Mahia"
+      }
+    ],
+    "e1b27f7e274549e5": [
+      {
+        "date": "2004-11-06",
+        "vehicle": "Chang Zheng 4B",
+        "payload": "ZY-2C",
+        "site": "Taiyuan"
+      },
+      {
+        "date": "2004-11-06",
+        "vehicle": "Delta 7925-9.5",
+        "payload": "USA 180 (GPS IIR-13)",
+        "site": "Canaveral"
+      }
+    ],
+    "e1d583556594e3e9": [
+      {
+        "date": "1994-01-28",
+        "vehicle": "Soyuz-U",
+        "payload": "Progress M-21",
+        "site": "Baykonur"
+      }
+    ],
+    "ea1cd5296143f378": [
+      {
+        "date": "2023-10-30",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-120",
+        "site": "Canaveral"
+      },
+      {
+        "date": "2023-10-31",
+        "vehicle": "Chang Zheng 6A",
+        "payload": "Tianhui-5",
+        "site": "Taiyuan"
+      }
+    ],
+    "f21f4ae91e51810b": [
+      {
+        "date": "2026-03-22",
+        "vehicle": "Soyuz-2-1A",
+        "payload": "Progress MS-33",
+        "site": "Baykonur"
+      },
+      {
+        "date": "2026-03-22",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-375",
+        "site": "Canaveral"
+      },
+      {
+        "date": "2026-03-22",
+        "vehicle": "Jielong-3",
+        "payload": "Weili Kongjian 02 zu",
+        "site": "Huang Hai"
+      },
+      {
+        "date": "2026-03-23",
+        "vehicle": "Soyuz-2-1B",
+        "payload": "Rassvet-3 G1",
+        "site": "Plesetsk"
+      }
+    ],
+    "f5885b95b57a81c0": [
+      {
+        "date": "2016-11-17",
+        "vehicle": "Ariane 5ES",
+        "payload": "Galileo FOC-M6",
+        "site": "Kourou"
+      },
+      {
+        "date": "2016-11-17",
+        "vehicle": "Soyuz-FG",
+        "payload": "Soyuz MS-03",
+        "site": "Baykonur"
+      },
+      {
+        "date": "2016-11-19",
+        "vehicle": "Atlas V 541",
+        "payload": "GOES R",
+        "site": "Canaveral"
+      }
+    ],
+    "f9deed9063306b0c": [
+      {
+        "date": "2022-05-05",
+        "vehicle": "Chang Zheng 2D",
+        "payload": "Jilin-1",
+        "site": "Taiyuan"
+      },
+      {
+        "date": "2022-05-06",
+        "vehicle": "Falcon 9",
+        "payload": "Starlink-46",
+        "site": "Kennedy"
+      }
+    ],
+    "fc5b1c8ab5661570": [],
+    "fd4deb1e48fcfa7f": [
+      {
+        "date": "2024-10-20",
+        "vehicle": "Falcon 9",
+        "payload": "OneWeb L20",
+        "site": "Vandenberg"
+      }
+    ],
+    "89ecb1163e42d3e8": [
+      {
+        "date": "1986-05-21",
+        "vehicle": "Soyuz-U2",
+        "payload": "Soyuz TM",
+        "site": "Baykonur"
+      },
+      {
+        "date": "1986-05-21",
+        "vehicle": "Soyuz-U",
+        "payload": "Kosmos-1744",
+        "site": "Plesetsk"
+      }
+    ],
+    "d3039ed486d8400b": [
+      {
+        "date": "1973-12-19",
+        "vehicle": "Kosmos 11K65M",
+        "payload": "Kosmos-617/624",
+        "site": "Plesetsk"
+      },
+      {
+        "date": "1973-12-21",
+        "vehicle": "Voskhod 11A57",
+        "payload": "Kosmos-625",
+        "site": "Plesetsk"
+      }
+    ],
+    "2be20f887d364078": [
+      {
+        "date": "1965-06-09",
+        "vehicle": "Thor SLV-2A Agena D",
+        "payload": "CORONA 96/1020",
+        "site": "Vandenberg"
+      }
+    ],
+    "5f073d6c4ae822a8": [
+      {
+        "date": "1965-06-03",
+        "vehicle": "Titan II GLV",
+        "payload": "Gemini 4",
+        "site": "Canaveral"
+      }
+    ],
+    "971d604c8a91acb1": [
+      {
+        "date": "1966-06-03",
+        "vehicle": "Titan II GLV",
+        "payload": "Gemini 9",
+        "site": "Canaveral"
+      },
+      {
+        "date": "1966-06-03",
+        "vehicle": "Atlas SLV-3 Agena D",
+        "payload": "AFP-206",
+        "site": "Vandenberg"
+      }
+    ],
+    "a54a4d12ac77b4f7": [],
+    "ca596a44820b275f": [
+      {
+        "date": "1965-06-09",
+        "vehicle": "Thor SLV-2A Agena D",
+        "payload": "CORONA 96/1020",
+        "site": "Vandenberg"
+      }
+    ],
+    "e192e501e6be5c87": [],
+    "fd3b139e6b9ad4e3": [
+      {
+        "date": "1965-08-03",
+        "vehicle": "Voskhod 11A57",
+        "payload": "Kosmos-77",
+        "site": "Baykonur"
+      },
+      {
+        "date": "1965-08-03",
+        "vehicle": "Atlas SLV-3 Agena D",
+        "payload": "AFP-206",
+        "site": "Vandenberg"
+      }
+    ]
+  }
+}

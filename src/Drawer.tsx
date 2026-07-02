@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { UAPRecord } from "../schema";
-import { incidentYear } from "./data";
+import { incidentYear, skepticCandidates, SKEPTIC_SOURCE } from "./data";
 
 // The case-file drawer: an opened classified file on a dark instrument screen
 // (DESIGN.md). Monospace header, amber status pill, neutral off-white summary,
@@ -53,6 +53,48 @@ function DocScan({ record }: { record: UAPRecord }) {
       />
       <figcaption className="mono-label">{label}</figcaption>
     </figure>
+  );
+}
+
+// Skeptic layer: orbital launches near the incident date, as neutral context.
+// Three honest states: not checkable (no day-precision date), checked-and-empty,
+// and a candidate list. Nothing here asserts an explanation.
+const SKEPTIC_SHOWN = 5;
+
+function SkepticSection({ record }: { record: UAPRecord }) {
+  const candidates = skepticCandidates(record.id);
+  return (
+    <section className="skeptic">
+      <span className="mono-label">prosaic context</span>
+      {candidates === undefined ? (
+        <p className="skeptic-empty">
+          not cross-referenced — the incident date lacks day precision
+        </p>
+      ) : candidates.length === 0 ? (
+        <p className="skeptic-empty">no orbital launches within ±1 day of the incident</p>
+      ) : (
+        <>
+          <ul className="skeptic-list">
+            {candidates.slice(0, SKEPTIC_SHOWN).map((c, i) => (
+              <li key={`${c.date}-${i}`} className="skeptic-row">
+                <span className="skeptic-date">{c.date}</span>
+                <span className="skeptic-what">
+                  {c.vehicle} · {c.payload}
+                  {c.site ? ` · ${c.site}` : ""}
+                </span>
+              </li>
+            ))}
+          </ul>
+          {candidates.length > SKEPTIC_SHOWN && (
+            <p className="skeptic-empty">+{candidates.length - SKEPTIC_SHOWN} more in window</p>
+          )}
+        </>
+      )}
+      <p className="skeptic-note">
+        {SKEPTIC_SOURCE || "orbital launches near the incident date"}. Context only — no
+        explanation is asserted.
+      </p>
+    </section>
   );
 }
 
@@ -109,6 +151,8 @@ export function Drawer({ record, onClose }: DrawerProps) {
           )}
         </dd>
       </dl>
+
+      <SkepticSection record={r} />
     </aside>
   );
 }
