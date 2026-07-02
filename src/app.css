@@ -526,6 +526,22 @@ a.meta-signal:hover {
   color: var(--alert);
 }
 
+/* Blue Book catalog card variants */
+.drawer-meta-solo {
+  border-top: none;
+  padding-top: 0;
+  margin-top: var(--space-4);
+}
+
+.drawer-note {
+  margin: var(--space-4) 0 0;
+  padding-top: var(--space-3);
+  border-top: var(--hairline) solid var(--line);
+  font-size: var(--type-xs);
+  line-height: var(--leading-body);
+  color: var(--text-muted);
+}
+
 /* ── onboarding (dismissible first-load card) ──────────────────────────── */
 
 .onboarding {

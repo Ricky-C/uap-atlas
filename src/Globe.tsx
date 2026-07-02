@@ -14,7 +14,7 @@ import { pointColorFor, pointRadiusFor, readPrecisionTheme } from "./precision";
 
 interface GlobeProps {
   records: UAPRecord[]; // ALL plottable hero records (PURSUE) — year filter applied here
-  basemap: UAPRecord[]; // ALL plottable Blue Book records — low emphasis, not clickable
+  basemap: UAPRecord[]; // ALL plottable Blue Book records — low emphasis, minimal case card on click
   maxYear: number | null; // timeline cutoff; null = everything
   selectedId: string | null;
   hoveredId: string | null; // linked hover from either the list or the globe (T4)
@@ -60,6 +60,7 @@ export function Globe({
       ringMaxRadius: tokenNumber("--globe-ring-max-radius", 5),
       ringPropagationSpeed: tokenNumber("--globe-ring-propagation-speed", 1),
       pointsTransitionMs: tokenNumber("--globe-points-transition-ms", 600),
+      basemapAltFactor: tokenNumber("--globe-basemap-alt-factor", 0.5),
       focusAltitude: tokenNumber("--globe-focus-altitude", 1.8),
       focusMs: tokenNumber("--globe-focus-ms", 1000),
       rotateResumeMs: tokenNumber("--globe-rotate-resume-ms", 4000),
@@ -149,16 +150,19 @@ export function Globe({
   // list click — both share selectedId). Region/theater center on the stored
   // centroid; unplotted records never get here (lat/lon guard). Under reduced
   // motion the camera jumps instead of flying.
+  // Basemap first so hero points draw over it at equal lat/lng.
+  const points = useMemo(() => [...basemap, ...records], [basemap, records]);
+
   useEffect(() => {
     const globe = globeRef.current;
     if (!globe || selectedId === null) return;
-    const r = records.find((x) => x.id === selectedId);
+    const r = points.find((x) => x.id === selectedId);
     if (!r || r.lat === null || r.lon === null) return;
     globe.pointOfView(
       { lat: r.lat, lng: r.lon, altitude: theme.focusAltitude },
       reducedMotion ? 0 : theme.focusMs,
     );
-  }, [selectedId, records, theme.focusAltitude, theme.focusMs, reducedMotion]);
+  }, [selectedId, points, theme.focusAltitude, theme.focusMs, reducedMotion]);
 
   // Timeline visibility: dated records past the cutoff shrink to radius 0 (the
   // points stay mounted so the scrub tweens instead of hard-cutting); undated
@@ -172,11 +176,8 @@ export function Globe({
   // A single "ping" ripple on the selected case (skipped under reduced motion,
   // and when the timeline has scrubbed the selected case out of view). It also
   // marks fly-to arrival — the ripple is already running when the camera lands.
-  const selected = records.find((r) => r.id === selectedId);
+  const selected = points.find((r) => r.id === selectedId);
   const ringsData = !reducedMotion && selected && visibleAt(selected) ? [selected] : [];
-
-  // Basemap first so hero points draw over it at equal altitude.
-  const points = useMemo(() => [...basemap, ...records], [basemap, records]);
 
   return (
     <div className="globe-layer" aria-hidden="true">
@@ -207,21 +208,22 @@ export function Globe({
             visible: visibleAt(r),
           });
         }}
-        pointAltitude={theme.pointAlt}
+        // Hero cases render a hair above the basemap: where a PURSUE point and a
+        // Blue Book dot share coordinates, the raycast hits the higher cap first,
+        // so the case with a real document always wins the click. Both layers are
+        // interactive — a basemap dot opens its minimal catalog card.
+        pointAltitude={(d) =>
+          isBasemap(d as UAPRecord) ? theme.pointAlt * theme.basemapAltFactor : theme.pointAlt
+        }
         pointsTransitionDuration={reducedMotion ? 0 : theme.pointsTransitionMs}
-        // The basemap is texture, not UI: without this filter its points still
-        // catch the raycast — they show a pointer cursor that lies, and a dot
-        // sharing coordinates with a hero case swallows that case's click.
-        pointerEventsFilter={(_, data) => !data || !isBasemap(data as UAPRecord)}
         onPointClick={(d) => {
           const r = d as UAPRecord;
-          // The basemap is texture, not UI; a scrubbed-out (radius 0) point isn't a target.
-          if (!isBasemap(r) && visibleAt(r)) onSelect(r.id);
+          // A scrubbed-out (radius 0) point isn't a target.
+          if (visibleAt(r)) onSelect(r.id);
         }}
         onPointHover={(d) => {
           const r = d as UAPRecord | null;
-          // Same rule as click: basemap and scrubbed-out points aren't targets.
-          onHover(r && !isBasemap(r) && visibleAt(r) ? r.id : null);
+          onHover(r && visibleAt(r) ? r.id : null);
         }}
         ringsData={ringsData}
         ringLat={(d) => (d as UAPRecord).lat ?? 0}

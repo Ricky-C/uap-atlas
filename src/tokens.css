@@ -95,6 +95,9 @@
      the hero layer (crisp point / soft blob / faint area), uniformly de-emphasized —
      radius = hero tier radius x the emphasis factor, color per tier at low alpha */
   --globe-emphasis-basemap: 0.55;
+  /* hero points render a hair above the basemap so the raycast prefers the case
+     with a real document when a PURSUE point and a Blue Book dot share coords */
+  --globe-basemap-alt-factor: 0.5;
   --globe-points-transition-ms: 600; /* scrub tween: points grow/shrink, no hard cuts */
   --timeline-play-step-ms: 180; /* year-sweep cadence for the timeline play control */
   --timeline-play-step-ms-reduced: 700; /* calmer sweep when reduced motion disables the tween */

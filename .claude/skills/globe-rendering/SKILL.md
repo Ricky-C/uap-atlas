@@ -47,16 +47,22 @@ const globeRef = useRef<GlobeMethods | undefined>(undefined);
 - `onPointClick(point, event, coords)` / `onPointHover(point | null, prevPoint | null)`.
   Hover emits `null` floods while the pointer roams — guard the state setter
   for identity before it becomes a re-render (see `setHoverGuarded` in App).
-- Basemap and scrubbed-out (radius 0) points must be excluded in BOTH
-  `onPointClick` and `onPointHover` — a radius-0 point is still a raycast target.
-- **`pointerEventsFilter={(obj, data) => boolean}`** is the real exclusion:
-  handler-level ignoring is not enough, because an ignored point still catches
-  the raycast — it shows a lying pointer cursor (globe.gl marks every point
-  `.clickable`) and, at equal `pointAltitude`, a basemap dot sharing
-  coordinates with a hero point SWALLOWS the hero's click (verified: 6/6 dead
-  clicks on an overlapped case before the filter). Return `false` for
-  non-interactive data and the ray passes through to the point beneath. Keep
-  `data === undefined` returning `true` so the globe itself stays interactive.
+- Scrubbed-out (radius 0) points must be excluded in BOTH `onPointClick` and
+  `onPointHover` — an ignored point can still be a raycast target.
+- **Click priority between overlapping layers = altitude separation.** At equal
+  `pointAltitude`, whichever point the raycast hits first wins arbitrarily — a
+  basemap dot sharing coordinates with a hero point SWALLOWED the hero's click
+  (verified: 6/6 dead clicks). Render the priority layer slightly higher
+  (`pointAltitude` accessor, hero at `--globe-point-alt`, basemap at
+  `× --globe-basemap-alt-factor`): the ray hits the higher cap first, so the
+  hero always wins where they overlap while both layers stay clickable.
+- **`pointerEventsFilter={(obj, data) => boolean}`** is the tool when a layer
+  must be truly inert: handler-level ignoring leaves it in the raycast, showing
+  a lying pointer cursor (globe.gl marks every hoverable point `.clickable`).
+  Return `false` and the ray passes through entirely. Keep `data === undefined`
+  returning `true` so the globe itself stays interactive. (Used here while the
+  basemap was non-interactive; replaced by altitude separation when it gained
+  its minimal catalog card.)
 - `pointsTransitionDuration` — the grow/shrink tween for scrub/hover/selection;
   `0` under reduced motion.
 - Rings layer (select ping): `ringsData`, `ringLat/ringLng`, `ringColor`

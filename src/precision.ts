@@ -47,6 +47,9 @@ export interface PointContext {
 // (crisp point / soft blob / faint area — the honesty rule applies to both),
 // just uniformly de-emphasized.
 export function pointColorFor(r: UAPRecord, t: PrecisionTheme, ctx: PointContext): string {
+  // Active state wins for BOTH layers: a hovered/selected Blue Book dot lights
+  // up like any case — it opens a (minimal) case card, so it earns the signal.
+  if (r.id === ctx.selectedId || r.id === ctx.hoveredId) return t.signal;
   if (isBasemap(r)) {
     switch (r.geoPrecision) {
       case "region":
@@ -57,7 +60,6 @@ export function pointColorFor(r: UAPRecord, t: PrecisionTheme, ctx: PointContext
         return t.colorBasemap;
     }
   }
-  if (r.id === ctx.selectedId || r.id === ctx.hoveredId) return t.signal;
   switch (r.geoPrecision) {
     case "region":
       return t.colorRegion;
@@ -76,8 +78,8 @@ export function pointRadiusFor(r: UAPRecord, t: PrecisionTheme, ctx: PointContex
       : r.geoPrecision === "theater"
         ? t.radiusTheater
         : t.radiusCrisp;
-  if (isBasemap(r)) return tier * t.emphasisBasemap;
-  return r.id === ctx.hoveredId ? tier * t.hoverScale : tier;
+  const base = isBasemap(r) ? tier * t.emphasisBasemap : tier;
+  return r.id === ctx.hoveredId ? base * t.hoverScale : base;
 }
 
 // Legend-facing descriptors: one entry per mark the globe can draw, in the
@@ -129,7 +131,7 @@ export function legendTiers(t: PrecisionTheme): LegendTier[] {
       key: "basemap",
       precision: ["point", "city", "region", "theater"],
       label: "blue book basemap",
-      note: "historical USAF cases (1947–1969) — same tiers, de-emphasized",
+      note: "historical USAF unknowns (1947–1969) — dim; click for the catalog entry",
       color: t.colorBasemap,
       radius: t.radiusCrisp * t.emphasisBasemap,
     },

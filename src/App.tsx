@@ -58,7 +58,11 @@ export function App() {
   const unplottedShown = indexRecords.length - plottedShown;
   // Deliberately not cleared when the timeline scrubs the selected case out of
   // view: the open case file stays readable; only its globe point recedes.
-  const selected = selectedId ? (RECORDS.find((r) => r.id === selectedId) ?? null) : null;
+  // Blue Book basemap dots are selectable too (they open a minimal catalog
+  // card), so the lookup spans both corpora.
+  const selected = selectedId
+    ? (RECORDS.find((r) => r.id === selectedId) ?? BLUEBOOK.find((r) => r.id === selectedId) ?? null)
+    : null;
   const timelineRecords = useMemo(() => [...RECORDS, ...BLUEBOOK], []);
 
   return (

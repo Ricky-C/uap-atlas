@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { UAPRecord } from "../schema";
-import { incidentYear, skepticCandidates, SKEPTIC_SOURCE } from "./data";
+import { incidentYear, isBasemap, skepticCandidates, SKEPTIC_SOURCE } from "./data";
 
 // The case-file drawer: an opened classified file on a dark instrument screen
 // (DESIGN.md). Monospace header, amber status pill, neutral off-white summary,
@@ -98,8 +98,57 @@ function SkepticSection({ record }: { record: UAPRecord }) {
   );
 }
 
+// The minimal card for a Blue Book basemap dot: these are catalog entries
+// (date, location, precision, source), not released documents — the card shows
+// exactly that much and says so, rather than dressing them up as case files.
+function BluebookCard({ record: r, onClose }: { record: UAPRecord; onClose: () => void }) {
+  return (
+    <aside className="drawer" aria-label="Blue Book catalog entry">
+      <header className="drawer-header">
+        <div className="drawer-title">
+          <span className="mono-label">{r.sourceAgency} · project blue book</span>
+          <span className="drawer-case-id">unknown #{r.id}</span>
+        </div>
+        <div className="drawer-header-actions">
+          <button type="button" className="drawer-close" onClick={onClose} aria-label="Close catalog entry">
+            ✕
+          </button>
+        </div>
+      </header>
+
+      <dl className="meta-grid drawer-meta-solo">
+        <dt>incident date</dt>
+        <dd>{formatDate(r)}</dd>
+        <dt>location</dt>
+        <dd>{r.locationRaw || DASH}</dd>
+        <dt>coordinates</dt>
+        <dd>{formatCoords(r)}</dd>
+        <dt>geo precision</dt>
+        <dd className="meta-signal">{r.geoPrecision}</dd>
+        <dt>source</dt>
+        <dd>
+          {isHttpUrl(r.sourceUrl) ? (
+            <a className="meta-signal" href={r.sourceUrl} target="_blank" rel="noreferrer">
+              unknowns catalog ↗
+            </a>
+          ) : (
+            DASH
+          )}
+        </dd>
+      </dl>
+
+      <p className="drawer-note">
+        A USAF Project Blue Book case (1947–1969) the Air Force closed as &quot;unidentified.&quot;
+        It is part of the historical basemap: the catalog records only the date and place — no
+        released document accompanies it in the PURSUE archive.
+      </p>
+    </aside>
+  );
+}
+
 export function Drawer({ record, onClose }: DrawerProps) {
   if (!record) return null;
+  if (isBasemap(record)) return <BluebookCard record={record} onClose={onClose} />;
   const r = record;
 
   return (
