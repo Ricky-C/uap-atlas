@@ -141,13 +141,33 @@ export function isLunar(r: UAPRecord): boolean {
   return /\b(moon|lunar|cislunar)\b/i.test(r.locationRaw);
 }
 
-// Case-index quick filters (faceted navigation): a search string plus three
-// facets. Pure functions — App derives the filtered list and the facet option
-// counts from the same predicate, so the two can never disagree.
+// Case-index quick filters (faceted navigation): a search string plus four
+// facets. Pure functions — App derives the filtered list, the facet option
+// counts, AND the globe's visible-id set from the same predicate, so the
+// three can never disagree.
+
+// What kind of artifact a case carries. Predicates, not a partition: a report
+// with attached footage honestly matches both "video" and "report".
+export type MediaKind = "video" | "report" | "photo";
+
+const PHOTO_DOCTYPES = new Set(["photo", "rendering", "visual-media", "video-still"]);
+
+function matchesMediaKind(r: UAPRecord, kind: MediaKind): boolean {
+  switch (kind) {
+    case "video":
+      return (r.media.videos?.length ?? 0) > 0;
+    case "photo":
+      return PHOTO_DOCTYPES.has(r.docType);
+    case "report":
+      return !PHOTO_DOCTYPES.has(r.docType) && r.docType !== "released video";
+  }
+}
+
 export interface IndexFilters {
   query: string;
   agency: string | null;
   objectClass: string | null;
+  mediaKind: MediaKind | null;
   onGlobeOnly: boolean;
 }
 
@@ -157,11 +177,18 @@ export const EMPTY_FILTERS: IndexFilters = {
   query: "",
   agency: null,
   objectClass: null,
+  mediaKind: null,
   onGlobeOnly: false,
 };
 
 export function filtersActive(f: IndexFilters): boolean {
-  return f.query.trim() !== "" || f.agency !== null || f.objectClass !== null || f.onGlobeOnly;
+  return (
+    f.query.trim() !== "" ||
+    f.agency !== null ||
+    f.objectClass !== null ||
+    f.mediaKind !== null ||
+    f.onGlobeOnly
+  );
 }
 
 function matchesFilters(
@@ -172,6 +199,7 @@ function matchesFilters(
   if (skipFacet !== "agency" && f.agency !== null && r.sourceAgency !== f.agency) return false;
   if (skipFacet !== "objectClass" && f.objectClass !== null && r.objectClass !== f.objectClass)
     return false;
+  if (f.mediaKind !== null && !matchesMediaKind(r, f.mediaKind)) return false;
   if (f.onGlobeOnly && !isPlottable(r) && !isLunar(r)) return false;
   const q = f.query.trim().toLowerCase();
   if (q !== "") {

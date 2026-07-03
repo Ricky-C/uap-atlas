@@ -145,9 +145,13 @@
   --globe-atmosphere-alt: 0.16; /* a touch more rim glow — the one free luxury */
   --globe-rotate-speed: 0.35;
   --globe-point-alt: 0.01;
-  --globe-radius-crisp: 0.35; /* point + city tiers — crisp dot, a hair finer */
-  --globe-radius-region: 1.1; /* soft blob at the centroid */
-  --globe-radius-theater: 2.2; /* large low-confidence area */
+  /* One radius for every precision tier — a large blob stacking over a crisp
+     dot occluded it (and stole its click), so size no longer encodes
+     precision. Honesty moved entirely to brightness: crisp = solid signal,
+     region = translucent, theater = faint (the color tokens below). */
+  --globe-radius-crisp: 0.35; /* point + city tiers */
+  --globe-radius-region: 0.35; /* regional centroid — dimmer, not bigger */
+  --globe-radius-theater: 0.35; /* broad area — fainter still */
   --globe-color-region: rgba(47, 157, 99, 0.55); /* --signal-dim, reduced */
   --globe-color-theater: rgba(47, 157, 99, 0.28); /* --signal-dim, faint */
   --globe-ring-period-ms: 2200; /* select "ping" ripple — slow, unhurried */

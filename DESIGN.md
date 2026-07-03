@@ -70,14 +70,14 @@ Green-on-black **vibrates** — it blooms and fatigues the eye at small sizes. S
 
 ## Precision rendering (honesty is a design feature)
 
-The `geoPrecision` tier controls how a case is drawn, so the map never fakes certainty:
+The `geoPrecision` tier controls how a case is drawn, so the map never fakes certainty. All marks share ONE radius (a larger blob stacking over a crisp dot occluded it and stole its click — 2026-07); precision is encoded entirely in brightness:
 
 | **Tier** | **Render** |
 | --- | --- |
-| `point` | crisp 1–2px point, full `--signal` |
-| `city` | crisp point |
-| `region` | soft blob at the centroid, reduced opacity |
-| `theater` | large low-confidence area, faint |
+| `point` | crisp point, full `--signal` |
+| `city` | crisp point, full `--signal` |
+| `region` | same-size mark at the centroid, translucent |
+| `theater` | same-size mark, faint |
 | `unknown` | not plotted on the globe; listed in a side index only |
 
 ## The case-file drawer (the mood centerpiece)

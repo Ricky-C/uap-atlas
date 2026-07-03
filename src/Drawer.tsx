@@ -57,43 +57,154 @@ function isDvidsUrl(u: string): boolean {
   return u.startsWith("https://www.dvidshub.net/");
 }
 
-// A released video, embedded from the official DVIDS player — but only after a
-// tap: the facade keeps third-party requests out of a mere drawer-open (the
-// standard embed privacy/performance pattern). The atlas never hosts video bytes.
-function VideoEmbed({ dvidsId }: { dvidsId: string }) {
-  const [loaded, setLoaded] = useState(false);
-  if (!loaded) {
-    return (
-      <div className="video-embed">
-        <button
-          type="button"
-          className="video-facade"
-          onClick={() => setLoaded(true)}
-          aria-label={`Load the official player for released video ${dvidsId}`}
-        >
-          <span className="video-facade-glyph" aria-hidden="true">
-            ▶
-          </span>
-          <span className="mono-label">released video · load official player</span>
-        </button>
-      </div>
-    );
-  }
+// A record's released videos, embedded from the official DVIDS player — but
+// only after a tap: the facade keeps third-party requests out of a mere
+// drawer-open (the standard embed privacy/performance pattern). The atlas
+// never hosts video bytes.
+//
+// One component coordinates ALL of a record's videos so exactly one THEATER
+// (the portaled center-screen lightbox — the drawer's backdrop-filter would
+// otherwise clip a fixed descendant, same as DocScan's lightbox) can be open
+// at a time: some records carry 2–3 videos, and independent modals could
+// stack, with a single Escape closing all of them at once. Closing the
+// theater returns that video inline to the drawer slot it came from, with an
+// enlarge control to re-open. Keyed by record id at the call site, so
+// switching case files resets everything to facades. Browser constraint,
+// accepted: an iframe that moves between the theater and the panel remounts,
+// so playback restarts on close.
+function VideoList({ ids }: { ids: string[] }) {
+  const [theater, setTheater] = useState<string | null>(null);
+  const [loaded, setLoaded] = useState<ReadonlySet<string>>(new Set());
+  const lightboxRef = useRef<HTMLDivElement>(null);
+  const enlargeRefs = useRef(new Map<string, HTMLButtonElement>());
+  const lastTheater = useRef<string | null>(null);
+
+  const openTheater = (id: string) => {
+    setLoaded((prev) => new Set(prev).add(id));
+    setTheater(id);
+  };
+
+  useEffect(() => {
+    if (theater === null) return;
+    lightboxRef.current?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setTheater(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [theater]);
+
+  // Closing the theater lands focus on that video's inline enlarge control —
+  // the facade that originally held focus is gone by then.
+  useEffect(() => {
+    if (theater !== null) {
+      lastTheater.current = theater;
+      return;
+    }
+    if (lastTheater.current !== null) {
+      enlargeRefs.current.get(lastTheater.current)?.focus();
+      lastTheater.current = null;
+    }
+  }, [theater]);
+
+  const player = (id: string) => (
+    <iframe
+      className="video-frame"
+      src={`https://www.dvidshub.net/video/embed/${encodeURIComponent(id)}`}
+      title={`Released video ${id} — official DVIDS player`}
+      // Least privilege for the app's one cross-origin embed. No popups /
+      // top-navigation: the meta grid's source link is the way out.
+      sandbox="allow-scripts allow-same-origin allow-presentation"
+      allowFullScreen
+      referrerPolicy="no-referrer"
+      loading="lazy"
+    />
+  );
+
   return (
-    <div className="video-embed">
-      <iframe
-        className="video-frame"
-        src={`https://www.dvidshub.net/video/embed/${encodeURIComponent(dvidsId)}`}
-        title={`Released video ${dvidsId} — official DVIDS player`}
-        // Least privilege for the app's one cross-origin embed. No popups /
-        // top-navigation: the meta grid's source link is the way out.
-        sandbox="allow-scripts allow-same-origin allow-presentation"
-        allowFullScreen
-        referrerPolicy="no-referrer"
-        loading="lazy"
-      />
-      <span className="mono-label video-embed-caption">official dvids player · public domain</span>
-    </div>
+    <>
+      {ids.map((id) => {
+        if (theater === id) {
+          // Hold the drawer slot while the theater is open — no layout jump,
+          // and the panel says where the video went.
+          return (
+            <div key={id} className="video-embed">
+              <div className="video-facade video-facade-placeholder">
+                <span className="mono-label">playing in theater view</span>
+              </div>
+            </div>
+          );
+        }
+        if (loaded.has(id)) {
+          return (
+            <div key={id} className="video-embed">
+              {player(id)}
+              <div className="video-embed-actions">
+                <span className="mono-label video-embed-caption">
+                  official dvids player · public domain
+                </span>
+                <button
+                  ref={(el) => {
+                    if (el) enlargeRefs.current.set(id, el);
+                    else enlargeRefs.current.delete(id);
+                  }}
+                  type="button"
+                  className="index-clear"
+                  onClick={() => openTheater(id)}
+                >
+                  enlarge ⤢
+                </button>
+              </div>
+            </div>
+          );
+        }
+        return (
+          <div key={id} className="video-embed">
+            <button
+              type="button"
+              className="video-facade"
+              onClick={() => openTheater(id)}
+              aria-label={`Play released video ${id} in the official player`}
+            >
+              <span className="video-facade-glyph" aria-hidden="true">
+                ▶
+              </span>
+              <span className="mono-label">released video · play</span>
+            </button>
+          </div>
+        );
+      })}
+      {theater !== null &&
+        createPortal(
+          <div
+            ref={lightboxRef}
+            className="video-lightbox"
+            role="dialog"
+            aria-modal="true"
+            aria-label={`Released video ${theater} — theater view`}
+            tabIndex={-1}
+            onClick={(e) => {
+              if (e.target === e.currentTarget) setTheater(null);
+            }}
+          >
+            <div className="video-lightbox-body">
+              {player(theater)}
+              <div className="video-lightbox-bar">
+                <span className="mono-label">released video · official dvids player</span>
+                <button
+                  type="button"
+                  className="drawer-close"
+                  onClick={() => setTheater(null)}
+                  aria-label="Close the theater and return the video to the case file"
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+          </div>,
+          document.body,
+        )}
+    </>
   );
 }
 
@@ -302,9 +413,9 @@ export function Drawer({ record, onClose }: DrawerProps) {
           panel's glass and border stay crisp while long content dissolves */}
       <div className="drawer-body">
         <DocScan key={r.id} record={r} />
-        {(r.media.videos ?? []).map((id) => (
-          <VideoEmbed key={id} dvidsId={id} />
-        ))}
+        {/* keyed by record id: a new case file resets every video to its facade,
+            even when two records share a DVIDS id (multi-part filings) */}
+        {(r.media.videos?.length ?? 0) > 0 && <VideoList key={r.id} ids={r.media.videos ?? []} />}
 
         <p className="drawer-summary">{r.summary || "No summary available for this record."}</p>
 

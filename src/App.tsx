@@ -14,6 +14,7 @@ import {
   BLUEBOOK,
   EMPTY_FILTERS,
   filterForIndex,
+  filtersActive,
   isPlottable,
   isLunar,
   incidentYear,
@@ -79,6 +80,13 @@ export function App() {
     () => filterForIndex(indexRecords, indexFilters),
     [indexRecords, indexFilters],
   );
+  // The same filters narrow the globe's PURSUE layer: matching points stay,
+  // the rest tween out (like the timeline scrub). null = no filter — the
+  // globe shows everything, byte-for-byte today's behavior.
+  const filteredIds = useMemo(
+    () => (filtersActive(indexFilters) ? new Set(filteredRecords.map((r) => r.id)) : null),
+    [filteredRecords, indexFilters],
+  );
   const plottedShown = useMemo(() => filteredRecords.filter(isPlottable).length, [filteredRecords]);
   const lunarShown = useMemo(
     () => filteredRecords.filter((r) => !isPlottable(r) && isLunar(r)).length,
@@ -106,6 +114,7 @@ export function App() {
           basemap={basemap}
           lunar={lunar}
           maxYear={maxYear}
+          filteredIds={filteredIds}
           selectedId={selectedId}
           hoveredId={hover?.id ?? null}
           rotationOn={rotationOn}

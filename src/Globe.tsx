@@ -18,6 +18,10 @@ interface GlobeProps {
   basemap: UAPRecord[]; // ALL plottable Blue Book records — low emphasis, minimal case card on click
   lunar: UAPRecord[]; // lunar/cislunar cases — anchored to the symbolic moon marker
   maxYear: number | null; // timeline cutoff; null = everything
+  // The case-index filters, as the ids that survived them; null = no filter.
+  // Non-matching PURSUE points tween to radius 0 exactly like the year scrub.
+  // The Blue Book basemap is context, never filtered.
+  filteredIds: ReadonlySet<string> | null;
   selectedId: string | null;
   hoveredId: string | null; // linked hover from either the list or the globe (T4)
   rotationOn: boolean; // user intent from the rotation toggle (T6)
@@ -46,6 +50,7 @@ export function Globe({
   basemap,
   lunar,
   maxYear,
+  filteredIds,
   selectedId,
   hoveredId,
   rotationOn,
@@ -182,6 +187,9 @@ export function Globe({
       { kind: "moon", lat: theme.moonLat, lng: theme.moonLng, alt: theme.moonAlt },
     ];
     const shown = lunar.filter((r) => {
+      // No isBasemap exemption here (unlike visibleAt): lunar is built from
+      // RECORDS only — Blue Book never anchors to the moon.
+      if (filteredIds !== null && !filteredIds.has(r.id)) return false;
       if (maxYear === null) return true;
       const y = incidentYear(r);
       return y === null || y <= maxYear;
@@ -197,7 +205,7 @@ export function Globe({
       });
     });
     return objs;
-  }, [lunar, maxYear, theme]);
+  }, [lunar, maxYear, filteredIds, theme]);
 
   // Marker materials by record id, so selection/hover emphasis can mutate the
   // existing meshes instead of rebuilding the objects layer.
@@ -243,10 +251,14 @@ export function Globe({
     }
   }, [selectedId, points, lunar, theme, reducedMotion]);
 
-  // Timeline visibility: dated records past the cutoff shrink to radius 0 (the
-  // points stay mounted so the scrub tweens instead of hard-cutting); undated
-  // records are always visible — hiding them would imply we know when they were.
+  // Visibility gate for points, rings, and click/hover targets. Two cuts, both
+  // tweened (points stay mounted; radius animates to 0, never a hard cut):
+  //   - the timeline cutoff: dated records past it hide; undated always show —
+  //     hiding them would imply we know when they were;
+  //   - the case-index filters: a PURSUE point outside the filtered set hides;
+  //     the basemap is context and never filtered.
   const visibleAt = (r: UAPRecord): boolean => {
+    if (filteredIds !== null && !isBasemap(r) && !filteredIds.has(r.id)) return false;
     if (maxYear === null) return true;
     const y = incidentYear(r);
     return y === null || y <= maxYear;

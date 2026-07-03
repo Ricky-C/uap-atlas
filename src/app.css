@@ -235,6 +235,17 @@
   cursor: pointer;
 }
 
+/* the artifact-kind facet reuses the segmented-control language full-width */
+.index-kind-row {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.index-kind-row .panel-switch-chip {
+  flex: 1;
+  text-align: center;
+}
+
 .index-filter-toggle {
   flex: none;
   font-family: var(--font-mono);
@@ -961,6 +972,52 @@
   font-size: var(--type-xxs);
 }
 
+.video-embed-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+/* the drawer slot while its video plays center-screen */
+.video-facade-placeholder {
+  cursor: default;
+}
+
+/* the theater: the video held up over the darkened instrument (portaled to
+   body — the drawer's backdrop-filter would clip a fixed descendant) */
+.video-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  box-sizing: border-box;
+  background: var(--overlay-scrim);
+}
+
+.video-lightbox-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: min(72vw, calc(78vh * 16 / 9));
+  max-width: 100%;
+}
+
+.video-lightbox-body .video-frame {
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-panel-raised);
+}
+
+.video-lightbox-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+}
+
 .drawer-summary {
   margin: var(--space-4) 0;
   font-size: var(--type-md);
@@ -1478,5 +1535,13 @@ a.meta-signal:hover {
   .index-search {
     /* below 16px, iOS zooms the page on input focus */
     font-size: var(--type-touch);
+  }
+
+  .video-lightbox {
+    padding: var(--space-4);
+  }
+
+  .video-lightbox-body {
+    width: 92vw;
   }
 }

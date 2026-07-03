@@ -8,6 +8,7 @@ import {
   isLunar,
   isPlottable,
   type IndexFilters,
+  type MediaKind,
 } from "./data";
 import { prefersReducedMotion } from "./theme";
 import { PanelSwitch } from "./PanelSwitch";
@@ -78,6 +79,14 @@ function groupByDecade(records: UAPRecord[]): DecadeGroup[] {
 function defaultCollapsed(groups: DecadeGroup[]): ReadonlySet<string> {
   return new Set(groups.slice(1).map((g) => g.key));
 }
+
+// The artifact-kind facet's one-tap chips. "all" clears the facet.
+const KIND_CHIPS: { label: string; kind: MediaKind | null }[] = [
+  { label: "all", kind: null },
+  { label: "video", kind: "video" },
+  { label: "report", kind: "report" },
+  { label: "photo", kind: "photo" },
+];
 
 // Facet <select> options: sorted by how much they'd show, ties alphabetical.
 // The active selection stays listed even at zero so the control never strands.
@@ -260,6 +269,31 @@ export function CaseIndex({
           >
             on globe
           </button>
+        </div>
+        {/* artifact-kind facet — the marquee filter, one tap always visible */}
+        <div
+          className="panel-switch index-kind-row"
+          role="group"
+          aria-label="Filter by record type"
+        >
+          {KIND_CHIPS.map((c) => {
+            const active = filters.mediaKind === c.kind;
+            return (
+              <button
+                key={c.label}
+                type="button"
+                className={
+                  active ? "panel-switch-chip panel-switch-chip-active" : "panel-switch-chip"
+                }
+                aria-pressed={active}
+                onClick={() => {
+                  if (!active) onFiltersChange({ ...filters, mediaKind: c.kind });
+                }}
+              >
+                {c.label}
+              </button>
+            );
+          })}
         </div>
       </div>
 

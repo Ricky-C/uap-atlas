@@ -29,9 +29,11 @@ export function readPrecisionTheme(): PrecisionTheme {
     colorBasemap: token("--globe-color-basemap"),
     colorBasemapRegion: token("--globe-color-basemap-region"),
     colorBasemapTheater: token("--globe-color-basemap-theater"),
-    radiusCrisp: tokenNumber("--globe-radius-crisp", 0.4),
-    radiusRegion: tokenNumber("--globe-radius-region", 1.2),
-    radiusTheater: tokenNumber("--globe-radius-theater", 2.4),
+    // Fallbacks mirror tokens.css: one uniform radius for every tier —
+    // a diverging fallback would silently reintroduce the occlusion bug.
+    radiusCrisp: tokenNumber("--globe-radius-crisp", 0.35),
+    radiusRegion: tokenNumber("--globe-radius-region", 0.35),
+    radiusTheater: tokenNumber("--globe-radius-theater", 0.35),
     emphasisBasemap: tokenNumber("--globe-emphasis-basemap", 0.55),
     hoverScale: tokenNumber("--globe-hover-scale", 1.5),
   };
@@ -107,7 +109,7 @@ export function legendTiers(t: PrecisionTheme): LegendTier[] {
       key: "region",
       precision: ["region"],
       label: "region",
-      note: "regional centroid only — soft blob",
+      note: "regional centroid only — dimmer mark",
       color: t.colorRegion,
       radius: t.radiusRegion,
     },
@@ -115,7 +117,7 @@ export function legendTiers(t: PrecisionTheme): LegendTier[] {
       key: "theater",
       precision: ["theater"],
       label: "theater",
-      note: "broad operational area — large faint mark",
+      note: "broad operational area — faint mark",
       color: t.colorTheater,
       radius: t.radiusTheater,
     },
