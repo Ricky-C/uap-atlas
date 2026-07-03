@@ -138,7 +138,22 @@ function VideoList({ ids }: { ids: string[] }) {
         if (loaded.has(id)) {
           return (
             <div key={id} className="video-embed">
-              {player(id)}
+              {/* the iframe swallows pointer events, so the theater re-entry
+                  affordance rides ON the frame — always visible over footage —
+                  plus a labeled action in the caption row. The redundancy is
+                  intentional (icon-first affordance + textual fallback); the
+                  caption button is the canonical focus-return target. */}
+              <div className="video-frame-wrap">
+                {player(id)}
+                <button
+                  type="button"
+                  className="video-theater-btn"
+                  onClick={() => openTheater(id)}
+                  aria-label="Reopen in theater view"
+                >
+                  <span aria-hidden="true">⤢</span>
+                </button>
+              </div>
               <div className="video-embed-actions">
                 <span className="mono-label video-embed-caption">
                   official dvids player · public domain
@@ -152,7 +167,7 @@ function VideoList({ ids }: { ids: string[] }) {
                   className="index-clear"
                   onClick={() => openTheater(id)}
                 >
-                  enlarge ⤢
+                  theater ⤢
                 </button>
               </div>
             </div>
@@ -412,10 +427,14 @@ export function Drawer({ record, onClose }: DrawerProps) {
       {/* the body is the inner scroller — the fade mask lives here so the
           panel's glass and border stay crisp while long content dissolves */}
       <div className="drawer-body">
-        <DocScan key={r.id} record={r} />
-        {/* keyed by record id: a new case file resets every video to its facade,
-            even when two records share a DVIDS id (multi-part filings) */}
-        {(r.media.videos?.length ?? 0) > 0 && <VideoList key={r.id} ids={r.media.videos ?? []} />}
+        {/* Both reset per case file via record-scoped keys — PREFIXED, because
+            they are siblings and React requires sibling keys to be unique
+            across component types too. A bare shared r.id here corrupted
+            reconciliation (duplicated/omitted children, dead handlers). */}
+        <DocScan key={`scan-${r.id}`} record={r} />
+        {(r.media.videos?.length ?? 0) > 0 && (
+          <VideoList key={`videos-${r.id}`} ids={r.media.videos ?? []} />
+        )}
 
         <p className="drawer-summary">{r.summary || "No summary available for this record."}</p>
 

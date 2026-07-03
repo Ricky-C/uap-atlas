@@ -979,6 +979,36 @@
   gap: var(--space-2);
 }
 
+/* the inline player wears its theater re-entry control — the cross-origin
+   iframe eats clicks, so the affordance floats above its top-right corner */
+.video-frame-wrap {
+  position: relative;
+}
+
+.video-theater-btn {
+  position: absolute;
+  top: var(--space-2);
+  right: var(--space-2);
+  width: var(--btn-icon);
+  height: var(--btn-icon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--type-sm);
+  color: var(--text-primary);
+  background: var(--bg-panel-raised);
+  border: var(--hairline) solid var(--line-strong);
+  border-radius: var(--radius-2);
+  padding: 0;
+  cursor: pointer;
+}
+
+.video-theater-btn:hover,
+.video-theater-btn:focus-visible {
+  color: var(--signal);
+  border-color: var(--signal-border);
+}
+
 /* the drawer slot while its video plays center-screen */
 .video-facade-placeholder {
   cursor: default;
